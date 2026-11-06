@@ -1828,6 +1828,9 @@ html[data-page="tarifs"] .voile{opacity:.7}
 /* ---------- la lanterne illustrée (washi, or et vermillon) : le prénom s'écrit sur sa bande crème ---------- */
 .lt-img{filter:drop-shadow(0 0 22px rgba(255,160,80,.55)) drop-shadow(0 0 6px rgba(255,200,120,.5))}
 .lt-lan:has(.lt-img) .lt-nom{left:16%; right:16%; top:42.9%; color:#3A1408; font-size:clamp(.95rem, 4.2vw, 1.22rem); letter-spacing:.01em; text-shadow:0 0 4px rgba(255,244,220,.9)}
+
+/* pied de page : une colonne de plus, « Votre besoin » (pages dédiées) */
+@media (min-width:981px){ .pied-g{grid-template-columns:1.3fr 1fr 1fr 1fr 1.1fr} }
 /* --- effets (fin) --- */
 </style>
 
@@ -2716,6 +2719,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
       <p>Séances individuelles à domicile, à Paris et en proche banlieue, à tout âge.</p>
     </div>
     <nav aria-label="Prestations"><h3>Prestations</h3><a href="#forme">Être en forme</a><a href="#sante">Prendre soin de sa santé</a><a href="#enfants">Enfants et ados</a></nav>
+    <nav aria-label="Votre besoin"><h3>Votre besoin</h3><a href="https://ascension-sport-sante.github.io/sport-sur-ordonnance/">Sport sur ordonnance</a><a href="https://ascension-sport-sante.github.io/mal-de-dos/">Mal de dos</a><a href="https://ascension-sport-sante.github.io/reprise-apres-maladie/">Reprendre après une maladie</a><a href="https://ascension-sport-sante.github.io/coach-sportif-enfants/">Coach sportif enfants</a></nav>
     <nav aria-label="Infos pratiques"><h3>Infos pratiques</h3><a href="#methode">Ma méthode</a><a href="#coach">À propos</a><a href="#tarifs">Tarifs et zone</a><a href="#questions">Questions fréquentes</a></nav>
     <div class="pied-c"><h3>Contact</h3><a class="pied-mail" href="#reserver">Écrivez-moi</a><a href="#reserver">Réserver mon bilan</a><button class="lien-btn" type="button" id="confort" aria-pressed="false">Lecture confort : textes plus grands</button></div>
   </div>
