@@ -262,14 +262,26 @@ html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi { backgrou
 @media (hover: hover) and (pointer: fine){.o-chips.situ li:has(> a):hover { border-color: var(--gold); background: rgba(201, 165, 92, 0.12); }}
 .lien-in { color: inherit; text-decoration-line: underline; text-decoration-style: initial; text-decoration-color: var(--gold); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
 @media (hover: hover) and (pointer: fine){.lien-in:hover { color: var(--gold); }}
+@media (max-width: 860px){.dock { display: none !important; }}
+@media (max-width: 860px){.top .nv-cta { display: inline-flex; min-height: 40px; padding: 9px 16px; font-size: 0.92rem; white-space: nowrap; }}
+@media (max-width: 860px){.top .nv-cta .cta-l { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; }}
+@media (max-width: 860px){.top .nv-cta { flex: 0 0 auto; }}
+@media (max-width: 860px){.top .brand > span:last-child { transition: opacity 0.25s; }}
+@media (max-width: 860px){html:not(.un-cta) .top .brand > span:last-child { position: absolute; opacity: 0; visibility: hidden; pointer-events: none; }}
+@media (min-width: 861px){.top .nv-cta .cta-c { display: none; }}
+.top a.btn { transition: opacity 0.25s, transform 0.25s, visibility; }
+@media (prefers-reduced-motion: reduce){.top a.btn, html.un-cta .top a.btn { transition: none; }}
 .top.solid { pointer-events: none; }
 .top.solid .brand, .top.solid .confort-btn { opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity 0.3s, transform 0.3s, visibility 0.3s; }
 .top.solid .som-btn, .top.solid a.btn { pointer-events: auto; }
 .top.solid a.btn { box-shadow: rgba(0, 0, 0, 0.75) 0px 10px 28px -8px, rgba(12, 18, 34, 0.4) 0px 0px 0px 1px; }
 @media (max-width: 860px){.dock.on { transform: none; }}
+@media (max-width: 860px){html.un-cta .top a.btn { opacity: 0; visibility: hidden; transform: translateY(-8px); pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0.25s; }}
 .top.solid { pointer-events: auto; background: rgba(20, 28, 49, 0.86); backdrop-filter: blur(12px); border-bottom-color: var(--line); }
 .top.solid .brand { opacity: 1; visibility: visible; transform: none; }
 @media (hover: none), (max-width: 860px){.top.solid { background: rgba(14, 20, 37, 0.97); }}
+@media (max-width: 860px){html.un-cta .top .nv-cta { display: none; }}
+html.un-cta .top a.btn { opacity: 0; visibility: hidden; transform: translateY(-8px); pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0.25s; }
 .fondvid { position: fixed; inset: 0px; z-index: 0; overflow: hidden; pointer-events: none; background: rgb(12, 18, 34); }
 .fondvid video { position: absolute; left: 0px; top: -3%; width: 100%; height: 106%; object-fit: cover; opacity: 0; transform: translate3d(0, var(--fy, 0px), 0); transition: opacity 0.8s; }
 .fondvid video.on { opacity: 1; }
@@ -443,7 +455,7 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
       <a class="nv-l" href="/#tarifs" data-nav="tarifs">Tarifs</a>
       <a class="nv-l" href="/#reserver" data-nav="reserver">Contact</a>
     </nav>
-    <a class="btn nv-cta" href="/#reserver">Réserver mon bilan</a>
+    <a class="btn nv-cta" href="/#reserver"><span class="cta-l">Réserver mon bilan</span><span class="cta-c" aria-hidden="true">Réserver</span></a>
     <button class="som-btn nv-menu-btn appel" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="sommaire"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</button>
   </div>
 </header>
@@ -509,6 +521,14 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
     if (dock){ var f = fin ? fin.getBoundingClientRect() : null; dock.classList.toggle("on", scrollY > innerHeight * .5 && !(f && f.top < innerHeight && f.bottom > 0)); }
   };
   addEventListener("scroll", sc, {passive:true}); sc();
+  /* un seul « Réserver » à la fois : celui de la barre s'efface dès qu'un bouton « Réserver » de la page est à l'écran */
+  if ("IntersectionObserver" in window){
+    var vus = [], io = new IntersectionObserver(function(es){
+      es.forEach(function(x){ var k = vus.indexOf(x.target); if (x.isIntersecting && k < 0) vus.push(x.target); else if (!x.isIntersecting && k >= 0) vus.splice(k, 1); });
+      H.classList.toggle("un-cta", vus.length > 0);
+    }, {rootMargin:"-60px 0px 0px 0px"});
+    [].forEach.call(document.querySelectorAll('main a.btn[href$="#reserver"]'), function(x){ io.observe(x); });
+  }
   /* « Prestations » (ordinateur) */
   var nl = document.querySelector(".nv-l"), nm = document.getElementById("nv-prest");
   var fermeNav = function(){ if (nm && !nm.hidden){ nm.hidden = true; nl.setAttribute("aria-expanded", "false"); } };

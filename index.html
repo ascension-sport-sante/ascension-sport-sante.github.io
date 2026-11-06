@@ -1839,6 +1839,25 @@ html[data-page="tarifs"] .voile{opacity:.7}
 @media (hover:hover) and (pointer:fine){ .o-chips.situ li:has(> a):hover{border-color:var(--gold); background:rgba(201,165,92,.12)} }
 .lien-in{color:inherit; text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px; text-decoration-thickness:1.5px}
 @media (hover:hover) and (pointer:fine){ .lien-in:hover{color:var(--gold)} }
+
+/* ---------- un seul « Réserver » à la fois ----------
+   Téléphone : plus de barre collée en bas ; un petit « Réserver » dans la barre du haut, à côté de « Menu ».
+   Partout : le bouton de la barre s'efface dès qu'un bouton « Réserver » de la page est à l'écran. */
+@media (max-width:860px){
+  .dock{display:none !important}
+  .top .nv-cta{display:inline-flex; min-height:40px; padding:9px 16px; font-size:.92rem; white-space:nowrap}
+  .top .nv-cta .cta-l{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  .top .wrap{gap:10px}
+  .top .nv-cta{flex:none}
+  /* quand le petit « Réserver » est là, le nom s'efface : le logo seul reste, pour laisser la place */
+  .top .brand > span:last-child{transition:opacity .25s ease}
+  html:not(.un-cta) .top .brand > span:last-child{position:absolute; opacity:0; visibility:hidden; pointer-events:none}
+  html.un-cta .top .nv-cta{display:none}   /* effacé, il libère aussi sa place : « Menu » reste entier */
+}
+@media (min-width:861px){ .top .nv-cta .cta-c{display:none} }
+.top a.btn{transition:opacity .25s ease, transform .25s ease, visibility 0s 0s}
+html.un-cta .top a.btn{opacity:0; visibility:hidden; transform:translateY(-8px); pointer-events:none; transition:opacity .25s ease, transform .25s ease, visibility 0s .25s}
+@media (prefers-reduced-motion:reduce){ .top a.btn, html.un-cta .top a.btn{transition:none} }
 /* --- effets (fin) --- */
 </style>
 
@@ -2107,7 +2126,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
       <a class="nv-l" href="#tarifs" data-nav="tarifs">Tarifs</a>
       <a class="nv-l" href="#reserver" data-nav="reserver">Contact</a>
     </nav>
-    <a class="btn nv-cta" href="#reserver">Réserver mon bilan</a>
+    <a class="btn nv-cta" href="#reserver"><span class="cta-l">Réserver mon bilan</span><span class="cta-c" aria-hidden="true">Réserver</span></a>
     <button class="som-btn nv-menu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="sommaire"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu</button>
   </div>
 </header>
@@ -2412,7 +2431,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
   <section class="sec suite-sec" data-obs>
     <div class="wrap" data-res>
       <p class="eyebrow rv">Continuer l'ascension</p>
-      <nav class="suite rv" data-suite="methode,tarifs,reserver" aria-label="Continuer l'ascension"></nav>
+      <nav class="suite rv" data-suite="methode,tarifs" aria-label="Continuer l'ascension"></nav>
     </div>
   </section>
   </div>
@@ -2484,7 +2503,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
   <section class="sec suite-sec" data-obs>
     <div class="wrap" data-res>
       <p class="eyebrow rv">Continuer l'ascension</p>
-      <nav class="suite rv" data-suite="tarifs,reserver" aria-label="Continuer l'ascension"></nav>
+      <nav class="suite rv" data-suite="tarifs,coach" aria-label="Continuer l'ascension"></nav>
     </div>
   </section>
   </div>
@@ -2538,7 +2557,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
   <section class="sec suite-sec" data-obs>
     <div class="wrap" data-res>
       <p class="eyebrow rv">La prochaine étape</p>
-      <nav class="suite rv" data-suite="reserver,coach" aria-label="La prochaine étape"></nav>
+      <nav class="suite rv" data-suite="coach,methode" aria-label="La prochaine étape"></nav>
     </div>
   </section>
   </div>
@@ -3459,10 +3478,16 @@ html[data-page="tarifs"] .voile{opacity:.7}
     var y = scrollY, ih = innerHeight, ae = document.activeElement, typing = !!(ae && /^(INPUT|TEXTAREA|SELECT)$/.test(ae.tagName));
     var on = y > ih * .5 && y + ih < UI.contact + ih * .35 && !typing;   /* sur téléphone, « Réserver mon bilan » reste en bas, sauf sur la page de réservation */
     put("dock", on, function(v){ dock.classList.toggle("on", v); });
-    put("uncta", on || UI.ctaVu || y + ih > UI.contact + ih * .5, function(v){ root.classList.toggle("un-cta", v); });   /* dans la section Réserver, le formulaire suffit */
+    put("uncta", UI.ctaVu || y + ih > UI.contact + ih * .5, function(v){ root.classList.toggle("un-cta", v); });   /* dans la section Réserver, le formulaire suffit */
   }
-  var ctaHero = $(".hero .actions");
-  if (ctaHero && IOK) new IntersectionObserver(function(es){ UI.ctaVu = es[0].isIntersecting; uiDock(); }, {rootMargin:"-60px 0px 0px 0px"}).observe(ctaHero);
+  /* un seul « Réserver » à la fois : celui de la barre du haut s'efface dès qu'un bouton « Réserver » de la page est à l'écran */
+  if (IOK){
+    var ctaVus = [], ctaIo = new IntersectionObserver(function(es){
+      es.forEach(function(x){ var k = ctaVus.indexOf(x.target); if (x.isIntersecting && k < 0) ctaVus.push(x.target); else if (!x.isIntersecting && k >= 0) ctaVus.splice(k, 1); });
+      UI.ctaVu = ctaVus.length > 0; uiDock();
+    }, {rootMargin:"-60px 0px 0px 0px"});
+    [].forEach.call(document.querySelectorAll("main a.btn[href='#contact'], main a.btn[href='#reserver'], main .suite-c.sommet"), function(b){ ctaIo.observe(b); });
+  }
   addEventListener("scroll", function(){
     var y = scrollY; if (Math.abs(y - dockY) > 8){ dockDir = y > dockY ? 1 : -1; dockY = y; }
     dockT = performance.now(); clearTimeout(dockTo); dockTo = setTimeout(uiDock, 1300); uiDock();
