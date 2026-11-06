@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ascension-sport-sante.github.io/sitemap.xml
