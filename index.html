@@ -1831,6 +1831,14 @@ html[data-page="tarifs"] .voile{opacity:.7}
 
 /* pied de page : une colonne de plus, « Votre besoin » (pages dédiées) */
 @media (min-width:981px){ .pied-g{grid-template-columns:1.3fr 1fr 1fr 1fr 1.1fr} }
+
+/* page Santé : les situations qui ont leur page deviennent des liens discrets (flèche dorée) ; « sport sur ordonnance » aussi dans le texte */
+.o-chips.situ li a{display:inline-flex; align-items:center; gap:6px; color:inherit; text-decoration:none}
+.o-chips.situ li a::after{content:"→"; color:var(--gold); font-weight:700}
+.o-chips.situ li:has(> a){border-color:rgba(201,165,92,.55)}
+@media (hover:hover) and (pointer:fine){ .o-chips.situ li:has(> a):hover{border-color:var(--gold); background:rgba(201,165,92,.12)} }
+.lien-in{color:inherit; text-decoration:underline; text-decoration-color:var(--gold); text-underline-offset:3px; text-decoration-thickness:1.5px}
+@media (hover:hover) and (pointer:fine){ .lien-in:hover{color:var(--gold)} }
 /* --- effets (fin) --- */
 </style>
 
@@ -2245,8 +2253,8 @@ html[data-page="tarifs"] .voile{opacity:.7}
       <div class="txt">
         <p class="eyebrow rv">Prendre soin de sa santé</p>
         <h2 class="rv">Retrouver un corps qui va bien.</h2>
-        <p class="body rv">Formé à l'activité physique adaptée (APA-S), <strong>je fais surtout bouger celles et ceux pour qui ce n'est pas simple</strong> : avec l'âge, une maladie chronique, un handicap. Chaque séance part de votre situation, sur prescription (sport sur ordonnance) ou non.</p>
-        <ul class="o-chips situ rv" aria-label="Les situations que j'accompagne"><li>Mal de dos</li><li>Après une blessure ou une opération</li><li>Diabète, tension, surpoids</li><li>Fauteuil roulant, handicap</li><li>Maladie chronique</li><li>Équilibre, prévention des chutes</li></ul>
+        <p class="body rv">Formé à l'activité physique adaptée (APA-S), <strong>je fais surtout bouger celles et ceux pour qui ce n'est pas simple</strong> : avec l'âge, une maladie chronique, un handicap. Chaque séance part de votre situation, sur prescription (<a class="lien-in" href="https://ascension-sport-sante.github.io/sport-sur-ordonnance/">sport sur ordonnance</a>) ou non.</p>
+        <ul class="o-chips situ rv" aria-label="Les situations que j'accompagne"><li><a href="https://ascension-sport-sante.github.io/mal-de-dos/">Mal de dos</a></li><li>Après une blessure ou une opération</li><li><a href="https://ascension-sport-sante.github.io/reprise-apres-maladie/">Diabète, tension, surpoids</a></li><li>Fauteuil roulant, handicap</li><li><a href="https://ascension-sport-sante.github.io/reprise-apres-maladie/">Maladie chronique</a></li><li>Équilibre, prévention des chutes</li></ul>
         <div class="actions rv"><a class="btn" href="#contact" data-pour="0" data-besoin="Prendre soin de sa santé">Réserver mon bilan</a></div>
       </div>
       <div class="moonbox"><div class="moon" data-moon="2"><img class="halo" src="enso.webp" alt=""><span class="tag vgt" aria-hidden="true"><svg class="vg"><use href="#vg-sante"/></svg></span></div></div>
@@ -2301,6 +2309,7 @@ html[data-page="tarifs"] .voile{opacity:.7}
         <h2 class="rv">Un enfant vif, bien dans son corps.</h2>
         <p class="body rv">Motricité, coordination, <strong>vitesse de réaction</strong>, souffle, force et <strong>confiance en soi</strong>. <strong>Par le jeu</strong>, à son rythme.</p>
         <div class="actions rv"><a class="btn" href="#contact" data-pour="1" data-besoin="Enfants et ados">Réserver un bilan pour mon enfant</a></div>
+        <a class="lien rv" href="https://ascension-sport-sante.github.io/coach-sportif-enfants/">Comment se passent les séances<span aria-hidden="true"> →</span></a>
       </div>
       <div class="moonbox"><div class="moon" data-moon="0"><img class="halo" src="enso.webp" alt=""><span class="tag vgt" aria-hidden="true"><svg class="vg"><use href="#vg-enfant"/></svg></span></div></div>
     </div>
