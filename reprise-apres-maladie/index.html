@@ -247,7 +247,7 @@ footer.pied { position: relative; z-index: 5; padding: 56px 0 calc(24px + env(sa
 .cta-box { justify-content: center; }
 .p-hero .o-chips.situ { justify-content: center; max-width: 640px; margin: 2px auto 0px; }
 :root { --washi: url("/washi.webp"); }
-html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi { background-image: var(--washi); background-size: 256px 256px; }
+html .rituel, html .legal, html .nv-menu, html .acc-i, html .maki, html .kintsugi { background-image: var(--washi); background-size: 256px 256px; }
 @media (hover: none), (max-width: 860px){.top.solid, .dock { backdrop-filter: none !important; }}
 @media (hover: none), (max-width: 860px){.dock { background: rgba(12, 18, 34, 0.97); }}
 .voile { position: fixed; inset: 0px; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 0.9s; background: radial-gradient(85% 40% at 50% 24%, rgba(9, 13, 26, 0.62), rgba(9, 13, 26, 0) 80%), linear-gradient(rgba(9, 13, 26, 0.36), rgba(9, 13, 26, 0.16) 42%, rgba(9, 13, 26, 0.5)); }
@@ -272,17 +272,17 @@ html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi { backgrou
 .top a.btn { transition: opacity 0.25s, transform 0.25s, visibility; }
 @media (prefers-reduced-motion: reduce){.top a.btn, html.un-cta .top a.btn { transition: none; }}
 .acc { gap: 12px; }
-.acc-i, .acc-i:first-child { border: 1px solid rgba(236, 230, 216, 0.13); border-radius: 16px; background-color: rgba(14, 20, 38, 0.62); transition: border-color 0.25s, background-color 0.25s; }
-.acc-i summary { padding: 16px 16px 16px 22px; gap: 18px; line-height: 1.4; }
-.acc-i summary::after { content: ""; flex: 0 0 auto; width: 36px; height: 36px; margin: 0px; border: 1px solid rgba(201, 165, 92, 0.45); border-radius: 50%; transform: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6' fill='none' stroke='%23C9A55C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center center / 15px no-repeat rgba(201, 165, 92, 0.06); transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.2s, border-color 0.2s; }
-@media (hover: hover) and (pointer: fine){.acc-i:hover { border-color: rgba(201, 165, 92, 0.32); }}
-@media (hover: hover) and (pointer: fine){.acc-i summary:hover::after { background-color: rgba(201, 165, 92, 0.18); }}
-.acc-i summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: 16px; }
-.acc-r { padding: 0px 22px 20px; }
-@media (max-width: 640px){.acc-i summary { padding: 14px 14px 14px 18px; gap: 14px; }}
-@media (max-width: 640px){.acc-r { padding: 0px 18px 18px; }}
-@media (max-width: 640px){.acc-i summary::after { width: 34px; height: 34px; }}
-@media (prefers-reduced-motion: reduce){.acc-i summary::after { transition: none; }}
+.acc-i, .acc-i:first-child, .maki, .makis .col .maki:first-child { border: 1px solid rgba(236, 230, 216, 0.13); border-radius: var(--r-c); background-color: rgba(14, 20, 38, 0.62); transition: border-color 0.25s, background-color 0.25s; }
+.acc-i summary, .maki summary { padding: 16px 16px 16px 22px; gap: 18px; line-height: 1.4; }
+.acc-i summary::after, .maki summary::after { content: ""; flex: 0 0 auto; width: 36px; height: 36px; margin: 0px; border: 1px solid rgba(201, 165, 92, 0.45); border-radius: 50%; transform: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6' fill='none' stroke='%23C9A55C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center center / 15px no-repeat rgba(201, 165, 92, 0.06); transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.2s, border-color 0.2s; }
+@media (hover: hover) and (pointer: fine){.acc-i:hover, .maki:hover { border-color: rgba(201, 165, 92, 0.32); }}
+@media (hover: hover) and (pointer: fine){.acc-i summary:hover::after, .maki summary:hover::after { background-color: rgba(201, 165, 92, 0.18); }}
+.acc-i summary:focus-visible, .maki summary:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: var(--r-c); }
+.acc-r, .maki .a { padding: 0px 22px 20px; }
+@media (max-width: 640px){.acc-i summary, .maki summary { padding: 14px 14px 14px 18px; gap: 14px; }}
+@media (max-width: 640px){.acc-r, .maki .a { padding: 0px 18px 18px; }}
+@media (max-width: 640px){.acc-i summary::after, .maki summary::after { width: 34px; height: 34px; }}
+@media (prefers-reduced-motion: reduce){.acc-i summary::after, .maki summary::after { transition: none; }}
 .cta-final { position: relative; isolation: isolate; background: none; }
 .cta-final::before { content: ""; position: absolute; z-index: -1; left: 50%; top: 50%; width: min(1000px, 160vw); aspect-ratio: 1.55 / 1; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(250, 222, 150, 0.46), rgba(214, 170, 92, 0.26) 34%, rgba(170, 104, 110, 0.12) 62%, rgba(12, 18, 34, 0) 100%); }
 @media (prefers-reduced-motion: no-preference){.cta-final::before { will-change: opacity; animation: 6s ease-in-out 0s infinite normal none running cta-lueur; }}
@@ -290,6 +290,21 @@ html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi { backgrou
 .cta-final .cta-box h2, .apr-fin .apr-grande blockquote { text-shadow: rgba(9, 13, 26, 0.8) 0px 1px 2px, rgba(9, 13, 26, 0.75) 0px 2px 22px; }
 .cta-final .cta-box p { text-shadow: rgba(9, 13, 26, 0.85) 0px 1px 2px, rgba(9, 13, 26, 0.8) 0px 0px 14px; }
 .cta-final::before { top: 54%; }
+:root { --r-c: 18px; }
+.apr-carte, .apr-moi, .offre, .zone, .r-pourqui, .rituel, .piliers, .lt-carte, .cta-voie, .suite-c, .som-r, .sm-tu, .door, .apr-pourquoi, .o-chips.rv:not(.situ) li { border-radius: var(--r-c); }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){html:not(.confort) .btn.aimant { translate: var(--mx, 0px) var(--my, 0px); transition: translate 0.6s cubic-bezier(0.2, 0.9, 0.25, 1.3), background-color 0.2s, box-shadow 0.25s, opacity 0.25s, transform 0.25s, visibility; }}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){html:not(.confort) .btn.aimant::after { content: ""; position: absolute; inset: 0px; z-index: -1; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 0.3s; background: radial-gradient(110px circle at var(--rx, 50%) var(--ry, 50%), rgba(255,251,238,.6), rgba(255,251,238,0) 70%); }}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){html:not(.confort) .btn.aimant:hover::after { opacity: 1; }}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){html:not(.confort) .btn.aimant::before { display: block; content: ""; position: absolute; z-index: -1; inset: 0px; width: auto; height: auto; border-radius: inherit; transform: none; transition: none; pointer-events: none; opacity: 0; background: linear-gradient(105deg, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.62) 48%, rgba(255, 255, 255, 0) 60%) 180% 0px / 250% 100% no-repeat; }}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference){html:not(.confort) .btn.aimant:hover::before { animation: 0.95s cubic-bezier(0.3, 0.6, 0.25, 1) 0s 1 normal both running bt-reflet; }}
+.js-anim .in .rv:not(h2) { animation: 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) 0s 1 normal backwards running vue; mask: none; }
+.js-anim .in .rv:not(h2):nth-child(2) { animation-delay: 0.06s; }
+.js-anim .in .rv:not(h2):nth-child(3) { animation-delay: 0.12s; }
+.js-anim .in .rv:not(h2):nth-child(4) { animation-delay: 0.18s; }
+.js-anim .in .rv:not(h2):nth-child(5) { animation-delay: 0.24s; }
+.js-anim .in .rv:not(h2):nth-child(6) { animation-delay: 0.3s; }
+.js-anim .in h2.rv { transition: clip-path 0.75s cubic-bezier(0.6, 0, 0.2, 1) 0.05s, opacity 0.45s 0.05s, filter 0.6s 0.05s, transform 0.6s 0.05s; }
+html:not(.fond):not(.nogl):not(.gl-on) body::after { content: ""; position: fixed; inset: 0px; z-index: -1; background: url("/poster_l.webp") center 40% / cover no-repeat rgb(12, 18, 34); pointer-events: none; }
 .top.solid { pointer-events: none; }
 .top.solid .brand, .top.solid .confort-btn { opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity 0.3s, transform 0.3s, visibility 0.3s; }
 .top.solid .som-btn, .top.solid a.btn { pointer-events: auto; }
@@ -301,6 +316,7 @@ html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi { backgrou
 @media (hover: none), (max-width: 860px){.top.solid { background: rgba(14, 20, 37, 0.97); }}
 @media (max-width: 860px){html.un-cta .top .nv-cta { display: none; }}
 html.un-cta .top a.btn { opacity: 0; visibility: hidden; transform: translateY(-8px); pointer-events: none; transition: opacity 0.25s, transform 0.25s, visibility 0.25s; }
+.top.solid { background: rgba(14, 20, 37, 0.95); backdrop-filter: none !important; }
 .fondvid { position: fixed; inset: 0px; z-index: 0; overflow: hidden; pointer-events: none; background: rgb(12, 18, 34); }
 .fondvid video { position: absolute; left: 0px; top: -3%; width: 100%; height: 106%; object-fit: cover; opacity: 0; transform: translate3d(0, var(--fy, 0px), 0); transition: opacity 0.8s; }
 .fondvid video.on { opacity: 1; }
@@ -377,6 +393,14 @@ html .som { background: var(--washi) 0 0 / 256px 256px, radial-gradient(120% 90%
   0%, 100% { transform: none; }
   40% { transform: scale(1.16) rotate(-8deg); }
   70% { transform: scale(0.96) rotate(4deg); }
+}
+@keyframes bt-reflet { 
+  0% { background-position: 180% 0px; opacity: 1; }
+  100% { background-position: -80% 0px; opacity: 1; }
+}
+@keyframes vue { 
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: none; }
 }
 @keyframes som-in { 
   0% { clip-path: circle(0 at var(--ox, 40px) var(--oy, 36px)); }
@@ -457,7 +481,7 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/#accueil" aria-label="Ascension, accueil">
-      <span class="mini sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit.webp" alt=""></span>
+      <span class="mini sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit_l.webp" alt=""></span>
       <span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span>
     </a>
     <nav class="nav-pro" aria-label="Navigation principale">
@@ -474,7 +498,7 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
       <a class="nv-l" href="/#tarifs" data-nav="tarifs">Tarifs</a>
       <a class="nv-l" href="/#reserver" data-nav="reserver">Contact</a>
     </nav>
-    <a class="btn nv-cta" href="/#reserver"><span class="cta-l">Réserver mon bilan</span><span class="cta-c" aria-hidden="true">Réserver</span></a>
+    <a class="btn nv-cta aimant" href="/#reserver"><span class="cta-l">Réserver mon bilan</span><span class="cta-c" aria-hidden="true">Réserver</span></a>
     <button class="som-btn nv-menu-btn appel" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="sommaire"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</button>
   </div>
 </header>
@@ -494,14 +518,14 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
 <div class="bes-cites"><figure><blockquote>Les experts de l&#x27;Inserm recommandent de prescrire l&#x27;activité physique dans toutes les maladies chroniques qu&#x27;ils ont étudiées, et de l&#x27;intégrer au parcours de soins.</blockquote><figcaption>Source : <a href="https://www.inserm.fr/expertise-collective/activite-physique-prevention-et-traitement-maladies-chroniques/" rel="noopener" target="_blank">Inserm, expertise collective « Activité physique. Prévention et traitement des maladies chroniques », 2019</a></figcaption></figure><figure><blockquote>Ce travail repose sur l&#x27;analyse critique de près de 1 800 documents scientifiques.</blockquote><figcaption>Source : <a href="https://www.inserm.fr/expertise-collective/activite-physique-prevention-et-traitement-maladies-chroniques/" rel="noopener" target="_blank">Inserm, 2019</a></figcaption></figure><figure><blockquote>La prise en charge doit être personnalisée et progressive, en forme, en intensité et en durée.</blockquote><figcaption>Source : <a href="https://www.vidal.fr/actualites/20647-affections-de-longue-duree-prescription-d-une-activite-physique-adaptee-possible-a-partir-de-mars-2017.html" rel="noopener" target="_blank">Code de la santé publique, art. D. 1172-4</a></figcaption></figure></div></div></section>
 <section class="sec pro-sec"><div class="wrap narrow"><div class="sec-head"><p class="eyebrow">Vos questions</p><h2>Questions fréquentes</h2></div>
 <div class="acc"><details class="acc-i"><summary>Je suis encore fatigué par les traitements.</summary><div class="acc-r"><p>On adapte chaque séance à votre forme du jour. Certains jours, on fait moins, et c'est très bien : ce qui compte, c'est la régularité.</p></div></details><details class="acc-i"><summary>Faut-il une ordonnance ?</summary><div class="acc-r"><p>Ce n'est pas obligatoire, mais c'est conseillé : elle précise ce que votre médecin souhaite. Au moindre doute, on lui demande son feu vert avant de commencer.</p></div></details><details class="acc-i"><summary>Et si je ne me sens pas bien pendant une séance ?</summary><div class="acc-r"><p>Je surveille vos signes pendant l'effort et j'arrête dès que quelque chose ne va pas. Les consignes de votre médecin servent de limites.</p></div></details><details class="acc-i"><summary>Je n&#x27;ai jamais fait de sport.</summary><div class="acc-r"><p>Ce n'est pas un problème : on part exactement de votre niveau, sans comparaison avec personne.</p></div></details></div></div></section>
-<section class="sec pro-sec"><div class="wrap narrow"><div class="bes-carte bes-coach"><span class="sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit.webp" alt=""></span><p><strong>Ilyas</strong>, enseignant en activité physique adaptée et santé (APA-S). Licence STAPS activité physique adaptée et santé, Université Paris Nanterre (2026) ; licence STAPS éducation et motricité, Université de Toulon (2022) ; carte professionnelle d'éducateur sportif. <a href="/#coach">En savoir plus</a></p></div></div></section>
+<section class="sec pro-sec"><div class="wrap narrow"><div class="bes-carte bes-coach"><span class="sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit_m.webp" alt=""></span><p><strong>Ilyas</strong>, enseignant en activité physique adaptée et santé (APA-S). Licence STAPS activité physique adaptée et santé, Université Paris Nanterre (2026) ; licence STAPS éducation et motricité, Université de Toulon (2022) ; carte professionnelle d'éducateur sportif. <a href="/#coach">En savoir plus</a></p></div></div></section>
 <section class="sec pro-sec cta-final"><div class="wrap"><div class="cta-box"><div><h2>On commence par un bilan, chez vous</h2><p>Le bilan dure une heure, chez vous, sans engagement. À Paris et en proche banlieue.</p></div><a class="btn" href="/#reserver">Réserver mon bilan</a></div></div></section>
 <section class="sec pro-sec"><div class="wrap narrow"><div class="sec-head"><p class="eyebrow">Selon votre besoin</p><h2>Les autres pages</h2></div><ul class="bes-autres"><li><a href="/sport-sur-ordonnance/">Sport sur ordonnance</a></li><li><a href="/mal-de-dos/">Mal de dos</a></li><li><a href="/coach-sportif-enfants/">Coach sportif enfants</a></li></ul></div></section>
 </main>
 <footer class="pied">
   <div class="wrap pied-g">
     <div class="pied-a">
-      <a class="brand" href="/#accueil" aria-label="Ascension, accueil"><span class="mini sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit.webp" alt=""></span><span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span></a>
+      <a class="brand" href="/#accueil" aria-label="Ascension, accueil"><span class="mini sigil" aria-hidden="true"><img class="ring" src="/enso.webp" alt=""><img class="feather" src="/plume_nuit_l.webp" alt=""></span><span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span></a>
       <p>Séances individuelles à domicile, à Paris et en proche banlieue, à tout âge.</p>
     </div>
     <nav aria-label="Prestations"><h3>Prestations</h3><a href="/#forme">Être en forme</a><a href="/#sante">Prendre soin de sa santé</a><a href="/#enfants">Enfants et ados</a></nav>
@@ -511,8 +535,8 @@ html.confort .bes-hero .lede, html.confort .bes-puces li, html.confort .bes-etap
   </div>
   <div class="wrap pied-l"><span>© 2026 Ascension</span><a href="/#mentions">Mentions légales</a><a href="/#confidentialite">Confidentialité</a><a href="/#cgv">Conditions de vente</a><span>SIRET : à venir</span><span>Carte professionnelle n° 08325ED0042</span></div>
 </footer>
-<div class="dock"><!--@tel-dock--><!--/@tel-dock--><a class="btn" href="/#reserver">Réserver mon bilan</a></div>
-<div class="som sm" id="sommaire" role="dialog" aria-modal="true" aria-labelledby="som-t"><div class="sm-tete"><span class="sm-marque" aria-hidden="true"><span class="sig"><img src="/enso.webp" alt=""><img class="pl" src="/plume_nuit.webp" alt=""></span><b>ASCENSION</b></span><h2 id="som-t" class="sm-titre">Menu</h2><button type="button" class="som-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>Fermer</button></div><div class="sm-corps"><p class="sm-ey">Prestations</p><ul class="sm-tuiles"><li><button type="button" class="sm-tu sm-anim" style="--i:0" data-id="forme"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-forme"></use></svg></span><b>Être en forme</b></button></li><li><button type="button" class="sm-tu sm-anim ici" style="--i:1" data-id="sante" aria-current="true"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-sante"></use></svg></span><b>Prendre soin de sa santé</b></button></li><li><button type="button" class="sm-tu sm-anim" style="--i:2" data-id="enfants"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-enfant"></use></svg></span><b>Enfants et ados</b></button></li></ul><p class="sm-ey">Le coach et la méthode</p><ul class="sm-liste"><li><button type="button" class="sm-l sm-anim" style="--i:3" data-id="accueil"><span class="t">Accueil</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:4" data-id="methode"><span class="t">Ma méthode</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:5" data-id="coach"><span class="t">À propos : Ilyas</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:6" data-id="tarifs"><span class="t">Tarifs et zone</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:7" data-href="#questions"><span class="t">Questions fréquentes</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li></ul></div><div class="sm-bas"><button type="button" class="sm-cta" data-id="reserver">Réserver mon bilan</button><div class="sm-aides"><button type="button" class="som-conf" aria-pressed="false"><span class="aa" aria-hidden="true">Aa</span>Textes plus grands</button><a class="sm-mail" href="mailto:ascension.santepro@gmail.com">ascension.santepro@gmail.com</a></div></div></div>
+<div class="dock"><!--@tel-dock--><!--/@tel-dock--><a class="btn aimant" href="/#reserver">Réserver mon bilan</a></div>
+<div class="som sm" id="sommaire" role="dialog" aria-modal="true" aria-labelledby="som-t"><div class="sm-tete"><span class="sm-marque" aria-hidden="true"><span class="sig"><img src="/enso.webp" alt=""><img class="pl" src="/plume_nuit_l.webp" alt=""></span><b>ASCENSION</b></span><h2 id="som-t" class="sm-titre">Menu</h2><button type="button" class="som-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>Fermer</button></div><div class="sm-corps"><p class="sm-ey">Prestations</p><ul class="sm-tuiles"><li><button type="button" class="sm-tu sm-anim" style="--i:0" data-id="forme"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-forme"></use></svg></span><b>Être en forme</b></button></li><li><button type="button" class="sm-tu sm-anim ici" style="--i:1" data-id="sante" aria-current="true"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-sante"></use></svg></span><b>Prendre soin de sa santé</b></button></li><li><button type="button" class="sm-tu sm-anim" style="--i:2" data-id="enfants"><span class="km" aria-hidden="true"><svg class="vg"><use href="#vg-enfant"></use></svg></span><b>Enfants et ados</b></button></li></ul><p class="sm-ey">Le coach et la méthode</p><ul class="sm-liste"><li><button type="button" class="sm-l sm-anim" style="--i:3" data-id="accueil"><span class="t">Accueil</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:4" data-id="methode"><span class="t">Ma méthode</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:5" data-id="coach"><span class="t">À propos : Ilyas</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:6" data-id="tarifs"><span class="t">Tarifs et zone</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li><li><button type="button" class="sm-l sm-anim" style="--i:7" data-href="#questions"><span class="t">Questions fréquentes</span><span class="sm-ch" aria-hidden="true">›</span><span class="sm-ici">Vous êtes</span></button></li></ul></div><div class="sm-bas"><button type="button" class="sm-cta" data-id="reserver">Réserver mon bilan</button><div class="sm-aides"><button type="button" class="som-conf" aria-pressed="false"><span class="aa" aria-hidden="true">Aa</span>Textes plus grands</button><a class="sm-mail" href="mailto:ascension.santepro@gmail.com">ascension.santepro@gmail.com</a></div></div></div>
 <script>
 (function(){
   var H = document.documentElement, A = "/", L = "/", FOND = "sante";

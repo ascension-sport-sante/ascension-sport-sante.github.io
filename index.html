@@ -1500,7 +1500,7 @@ h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus{outline:none}
 /* 7. le papier washi : un grain très léger sur les panneaux */
 :root{--washi:url("washi.webp")}   /* une petite image déjà calculée : rien à recalculer à l'affichage */
 /* seulement sur les panneaux qui ont un fond uni (le grain s'ajoute par-dessus, il ne remplace jamais un dégradé) */
-html .rituel, html .legal, html .nv-menu, html .acc-i, html .kintsugi{background-image:var(--washi); background-size:256px 256px}
+html .rituel, html .legal, html .nv-menu, html .acc-i, html .maki, html .kintsugi{background-image:var(--washi); background-size:256px 256px}
 html .som{background:var(--washi) 0 0 / 256px 256px, radial-gradient(120% 90% at 15% 0%, #18203A, #06090F)}   /* opaque : rien de la page ne transparaît sous le menu */
 
 @media (prefers-reduced-motion: reduce){ .r-done.on .r-dar, .r-done.on .dr-oeil{animation:none} .kseam .m{stroke-dashoffset:0} .kseam .b{opacity:.8} }
@@ -1890,7 +1890,7 @@ html.un-cta .top a.btn{opacity:0; visibility:hidden; transform:translateY(-8px);
 .apr-stages p.apr-ou{color:var(--gold); font-size:.92rem; font-weight:600}
 .apr-pub{justify-self:start; padding:4px 11px; border:1px solid rgba(201,165,92,.5); border-radius:999px; background:rgba(201,165,92,.08); color:var(--silver); font-size:.82rem; font-weight:700; letter-spacing:.02em}
 .apr-retour{margin:26px 0 0}
-.apr-citation{margin:26px 0 0; padding:24px 26px; border-left:3px solid var(--gold); border-radius:0 var(--r-c, 16px) var(--r-c, 16px) 0; background:rgba(201,165,92,.09); max-width:820px}
+.apr-citation{margin:26px 0 0; padding:24px 26px; border-left:3px solid var(--gold); border-radius:0 var(--r-c) var(--r-c) 0; background:linear-gradient(90deg, rgba(201,165,92,.12), rgba(14,20,38,.72) 70%); max-width:820px}
 .apr-citation blockquote{margin:0; font-family:var(--f-display); font-weight:700; font-size:clamp(1.08rem,2.4vw,1.24rem); line-height:1.55; color:var(--silver)}
 .apr-citation figcaption{margin-top:10px; font-size:.9rem; color:var(--mist)}
 .apr-cartes{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px}
@@ -1919,7 +1919,7 @@ html.confort .apr-src{font-size:1rem}
 
 /* À propos, version courte */
 .apr-terrain{margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit, minmax(196px,1fr)); gap:10px}
-.apr-terrain li{display:grid; gap:2px; padding:12px 16px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; background:rgba(14,20,38,.72)}
+.apr-terrain li{display:grid; gap:2px; padding:12px 16px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 var(--r-c) var(--r-c) 0; background:rgba(14,20,38,.72)}
 .apr-terrain b{font-family:var(--f-display); font-weight:800; font-size:1.06rem; color:var(--fort, #FFF7E6)}
 .apr-terrain span{font-size:.93rem; color:var(--mist)}
 .apr-cartes.apr-quatre{grid-template-columns:repeat(4, minmax(0,1fr))}
@@ -1931,22 +1931,22 @@ html.confort .apr-terrain span{font-size:1.1rem}
 
 /* Questions en accordéon : cartes douces, flèche dans un rond doré, loin du bord */
 .acc{gap:12px}
-.acc-i, .acc-i:first-child{border:1px solid rgba(236,230,216,.13); border-radius:16px; background-color:rgba(14,20,38,.62); transition:border-color .25s ease, background-color .25s ease}
-.acc-i[open]{border-color:rgba(201,165,92,.42); background-color:rgba(20,28,49,.82)}
-.acc-i summary{padding:16px 16px 16px 22px; gap:18px; line-height:1.4}
-.acc-i summary::after{content:""; flex:none; width:36px; height:36px; margin:0; border:1px solid rgba(201,165,92,.45); border-radius:50%; transform:none;
+.acc-i, .acc-i:first-child, .maki, .makis .col .maki:first-child{border:1px solid rgba(236,230,216,.13); border-radius:var(--r-c); background-color:rgba(14,20,38,.62); transition:border-color .25s ease, background-color .25s ease}
+.acc-i[open], .maki[open]{border-color:rgba(201,165,92,.42); background-color:rgba(20,28,49,.82)}
+.acc-i summary, .maki summary{padding:16px 16px 16px 22px; gap:18px; line-height:1.4}
+.acc-i summary::after, .maki summary::after{content:""; flex:none; width:36px; height:36px; margin:0; border:1px solid rgba(201,165,92,.45); border-radius:50%; transform:none;
   background:rgba(201,165,92,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6' fill='none' stroke='%23C9A55C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 15px no-repeat;
   transition:transform .3s cubic-bezier(.2,.7,.2,1), background-color .2s ease, border-color .2s ease}
-.acc-i[open] summary::after{margin:0; transform:rotate(180deg); background-color:rgba(201,165,92,.16); border-color:var(--gold)}
+.acc-i[open] summary::after, .maki[open] summary::after{margin:0; transform:rotate(180deg); background-color:rgba(201,165,92,.16); border-color:var(--gold)}
 @media (hover:hover) and (pointer:fine){
-  .acc-i:hover{border-color:rgba(201,165,92,.32)}
-  .acc-i summary:hover::after{background-color:rgba(201,165,92,.18)}
+  .acc-i:hover, .maki:hover{border-color:rgba(201,165,92,.32)}
+  .acc-i summary:hover::after, .maki summary:hover::after{background-color:rgba(201,165,92,.18)}
 }
-.acc-i summary:focus-visible{outline:2px solid var(--gold); outline-offset:-2px; border-radius:16px}
-.acc-r{padding:0 22px 20px}
+.acc-i summary:focus-visible, .maki summary:focus-visible{outline:2px solid var(--gold); outline-offset:-2px; border-radius:var(--r-c)}
+.acc-r, .maki .a{padding:0 22px 20px} .maki .a p{padding:0}
 .acc-r p + p{margin-top:10px}
-@media (max-width:640px){ .acc-i summary{padding:14px 14px 14px 18px; gap:14px} .acc-r{padding:0 18px 18px} .acc-i summary::after{width:34px; height:34px} }
-@media (prefers-reduced-motion: reduce){ .acc-i summary::after{transition:none} }
+@media (max-width:640px){ .acc-i summary, .maki summary{padding:14px 14px 14px 18px; gap:14px} .acc-r, .maki .a{padding:0 18px 18px} .acc-i summary::after, .maki summary::after{width:34px; height:34px} }
+@media (prefers-reduced-motion: reduce){ .acc-i summary::after, .maki summary::after{transition:none} }
 
 /* « Prêt à commencer ? » : un halo doré doux derrière le texte, sans bande orange qui s'arrête net */
 .cta-final{position:relative; isolation:isolate; background:none}
@@ -1964,7 +1964,7 @@ html.confort .cta-final::before{animation:none}
 
 /* « Mes engagements » : des lignes sobres, « jamais » puis « je préfère » */
 .apr-engage{margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px}
-.apr-engage li{display:grid; gap:6px; align-content:start; padding:16px 20px 18px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 14px 14px 0; background:rgba(14,20,38,.72)}
+.apr-engage li{display:grid; gap:6px; align-content:start; padding:16px 20px 18px; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 var(--r-c) var(--r-c) 0; background:rgba(14,20,38,.72)}
 .apr-engage b{font-family:var(--f-display); font-weight:800; font-size:1.1rem; line-height:1.3; color:var(--fort, #FFF7E6)}
 .apr-engage span{color:var(--mist); font-size:.98rem}
 @media (max-width:760px){ .apr-engage{grid-template-columns:1fr} }
@@ -2105,6 +2105,88 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
   .meth-hero::after{animation:mh-fleche 2.2s ease-in-out infinite}
   @keyframes mh-fleche{0%, 100%{transform:translateY(0) rotate(45deg); opacity:.85} 50%{transform:translateY(8px) rotate(45deg); opacity:.4}}
 }
+
+/* ===== Cohérence : une seule famille de cartes, mêmes coins, mêmes marges ===== */
+:root{--r-c:18px}
+.apr-carte, .apr-moi, .offre, .zone, .r-pourqui, .rituel, .piliers, .lt-carte, .cta-voie, .suite-c, .som-r, .sm-tu, .door, .apr-pourquoi, .o-chips.rv:not(.situ) li{border-radius:var(--r-c)}
+#temoignages.sec{padding-block:128px}
+@media (max-width:980px){ #temoignages.sec{padding-block:80px} }
+/* la section Zone suit l'alignement des autres sections sur téléphone */
+@media (max-width:980px){ .zone-sec .col-txt{text-align:center; justify-items:center} }
+/* bouton de l'offre : pleine largeur sur téléphone, comme les autres */
+@media (max-width:640px){ .offre .btn{width:100%; justify-content:center} }
+/* piliers de la méthode sur téléphone : texte aligné à gauche, comme l'icône */
+@media (max-width:980px){ .meth-hero .pillars li, .meth-hero .pillars .pil-t{text-align:left} }
+
+/* ===== L'ascension (accueil) : chemin de lanternes sur le côté, la petite montagne s'illumine au sommet ===== */
+.asc-voie{position:fixed; z-index:20; left:calc(clamp(8px, 2.1vw, 30px) - 14px); top:50%; width:28px; height:min(60vh, 520px); transform:translateY(-44%); pointer-events:none;
+  opacity:0; visibility:hidden; transition:opacity .5s ease, visibility 0s linear .5s}
+html[data-page="accueil"] .asc-voie.pret{opacity:.62; visibility:visible; transition:opacity .7s ease}
+html[data-page="accueil"] .asc-voie.pret.lance{opacity:1}
+html[data-page="accueil"] .asc-voie.pret.cache{opacity:0; transition:opacity .4s ease}
+.av-svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible}
+.av-trace{fill:none; stroke:rgba(236,230,216,.26); stroke-width:1.3; stroke-linecap:round; stroke-dasharray:.5 6; vector-effect:non-scaling-stroke}
+.av-rempli{position:absolute; inset:0; clip-path:inset(calc((1 - var(--p, 0)) * 100%) -14px 0 -14px)}
+.av-halo{fill:none; stroke:rgba(232,198,119,.22); stroke-width:7; stroke-linecap:round; vector-effect:non-scaling-stroke}
+.av-or{fill:none; stroke:url(#av-or); stroke-width:2.2; stroke-linecap:round; vector-effect:non-scaling-stroke}
+.av-tete{position:absolute; left:0; top:0; width:9px; height:9px; margin:-4.5px 0 0 -4.5px; border-radius:50%; background:#FFF6DC;
+  box-shadow:0 0 0 3px rgba(232,198,119,.22), 0 0 12px 4px rgba(232,198,119,.75), 0 0 28px 8px rgba(232,198,119,.25)}
+.av-l{position:absolute; width:24px; height:24px; margin:-12px 0 0 -12px; padding:0; border:0; background:none; color:inherit; font:inherit}
+.av-l::before{content:""; position:absolute; left:50%; top:50%; width:10px; height:10px; margin:-5px 0 0 -5px; border-radius:50%; box-sizing:border-box;
+  border:1.5px solid rgba(201,165,92,.6); background:#0C1222; transition:background .35s ease, border-color .35s ease, box-shadow .35s ease}
+.av-l.on::before{border-color:#FFE6A8; background:radial-gradient(circle at 45% 40%, #FFF6DC, #E8C677 55%, #B98A3A); box-shadow:0 0 10px 3px rgba(232,198,119,.6)}
+.av-l.flash::before{animation:av-flash .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes av-flash{0%{transform:scale(2.1); box-shadow:0 0 22px 9px rgba(255,230,168,.9)} 100%{transform:scale(1)}}
+.av-l span{position:absolute; left:26px; top:50%; padding:6px 10px; border-radius:8px; border:1px solid rgba(201,165,92,.32); background:rgba(9,13,26,.88);
+  color:var(--gold); font:700 .72rem/1 var(--f-body); letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; opacity:0; transform:translate(-6px, -50%); transition:opacity .2s ease, transform .2s ease; pointer-events:none}
+@media (hover:hover) and (pointer:fine){
+  .av-l{pointer-events:auto; cursor:pointer}
+  .av-l:hover span{opacity:1; transform:translate(0, -50%)}
+  .av-l:hover::before{border-color:#FFE6A8; box-shadow:0 0 0 4px rgba(201,165,92,.18)}
+}
+.av-sommet{position:absolute; left:50%; top:-32px; width:24px; height:18px; margin-left:-12px}
+.av-sommet svg{display:block; width:100%; height:100%; overflow:visible}
+.av-sommet path{fill:rgba(201,165,92,.38); transition:fill .5s ease, filter .5s ease}
+.av-sommet .av-neige{fill:rgba(236,230,216,.45)}
+.au-sommet .av-sommet path{fill:#E8C677; filter:drop-shadow(0 0 6px rgba(255,214,140,.9))}
+.au-sommet .av-sommet .av-neige{fill:#FFF7E6}
+@media (max-width:640px){
+  .asc-voie{left:calc(7px - 14px); height:min(56vh, 460px)}
+  .av-l::before{width:8px; height:8px; margin:-4px 0 0 -4px; border-width:1.2px}
+  .av-tete{width:7px; height:7px; margin:-3.5px 0 0 -3.5px}
+  .av-sommet{top:-24px; width:16px; height:12px; margin-left:-8px}
+  .av-or{stroke-width:1.8}
+}
+@media (max-height:520px){ .asc-voie{display:none} }
+
+
+/* ===== Boutons dorés aimantés, avec lumière et reflet (ordinateur à la souris seulement) ===== */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html:not(.confort) .btn.aimant{translate:var(--mx, 0px) var(--my, 0px); transition:translate .6s cubic-bezier(.2,.9,.25,1.3), background-color .2s ease, box-shadow .25s ease, opacity .25s ease, transform .25s ease, visibility 0s 0s}
+  html:not(.confort) .btn.aimant.attire{transition:translate .14s ease-out, background-color .2s ease, box-shadow .25s ease, opacity .25s ease, transform .25s ease, visibility 0s 0s}
+  html:not(.confort) .btn.aimant::after{content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; pointer-events:none; opacity:0; transition:opacity .3s ease;
+    background:radial-gradient(110px circle at var(--rx, 50%) var(--ry, 50%), rgba(255,251,238,.6), rgba(255,251,238,0) 70%)}
+  html:not(.confort) .btn.aimant:hover::after{opacity:1}
+  html:not(.confort) .btn.aimant::before{display:block; content:""; position:absolute; z-index:-1; inset:0; left:0; top:0; width:auto; height:auto; border-radius:inherit; transform:none; transition:none; pointer-events:none; opacity:0;
+    background:linear-gradient(105deg, rgba(255,255,255,0) 36%, rgba(255,255,255,.62) 48%, rgba(255,255,255,0) 60%) no-repeat; background-size:250% 100%; background-position:180% 0}
+  html:not(.confort) .btn.aimant:hover::before{animation:bt-reflet .95s cubic-bezier(.3,.6,.25,1) both}
+  html:not(.confort) .btn.aimant.attire{box-shadow:0 12px 30px -12px rgba(0,0,0,.7), 0 0 0 1px rgba(255,230,168,.25), 0 0 26px -2px rgba(232,198,119,.45)}
+}
+@keyframes bt-reflet{0%{background-position:180% 0; opacity:1} 100%{background-position:-80% 0; opacity:1}}
+
+/* ===== Fluidité ===== */
+/* les blocs apparaissent en fondu avec une légère montée : calculé par la carte graphique, plus vif (avant : un masque d'encre redessiné à chaque image) */
+.js-anim .in .rv:not(h2){animation:vue .55s cubic-bezier(.2,.7,.2,1) backwards; -webkit-mask:none; mask:none}
+.js-anim .in .rv:not(h2):nth-child(2){animation-delay:.06s} .js-anim .in .rv:not(h2):nth-child(3){animation-delay:.12s} .js-anim .in .rv:not(h2):nth-child(4){animation-delay:.18s}
+.js-anim .in .rv:not(h2):nth-child(5){animation-delay:.24s} .js-anim .in .rv:not(h2):nth-child(6){animation-delay:.3s}
+@keyframes vue{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+.js-anim .in h2.rv{transition:clip-path .75s cubic-bezier(.6,0,.2,1) .05s, opacity .45s ease .05s, filter .6s ease .05s, transform .6s ease .05s}
+/* la barre du haut : fond presque opaque au lieu d'un flou recalculé à chaque image du paysage */
+.top.solid{-webkit-backdrop-filter:none !important; backdrop-filter:none !important; background:rgba(14,20,37,.95)}
+/* ordinateur : tant que le paysage 3D se prépare, son image fixe attend derrière ; la 3D apparaît ensuite en fondu */
+html:not(.fond):not(.nogl):not(.gl-on) body::after{content:""; position:fixed; inset:0; z-index:-1; background:#0C1222 url(poster_l.webp) center 40% / cover no-repeat; pointer-events:none}
+html:not(.fond):not(.nogl):not(.gl-on) #gl{opacity:0}
+#gl{transition:opacity .8s ease}
 /* --- effets (fin) --- */
 </style>
 
@@ -2356,7 +2438,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#accueil" aria-label="Ascension, accueil">
-      <span class="mini sigil" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit.webp" alt=""></span>
+      <span class="mini sigil" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit_l.webp" alt=""></span>
       <span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span>
     </a>
     <nav class="nav-pro" aria-label="Navigation principale">
@@ -2391,7 +2473,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
         <div class="actions reveal" style="--d:.3"><a class="btn" href="#reserver">Réserver mon bilan</a><a class="btn ghost" href="#prestations">Voir les prestations</a><!--@tel-hero--><!--/@tel-hero--></div>
         <!--@offre-hero--><p class="offre-l reveal" style="--d:.4"><strong>Le bilan</strong> : 1 h chez vous, 30€ après crédit d'impôt (60€), sans engagement.</p><!--/@offre-hero-->
       </div>
-      <div class="sigil h-sig" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit.webp" alt=""></div>
+      <div class="sigil h-sig" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit_m.webp" alt=""></div>
     </div>
   </section>
 
@@ -2859,7 +2941,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
       <div class="col-txt">
         <p class="eyebrow rv">Zone d'intervention</p>
         <h2 class="rv">Je viens chez vous</h2>
-        <p class="body rv">Paris et la proche banlieue, jusqu'à une heure de transport depuis Paris 18e. Votre commune n'est pas sur la carte ? Écrivez-moi.</p>
+        <p class="body rv">Je me déplace avec tout le matériel, depuis Paris 18e.</p>
       </div>
       <figure class="zone rv" data-res><!--@zone--><h3>Je viens chez vous</h3><p class="z-sub">Depuis Paris 18e, à Montmartre.</p><svg class="carte" viewBox="0 0 460 340" role="img" aria-label="Carte : depuis Paris 18e, ≈ 1 h de transport"><defs><filter id="lavis" x="-15%" y="-15%" width="130%" height="130%"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="26"/><feGaussianBlur stdDeviation="5"/></filter></defs><path class="c-wash" d="M445.3 182.0 C446.7 171.7 446.4 160.4 442.8 150.6 C439.2 140.7 430.9 131.3 423.7 122.7 C416.4 114.2 407.0 107.1 399.4 99.3 C391.8 91.5 385.8 83.5 378.3 76.0 C370.9 68.5 363.8 60.4 354.7 54.3 C345.6 48.3 334.5 43.6 323.7 39.7 C313.0 35.7 301.4 33.5 290.2 30.6 C279.1 27.7 268.2 24.5 256.8 22.5 C245.4 20.5 233.6 18.7 222.0 18.6 C210.4 18.4 198.7 20.5 187.0 21.8 C175.3 23.1 164.1 25.0 151.9 26.4 C139.6 27.8 126.1 27.7 113.5 30.2 C100.9 32.7 86.7 35.7 76.1 41.6 C65.6 47.5 56.8 56.6 50.1 65.5 C43.4 74.5 39.9 85.4 36.1 95.3 C32.3 105.2 29.4 115.1 27.5 124.8 C25.6 134.6 24.5 144.4 24.8 153.9 C25.1 163.4 27.9 172.8 29.3 182.0 C30.7 191.2 32.5 199.6 33.1 208.9 C33.7 218.2 31.8 227.9 32.8 237.6 C33.8 247.4 34.7 258.2 39.1 267.3 C43.6 276.3 51.7 284.6 59.7 292.0 C67.7 299.4 77.9 305.3 87.3 311.7 C96.6 318.1 105.6 324.9 115.7 330.7 C125.8 336.4 136.5 342.5 148.0 346.3 C159.4 350.1 172.2 352.0 184.6 353.4 C196.9 354.8 209.6 354.7 222.0 354.6 C234.4 354.4 247.2 354.7 259.3 352.7 C271.3 350.6 283.8 347.4 294.2 342.2 C304.5 336.9 313.3 328.4 321.5 321.2 C329.7 314.0 335.7 305.6 343.5 299.0 C351.4 292.4 360.0 287.4 368.8 281.5 C377.6 275.5 388.1 270.3 396.4 263.3 C404.6 256.3 412.1 248.2 418.4 239.7 C424.8 231.2 430.0 221.9 434.5 212.3 C439.0 202.6 443.9 192.3 445.3 182.0" style="transform-origin:219px 131px"/><path class="c-bois" d="M103.9 199.0 C103.0 195.2 100.5 192.6 99.6 189.1 C98.7 185.6 99.7 181.1 98.6 177.9 C97.6 174.7 95.2 172.5 93.2 170.0 C91.3 167.5 89.3 164.6 86.9 163.0 C84.5 161.3 81.8 160.6 79.0 160.1 C76.2 159.6 72.9 158.5 70.4 159.8 C67.9 161.2 65.4 164.9 64.0 168.4 C62.5 171.8 62.7 177.0 61.7 180.4 C60.6 183.8 59.0 185.6 57.7 188.7 C56.4 191.8 54.9 195.1 53.9 199.0 C53.0 202.9 51.4 208.2 52.1 212.0 C52.8 215.7 56.2 218.4 58.2 221.4 C60.1 224.4 61.6 227.9 63.8 229.9 C66.1 231.9 68.9 232.7 71.5 233.4 C74.0 234.1 76.6 234.6 79.0 234.1 C81.4 233.6 83.5 231.2 85.9 230.2 C88.2 229.2 90.6 229.3 93.3 228.2 C96.1 227.2 100.1 226.6 102.1 223.9 C104.1 221.1 104.9 215.8 105.2 211.6 C105.5 207.5 104.9 202.8 103.9 199.0"/><path class="c-bois" d="M378.6 271.0 C379.3 268.9 382.4 266.5 382.4 264.3 C382.3 262.1 380.4 259.7 378.3 257.9 C376.2 256.0 372.9 254.6 369.9 253.2 C366.8 251.9 363.6 250.5 360.1 249.9 C356.6 249.4 352.5 249.5 349.0 249.9 C345.5 250.2 341.9 251.0 339.1 252.1 C336.3 253.3 335.2 255.7 332.2 256.7 C329.2 257.8 324.4 257.4 321.2 258.5 C318.1 259.7 315.0 261.8 313.3 263.8 C311.5 265.9 309.8 268.8 310.6 271.0 C311.3 273.2 315.6 275.4 317.7 277.3 C319.8 279.2 321.2 280.9 323.3 282.5 C325.3 284.2 327.3 286.0 329.9 287.2 C332.5 288.4 335.9 289.1 339.1 289.9 C342.3 290.6 345.5 291.5 349.0 291.9 C352.5 292.2 356.2 292.3 360.1 292.1 C363.9 291.9 369.5 292.2 372.2 290.7 C374.9 289.2 375.3 285.5 376.3 283.2 C377.2 280.9 377.5 278.8 377.9 276.8 C378.3 274.8 377.8 273.1 378.6 271.0"/><path class="c-seine" pathLength="1" d="M336.6 302.0 C331.5 298.7 314.9 287.6 305.9 282.1 C296.8 276.6 289.4 273.4 282.4 268.8 C275.5 264.2 270.0 259.8 264.1 254.4 C258.3 249.1 252.5 242.5 247.3 236.8 C242.0 231.0 237.5 224.3 232.6 220.2 C227.8 216.0 222.0 214.1 218.0 211.8 C214.0 209.4 213.3 208.9 208.5 206.2 C203.6 203.6 197.4 197.9 188.7 195.8 C180.0 193.7 164.2 192.5 156.5 193.6 C148.8 194.7 148.0 197.5 142.5 202.5 C137.1 207.5 129.0 215.9 123.5 223.5 C118.0 231.0 114.4 240.3 109.6 247.8 C104.8 255.4 101.8 263.5 94.9 268.8 C88.1 274.2 76.9 281.0 68.6 279.9 C60.3 278.8 50.5 270.7 45.1 262.2 C39.8 253.7 37.1 240.8 36.3 229.0 C35.6 217.2 35.4 203.2 40.7 191.4 C46.1 179.6 59.1 167.5 68.6 158.3 C78.1 149.0 88.6 143.5 97.9 136.1 C107.1 128.8 115.0 121.4 124.2 114.0 C133.5 106.7 142.5 98.2 153.5 91.9 C164.5 85.6 179.9 81.2 190.2 76.4 C200.4 71.6 209.4 69.1 215.1 63.2 C220.7 57.3 225.6 48.1 223.8 41.0 C222.1 34.0 212.9 26.7 204.8 21.1 C196.7 15.6 180.4 10.1 175.5 7.9"/><path class="c-peri" pathLength="1" d="M240.5 116.2 C243.0 116.3 249.1 116.4 255.5 116.9 C261.9 117.4 273.5 115.4 279.1 119.1 C284.6 122.9 283.6 131.8 288.7 139.5 C293.8 147.1 305.7 156.0 309.7 164.9 C313.7 173.7 311.8 183.9 312.8 192.5 C313.7 201.2 314.9 210.4 315.4 216.9 C315.9 223.3 316.9 224.4 315.8 231.2 C314.7 238.0 312.4 251.5 308.8 257.8 C305.2 264.0 303.1 263.8 294.2 268.8 C285.2 273.8 264.0 283.6 255.0 287.6 C246.1 291.7 246.9 291.3 240.7 293.1 C234.5 295.0 226.3 300.3 218.0 298.7 C209.7 297.1 200.1 287.8 190.7 283.6 C181.3 279.5 170.8 277.2 161.6 273.9 C152.3 270.6 141.8 267.0 135.2 263.7 C128.6 260.5 129.5 256.3 122.0 254.2 C114.6 252.2 95.6 255.6 90.5 251.4 C85.5 247.2 89.6 236.6 92.0 229.0 C94.4 221.4 100.2 214.5 104.8 205.8 C109.3 197.1 115.1 184.2 119.1 177.1 C123.1 169.9 124.7 167.9 128.6 162.7 C132.5 157.4 138.6 149.7 142.5 145.6 C146.5 141.6 146.9 141.6 152.1 138.4 C157.2 135.1 166.0 129.3 173.3 126.2 C180.6 123.1 189.3 120.8 196.0 119.6 C202.7 118.3 210.7 118.6 213.6 118.4"/><text class="c-paris" x="249" y="208" text-anchor="middle">PARIS</text><g class="c-v" style="--i:0"><circle cx="203.3" cy="87.9" r="3.6"/><text x="194.3" y="92.9" text-anchor="end">Saint-Ouen</text></g><g class="c-v" style="--i:1"><circle cx="162.3" cy="104.1" r="3.6"/><text x="153.3" y="109.1" text-anchor="end">Clichy</text></g><g class="c-v" style="--i:2"><circle cx="273.8" cy="81.7" r="3.6"/><text x="282.8" y="86.7" text-anchor="start">Aubervilliers</text></g><g class="c-v" style="--i:3"><circle cx="313.8" cy="126.4" r="3.6"/><text x="322.8" y="131.4" text-anchor="start">Pantin</text></g><g class="c-v" style="--i:4"><circle cx="237.6" cy="34.0" r="3.6"/><text x="237.6" y="54.0" text-anchor="middle">Saint-Denis</text></g><g class="c-v" style="--i:5"><circle cx="109.1" cy="148.1" r="3.6"/><text x="103.1" y="166.1" text-anchor="end">Neuilly</text></g><g class="c-v" style="--i:6"><circle cx="62.7" cy="131.7" r="3.6"/><text x="62.7" y="121.7" text-anchor="middle">La Défense</text></g><g class="c-v" style="--i:7"><circle cx="371.1" cy="194.1" r="3.6"/><text x="380.1" y="199.1" text-anchor="start">Montreuil</text></g><g class="c-v" style="--i:8"><circle cx="357.4" cy="230.3" r="3.6"/><text x="366.4" y="235.3" text-anchor="start">Vincennes</text></g><g class="c-v" style="--i:9"><circle cx="177.7" cy="299.8" r="3.6"/><text x="168.7" y="304.8" text-anchor="end">Montrouge</text></g><g class="c-v" style="--i:10"><circle cx="277.9" cy="300.4" r="3.6"/><text x="286.9" y="305.4" text-anchor="start">Ivry</text></g><g class="c-v" style="--i:11"><circle cx="109.6" cy="282.1" r="3.6"/><text x="100.6" y="287.1" text-anchor="end">Issy</text></g><g class="c-v" style="--i:12"><circle cx="65.5" cy="247.4" r="3.6"/><text x="65.5" y="267.4" text-anchor="middle">Boulogne</text></g><g class="c-ripple"><circle cx="218.6" cy="130.6" r="40"/><circle cx="218.6" cy="130.6" r="40"/></g><g class="c-base"><path class="c-dome" d="M205.6 104.6 h26 v-7 q-2 -9 -7 -11 q-1 -6 -6 -7 q-5 1 -6 7 q-5 2 -7 11 Z M217.9 79.6 v-8 h1.4 v8 Z"/><g class="c-hanko"><rect x="203.6" y="118.6" width="30" height="24" rx="3"/><text x="218.6" y="135.6" text-anchor="middle">18e</text></g></g><text class="c-heure" x="18" y="322">≈ 1 h de transport</text></svg><figcaption><strong>Tout Paris et la proche banlieue</strong>, jusqu'à une heure de transport en commun. Votre commune n'y figure pas ? Demandez-moi.</figcaption><!--/@zone-->
       </figure>
@@ -2888,7 +2970,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
 
   <section class="sec suite-sec" data-obs>
     <div class="wrap" data-res>
-      <p class="eyebrow rv">La prochaine étape</p>
+      <p class="eyebrow rv">Continuer l'ascension</p>
       <nav class="suite rv" data-suite="coach,methode" aria-label="La prochaine étape"></nav>
     </div>
   </section>
@@ -3062,11 +3144,11 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
         <p class="body rv">Une carte de visite, un flyer pour les médecins, kinés et pharmacies du 18e, et trois modèles Instagram, dans le même univers que le site. Le QR code mène au site.</p>
       </div>
       <div class="kit-g">
-        <figure class="kit-c kit-large rv"><div class="kit-cartes"><img src="kit/apercu_carte_recto.jpg" alt="Carte de visite, recto"><img src="kit/apercu_carte_verso.jpg" alt="Carte de visite, verso"></div><figcaption><b>Carte de visite</b>85 × 55 mm, recto verso</figcaption></figure>
-        <figure class="kit-c rv"><img src="kit/apercu_flyer.jpg" alt="Flyer A5 pour les professionnels de santé"><figcaption><b>Flyer A5</b>Pour les médecins, kinés et pharmacies</figcaption></figure>
-        <figure class="kit-c rv"><img src="kit/apercu_insta_presentation.jpg" alt="Publication Instagram de présentation"><figcaption><b>Instagram : présentation</b>1080 × 1350</figcaption></figure>
-        <figure class="kit-c rv"><img src="kit/apercu_insta_conseil.jpg" alt="Modèle Instagram : le conseil du coach"><figcaption><b>Instagram : le conseil du coach</b>Modèle à remplir, 1080 × 1080</figcaption></figure>
-        <figure class="kit-c rv"><img src="kit/apercu_insta_story.jpg" alt="Story Instagram"><figcaption><b>Instagram : story</b>1080 × 1920</figcaption></figure>
+        <figure class="kit-c kit-large rv"><div class="kit-cartes"><img loading="lazy" decoding="async" src="kit/apercu_carte_recto.jpg" alt="Carte de visite, recto"><img loading="lazy" decoding="async" src="kit/apercu_carte_verso.jpg" alt="Carte de visite, verso"></div><figcaption><b>Carte de visite</b>85 × 55 mm, recto verso</figcaption></figure>
+        <figure class="kit-c rv"><img loading="lazy" decoding="async" src="kit/apercu_flyer.jpg" alt="Flyer A5 pour les professionnels de santé"><figcaption><b>Flyer A5</b>Pour les médecins, kinés et pharmacies</figcaption></figure>
+        <figure class="kit-c rv"><img loading="lazy" decoding="async" src="kit/apercu_insta_presentation.jpg" alt="Publication Instagram de présentation"><figcaption><b>Instagram : présentation</b>1080 × 1350</figcaption></figure>
+        <figure class="kit-c rv"><img loading="lazy" decoding="async" src="kit/apercu_insta_conseil.jpg" alt="Modèle Instagram : le conseil du coach"><figcaption><b>Instagram : le conseil du coach</b>Modèle à remplir, 1080 × 1080</figcaption></figure>
+        <figure class="kit-c rv"><img loading="lazy" decoding="async" src="kit/apercu_insta_story.jpg" alt="Story Instagram"><figcaption><b>Instagram : story</b>1080 × 1920</figcaption></figure>
       </div>
     </div>
   </section>
@@ -3075,7 +3157,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
 <footer class="pied">
   <div class="wrap pied-g">
     <div class="pied-a">
-      <a class="brand" href="#accueil" aria-label="Ascension, accueil"><span class="mini sigil" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit.webp" alt=""></span><span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span></a>
+      <a class="brand" href="#accueil" aria-label="Ascension, accueil"><span class="mini sigil" aria-hidden="true"><img class="ring" src="enso.webp" alt=""><img class="feather" src="plume_nuit_l.webp" alt=""></span><span><b>ASCENSION</b><small>Coach sport-santé à domicile</small></span></a>
       <p>Séances individuelles à domicile, à Paris et en proche banlieue, à tout âge.</p>
     </div>
     <nav aria-label="Prestations"><h3>Prestations</h3><a href="#forme">Être en forme</a><a href="#sante">Prendre soin de sa santé</a><a href="#enfants">Enfants et ados</a></nav>
@@ -3088,7 +3170,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
 <div class="dock"><!--@tel-dock--><!--/@tel-dock--><a class="btn" href="#reserver">Réserver mon bilan</a></div>
 
 <script type="application/json" id="contenu">{"v": 1, "coord": {"tel": "", "wa": "", "mail": "ascension.santepro@gmail.com", "formulaire": "https://script.google.com/macros/s/AKfycbwIc_LQiE_ZR6XIOdXbZSQ9XZOGU61H-orBb66oXKHCmLRq54tCy4vRmhHE0pm0ObE/exec"}, "tarif": {"prix": 60, "note": ""}, "zone": {"titre": "Je viens chez vous", "sous": "Depuis Paris 18e, à Montmartre.", "ville": "Paris 18e", "sceau": "18e", "lat": 48.8925, "lon": 2.3444, "paris": true, "heure": "≈ 1 h de transport", "legende": "**Tout Paris et la proche banlieue**, jusqu'à une heure de transport en commun. Votre commune n'y figure pas ? Demandez-moi.", "communes": [["Saint-Denis", 48.9362, 2.3574, "s"], ["Saint-Ouen", 48.9118, 2.334, "w"], ["Aubervilliers", 48.9146, 2.3821, "e"], ["Pantin", 48.8944, 2.4094, "e"], ["Montreuil", 48.8638, 2.4485, "e"], ["Vincennes", 48.8474, 2.4392, "e"], ["Ivry", 48.8157, 2.3849, "e"], ["Montrouge", 48.816, 2.3165, "w"], ["Issy", 48.824, 2.27, "w"], ["Boulogne", 48.8397, 2.2399, "s"], ["Neuilly", 48.8846, 2.2697, "sw"], ["La Défense", 48.892, 2.238, "n"], ["Clichy", 48.9045, 2.306, "w"]]}, "temoignages": {"note": "Exemples de mise en page : ces avis sont fictifs, à remplacer par les vôtres.", "google": {"note": "5,0", "nombre": "12", "lien": "", "avis": "", "exemple": true}, "liste": [{"texte": "Après mon opération du dos, je n'osais plus rien faire. Ilyas m'a remise en mouvement, en douceur, sans jamais me brusquer. Aujourd'hui je refais mes courses à pied.", "nom": "Martine L.", "contexte": "Après une opération du dos", "etoiles": 5, "voie": 2, "source": "google", "exemple": true}, {"texte": "Fini le mal de dos. Et mon premier équilibre sur les mains, à 42 ans.", "nom": "Karim B.", "contexte": "Remise en forme", "etoiles": 5, "voie": 1, "source": "google", "exemple": true}, {"texte": "Avant, ma fille avait peur du ballon. Maintenant elle fait la roue et court plus vite que son grand frère !", "nom": "Leïla K.", "contexte": "Pour sa fille, 9 ans", "etoiles": 5, "voie": 0, "source": "google", "exemple": true}, {"texte": "Ma mère a 82 ans. Elle se relève seule du sol, sans peur, et elle attend la séance toute la semaine.", "nom": "Nadia S.", "contexte": "Pour sa mère, 82 ans", "etoiles": 5, "voie": 2, "source": "google", "exemple": true}, {"texte": "Avec mon diabète, je ne savais pas par où commencer. Chaque séance est adaptée à ma forme du jour, et je me sens enfin en confiance.", "nom": "Jean-Pierre R.", "contexte": "Diabète de type 2", "etoiles": 5, "voie": 2, "source": "direct", "exemple": true}, {"texte": "Mon fils de 13 ans ne voulait plus entendre parler de sport. Il a repris confiance, et c'est lui qui me rappelle l'heure de la séance.", "nom": "Sofiane D.", "contexte": "Pour son fils, 13 ans", "etoiles": 5, "voie": 0, "source": "google", "exemple": true}]}, "faq": [{"q": "Comment se passe le bilan ?", "r": "C'est la **première étape** de votre accompagnement. Je viens chez vous : un **entretien santé** (vos antécédents, vos douleurs, vos objectifs), puis des **tests simples** d'équilibre, de force, de souplesse et de souffle. Vous repartez avec votre point de départ et la suite du parcours."}, {"q": "Je n'ai jamais fait de sport, ou je me trouve trop âgé : c'est pour moi ?", "r": "Oui. On part **exactement de là où vous êtes**, et chaque séance s'adapte à votre forme du jour. J'accompagne de l'enfant au grand-parent, y compris après des années sans bouger."}, {"q": "J'ai mal au dos, ou une pathologie : est-ce risqué ?", "r": "L'**activité physique adaptée**, c'est justement mon métier. Je tiens compte de vos douleurs, de vos traitements et des avis de votre médecin, et j'adapte chaque exercice. En cas de doute, on demande son feu vert avant de commencer."}, {"q": "Mon enfant n'aime pas le sport : ça peut marcher ?", "r": "C'est souvent là que ça marche le mieux. Tout passe **par le jeu** : défis, parcours, ballons, cordes. Il bouge sans s'en rendre compte, prend confiance, et l'envie revient à son rythme."}, {"q": "Faut-il du matériel, ou beaucoup de place ?", "r": "Non. **J'apporte le matériel** : élastiques, tapis, petits accessoires. Un coin de salon, un jardin ou un parc près de chez vous suffit."}, {"q": "Comment fonctionne le crédit d'impôt ?", "r": "Les séances à domicile ouvrent droit au **crédit d'impôt de 50 %** des services à la personne. Avec l'**avance immédiate** de l'Urssaf, vous ne réglez que votre moitié, directement : inutile d'attendre la déclaration de l'année suivante."}, {"q": "Ma mutuelle peut-elle rembourser ?", "r": "Certaines mutuelles prennent en charge une partie des séances d'activité physique adaptée, surtout **sur prescription médicale** (le sport sur ordonnance). Renseignez-vous auprès de la vôtre : je vous fournis les factures nécessaires."}, {"q": "Quand vais-je voir des résultats ?", "r": "Souvent, le sommeil, l'énergie et l'aisance dans les gestes du quotidien s'améliorent **dès les premières semaines**. On refait régulièrement les tests du bilan : vous voyez, chiffres à l'appui, le chemin parcouru."}], "diplomes": [{"glyphe": "APA", "petit": "SANTÉ", "titre": "Licence STAPS, activité physique adaptée et santé", "detail": "Université Paris Nanterre, 2026", "lien": "", "lienTexte": ""}, {"glyphe": "ÉM", "petit": "STAPS", "titre": "Licence STAPS, éducation et motricité", "detail": "Université de Toulon, 2022", "lien": "", "lienTexte": ""}, {"glyphe": "PRO", "petit": "CARTE", "titre": "Carte professionnelle d'éducateur sportif", "detail": "N° 08325ED0042", "lien": "", "lienTexte": ""}]}</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="three-r128.min.js"></script>
 <script>
 (function(){
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -4209,7 +4291,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     else {
       var sjSkip = function(){ shojiGo(); if (shoji.parentNode){ shoji.style.opacity = "0"; setTimeout(function(){ shoji.remove(); }, 320); } ["pointerdown", "keydown", "wheel", "touchstart"].forEach(function(t){ removeEventListener(t, sjSkip); }); };
       ["pointerdown", "keydown", "wheel", "touchstart"].forEach(function(t){ addEventListener(t, sjSkip, {passive:true}); });
-      setTimeout(shojiGo, innerWidth <= 860 ? 1000 : 2600);   /* sur téléphone, l'intro est plus courte */
+      setTimeout(shojiGo, innerWidth <= 860 ? 1000 : 1400);   /* sur téléphone, l'intro est plus courte */
     }
   } else root.classList.remove("sj-wait");
 
@@ -4720,25 +4802,25 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     var arrive = function(){ if (!PAGE.wait) return; PAGE.wait = false; entrerVisibles(); focusTitre(P, cible); };
     VOL.to = setTimeout(function(){ if (PAGE.cur !== P){ montrer(P); scrollTo({top:y(), behavior:"instant"}); } fin(); arrive(); }, 4500);   /* filet de sécurité : on arrive toujours */
     var dl = FX.delai && performance.now() - FX.delai.t < 700 ? FX.delai.ms : 0; FX.delai = null;   /* le sceau a le temps de s'imprimer */
-    var ferme = {duration:460, delay:dl, easing:"cubic-bezier(.6,0,.3,1)", fill:"forwards"};
+    var ferme = {duration:mobile ? 460 : 400, delay:dl, easing:"cubic-bezier(.6,0,.3,1)", fill:"forwards"};
     if (FX.ferme) FX.ferme(P, d, dl);
     L.animate([{transform:"translateX(-102%)"}, {transform:"translateX(.8%)", offset:.86}, {transform:"translateX(0)"}], ferme);
     var a = R.animate([{transform:"translateX(102%)"}, {transform:"translateX(-.8%)", offset:.86}, {transform:"translateX(0)"}], ferme);
     a.onfinish = function(){   /* les portes sont closes : la page change derrière, la caméra s'envole vers le nouveau lieu */
       var k0 = typeof kS === "number" && isFinite(kS) ? kS : P.k[0];
       montrer(P); scrollTo({top:y(), behavior:"instant"});
-      var dur = mobile ? Math.min(2300, 950 + 150 * Math.abs(PAGE.base() - k0)) : Math.min(3600, 1300 + 230 * Math.abs(PAGE.base() - k0));   /* au téléphone, un vol plus court */
+      var dur = mobile ? Math.min(2300, 950 + 150 * Math.abs(PAGE.base() - k0)) : Math.min(2400, 1000 + 160 * Math.abs(PAGE.base() - k0));   /* au téléphone, un vol plus court ; à l'ordinateur aussi, plus vif qu'avant */
       var loin = mobile && Math.abs(PAGE.base() - k0) > 2.5;   /* au téléphone, une destination lointaine (le sommet) : le décor change d'un coup, derrière les portes */
       if (loin){ PAGE.vol = null; kS = PAGE.base(); dur = 700; } else PAGE.vol = {a:k0, t0:performance.now(), d:dur};
       setTimeout(function(){
-        var ouvre = {duration:900, easing:"cubic-bezier(.77,0,.18,1)", fill:"forwards"};
+        var ouvre = {duration:mobile ? 900 : 760, easing:"cubic-bezier(.77,0,.18,1)", fill:"forwards"};
         L.animate([{transform:"translateX(0)"}, {transform:"translateX(-1.4%)", offset:.09}, {transform:"translateX(-1%)", offset:.16}, {transform:"translateX(-102%)"}], ouvre);
         var z = R.animate([{transform:"translateX(0)"}, {transform:"translateX(1.4%)", offset:.09}, {transform:"translateX(1%)", offset:.16}, {transform:"translateX(102%)"}], ouvre);
         lum.animate([{opacity:0}, {opacity:1, offset:.12}, {opacity:.4, offset:.4}, {opacity:0}], {duration:900, easing:"ease"});
         if (FX.ouvre) FX.ouvre(P);
         z.onfinish = fin;
       }, 170);
-      setTimeout(arrive, Math.max(1000, dur * .62));
+      setTimeout(arrive, mobile ? Math.max(1000, dur * .62) : Math.max(800, dur * .5));
     };
   }
   addEventListener("popstate", function(){ route(location.hash, false); });
@@ -4753,7 +4835,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     var e = RENDU.esc, rang = 0, CH = "<span class=\"sm-ch\" aria-hidden=\"true\">›</span>", ICI = "<span class=\"sm-ici\">Vous êtes ici</span>";
     var tuile = function(P){ return "<li><button type=\"button\" class=\"sm-tu sm-anim\" style=\"--i:" + (rang++) + "\" data-id=\"" + P.id + "\"><span class=\"km\" aria-hidden=\"true\"><svg class=\"vg\"><use href=\"#" + P.vg + "\"/></svg></span><b>" + e(P.t) + "</b></button></li>"; };
     var ligne = function(id, t, href){ return "<li><button type=\"button\" class=\"sm-l sm-anim\" style=\"--i:" + (rang++) + "\"" + (href ? " data-href=\"" + href + "\"" : " data-id=\"" + id + "\"") + "><span class=\"t\">" + e(t) + "</span>" + CH + ICI + "</button></li>"; };
-    var h = "<div class=\"sm-tete\"><span class=\"sm-marque\" aria-hidden=\"true\"><span class=\"sig\"><img src=\"enso.webp\" alt=\"\"><img class=\"pl\" src=\"plume_nuit.webp\" alt=\"\"></span><b>ASCENSION</b></span>" +
+    var h = "<div class=\"sm-tete\"><span class=\"sm-marque\" aria-hidden=\"true\"><span class=\"sig\"><img src=\"enso.webp\" alt=\"\"><img class=\"pl\" src=\"plume_nuit_l.webp\" alt=\"\"></span><b>ASCENSION</b></span>" +
       "<h2 id=\"som-t\" class=\"sm-titre\">Menu</h2><button type=\"button\" class=\"som-x\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg>Fermer</button></div>" +
       "<div class=\"sm-corps\"><p class=\"sm-ey\">Prestations</p><ul class=\"sm-tuiles\">" + [PG.forme, PG.sante, PG.enfants].map(tuile).join("") + "</ul>" +
       "<p class=\"sm-ey\">Le coach et la méthode</p><ul class=\"sm-liste\">" +
@@ -5188,6 +5270,159 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
 
     coutures(); relief();
   })();
+
+  /* ---------- l'ascension (accueil) : un fin chemin de lanternes dorées monte sur le côté au fil de la lecture
+     (une lanterne par étape de la page) ; au sommet, la petite montagne s'illumine ---------- */
+  (function(){
+    var page = document.getElementById("p-accueil"); if (!page) return;
+    var cta = page.querySelector(".cta-final");
+    var cibles = [page.querySelector(".hero"), page.querySelector("#prestations"), page.querySelector("#deroule"), page.querySelector("#apropos"), cta];
+    if (cibles.some(function(c){ return !c; })) return;
+    var noms = ["Le départ", "Prestations", "Trois étapes", "Votre coach", "Le sommet"];
+    var N = cibles.length - 1, H = 400, W = 28, tel = matchMedia("(max-width: 640px)");
+    var calme = function(){ return reduce || confort; };
+    var xDe = function(t, a){ return W / 2 + a * Math.sin(t * Math.PI * 4.5 + .4); };   /* t : 0 en bas (le départ), 1 au sommet */
+    var trace = function(a){ var d = ""; for (var k = 0; k <= 90; k++){ var t = k / 90; d += (k ? " L" : "M") + xDe(t, a).toFixed(2) + " " + ((1 - t) * H).toFixed(1); } return d; };
+
+    var voie = document.createElement("div"); voie.className = "asc-voie"; voie.setAttribute("aria-hidden", "true");
+    voie.innerHTML = '<svg class="av-svg" viewBox="0 0 28 400" preserveAspectRatio="none"><path class="av-trace"/></svg>'
+      + '<div class="av-rempli"><svg class="av-svg" viewBox="0 0 28 400" preserveAspectRatio="none"><defs><linearGradient id="av-or" x1="0" y1="1" x2="0" y2="0">'
+      + '<stop offset="0" stop-color="#9C7A3A"/><stop offset=".55" stop-color="#E8C677"/><stop offset="1" stop-color="#FFF1C9"/></linearGradient></defs><path class="av-halo"/><path class="av-or"/></svg></div>'
+      + '<span class="av-sommet"><svg viewBox="0 0 24 18"><path d="M1 17 9 4.5l3.6 4.8L15 6.4 23 17Z"/><path class="av-neige" d="m9 4.5 2.2 3-1.4-.4-1.2 1-.9-1.4Z"/></svg></span>'
+      + '<i class="av-tete"></i>';
+    var ls = noms.map(function(n, i){
+      var b = document.createElement("button"); b.type = "button"; b.className = "av-l"; b.tabIndex = -1; b.style.top = ((1 - i / N) * 100) + "%";
+      b.innerHTML = "<span>" + n + "</span>";
+      b.addEventListener("click", function(){ scrollTo({top: i ? T[i] + 2 : 0, behavior: calme() ? "auto" : "smooth"}); });
+      voie.appendChild(b); return b;
+    });
+    document.body.appendChild(voie);
+    var pTrace = voie.querySelector(".av-trace"), pOr = voie.querySelector(".av-or"), pHalo = voie.querySelector(".av-halo"), tete = voie.querySelector(".av-tete");
+
+
+    var pied = document.querySelector("footer");
+    var T = [], amp = 6, hpx = 0, pVise = 0, pAff = 0, anim = 0, allume = [];
+    function mesurer(){
+      if (!page.classList.contains("on")) return;
+      var y0 = scrollY, vh = innerHeight, maxY = Math.max(0, document.documentElement.scrollHeight - vh);
+      T = cibles.map(function(c, i){
+        if (!i) return 0;
+        var r = c.getBoundingClientRect(), top = r.top + y0;
+        return Math.min(i === N ? top + r.height / 2 - vh / 2 : top - vh * .6, maxY);
+      });
+      for (var i = 1; i <= N; i++) if (T[i] <= T[i - 1]) T[i] = T[i - 1] + 1;
+      var a = tel.matches ? 2 : 6;
+      if (a !== amp || !pTrace.getAttribute("d")){ amp = a; var d = trace(a); pTrace.setAttribute("d", d); pOr.setAttribute("d", d); pHalo.setAttribute("d", d); }
+      ls.forEach(function(b, i){ b.style.left = xDe(i / N, amp).toFixed(1) + "px"; });
+      hpx = voie.clientHeight;
+      maj();
+    }
+    function progres(y){
+      if (!T.length) return 0;
+      if (y >= T[N]) return 1;
+      for (var i = 0; i < N; i++) if (y < T[i + 1]) return (i + Math.max(0, y - T[i]) / (T[i + 1] - T[i])) / N;
+      return 1;
+    }
+    function peindre(p){
+      voie.style.setProperty("--p", p.toFixed(4));
+      tete.style.transform = "translate(" + xDe(p, amp).toFixed(1) + "px," + ((1 - p) * hpx).toFixed(1) + "px)";
+      ls.forEach(function(b, i){
+        var on = p >= i / N - .004;
+        if (on !== !!allume[i]){ allume[i] = on; b.classList.toggle("on", on);
+          if (on && !calme() && i){ b.classList.remove("flash"); void b.offsetWidth; b.classList.add("flash"); } }
+      });
+      voie.classList.toggle("au-sommet", p >= .999);
+    }
+    var tPrec = 0;
+    function boucle(t){
+      anim = 0;
+      var dt = tPrec ? Math.min(.25, (t - tPrec) / 1000) : .016; tPrec = t;   /* lissage selon le temps écoulé : même vitesse à 30 ou 120 images/s */
+      pAff += (pVise - pAff) * (1 - Math.exp(-dt / .09));
+      if (Math.abs(pVise - pAff) < .0008){ pAff = pVise; tPrec = 0; } else anim = requestAnimationFrame(boucle);
+      peindre(pAff);
+    }
+    function maj(){
+      if (!page.classList.contains("on")) return;
+      var vh = innerHeight, maxY = document.documentElement.scrollHeight - vh;
+      pVise = scrollY >= maxY - 4 ? 1 : progres(scrollY);
+      voie.classList.toggle("lance", scrollY > 30);
+      /* au téléphone, le chemin longe le bord des textes : il s'efface quand le bas de page arrive */
+      if (pied) voie.classList.toggle("cache", tel.matches && pied.getBoundingClientRect().top < vh * .8);
+      if (calme()){ pAff = pVise; peindre(pAff); } else if (!anim) anim = requestAnimationFrame(boucle);
+    }
+    var attente = 0;
+    var remesurer = function(){ clearTimeout(attente); attente = setTimeout(mesurer, 120); };
+    addEventListener("scroll", maj, {passive:true});
+    addEventListener("resize", remesurer);
+    if (window.ResizeObserver) new ResizeObserver(remesurer).observe(page);
+    new MutationObserver(function(){ if (page.classList.contains("on")) { voie.classList.add("pret"); remesurer(); } }).observe(root, {attributes:true, attributeFilter:["data-page", "class"]});
+    if (page.classList.contains("on")) voie.classList.add("pret");
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(remesurer);
+    addEventListener("load", remesurer);
+    mesurer();
+  })();
+
+  /* ---------- boutons dorés aimantés (ordinateur, souris) : à l'approche, le bouton glisse un peu vers la souris,
+     une lumière suit le curseur dessus et un reflet le traverse au survol. Rien au toucher, ni en « moins d'animations » ---------- */
+  (function(){
+    if (reduce || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var bs = [], R = 70, mx = -1e4, my = -1e4, rq = 0;
+    function lister(){
+      bs = [].filter.call(document.querySelectorAll(".page.on .btn, .top .btn, .dock .btn"), function(b){ return !b.classList.contains("ghost"); });
+      bs.forEach(function(b){ b.classList.add("aimant"); });
+    }
+    function cycle(){
+      rq = 0;
+      var m = bs.map(function(b){
+        if (confort || !b.offsetParent) return null;
+        var r = b.getBoundingClientRect(), tx = b._mx || 0, ty = b._my || 0;
+        return r.width ? {l:r.left - tx, t:r.top - ty, w:r.width, h:r.height} : null;
+      });
+      bs.forEach(function(b, i){
+        var q = m[i], tx = 0, ty = 0, d = 1e9;
+        if (q){
+          var dx = mx - (q.l + q.w / 2), dy = my - (q.t + q.h / 2);
+          d = Math.hypot(Math.max(0, Math.abs(dx) - q.w / 2), Math.max(0, Math.abs(dy) - q.h / 2));   /* distance au bord du bouton */
+          if (d < R){ var f = 1 - d / R; tx = Math.max(-9, Math.min(9, dx * .14 * f)); ty = Math.max(-6, Math.min(6, dy * .24 * f)); }
+          if (d === 0){ b.style.setProperty("--rx", Math.round(mx - q.l - tx) + "px"); b.style.setProperty("--ry", Math.round(my - q.t - ty) + "px"); }
+        }
+        if (tx !== (b._mx || 0) || ty !== (b._my || 0)){
+          b._mx = tx; b._my = ty;
+          b.style.setProperty("--mx", tx.toFixed(1) + "px"); b.style.setProperty("--my", ty.toFixed(1) + "px");
+        }
+        b.classList.toggle("attire", d < R);
+      });
+    }
+    var demander = function(){ if (!rq) rq = requestAnimationFrame(cycle); };
+    addEventListener("pointermove", function(e){ if (e.pointerType && e.pointerType !== "mouse") return; mx = e.clientX; my = e.clientY; demander(); }, {passive:true});
+    document.documentElement.addEventListener("pointerleave", function(){ mx = my = -1e4; demander(); });
+    addEventListener("blur", function(){ mx = my = -1e4; demander(); });
+    addEventListener("scroll", demander, {passive:true});
+    new MutationObserver(function(){ lister(); demander(); }).observe(root, {attributes:true, attributeFilter:["data-page"]});
+    lister();
+  })();
+
+  /* ---------- fluidité : les petites animations des médaillons (SVG) ne tournent que quand on les voit ;
+     hors de l'écran, ou sur une autre page, elles se mettent en pause et ne coûtent plus rien ---------- */
+  (function(){
+    if (!("IntersectionObserver" in window) || !window.SVGSVGElement || !SVGSVGElement.prototype.pauseAnimations) return;
+    var suivis = typeof WeakSet === "function" ? new WeakSet() : null, calme = function(){ return reduce || confort; };
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ try { if (e.isIntersecting && !calme()) e.target.unpauseAnimations(); else e.target.pauseAnimations(); } catch (x) {} });
+    }, {rootMargin:"150px 0px"});
+    function suivre(){
+      [].forEach.call(document.querySelectorAll("svg"), function(s){
+        if (suivis && suivis.has(s)) return;
+        if (s.ownerSVGElement || !s.querySelector("use, animate, animateTransform, animateMotion, set")) return;   /* seulement les dessins qui peuvent s'animer */
+        if (suivis) suivis.add(s);
+        try { s.pauseAnimations(); } catch (x) {}
+        io.observe(s);
+      });
+    }
+    suivre();
+    new MutationObserver(function(){ suivre(); }).observe(root, {attributes:true, attributeFilter:["data-page"]});
+    addEventListener("load", suivre);
+  })();
   addEventListener("resize", function(){ clearTimeout(UI.rt); UI.rt = setTimeout(measureUI, 150); });
   if ("ResizeObserver" in window) new ResizeObserver(function(){ clearTimeout(UI.rt); UI.rt = setTimeout(measureUI, 150); }).observe(document.querySelector("main"));
   measureUI();
@@ -5208,7 +5443,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
   var HALF = webgl2 || (!!renderer.extensions.get("OES_texture_half_float") && !!renderer.extensions.get("EXT_color_buffer_half_float"));
   var PHONE = mobile && matchMedia("(hover: none)").matches;   /* un téléphone ou une tablette tactile */
   var RS = LOWRES ? .45 : (mobile ? .62 : .8);
-  var DPR = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 1.5);
+  var DPR = Math.min(devicePixelRatio || 1, mobile ? 1.5 : 1.25);
   /* le tournage du paysage pour les téléphones (?film) : pleine définition, ni pinceau, ni balancement de caméra */
   var FILM = /[?&]film\b/.test(location.search); if (FILM) RS = 1;
   renderer.setPixelRatio(DPR); renderer.autoClear = false;
@@ -5540,7 +5775,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
   var cam = new THREE.PerspectiveCamera(mobile ? 62 : 48, innerWidth / innerHeight, 1, 9000);
   var loader = new THREE.TextureLoader(), TEX = {};
   function tex(n, u){ var t = loader.load(u, function(){ t.ready = true; }); t.minFilter = THREE.LinearFilter; t.generateMipmaps = false; TEX[n] = t; return t; }
-  tex("plume", "plume_nuit.webp");
+  tex("plume", FOND ? "plume_nuit_l.webp" : "plume_nuit.webp");   /* au téléphone, le décor 3D ne s'affiche pas : la petite plume du logo suffit */
 
   var sky = new THREE.Mesh(new THREE.SphereGeometry(4000, 48, 24), new THREE.ShaderMaterial({uniforms:shared({uHDR:{value:HALF ? 3.2 : 1.}}), vertexShader:SKY_V, fragmentShader:SKY_F, side:THREE.BackSide, depthWrite:false}));
   sky.renderOrder = -10; sky.frustumCulled = false; world.add(sky);
@@ -5765,7 +6000,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     "  col += (texture2D(uBloom, uv).rgb * .55 + texture2D(uBloom2, uv).rgb * .45) * (1. - uDawn * .45) + texture2D(uRays, uv).rgb * .55;",
     /* à travers les nuages */
     "  if (uFog > .001){ float swirl = fbm(uv * vec2(3., 2.) + vec2(uT * .05, uT * .02));",
-    "    col = mix(col, mix(vec3(.3, .35, .5), vec3(.95, .7, .55), uDawn) * (.75 + .5 * swirl), uFog * (.65 + .35 * swirl)); }",
+    "    col = mix(col, mix(vec3(.07, .09, .18), vec3(.42, .3, .3), uDawn) * (.8 + .5 * swirl), uFog * (.55 + .3 * swirl)); }",
     /* l'encre d'argent du pinceau */
     "  float ink = texture2D(uInk, uv).r;",
     "  float res = 0.;",
@@ -5861,7 +6096,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     /* composition finale à l'écran */
     var fu = FINAL.m.uniforms;
     ripT = T; fu.uNow.value = T;
-    fu.uInk.value = inkA.texture; fu.uT.value = U.uT.value; fu.uExpo.value = DAY.e * (1 + .28 * SOM.v); fu.uFog.value = inC * .78; fu.uDawn.value = dawn; fu.uCalm.value = confort ? .3 : 1;
+    fu.uInk.value = inkA.texture; fu.uT.value = U.uT.value; fu.uExpo.value = DAY.e * (1 + .28 * SOM.v); fu.uFog.value = inC * .5; fu.uDawn.value = dawn; fu.uCalm.value = confort ? .3 : 1;
     fu.uInvProj.value.copy(cam.projectionMatrixInverse); fu.uViewProj.value.multiplyMatrices(cam.projectionMatrix, cam.matrixWorldInverse);
     fu.uCamRot.value.setFromMatrix4(cam.matrixWorld); fu.uCamPos.value.copy(cam.position);
     fu.uFade.value = Math.min(1, fu.uFade.value + dt * .6);
@@ -6365,6 +6600,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
   /* ---------- les lunes : peintes dans une toile posée dans la page (et non sur le fond fixe), pour défiler collées à leur ensō ---------- */
   var MR = null, mrW = 0, mrH = 0;
   try { MR = new THREE.WebGLRenderer({canvas:document.createElement("canvas"), alpha:true, premultipliedAlpha:true, antialias:false, powerPreference:"high-performance"}); MR.setPixelRatio(DPR); MR.autoClear = false; MR.setClearColor(0x000000, 0); } catch (e) { MR = null; }
+  var MRPSC = null; if (MR) try { MRPSC = MR.getContext().getExtension("KHR_parallel_shader_compile"); } catch (e) {}   /* la toile des lunes compile aussi en parallèle quand elle le peut */
   function moonPaint(S, r){
     var w = Math.max(1, Math.round(r.width)), h = Math.max(1, Math.round(r.height)), src = MR.domElement;
     if (w !== mrW || h !== mrH){ MR.setSize(w, h, false); mrW = w; mrH = h; }
@@ -6395,6 +6631,13 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     var it = CQ.shift(); if (typeof it === "function"){ it(); return; }
     var s = new THREE.Scene(), proxy = new THREE.Mesh(it[1].geometry, it[1].material);
     proxy.frustumCulled = false; s.add(proxy); try { it[0].compile(s, it[2]); } catch (e) {}
+    if (!(it[0] === renderer ? PSC : MRPSC)) finir(it[0]);
+  }
+  /* three.js (r128 retouché) ne bloque plus à la compilation : sans compilation parallèle, on force la fin ici, un programme par image,
+     pour que tout ne tombe pas d'un coup sur la première image affichée */
+  function finir(r){
+    var g = r.getContext(), ps = r.info.programs || [];
+    for (var i = 0; i < ps.length; i++) if (!ps[i].ascFini){ ps[i].ascFini = 1; try { g.getProgramParameter(ps[i].program, g.LINK_STATUS); } catch (e) {} }
   }
   /* la toile des lunes s'éveille pendant le chargement (sur certains appareils, c'est long la première fois) */
   if (MR) CQ.push(function(){ MR.setSize(8, 8, false); MR.clear(); mrW = mrH = 0; });
@@ -6425,7 +6668,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     var lv = (mem <= 2 || cores <= 2 || weak) ? 2 : (mem <= 4 || cores <= 4) ? 1 : 0;
     return mobile && matchMedia("(hover: none)").matches ? Math.max(1, lv) : lv;   /* au téléphone, on part d'un cran plus léger : la fluidité d'abord */
   }
-  var qCap = PHONE, qCapTested = PHONE, qProbe = 0, qProbeMed = 0, qLockDur = 40000;
+  var cap30 = false, qCap = PHONE, qCapTested = PHONE, qProbe = 0, qProbeMed = 0, qLockDur = 40000;
   function govern(ms, now){
     if (document.hidden || now - qFrom < 2500) return;   /* onglet caché, ou tout début (préparations) : on ignore */
     qWin.push(Math.min(ms, 1000));
@@ -6438,20 +6681,22 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     /* écran bridé à 30 images/s (mode économie) ? on a essayé un cran plus bas : si rien n'a changé, ce n'était pas l'appareil */
     if (qProbe){ var back = qProbe - 1; qProbe = 0; qCapTested = true; if (flat30 && med > qProbeMed * .9){ qCap = true; setQuality(back); return; } }
     if (med > base * 1.35 || slow > .25){
+      /* ordinateur qui peine déjà au cran 2 : plutôt 30 images par seconde régulières qu'un décor encore plus flou et saccadé */
+      if (!PHONE && !cap30 && qLv >= 2){ cap30 = true; qCap = true; qCapTested = true; qGood = 0; return; }
       if (qLv < QL.length - 1){
         /* tout à 30 images/s pile : on descend de deux crans pour en avoir le cœur net */
         if (flat30 && !qCapTested){ qProbe = qLv + 1; qProbeMed = med; setQuality(Math.min(QL.length - 1, qLv + 2)); }
         else setQuality(qLv + 1);
-        if (now - qUp < 6000){ qLock = now + qLockDur; qLockDur *= 2; }
+        qLock = now + qLockDur; qLockDur *= 2;   /* après une descente, on ne remonte pas avant longtemps : pas de va-et-vient */
       }
       qGood = 0; return;
     }
-    if (med < base * 1.05 && slow < .03){ if (++qGood >= 5 && qLv > 0 && now > qLock){ setQuality(qLv - 1); qUp = now; qGood = 0; } } else qGood = 0;
+    if (med < base * 1.05 && slow < .03){ if (++qGood >= 8 && qLv > 0 && now > qLock && !cap30){ setQuality(qLv - 1); qUp = now; qGood = 0; } } else qGood = 0;
   }
   if (qForce) setQuality(Math.min(QL.length - 1, +qForce[1])); else { var lv0 = startLevel(); if (lv0) setQuality(lv0); }
 
   function frame(now){
-    if (PHONE && ready && now - last < 28){ requestAnimationFrame(frame); return; }   /* au téléphone : 30 images par seconde, régulières (le défilement et les animations restent fluides) */
+    if ((PHONE || cap30) && ready && now - last < 28){ requestAnimationFrame(frame); return; }   /* au téléphone : 30 images par seconde, régulières (le défilement et les animations restent fluides) */
     var dt = Math.min(.05, (now - last) / 1000), ms = now - last; last = now;
     if (CQ.length) compileOne();
     if (!ready){
@@ -6479,6 +6724,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     for (var i = 0; !FILM && i < RES.length && n < 8; i++){ var r = RES[i].getBoundingClientRect(); if (r.bottom < -40 || r.top > H + 40 || r.width < 2) continue; fu.uRect.value[n++].set(r.left, H - r.bottom, r.right, H - r.top); }
     fu.uNR.value = n;
     var st = renderWorld(dt, T, mouse, brush);
+    if (!glOn){ glOn = true; root.classList.add("gl-on"); }
     lunes(dt, T, H);
     renderer.setViewport(0, 0, W, H);
     domMotion(dt, st.k / (KEYS.length - 1));   /* après toutes les lectures de positions : une seule mise en page par image */
@@ -6513,7 +6759,7 @@ html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; o
     featherQ.scale.set(fw, fh, 1); featherQ.rotation.z = rot; featherQ.position.set(cx + ox * c - oy * sn, cy + ox * sn + oy * c, 0);
     featherM.uniforms.uAlpha.value = TEX.plume.ready && !confort && !FILM ? Math.min(1, T / 2.5) * .95 * featherVis : 0;
   }
-  var featherVis = 1;
+  var featherVis = 1, glOn = false;
   requestAnimationFrame(frame);
 })();
 
