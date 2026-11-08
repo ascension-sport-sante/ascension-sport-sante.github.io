@@ -1976,6 +1976,135 @@ html.confort .apr-engage span{font-size:1.15rem}
 .scroll .k .vgx, .apr-carte .k .vgx{width:100%; height:100%}
 .apr-carte .k{width:62px; height:62px; margin-bottom:6px}
 @media (max-width:640px){ .apr-carte .k{width:58px; height:58px} }
+
+/* ===== Les trois cercles de la méthode : lumière, cœur doré, comètes, médaillons vivants ===== */
+.trio .pillar, .venn .v{cursor:pointer}
+.venn{transition:transform .6s cubic-bezier(.2,.7,.2,1); transform-origin:50% 50%; will-change:transform}
+/* chaque cercle a sa lumière ; en se croisant, elles s'additionnent */
+.venn .v .area{mix-blend-mode:screen; transition:opacity .6s ease, fill .45s ease}
+.venn .v[data-i="0"] .area, .trio[data-on="0"] .venn .v[data-i="0"] .area{fill:url(#vn-a)}
+.venn .v[data-i="1"] .area, .trio[data-on="1"] .venn .v[data-i="1"] .area{fill:url(#vn-b)}
+.venn .v[data-i="2"] .area, .trio[data-on="2"] .venn .v[data-i="2"] .area{fill:url(#vn-c)}
+.trio:not([data-on=""]) .venn .v .area{opacity:.35}
+.trio[data-on="0"] .venn .v[data-i="0"] .area, .trio[data-on="1"] .venn .v[data-i="1"] .area, .trio[data-on="2"] .venn .v[data-i="2"] .area{opacity:1}
+/* le cœur doré, là où les trois se rejoignent */
+.venn .vn-coeur{transform-box:fill-box; transform-origin:50% 50%}
+.venn .vous{transition:fill .45s ease}
+/* l'anneau, son halo et sa comète */
+.venn .ring-halo, .venn .ring-comete{fill:none; stroke-linecap:round; pointer-events:none; stroke-dasharray:.06 .94; stroke-dashoffset:0; opacity:0}
+.venn .ring-halo{stroke:#F4D58D; stroke-width:12; stroke-opacity:.22}
+.venn .ring-comete{stroke:#FFF8E4; stroke-width:3.4}
+.trio[data-on="0"] .v[data-i="0"] .ring-comete, .trio[data-on="1"] .v[data-i="1"] .ring-comete, .trio[data-on="2"] .v[data-i="2"] .ring-comete{stroke-width:4.4}
+/* les médaillons */
+.venn .vim-g, .venn .vim-h, .venn .vim-f{transform-box:fill-box; transform-origin:50% 50%}
+.venn .vim-h{transition:transform .5s cubic-bezier(.2,1.3,.3,1)}
+.trio[data-on="0"] .v[data-i="0"] .vim-h, .trio[data-on="1"] .v[data-i="1"] .vim-h, .trio[data-on="2"] .v[data-i="2"] .vim-h{transform:scale(1.16)}
+.venn .vm-eclat{transform-box:fill-box}
+/* la carte du pilier se réveille avec son cercle */
+.trio .pillar{transition:background-color .45s ease, border-color .45s ease, transform .45s cubic-bezier(.2,.7,.2,1)}
+.trio .pillar .vgx{transition:transform .45s cubic-bezier(.2,1.3,.3,1), box-shadow .45s ease}
+.trio .pillar.on{transform:translateX(5px)}
+.trio .pillar.on .vgx{transform:scale(1.1); box-shadow:0 0 0 2px var(--night), 0 0 0 3.4px #F4D58D, 0 0 22px rgba(244,213,141,.6)}
+@media (prefers-reduced-motion: no-preference){
+  .js-anim .venn .vn-coeur{opacity:0}
+  .js-anim .methode.in .venn .vn-coeur{opacity:.9; transition:opacity 1.4s ease 2s; animation:vn-pouls 3.8s ease-in-out 3.4s infinite}
+  @keyframes vn-pouls{0%, 100%{opacity:.6; transform:scale(.9)} 50%{opacity:1; transform:scale(1.07)}}
+  .js-anim .methode.in .venn .vous{fill:#FFF3D0}
+  .js-anim .methode.in .venn .ring-halo, .js-anim .methode.in .venn .ring-comete{opacity:1; transition:opacity .8s ease 2.4s; animation:vn-comete 6.5s linear 2.4s infinite}
+  .js-anim .methode.in .venn .v[data-i="1"] .ring-halo, .js-anim .methode.in .venn .v[data-i="1"] .ring-comete{animation-duration:8s; animation-direction:reverse}
+  .js-anim .methode.in .venn .v[data-i="2"] .ring-halo, .js-anim .methode.in .venn .v[data-i="2"] .ring-comete{animation-duration:9.5s}
+  @keyframes vn-comete{to{stroke-dashoffset:-1}}
+  .js-anim .venn .vim-g{opacity:0; transform:scale(.35) rotate(-50deg)}
+  .js-anim .methode.in .venn .vim-g{opacity:1; transform:none; transition:opacity .5s ease 1.5s, transform 1.1s cubic-bezier(.2,1.45,.3,1) 1.5s}
+  .js-anim .methode.in .venn .v[data-i="1"] .vim-g{transition-delay:1.8s, 1.8s}
+  .js-anim .methode.in .venn .v[data-i="2"] .vim-g{transition-delay:2.1s, 2.1s}
+  .js-anim .methode.in .venn .vim-f{animation:vn-flotte 5.5s ease-in-out 3s infinite}
+  .js-anim .methode.in .venn .v[data-i="1"] .vim-f{animation-delay:3.6s}
+  .js-anim .methode.in .venn .v[data-i="2"] .vim-f{animation-delay:4.2s}
+  @keyframes vn-flotte{0%, 100%{transform:translateY(0)} 50%{transform:translateY(-4px)}}
+  .js-anim .methode.in .venn .vm-eclat{animation:vn-eclat 1.5s ease-in-out 2.7s both}
+  .js-anim .methode.in .venn .v[data-i="1"] .vm-eclat{animation-delay:3s}
+  .js-anim .methode.in .venn .v[data-i="2"] .vm-eclat{animation-delay:3.3s}
+  .js-anim .methode.in .trio[data-on="0"] .v[data-i="0"] .vm-eclat, .js-anim .methode.in .trio[data-on="1"] .v[data-i="1"] .vm-eclat, .js-anim .methode.in .trio[data-on="2"] .v[data-i="2"] .vm-eclat{animation:vn-eclat2 1.1s ease-in-out both}
+  @keyframes vn-eclat{from{transform:skewX(-18deg) translateX(0)} to{transform:skewX(-18deg) translateX(230px)}}
+  @keyframes vn-eclat2{from{transform:skewX(-18deg) translateX(0)} to{transform:skewX(-18deg) translateX(230px)}}
+}
+.venn .vm-eclat{transform:skewX(-18deg) translateX(0)}
+@media (prefers-reduced-motion: reduce){ .venn{transition:none} .venn .vm-eclat{display:none} .venn .ring-halo, .venn .ring-comete{display:none} }
+html.confort .venn .ring-halo, html.confort .venn .ring-comete{animation:none; opacity:0}
+.trio[data-on="0"] .venn .v[data-i="0"] .ring, .trio[data-on="1"] .venn .v[data-i="1"] .ring, .trio[data-on="2"] .venn .v[data-i="2"] .ring{stroke-width:7.5}
+.trio[data-on="0"] .v[data-i="0"] .ring-halo, .trio[data-on="1"] .v[data-i="1"] .ring-halo, .trio[data-on="2"] .v[data-i="2"] .ring-halo{stroke-opacity:.4; stroke-width:16}
+
+/* ===== Méthode : les trois cercles en ouverture de page ===== */
+.meth-hero > .wrap{display:block}
+.meth-hero .trio{grid-template-columns:1fr; justify-items:center; gap:clamp(22px, 4vw, 34px); margin-top:0}
+.meth-hero .venn{width:min(92vw, 520px); max-width:none; justify-self:center}
+.meth-hero .txt{justify-items:center; text-align:center; max-width:760px; margin:0 auto}
+.meth-hero .txt h2 em{font-style:normal; color:var(--gold); text-shadow:0 0 30px rgba(201,165,92,.35)}
+.meth-hero .pillars{width:min(100%, 1060px); grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; margin-top:6px}
+.meth-hero .pillar{align-items:start}
+@media (max-width:860px){ .meth-hero .pillars{grid-template-columns:1fr} }
+.p-hero.philo{padding-block:clamp(70px, 10vw, 110px)}
+/* l'entrée : les trois lumières arrivent de trois directions et se rejoignent, puis un éclair doré jaillit du cœur */
+.venn .vn-eclair{fill:none; stroke:#FFF3C4; stroke-width:3; opacity:0; transform-box:fill-box; transform-origin:50% 50%; pointer-events:none}
+@media (prefers-reduced-motion: no-preference){
+  .js-anim .meth-hero .venn .v .area{transform-box:fill-box; transform-origin:50% 50%}
+  .js-anim .meth-hero:not(.in) .venn .v .area{opacity:0}
+  .js-anim .meth-hero:not(.in) .venn .v[data-i="0"] .area{transform:translate(-70px, -60px) scale(.55)}
+  .js-anim .meth-hero:not(.in) .venn .v[data-i="1"] .area{transform:translate(70px, -60px) scale(.55)}
+  .js-anim .meth-hero:not(.in) .venn .v[data-i="2"] .area{transform:translate(0, 80px) scale(.55)}
+  .js-anim .meth-hero.in .venn .v .area{transition:opacity 1.2s ease .1s, transform 1.5s cubic-bezier(.2,.9,.25,1) .1s, fill .45s ease}
+  .js-anim .meth-hero.in .venn .v[data-i="1"] .area{transition-delay:.25s, .25s, 0s}
+  .js-anim .meth-hero.in .venn .v[data-i="2"] .area{transition-delay:.4s, .4s, 0s}
+  .js-anim .meth-hero.in .venn .vn-eclair{animation:vn-eclair 1.3s cubic-bezier(.2,.7,.3,1) 2.05s both}
+  @keyframes vn-eclair{0%{opacity:0; transform:scale(.2)} 15%{opacity:1} 100%{opacity:0; transform:scale(3.6); stroke-width:.5}}
+}
+/* Méthode, ordinateur : texte à gauche, cercles à droite, tout tient dans le premier écran */
+@media (min-width:981px){
+  .meth-hero{padding-block:clamp(96px, 13vh, 130px) 70px}
+  .meth-hero .trio{grid-template-columns:minmax(0, 1fr) minmax(0, 1.05fr); grid-template-areas:"txt venn" "pil pil"; grid-template-rows:minmax(calc(100svh - clamp(96px, 13vh, 130px) - 40px), auto) auto; align-items:center; justify-items:stretch; column-gap:clamp(40px, 6vw, 96px); row-gap:10px}
+  .meth-hero .txt{grid-area:txt; justify-items:start; text-align:left; justify-self:start; margin:0; max-width:560px}
+  .meth-hero .txt .actions{justify-content:flex-start}
+  .meth-hero .venn{grid-area:venn; justify-self:center; width:min(100%, 560px, calc((100svh - 200px) * 1.07))}
+  .meth-hero .pillars{grid-area:pil; justify-self:center}
+}
+
+/* ===== Le daruma : laqué, physique, sept perles, et la fête au septième relèvement ===== */
+.daru{gap:10px}
+.daru-scene{position:relative; width:min(86vw, 360px); height:290px; display:grid; place-items:end center}
+.daru-btn{position:relative; z-index:2; width:196px; height:216px; margin-bottom:26px; padding:0; border:0; background:none; cursor:grab; touch-action:none; -webkit-tap-highlight-color:transparent}
+.daru-btn:active{cursor:grabbing}
+.daru-btn:focus-visible{outline:3px solid var(--gold); outline-offset:8px; border-radius:46%}
+.daru-svg{display:block; width:100%; height:100%; overflow:visible; transform-origin:50% 98%; will-change:transform; filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.daru-ombre{position:absolute; z-index:1; left:50%; bottom:20px; width:176px; height:24px; margin-left:-88px; border-radius:50%; background:radial-gradient(closest-side, rgba(5,8,18,.7), rgba(5,8,18,0))}
+.daru-aura{position:absolute; z-index:0; left:50%; bottom:40px; width:340px; height:340px; margin-left:-170px; border-radius:50%; background:radial-gradient(closest-side, rgba(244,213,141,.4), rgba(244,213,141,.08) 60%, rgba(244,213,141,0)); opacity:.45; transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)}
+.daru.fete .daru-aura{opacity:1; transform:scale(1.3)}
+.daru-onde{position:absolute; z-index:1; left:50%; bottom:18px; width:200px; height:30px; margin-left:-100px; border-radius:50%; border:2px solid #F4D58D; opacity:0; pointer-events:none}
+.daru-onde.go{animation:daru-onde .9s cubic-bezier(.2,.7,.3,1)}
+@keyframes daru-onde{0%{opacity:.9; transform:scale(.6)} 100%{opacity:0; transform:scale(1.9)}}
+.daru-scene.choc{animation:daru-choc .22s ease}
+@keyframes daru-choc{25%{transform:translate(2px, 1px)} 50%{transform:translate(-2px, 0)} 75%{transform:translate(1px, -1px)}}
+.daru-fx{position:absolute; z-index:3; left:-70px; right:-70px; top:-60px; bottom:0; width:calc(100% + 140px); height:calc(100% + 60px); pointer-events:none}
+
+.daru-perles{display:flex; gap:12px; justify-content:center; margin-top:-6px}
+.daru-perles i{width:13px; height:13px; border-radius:50%; border:1.6px solid rgba(201,165,92,.6); background:rgba(201,165,92,.06); transition:background-color .35s ease, box-shadow .35s ease, transform .35s cubic-bezier(.2,1.6,.3,1)}
+.daru-perles i.on{background:#F4D58D; border-color:#F4D58D; box-shadow:0 0 12px rgba(244,213,141,.85); transform:scale(1.15)}
+.daru.fete .daru-perles i{animation:daru-perle .9s ease-in-out infinite}
+.daru.fete .daru-perles i:nth-child(2n){animation-delay:.15s}
+@keyframes daru-perle{50%{transform:scale(1.5)}}
+.daru figcaption{min-height:3em; font-size:1.02rem; color:var(--silver)}
+.daru.fete figcaption{font-family:var(--f-display); font-weight:800; font-size:1.35rem; color:#F4D58D; text-shadow:0 0 20px rgba(244,213,141,.5)}
+@media (prefers-reduced-motion: reduce){ .daru-svg{filter:none} .daru-scene.choc{animation:none} }
+/* Méthode, ordinateur : les cartes commencent juste sous le premier écran ; une flèche dorée invite à descendre */
+@media (min-width:981px){
+  .meth-hero{position:relative}
+  .meth-hero .trio{grid-template-rows:minmax(calc(100svh - clamp(96px, 13vh, 130px)), auto) auto; row-gap:40px}
+  .meth-hero::after{content:""; position:absolute; left:50%; top:calc(100svh - 58px); width:14px; height:14px; margin-left:-7px; border-right:2px solid var(--gold); border-bottom:2px solid var(--gold); transform:rotate(45deg); opacity:.85; pointer-events:none}
+}
+@media (min-width:981px) and (prefers-reduced-motion: no-preference){
+  .meth-hero::after{animation:mh-fleche 2.2s ease-in-out infinite}
+  @keyframes mh-fleche{0%, 100%{transform:translateY(0) rotate(45deg); opacity:.85} 50%{transform:translateY(8px) rotate(45deg); opacity:.4}}
+}
 /* --- effets (fin) --- */
 </style>
 
@@ -2620,38 +2749,58 @@ html.confort .apr-engage span{font-size:1.15rem}
   </div>
 
   <div class="page" id="p-methode" data-page="methode">
-  <section class="sec p-hero " id="la-voie" data-obs>
+  <section class="sec p-hero methode meth-hero" id="grades" data-scene="8" data-obs>
     <div class="wrap" data-res>
-      <div class="txt">
-        <p class="eyebrow rv">Ma philosophie</p>
-        <h2 class="rv">Tomber sept fois, se relever huit.</h2>
-        <p class="body rv">Progresser, ce n'est pas ne jamais tomber : c'est <strong>se relever à chaque fois</strong>. On repart de là où vous êtes, <strong>sans jugement</strong>, et on avance <strong>pas à pas</strong>.</p>
-        <div class="actions rv"><a class="btn" href="#contact">Réserver mon bilan</a><a class="btn ghost" href="#grades">Les trois piliers</a></div>
-      </div>
-      <figure class="devise devise-xl rv"><button class="dar-p" type="button" aria-label="Pousser le daruma" title="Poussez-le"><svg class="dar" aria-hidden="true"><use href="#i-daruma"/></svg></button><figcaption aria-live="polite">Poussez le daruma : il se relève toujours.</figcaption></figure>
-    </div>
-  </section>
-
-  <section class="sec pro-sec methode" id="grades" data-scene="8" data-obs>
-    <div class="wrap" data-res>
-      <div class="sec-head">
-        <p class="eyebrow rv">Ma méthode</p>
-        <h2 class="rv">Trois piliers, entraînés ensemble</h2>
-        <p class="body rv">À chaque séance, on travaille les trois. Le dosage dépend de vous, et les tests du bilan sont <strong>refaits régulièrement</strong> : vos progrès se mesurent, chiffres à l'appui.</p>
-      </div>
       <div class="trio rv" data-on="">
-          <svg class="venn" viewBox="0 0 400 372" role="img" aria-label="Trois cercles qui se recoupent : muscles et articulations, endurance et cardio, coordination ; vous êtes au centre"><defs><clipPath id="vm-rond"><circle cx="60" cy="60" r="54.5"/></clipPath></defs>
-            <g class="v" data-i="0"><circle class="area" cx="145" cy="138" r="100"/><path class="ring" pathLength="1" d="M235.6 95.7 A100 100 0 1 0 243.5 120.6"/><svg class="vi vim" x="86" y="78" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-force"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g>
-            <g class="v" data-i="1"><circle class="area" cx="255" cy="138" r="100"/><path class="ring" pathLength="1" d="M345.6 95.7 A100 100 0 1 0 353.5 120.6"/><svg class="vi vim" x="246" y="78" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-cardio"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g>
-            <g class="v" data-i="2"><circle class="area" cx="200" cy="234" r="100"/><path class="ring" pathLength="1" d="M290.6 191.7 A100 100 0 1 0 298.5 216.6"/><svg class="vi vim" x="166" y="250" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-coord"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g>
-            <text class="vous" x="200" y="181" text-anchor="middle">Vous</text>
+          <svg class="venn" viewBox="0 0 400 372" role="img" aria-label="Trois cercles qui se recoupent : muscles et articulations, endurance et cardio, coordination ; vous êtes au centre"><defs><clipPath id="vm-rond"><circle cx="60" cy="60" r="54.5"/></clipPath><radialGradient id="vn-a" cx="145" cy="138" r="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#E88A6C" stop-opacity=".12"/><stop offset=".72" stop-color="#E88A6C" stop-opacity=".26"/><stop offset="1" stop-color="#E88A6C" stop-opacity=".52"/></radialGradient><clipPath id="vn-ca"><circle cx="145" cy="138" r="100"/></clipPath><radialGradient id="vn-b" cx="255" cy="138" r="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7FB0DC" stop-opacity=".12"/><stop offset=".72" stop-color="#7FB0DC" stop-opacity=".26"/><stop offset="1" stop-color="#7FB0DC" stop-opacity=".52"/></radialGradient><clipPath id="vn-cb"><circle cx="255" cy="138" r="100"/></clipPath><radialGradient id="vn-c" cx="200" cy="234" r="100" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B48CC8" stop-opacity=".12"/><stop offset=".72" stop-color="#B48CC8" stop-opacity=".26"/><stop offset="1" stop-color="#B48CC8" stop-opacity=".52"/></radialGradient><clipPath id="vn-cc"><circle cx="200" cy="234" r="100"/></clipPath><radialGradient id="vn-coeur" cx="200" cy="170" r="74" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFF6D8" stop-opacity=".95"/><stop offset=".45" stop-color="#F4D58D" stop-opacity=".55"/><stop offset="1" stop-color="#C9A55C" stop-opacity="0"/></radialGradient><linearGradient id="vn-eclat" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF" stop-opacity="0"/><stop offset=".5" stop-color="#FFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFF" stop-opacity="0"/></linearGradient><filter id="vn-lueur" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><circle class="vn-eclair" cx="200" cy="172" r="40" aria-hidden="true"/><g class="vn-coeur-g" aria-hidden="true"><g clip-path="url(#vn-ca)"><g clip-path="url(#vn-cb)"><g clip-path="url(#vn-cc)"><circle class="vn-coeur" cx="200" cy="170" r="74" fill="url(#vn-coeur)"/></g></g></g></g>
+            <g class="v" data-i="0"><circle class="area" cx="145" cy="138" r="100"/><path class="ring" pathLength="1" d="M235.6 95.7 A100 100 0 1 0 243.5 120.6"/><path class="ring-halo" pathLength="1" d="M235.6 95.7 A100 100 0 1 0 243.5 120.6"/><path class="ring-comete" pathLength="1" d="M235.6 95.7 A100 100 0 1 0 243.5 120.6"/><g class="vim-g"><g class="vim-h"><g class="vim-f"><svg class="vi vim" x="86" y="78" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-force"/><rect class="vm-eclat" x="-70" y="-10" width="46" height="140" fill="url(#vn-eclat)" transform="skewX(-18)"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g></g></g></g>
+            <g class="v" data-i="1"><circle class="area" cx="255" cy="138" r="100"/><path class="ring" pathLength="1" d="M345.6 95.7 A100 100 0 1 0 353.5 120.6"/><path class="ring-halo" pathLength="1" d="M345.6 95.7 A100 100 0 1 0 353.5 120.6"/><path class="ring-comete" pathLength="1" d="M345.6 95.7 A100 100 0 1 0 353.5 120.6"/><g class="vim-g"><g class="vim-h"><g class="vim-f"><svg class="vi vim" x="246" y="78" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-cardio"/><rect class="vm-eclat" x="-70" y="-10" width="46" height="140" fill="url(#vn-eclat)" transform="skewX(-18)"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g></g></g></g>
+            <g class="v" data-i="2"><circle class="area" cx="200" cy="234" r="100"/><path class="ring" pathLength="1" d="M290.6 191.7 A100 100 0 1 0 298.5 216.6"/><path class="ring-halo" pathLength="1" d="M290.6 191.7 A100 100 0 1 0 298.5 216.6"/><path class="ring-comete" pathLength="1" d="M290.6 191.7 A100 100 0 1 0 298.5 216.6"/><g class="vim-g"><g class="vim-h"><g class="vim-f"><svg class="vi vim" x="166" y="250" width="68" height="68" viewBox="0 0 120 120"><circle cx="60" cy="60" r="60" fill="#0C1222"/><g clip-path="url(#vm-rond)"><use href="#vg-coord"/><rect class="vm-eclat" x="-70" y="-10" width="46" height="140" fill="url(#vn-eclat)" transform="skewX(-18)"/></g><circle class="vm-or" cx="60" cy="60" r="56.5" fill="none" stroke="#C9A55C" stroke-width="4"/></svg></g></g></g></g>
+            <text class="vous" x="200" y="181" text-anchor="middle" filter="url(#vn-lueur)">Vous</text>
           </svg>
+          <div class="txt">
+            <p class="eyebrow rv">Ma méthode</p>
+            <h2 class="rv">Tout votre corps, <em>à chaque séance.</em></h2>
+            <p class="body rv">À chaque séance, on travaille les trois. Le dosage dépend de vous, et les tests du bilan sont <strong>refaits régulièrement</strong> : vos progrès se mesurent, chiffres à l'appui.</p>
+            <div class="actions rv"><a class="btn" href="#contact">Réserver mon bilan</a><a class="btn ghost" href="#la-voie">Ma philosophie</a></div>
+          </div>
           <ol class="pillars">
             <li class="pillar" data-i="0"><span class="k" aria-hidden="true"><span class="vgx"><svg class="vg"><use href="#vg-force"/></svg></span></span><small class="tech">Système musculo-squelettique</small><h4>Muscles et articulations</h4><p>Force, mobilité, posture, solidité des os et des articulations.</p></li>
             <li class="pillar" data-i="1"><span class="k" aria-hidden="true"><span class="vgx"><svg class="vg"><use href="#vg-cardio"/></svg></span></span><small class="tech">Système cardiovasculaire</small><h4>Endurance et cardio</h4><p>Cœur, vaisseaux, souffle, récupération.</p></li>
             <li class="pillar" data-i="2"><span class="k" aria-hidden="true"><span class="vgx"><svg class="vg"><use href="#vg-coord"/></svg></span></span><small class="tech">Capacités coordinatives</small><h4>Coordination</h4><p>Équilibre, dissociation, réaction, orientation, rythme.</p></li>
           </ol>
         </div>
+    </div>
+  </section>
+
+  <section class="sec p-hero philo" id="la-voie" data-obs>
+    <div class="wrap" data-res>
+      <div class="txt">
+        <p class="eyebrow rv">Ma philosophie</p>
+        <h2 class="rv">Tomber sept fois, se relever huit.</h2>
+        <p class="body rv">Progresser, ce n'est pas ne jamais tomber : c'est <strong>se relever à chaque fois</strong>. On repart de là où vous êtes, <strong>sans jugement</strong>, et on avance <strong>pas à pas</strong>.</p>
+      </div>
+      <figure class="devise devise-xl rv daru"><div class="daru-scene"><span class="daru-aura" aria-hidden="true"></span><span class="daru-onde" aria-hidden="true"></span><span class="daru-ombre" aria-hidden="true"></span><button class="daru-btn" type="button" aria-label="Pousser le daruma" title="Poussez-le, ou faites-le basculer"><svg class="daru-svg" viewBox="0 0 200 220" aria-hidden="true"><defs>
+<radialGradient id="dr-corps" cx=".36" cy=".3" r=".82"><stop offset="0" stop-color="#FF7356"/><stop offset=".42" stop-color="#DA321F"/><stop offset=".82" stop-color="#A3180F"/><stop offset="1" stop-color="#6E0C08"/></radialGradient>
+<radialGradient id="dr-visage" cx=".45" cy=".35" r=".78"><stop offset="0" stop-color="#FFFDF7"/><stop offset="1" stop-color="#EAD7B2"/></radialGradient>
+<linearGradient id="dr-or" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFEBB0"/><stop offset=".5" stop-color="#E2B04A"/><stop offset="1" stop-color="#A97C2A"/></linearGradient>
+<radialGradient id="dr-reflet"><stop offset="0" stop-color="#FFF" stop-opacity=".75"/><stop offset="1" stop-color="#FFF" stop-opacity="0"/></radialGradient></defs>
+<path d="M100 6C152 6 190 50 190 116C190 178 150 216 100 216C50 216 10 178 10 116C10 50 48 6 100 6Z" fill="url(#dr-corps)" stroke="#5E0A06" stroke-width="2"/>
+<path d="M30 168C52 156 74 180 100 168C126 180 148 156 170 168" fill="none" stroke="url(#dr-or)" stroke-width="5" stroke-linecap="round"/>
+<path d="M40 182C60 174 78 190 100 182C122 190 140 174 160 182" fill="none" stroke="url(#dr-or)" stroke-width="2.4" stroke-linecap="round" opacity=".85"/>
+<g fill="none" stroke="url(#dr-or)" stroke-width="3" stroke-linecap="round"><path d="M44 198c-6-2-8-10-2-13 5-2 9 3 6 7"/><path d="M156 198c6-2 8-10 2-13-5-2-9 3-6 7"/></g>
+<path d="M112 205A15 15 0 1 1 106 191" fill="none" stroke="url(#dr-or)" stroke-width="4" stroke-linecap="round"/>
+<path d="M100 40C140 40 162 67 162 100C162 135 135 154 100 154C65 154 38 135 38 100C38 67 60 40 100 40Z" fill="url(#dr-visage)" stroke="url(#dr-or)" stroke-width="4.5"/>
+<path d="M48 80C56 62 76 56 94 65C80 66 66 71 56 84Z M152 80C144 62 124 56 106 65C120 66 134 71 144 84Z" fill="#1A1410"/>
+<circle cx="78" cy="95" r="15.5" fill="#FFF" stroke="#1A1410" stroke-width="2.6"/><circle cx="122" cy="95" r="15.5" fill="#FFF" stroke="#1A1410" stroke-width="2.6"/>
+<g class="daru-oeil1"><circle cx="122" cy="96" r="10" fill="#1A1410"/><circle cx="118.5" cy="92" r="3" fill="#FFF"/></g>
+<g class="daru-oeil2"><circle cx="78" cy="96" r="10" fill="#1A1410"/><circle cx="74.5" cy="92" r="3" fill="#FFF"/></g>
+<path d="M96 110Q100 114 104 110" fill="none" stroke="#1A1410" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M68 121C80 111 93 117 100 120C107 117 120 111 132 121C120 125 109 127 100 124C91 127 80 125 68 121Z" fill="#1A1410"/>
+<g fill="none" stroke="#1A1410" stroke-width="3.4" stroke-linecap="round"><path d="M47 104C43 118 49 134 64 141"/><path d="M153 104C157 118 151 134 136 141"/><path d="M58 128c-3 4-1 9 4 9"/><path d="M142 128c3 4 1 9-4 9"/></g>
+<path d="M90 133Q100 139 110 133" fill="none" stroke="#1A1410" stroke-width="2.4" stroke-linecap="round"/>
+<ellipse cx="62" cy="44" rx="24" ry="11" transform="rotate(-32 62 44)" fill="url(#dr-reflet)"/><ellipse cx="164" cy="132" rx="6" ry="20" transform="rotate(12 164 132)" fill="url(#dr-reflet)" opacity=".35"/>
+</svg></button><canvas class="daru-fx" aria-hidden="true"></canvas></div><div class="daru-perles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><figcaption aria-live="polite">Poussez le daruma, ou faites-le basculer : il se relève toujours.</figcaption></figure>
     </div>
   </section>
 
@@ -3732,19 +3881,36 @@ html.confort .apr-engage span{font-size:1.15rem}
     scDots.forEach(function(d, j){ d.addEventListener("click", function(){ scs.scrollTo({left:j * scStep(), behavior:reduce ? "auto" : "smooth"}); }); });
   }
 
-  /* la méthode : survoler (ou toucher) un cercle ou un pilier allume les deux */
-  var trio = null;   /* les trois piliers ne réagissent plus au clic : une présentation simple et lisible */
+  /* la méthode : les trois cercles s'illuminent tour à tour ; au survol, le cercle choisi s'allume et le schéma s'incline vers la souris */
+  var trio = document.querySelector(".trio");
   if (trio){
-    var PL = [].slice.call(trio.querySelectorAll(".pillar")), VV = [].slice.call(trio.querySelectorAll(".venn .v")), lastPT = "mouse";
-    var setOn = function(i){ trio.setAttribute("data-on", i == null ? "" : String(i)); PL.forEach(function(p){ p.classList.toggle("on", p.getAttribute("data-i") === String(i)); }); };
-    PL.concat(VV).forEach(function(el){
+    var scPL = [].slice.call(trio.querySelectorAll(".pillar")), scVV = [].slice.call(trio.querySelectorAll(".venn .v")), scVn = trio.querySelector(".venn");
+    var scOn = function(i){ trio.setAttribute("data-on", i == null ? "" : String(i)); scPL.forEach(function(p){ p.classList.toggle("on", p.getAttribute("data-i") === String(i)); }); };
+    var scFin = matchMedia("(hover: hover) and (pointer: fine)").matches, scMain = false, scPause = 0;
+    scPL.concat(scVV).forEach(function(el){
       var i = +el.getAttribute("data-i");
-      el.addEventListener("pointerenter", function(e){ lastPT = e.pointerType; if (e.pointerType === "mouse") setOn(i); });
-      el.addEventListener("pointerleave", function(e){ if (e.pointerType === "mouse") setOn(null); });
-      el.addEventListener("pointerdown", function(e){ lastPT = e.pointerType; });
-      el.addEventListener("click", function(){ if (lastPT === "mouse") setOn(i); else setOn(trio.getAttribute("data-on") === String(i) ? null : i); });
+      el.addEventListener("pointerenter", function(e){ if (e.pointerType === "mouse") scOn(i); });
+      el.addEventListener("click", function(){ scOn(i); scPause = Date.now() + 7000; });
     });
-    PL.forEach(function(p){ p.addEventListener("focus", function(){ setOn(+p.getAttribute("data-i")); }); p.addEventListener("blur", function(){ setOn(null); }); });
+    trio.addEventListener("pointerenter", function(e){ if (e.pointerType === "mouse") scMain = true; });
+    trio.addEventListener("pointerleave", function(e){ if (e.pointerType === "mouse"){ scMain = false; scOn(null); scVn.style.transform = ""; } });
+    if (!reduce){
+      var scPas = 3, scCycle = null;
+      var scTour = function(){ if (scMain || Date.now() < scPause) return; scPas = (scPas + 1) % 4; scOn(scPas === 3 ? null : scPas); };
+      if (IOK){
+        new IntersectionObserver(function(es){ es.forEach(function(e){
+          if (e.isIntersecting){ if (!scCycle) scCycle = setTimeout(function go(){ scTour(); scCycle = setTimeout(go, 2600); }, 3200); }
+          else { clearTimeout(scCycle); scCycle = null; if (!scMain) scOn(null); }
+        }); }, {threshold:.45}).observe(scVn);
+      }
+      if (scFin){
+        var scRaf = 0, scX = 0, scY = 0;
+        trio.addEventListener("pointermove", function(e){
+          var r = scVn.getBoundingClientRect(); scX = (e.clientX - r.left) / r.width - .5; scY = (e.clientY - r.top) / r.height - .5;
+          if (!scRaf) scRaf = requestAnimationFrame(function(){ scRaf = 0; if (scMain) scVn.style.transform = "perspective(900px) rotateY(" + (scX * 12).toFixed(2) + "deg) rotateX(" + (-scY * 10).toFixed(2) + "deg)"; });
+        });
+      }
+    }
   }
 
   /* le pointeur : une goutte d'encre qui suit la souris et s'élargit sur ce qui se touche */
@@ -4674,32 +4840,121 @@ html.confort .apr-engage span{font-size:1.15rem}
     if (cr && C && C.diplomes) cr.innerHTML = C.diplomes.filter(function(d){ return d && String(d.titre || "").trim(); }).map(function(d, i){
       return "<li style=\"--i:" + i + "; --r:" + RO[i % 4] + "deg\"><span class=\"hk\" aria-hidden=\"true\"><b>" + e(String(d.glyphe || "").slice(0, 5)) + "</b><small>" + e(String(d.petit || "").slice(0, 9)) + "</small></span><span class=\"tx\"><b>" + e(d.titre) + "</b>" + (d.detail ? "<span>" + e(d.detail) + "</span>" : "") + "</span></li>";
     }).join("");
-    /* le daruma de la devise : on le pousse du côté où l'on touche, il bascule, oscille sur sa base ronde et se relève
-       (un ressort amorti, comme un vrai) ; les poussées s'additionnent ; au septième, un tour complet et le proverbe */
-    [].forEach.call(document.querySelectorAll(".dar-p"), function(dp){
-      var dc = dp.closest("figure").querySelector("figcaption"), sv = dp.querySelector(".dar"), dn = 0, A = 0, V = 0, run = false, last = 0, to = 0, cap = dc.textContent;
-      var pas = function(now){
-        var dt = Math.min(.033, Math.max(.001, (now - last) / 1000)); last = now;
-        V += (-90 * A - 4.2 * V) * dt; A += V * dt;
-        sv.style.transform = "translateX(" + (A * .3).toFixed(2) + "px) rotate(" + A.toFixed(2) + "deg)";
-        if (Math.abs(A) < .05 && Math.abs(V) < .6){ sv.style.transform = ""; run = false; return; }
-        requestAnimationFrame(pas);
+    /* le daruma : on le pousse ou on le fait basculer du doigt ; il tombe, rebondit au sol et se relève toujours.
+       Sept perles s'allument, une par relèvement ; au septième, la fête : bond, étincelles, pétales et carillon. */
+    (function(){
+      var fig = document.querySelector(".daru"); if (!fig) return;
+      var btn = fig.querySelector(".daru-btn"), sv = fig.querySelector(".daru-svg"), ombre = fig.querySelector(".daru-ombre"), cap = fig.querySelector("figcaption"),
+          perles = [].slice.call(fig.querySelectorAll(".daru-perles i")), cv = fig.querySelector(".daru-fx"), onde = fig.querySelector(".daru-onde"), scene = fig.querySelector(".daru-scene");
+      var dA = 0, dV = 0, dRun = false, dLast = 0, dChutes = 0, dTerre = false, dDrag = null, dTouche = false, dPointeur = 0, dSens = 1, MAX = 84;
+      var dReduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var TXT = {1:"Il se relève toujours. Vous aussi, à chaque séance.", 3:"Bon, il est plus têtu que vous et moi réunis.", 5:"Encore deux fois…", 6:"Plus qu'une !"};
+      var ac = null;
+      var son = function(type, force){
+        if (dReduce) return;
+        try {
+          ac = ac || new (window.AudioContext || window.webkitAudioContext)(); var t0 = ac.currentTime;
+          if (type === "toc"){
+            var o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.setValueAtTime(320, t0); o.frequency.exponentialRampToValueAtTime(120, t0 + .1);
+            g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(Math.min(.16, .04 + force * .0002), t0 + .004); g.gain.exponentialRampToValueAtTime(.0001, t0 + .14);
+            o.connect(g); g.connect(ac.destination); o.start(t0); o.stop(t0 + .16);
+          } else {
+            [880, 1318.5, 1760, 2637].forEach(function(f, k){ var o = ac.createOscillator(), g = ac.createGain(), t = t0 + k * .11; o.type = "sine"; o.frequency.value = f;
+              g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.06, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + 1.6); o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + 1.7); });
+          }
+        } catch (e) {}
       };
-      dp.addEventListener("click", function(e){
-        dp.classList.add("touched"); dn++;
-        if (dn % 7 === 0){
-          if (!reduce) sv.animate([{transform:"translateY(0) rotate(0deg)"}, {transform:"translateY(-16px) rotate(180deg)", offset:.45}, {transform:"translateY(0) rotate(360deg)"}], {duration:950, easing:"cubic-bezier(.4,0,.2,1)"});
-          dc.textContent = "Sept fois à terre, huit fois debout."; clearTimeout(to); to = setTimeout(function(){ dc.textContent = cap; }, 5000);
-          return;
+      var cx2 = cv.getContext("2d"), PT = [], fxRun = false, dpr = Math.min(2, window.devicePixelRatio || 1), fxLast = 0;
+      var fxTaille = function(){ var r = cv.getBoundingClientRect(); cv.width = Math.max(1, r.width * dpr); cv.height = Math.max(1, r.height * dpr); };
+      var base = function(){ var c = cv.getBoundingClientRect(), b = btn.getBoundingClientRect(); return {x:(b.left + b.width / 2 - c.left), y:(b.bottom - c.top - 6), w:b.width, h:b.height}; };
+      var fxPas = function(now){
+        var dt = Math.min(.04, (now - fxLast) / 1000); fxLast = now;
+        cx2.setTransform(dpr, 0, 0, dpr, 0, 0); cx2.clearRect(0, 0, cv.width, cv.height);
+        PT = PT.filter(function(p){ p.t += dt; return p.t < p.v; });
+        PT.forEach(function(p){
+          var k = p.t / p.v;
+          if (p.type === "petale"){ p.vy += 22 * dt; p.vx *= .985; p.x += (p.vx + Math.sin(p.t * 3 + p.ph) * 24) * dt; p.y += p.vy * dt; p.r += p.vr * dt;
+            cx2.save(); cx2.translate(p.x, p.y); cx2.rotate(p.r); cx2.globalAlpha = Math.min(1, (1 - k) * 2.2); cx2.fillStyle = p.c; cx2.beginPath(); cx2.ellipse(0, 0, p.s, p.s * .55, 0, 0, Math.PI * 2); cx2.fill(); cx2.restore(); }
+          else if (p.type === "etincelle"){ p.vy += 260 * dt; p.x += p.vx * dt; p.y += p.vy * dt;
+            cx2.globalAlpha = 1 - k; cx2.strokeStyle = p.c; cx2.lineWidth = p.s; cx2.lineCap = "round"; cx2.beginPath(); cx2.moveTo(p.x, p.y); cx2.lineTo(p.x - p.vx * .035, p.y - p.vy * .035); cx2.stroke(); }
+          else { p.x += p.vx * dt; p.y += p.vy * dt; p.vx *= .93; p.vy *= .93; p.s += 18 * dt;
+            cx2.globalAlpha = (1 - k) * .5; cx2.fillStyle = "rgba(236,230,216,1)"; cx2.beginPath(); cx2.arc(p.x, p.y, p.s, 0, Math.PI * 2); cx2.fill(); }
+        });
+        cx2.globalAlpha = 1;
+        if (PT.length) requestAnimationFrame(fxPas); else { fxRun = false; cx2.clearRect(0, 0, cv.width, cv.height); }
+      };
+      var fxAjoute = function(arr){ if (dReduce) return; PT = PT.concat(arr); if (!fxRun){ fxRun = true; fxTaille(); fxLast = performance.now(); requestAnimationFrame(fxPas); } };
+      var poussiere = function(cote, force){ var b = base(), n = Math.round(8 + Math.min(14, force / 60)), a = [];
+        for (var q = 0; q < n; q++) a.push({type:"poussiere", x:b.x + cote * b.w * .32 + (Math.random() - .5) * 20, y:b.y, vx:cote * (40 + Math.random() * 120) + (Math.random() - .5) * 60, vy:-(10 + Math.random() * 50), s:2 + Math.random() * 3, t:0, v:.6 + Math.random() * .5});
+        fxAjoute(a); };
+      var fete = function(){ var b = base(), a = [], q;
+        for (q = 0; q < 46; q++){ var ang = -Math.PI / 2 + (Math.random() - .5) * 2.4, sp = 240 + Math.random() * 320; a.push({type:"etincelle", x:b.x, y:b.y - b.h * .55, vx:Math.cos(ang) * sp, vy:Math.sin(ang) * sp, s:1.6 + Math.random() * 1.8, c:Math.random() < .5 ? "#F4D58D" : "#FFF3C4", t:0, v:.9 + Math.random() * .6}); }
+        for (q = 0; q < 34; q++) a.push({type:"petale", x:b.x + (Math.random() - .5) * 260, y:b.y - b.h - 30 - Math.random() * 90, vx:(Math.random() - .5) * 80, vy:10 + Math.random() * 30, s:4 + Math.random() * 3, r:Math.random() * 6, vr:(Math.random() - .5) * 5, ph:Math.random() * 6, c:Math.random() < .6 ? "#F7B6C8" : "#FBE1E8", t:0, v:2.6 + Math.random() * 1.4});
+        fxAjoute(a); };
+      var dessiner = function(){ var rad = dA * Math.PI / 180; sv.style.transform = "translateX(" + (rad * 64).toFixed(2) + "px) rotate(" + dA.toFixed(2) + "deg)";
+        ombre.style.transform = "translateX(" + (rad * 52).toFixed(1) + "px) scaleX(" + (1 - Math.min(.42, Math.abs(rad) * .32)).toFixed(3) + ")"; };
+      var perlesMaj = function(){ perles.forEach(function(p, k){ p.classList.toggle("on", k < dChutes); }); };
+      var releve = function(){
+        dChutes++; perlesMaj();
+        if (!dReduce){ onde.classList.remove("go"); void onde.offsetWidth; onde.classList.add("go"); }
+        if (dChutes >= 7){
+          fig.classList.add("fete"); cap.textContent = "Sept fois à terre, huit fois debout.";
+          fete(); son("carillon");
+          if (!dReduce && btn.animate) btn.animate([{transform:"translateY(0)"}, {transform:"translateY(-38px)", offset:.4}, {transform:"translateY(0)", offset:.75}, {transform:"translateY(-10px)", offset:.88}, {transform:"translateY(0)"}], {duration:1100, easing:"cubic-bezier(.3,0,.3,1)"});
+          setTimeout(function(){ fig.classList.remove("fete"); dChutes = 0; perlesMaj(); cap.textContent = "Il se relève toujours. Et vous, quel est votre objectif ?"; }, 5200);
+        } else if (TXT[dChutes]) cap.textContent = TXT[dChutes];
+      };
+      var boucle = function(now){
+        var dt = Math.min(.033, Math.max(.001, (now - dLast) / 1000)); dLast = now;
+        if (!dDrag){
+          dV += (-62 * dA - 2.9 * dV) * dt; dA += dV * dt;
+          if (Math.abs(dA) > MAX){ var sg = dA > 0 ? 1 : -1; dA = sg * MAX; if (sg * dV > 0){ var f = Math.abs(dV); son("toc", f); poussiere(sg, f); scene.classList.remove("choc"); void scene.offsetWidth; scene.classList.add("choc"); dV = -dV * .34; } }
         }
-        if (dn === 1) cap = "Il se relève toujours. Vous aussi, à chaque séance.";
-        else if (dn === 3) cap = "Bon, il est plus têtu que vous et moi réunis.";
-        clearTimeout(to); dc.textContent = cap;
-        if (reduce) return;
-        var r = dp.getBoundingClientRect(), x = e.clientX || (r.left + r.width / 2 + (dn % 2 ? 1 : -1)), dir = x > r.left + r.width / 2 ? -1 : 1;
-        V += dir * 260; if (!run){ run = true; last = performance.now(); requestAnimationFrame(pas); }
+        if (Math.abs(dA) > 58) dTerre = true;
+        if (dTerre && !dDrag && Math.abs(dA) < 5){ dTerre = false; releve(); }
+        dessiner();
+        if (!dDrag && Math.abs(dA) < .05 && Math.abs(dV) < .6){ dA = 0; dV = 0; sv.style.transform = ""; ombre.style.transform = ""; dRun = false; return; }
+        requestAnimationFrame(boucle);
+      };
+      var lancer = function(){ if (!dRun){ dRun = true; dLast = performance.now(); requestAnimationFrame(boucle); } };
+      var pousser = function(sens){
+        dTouche = true; fig.classList.add("touche");
+        if (dReduce){ releve(); return; }
+        dV += sens * 560; lancer();
+      };
+      btn.addEventListener("pointerdown", function(e){
+        if (dReduce) return;
+        dTouche = true; fig.classList.add("touche");
+        dDrag = {x0:e.clientX, a0:dA, bouge:false, pt:performance.now(), vit:0};
+        try { btn.setPointerCapture(e.pointerId); } catch (er) {}
+        lancer();
       });
-    });
+      btn.addEventListener("pointermove", function(e){
+        if (!dDrag) return;
+        var dx = e.clientX - dDrag.x0;
+        if (!dDrag.bouge && Math.abs(dx) > 6) dDrag.bouge = true;
+        if (dDrag.bouge){
+          var now = performance.now(), na = Math.max(-MAX, Math.min(MAX, dDrag.a0 + dx * .6)), dt = Math.max(.008, (now - dDrag.pt) / 1000);
+          dDrag.vit = dDrag.vit * .5 + ((na - dA) / dt) * .5; dDrag.pt = now; dA = na; dV = 0;
+        }
+      });
+      var lacher = function(e){
+        if (!dDrag) return;
+        var d = dDrag; dDrag = null; dPointeur = performance.now();
+        if (d.bouge) dV = Math.max(-900, Math.min(900, d.vit));
+        else { var r = btn.getBoundingClientRect(); dSens = e.clientX > r.left + r.width / 2 ? -1 : 1; pousser(dSens); }
+        lancer();
+      };
+      btn.addEventListener("pointerup", lacher); btn.addEventListener("pointercancel", lacher);
+      btn.addEventListener("click", function(){ if (performance.now() - dPointeur < 400) return; dSens = -dSens; pousser(dSens); });
+      if (!dReduce && "IntersectionObserver" in window){
+        var dInv = null;
+        new IntersectionObserver(function(es){ es.forEach(function(e){
+          if (e.isIntersecting && !dInv) dInv = setInterval(function(){ if (!dTouche && !dRun){ dV += (Math.random() < .5 ? -1 : 1) * 130; lancer(); } }, 3600);
+          else if (!e.isIntersecting){ clearInterval(dInv); dInv = null; }
+        }); }, {threshold:.6}).observe(btn);
+      }
+    })();
     var pm = $(".pied-mail"); if (pm && COACH.mail){ pm.href = "mailto:" + COACH.mail; pm.textContent = COACH.mail; }
   })();
   /* le menu « Prestations » de l'en-tête : il s'ouvre au clic (ou au clavier), se ferme avec Échap ou en cliquant ailleurs */
