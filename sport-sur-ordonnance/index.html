@@ -1260,13 +1260,12 @@ h1, h2, h3{text-wrap:balance} p, li, summary{text-wrap:pretty}
   F.addEventListener("focusin", function(e){ var t = e.target; if (!t.matches("input:not([type=radio])")) return; setTimeout(function(){ try { t.scrollIntoView({block:"center", behavior:"instant"}); } catch (x) {} }, 280); });
   M.querySelector(".rp-ferme").addEventListener("click", function(){ fermer(); });
 
-  /* l'envoi : on lit la réponse de la feuille ; succès seulement sur « ok » */
+  /* l'envoi : réussi dès que Google a reçu la demande (sa réponse ne peut pas être lue par le site), en échec sans réseau ou après 25 s */
   var envoyer = function(d){
     if (!K.form || !window.fetch) return Promise.reject(new Error("pas d'adresse d'envoi"));
     var ctl = window.AbortController ? new AbortController() : null, to = ctl ? setTimeout(function(){ ctl.abort(); }, 25000) : 0;
-    return fetch(K.form, {method:"POST", keepalive:true, headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(d), signal:ctl ? ctl.signal : undefined})
-      .then(function(r){ return r.text(); })
-      .then(function(t){ clearTimeout(to); if (String(t).trim() !== "ok") throw new Error("réponse inattendue"); }, function(x){ clearTimeout(to); throw x; });
+    return fetch(K.form, {method:"POST", mode:"no-cors", keepalive:true, headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(d), signal:ctl ? ctl.signal : undefined})
+      .then(function(){ clearTimeout(to); }, function(x){ clearTimeout(to); throw x; });
   };
   var FILE = "ascension-envois";   /* la même file que l'accueil : une demande gardée part de n'importe quelle page du site */
   var file = function(a){ try { if (a === undefined) return JSON.parse(localStorage.getItem(FILE) || "[]"); if (a.length) localStorage.setItem(FILE, JSON.stringify(a)); else localStorage.removeItem(FILE); } catch (x) {} return []; };
