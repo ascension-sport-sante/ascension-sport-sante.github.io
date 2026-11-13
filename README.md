@@ -11,6 +11,8 @@ En ligne : https://ascension-sport-sante.github.io
 - `fond/` : les paysages en vidéo (`fond/` pour le téléphone, `fond/pc/` et `fond/pc720/` pour l'ordinateur).
 - `sil/` : les silhouettes animées ; `sys/` : les illustrations des trois systèmes ; `polices/` : les polices de caractères.
 - `sitemap.xml`, `robots.txt`, `llms.txt` : pour Google et les assistants.
+- `seance/` : l'appli de séance des clients (appli web construite depuis le projet privé du coach, ne pas modifier à la main). Les séances et les résultats voyagent dans les liens, jamais sur ce site. `robots.txt` l'exclut des moteurs de recherche.
+- `.well-known/assetlinks.json` : permet aux liens de retour d'ouvrir directement l'app du coach sur Android.
 
 ## Modifier un texte
 

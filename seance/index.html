@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Remplacé par --base-href au build (le site vit sous /seance/). -->
+  <base href="/seance/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Ta séance, envoyée par ton coach.">
+  <!-- Séances privées : jamais indexées, aucune adresse transmise ailleurs. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#F5F1E8">
+
+  <!-- Écran d'accueil (Android, iPhone : plein écran une fois ajoutée). -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ma séance">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <title>Ma séance</title>
+
+  <style>
+    /* Cinzel (licence OFL, fonts/OFL-Cinzel.txt) : le mot ASCENSION. */
+    @font-face{font-family:"Cinzel"; src:url("fonts/Cinzel-Bold.ttf") format("truetype"); font-weight:600 700; font-display:swap}
+    html,body{margin:0; height:100%; background:#F5F1E8}
+
+    /* L'écran d'ouverture : le sceau du site Ascension (plume qui tombe,
+       ensō tracé au pinceau, puis le mot), en HTML et CSS pur, visible
+       avant que Flutter ait fini de charger. Animation recopiée du site. */
+    #ouverture{position:fixed; inset:0; z-index:9999; background:#0C1222; display:grid; place-content:center; justify-items:center; gap:26px; overflow:hidden; transition:opacity .25s ease}
+    #ouverture.fin{opacity:0; pointer-events:none}
+    .sigil{position:relative; width:140px; aspect-ratio:1}
+    .sigil img{position:absolute; display:block; pointer-events:none}
+    .sigil .ring{left:0; top:0; width:100%; height:100%; -webkit-mask:conic-gradient(from 37deg, transparent calc(352deg - var(--a)), #000 calc(360deg - var(--a))); mask:conic-gradient(from 37deg, transparent calc(352deg - var(--a)), #000 calc(360deg - var(--a)))}
+    .sigil .feather{left:20.09%; top:5.08%; width:61.73%; height:99.57%; transform-origin:50% 90%}
+    @property --a{syntax:"<angle>"; inherits:false; initial-value:340deg}
+    @keyframes ring-draw{from{--a:-10deg} to{--a:340deg}}
+    @keyframes feather-fall{0%{transform:translate(30%,-90vh) rotate(-40deg); opacity:0} 15%{opacity:1} 70%{transform:translate(0,5%) rotate(5deg)} 85%{transform:translate(0,-4%) rotate(-2deg)} 100%{transform:none}}
+    @keyframes feather-float{0%,100%{transform:none} 50%{transform:translateY(-5%) rotate(2deg)}}
+    .word{display:flex; gap:.12em; font-family:"Cinzel","Shippori Mincho",Georgia,serif; font-weight:600; letter-spacing:.24em; font-size:1.55rem; color:#C9A55C; line-height:1; margin-right:-.24em}
+    .word span{display:inline-block}
+    @keyframes letter{from{opacity:0; transform:translateY(14px); filter:blur(6px)} to{opacity:1; transform:none; filter:none}}
+
+    /* Première ouverture : toute l'animation (environ 2,5 s). */
+    .premiere .sigil .ring{animation:ring-draw 1.6s cubic-bezier(.55,0,.25,1) .9s both}
+    .premiere .sigil .feather{animation:feather-fall 1.9s cubic-bezier(.2,.75,.25,1) both, feather-float 6s ease-in-out 2s infinite}
+    .premiere .word span{animation:letter .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(1.6s + var(--i) * 70ms)}
+    /* Ouvertures suivantes : la plume est posée, l'ensō se trace en 0,8 s. */
+    .courte .sigil .ring{animation:ring-draw .8s cubic-bezier(.55,0,.25,1) both}
+    /* Sans @property (vieux navigateur) : l'anneau entier, sans tracé. */
+    .sans-prop .sigil .ring{-webkit-mask:none; mask:none; animation:none}
+    /* Mouvement réduit : le logo immobile. */
+    @media (prefers-reduced-motion: reduce){
+      #ouverture *{animation:none !important}
+      .sigil .ring{-webkit-mask:none; mask:none}
+      #ouverture{transition:none}
+    }
+  </style>
+  <script>
+    (function () {
+      var racine = document.documentElement;
+      var vue = false;
+      try { vue = localStorage.getItem('apm-ouverture-vue') === '1'; } catch (e) {}
+      var calme = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!(window.CSS && CSS.registerProperty)) racine.classList.add('sans-prop');
+      racine.classList.add(calme ? 'calme' : (vue ? 'courte' : 'premiere'));
+      var depart = Date.now();
+      // Première ouverture : on attend la fin de l'animation (dernière
+      // lettre : 1,6 s + 8 × 70 ms + 0,7 s). Ensuite, jamais au-delà du
+      // chargement réel.
+      var attente = (calme || vue) ? 0 : 2860;
+      var pret = false;
+      function effacer() {
+        var o = document.getElementById('ouverture');
+        if (!o || o.dataset.fin) return;
+        o.dataset.fin = '1';
+        o.classList.add('fin');
+        setTimeout(function () { o.remove(); }, calme ? 0 : 260);
+        try { localStorage.setItem('apm-ouverture-vue', '1'); } catch (e) {}
+      }
+      // Appelé par l'appli Flutter à sa première image.
+      window.apmPret = function () {
+        if (pret) return;
+        pret = true;
+        var reste = attente - (Date.now() - depart);
+        if (reste > 0) setTimeout(effacer, reste); else effacer();
+      };
+      // Android : l'invitation à installer, gardée pour le bouton
+      // « Installer » de l'appli.
+      window.addEventListener('beforeinstallprompt', function (e) {
+        e.preventDefault();
+        window.apmInvitation = e;
+      });
+      window.apmInstaller = function () {
+        var e = window.apmInvitation;
+        if (!e) return Promise.resolve(false);
+        window.apmInvitation = null;
+        e.prompt();
+        return e.userChoice.then(function (r) { return r.outcome === 'accepted'; });
+      };
+      // Hors ligne : le service worker garde l'appli (voir sw.js).
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('sw.js').catch(function () {});
+        });
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div id="ouverture" aria-hidden="true">
+    <div class="sigil"><img class="ring" src="splash/enso.webp" alt=""><img class="feather" src="splash/plume_nuit_m.webp" alt=""></div>
+    <div class="word"><span style="--i:0">A</span><span style="--i:1">S</span><span style="--i:2">C</span><span style="--i:3">E</span><span style="--i:4">N</span><span style="--i:5">S</span><span style="--i:6">I</span><span style="--i:7">O</span><span style="--i:8">N</span></div>
+  </div>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
