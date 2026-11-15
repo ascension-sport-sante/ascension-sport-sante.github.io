@@ -1620,4 +1620,19 @@ html.clair .apr-citation blockquote{color:#1F1A15 !important; font-size:clamp(1.
 html.clair .apr-citation figcaption{display:flex; align-items:center; gap:12px; color:#9E1B14 !important; font-weight:700; letter-spacing:.04em}
 html.clair .apr-citation figcaption::before{content:""; width:38px; height:2px; background:linear-gradient(90deg, #C9A55C, #9E1B14)}
 @media (max-width:640px){ html.clair .apr-citation{padding:46px 6px 12px 10px !important} html.clair .apr-citation::before{left:0; top:-14px; font-size:84px} }
+/* ===== Lot 142 : barre du haut plus fine (les deux thèmes) — 72 → 58 px sur ordinateur, 64 → 54 px au téléphone ===== */
+header.top .wrap{height:58px}
+header.top .brand .mini{width:34px; height:34px}
+header.top .brand small{font-size:.7rem}
+header.top .nv-l{height:40px}
+header.top .nv-cta{min-height:40px; height:40px; font-size:.95rem}
+header.top :is(.nv-aa, .nv-tel){height:38px; min-height:38px}
+header.top .nv-aa{width:38px}
+@media (max-width:860px){
+  header.top .wrap{height:54px}
+  header.top .brand .mini{width:32px; height:32px}
+  header.top :is(.nv-menu-btn, .nv-cta, .nv-tel){height:44px; min-height:44px}
+}
+/* les pages légales et le kit : leur haut de page passe sous la barre au téléphone (sections resserrées à 48 px) */
+@media (max-width:860px){ .page > section:first-child:is(.legal-sec, .kit-sec){padding-top:88px} }
 </style><style>.theme-btn.tb-pied{opacity:0; pointer-events:none}</style><script>(function(){var b=document.querySelector(".theme-btn"),f=document.querySelector("footer.pied");if(!b||!f||!("IntersectionObserver" in window))return;new IntersectionObserver(function(e){b.classList.toggle("tb-pied",e[0].isIntersecting)},{threshold:0}).observe(f)})();</script>
