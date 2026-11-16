@@ -275,6 +275,12 @@ html:is(.som-vu, .r-vu) :is(.aa-pill, .theme-btn){display:none !important}
 @media (prefers-reduced-motion: reduce){ #sommaire.som, #sommaire.som.on{transition:none} }
 /* ===== Lot 152 : animations de fond en pause derrière le menu et la fenêtre ===== */
 html:is(.som-vu, .r-vu) :is(.fondvid, .to-m, .soleil-coin){animation-play-state:paused !important}
+/* ===== Lot 154 : la Méthode, texte du haut plus lisible (brume de papier, comme derrière les titres) ===== */
+@media (min-width:861px){
+  html.clair .p-hero.methode .txt{position:relative; isolation:isolate}
+  html.clair .p-hero.methode .txt::after{content:""; position:absolute; inset:-40px -60px -40px -150px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.92), rgba(250,245,234,.84) 52%, rgba(250,245,234,.55) 74%, rgba(250,245,234,0))}
+}
+html.clair .p-hero.methode .txt :is(p, p *, h2, h2 *){text-shadow:0 0 10px rgba(251,248,242,1), 0 0 22px rgba(251,248,242,.95), 0 0 46px rgba(251,248,242,.7) !important}
 </style><style>span.nw, span.nw-t{all:unset !important} span.nw{white-space:nowrap !important}</style><style>.theme-btn.tb-pied{opacity:0; pointer-events:none}</style><svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="inkedge"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5"/></filter>
 </svg>
@@ -1002,20 +1008,6 @@ html:is(.som-vu, .r-vu) :is(.fondvid, .to-m, .soleil-coin){animation-play-state:
     </div>
   </section>
 
-  <section class="sec pro-sec meth-seance" id="seance" data-obs>
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow rv">Une séance, de l’intérieur</p>
-        <h2 class="rv">Une heure, rien que pour vous</h2>
-      </div>
-      <ol class="frise rv">
-        <li><h3>Le point du jour</h3><p>Sommeil, douleurs, fatigue, moral : on en parle, et la séance s’adapte avant même de commencer.</p></li>
-        <li><h3>L’échauffement</h3><p>Le corps se met en route doucement : articulations, muscles, cœur.</p></li>
-        <li><h3>Le cœur de la séance</h3><p data-t="coeur">Force, endurance, équilibre et coordination, dosés pour vous. Vous me dites ce que vous ressentez, j’ajuste en direct.</p></li>
-        <li><h3>Le retour au calme</h3><p>On redescend en douceur, on fait le point, et on prépare la suite.</p></li>
-      </ol>
-    </div>
-  </section>
 
   <section class="sec pro-sec meth-voies" id="accompagnements" data-obs>
     <div class="wrap">
