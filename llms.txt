@@ -3,13 +3,18 @@
 > Coach sport-santé et enseignant en activité physique adaptée, à domicile, à Paris et en proche banlieue, depuis Paris 18e. Séances individuelles d'une heure pour enfants, adultes et personnes de plus de 60 ans, avec ou sans pathologie. Matériel fourni.
 
 ## Ce que je propose
-- Bilan sport-santé à domicile (1 h) : entretien santé et tests simples (force, équilibre, souffle, mobilité). Au prix d'une séance, sans engagement.
+- Bilan sport-santé à domicile (1 h) : entretien santé et tests simples (force, équilibre, endurance, mobilité). Au prix d'une séance, sans engagement : https://ascension-sport-sante.github.io/bilan/
+- Éveil, activité physique adaptée à domicile (douleurs, maladie chronique, handicap, âge) : https://ascension-sport-sante.github.io/activite-physique-adaptee-domicile/
+- Élan, remise en forme à domicile (énergie, force, endurance, souplesse) : https://ascension-sport-sante.github.io/remise-en-forme-domicile/
+- Envol, préparation physique à domicile (s'entraîner plus intensément) : https://ascension-sport-sante.github.io/preparation-physique-domicile/
+- Plume, enfants et ados, par le jeu : https://ascension-sport-sante.github.io/coach-sportif-enfants/
+- La méthode (Terre, Eau, Feu, Air : force, mobilité, endurance, coordination) : https://ascension-sport-sante.github.io/methode/
+
+## Selon votre situation
 - Sport sur ordonnance (activité physique adaptée prescrite par le médecin) : https://ascension-sport-sante.github.io/sport-sur-ordonnance/
 - Mal de dos : https://ascension-sport-sante.github.io/mal-de-dos/
 - Reprendre une activité après une maladie : https://ascension-sport-sante.github.io/reprise-apres-maladie/
-- Enfants et ados, par le jeu : https://ascension-sport-sante.github.io/coach-sportif-enfants/
 - Après 60 ans : équilibre, force, autonomie : https://ascension-sport-sante.github.io/coach-sportif-senior/
-- Remise en forme à domicile : https://ascension-sport-sante.github.io/coach-sportif-domicile-paris/
 
 ## Tarifs
 - 60€ la séance d'une heure à domicile, matériel fourni.
@@ -27,4 +32,4 @@ Ilyas, enseignant en activité physique adaptée et santé.
 
 ## Contact
 - E-mail : ascension.santepro@gmail.com
-- Réserver un bilan : https://ascension-sport-sante.github.io/#reserver
+- Réserver un bilan : https://ascension-sport-sante.github.io/bilan/
