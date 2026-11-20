@@ -647,6 +647,7 @@ html{scroll-behavior:smooth}
 .sj-vol .sd-l{--paper:radial-gradient(130% 80% at 100% 50%, #EADCB8 0%, #CFBC92 42%, #8E7954 100%); transform:translateX(-102%)}
 .sj-vol .sd-r{--paper:radial-gradient(130% 80% at 0% 50%, #EADCB8 0%, #CFBC92 42%, #8E7954 100%); transform:translateX(102%)}
 .sj-vol .sd::after{content:""; position:absolute; top:50%; width:min(62vh, 84vw); aspect-ratio:1; background:url(/porte_logo_nuit.webp) center / contain no-repeat; opacity:.96}
+/* lot 180 : logo des portes préchargé */ html::after{content:url(/porte_logo_nuit.webp); position:absolute; width:0; height:0; overflow:hidden; opacity:0; pointer-events:none} html.clair::after{content:url(/porte_logo_jour.webp)}
 /* lot 179 : logo en couleur sur les portes */.sj-vol .sd::after{filter:none!important} html.clair .sj-vol .sd::after{background-image:url(/porte_logo_jour.webp)}
 .sj-vol .sd-l::after{right:0; transform:translate(50%, -50%)}
 .sj-vol .sd-r::after{left:0; transform:translate(-50%, -50%)}
