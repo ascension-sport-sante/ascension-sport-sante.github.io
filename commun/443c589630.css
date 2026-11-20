@@ -651,7 +651,7 @@ html{scroll-behavior:smooth}
 .sj-vol .sd-r::after{left:0; transform:translate(-50%, -50%)}
 .sj-vol .sd i{position:absolute; top:66%; width:13px; height:46px; margin-top:-23px; border-radius:7px; background:#1E130B; box-shadow:inset 0 0 0 2px #6B5732}
 .sj-vol .sd-l i{right:34px} .sj-vol .sd-r i{left:34px}
-.sj-n{position:absolute; top:50%; z-index:1; white-space:nowrap; font-family:var(--f-display); font-weight:800; font-size:clamp(1.5rem, 3.6vw, 2.5rem); color:#2A1B0E; opacity:.9}
+/* lot 176 : portes sans mots */ .sj-n{display:none !important; position:absolute; top:50%; z-index:1; white-space:nowrap; font-family:var(--f-display); font-weight:800; font-size:clamp(1.5rem, 3.6vw, 2.5rem); color:#2A1B0E; opacity:.9}
 .sd-l .sj-n{right:0; transform:translate(50%, -50%)}
 .sd-r .sj-n{left:0; transform:translate(-50%, -50%)}
 .sj-lum{position:absolute; left:50%; top:0; bottom:0; width:2px; margin-left:-1px; background:#FFF4D8; box-shadow:0 0 34px 10px rgba(255,214,150,.6); opacity:0; pointer-events:none}
