@@ -617,6 +617,7 @@ html:is(.som-vu, .r-vu) :is(.fondvid, .to-m, .soleil-coin) { animation-play-stat
 .bes-etapes h3{font-family:var(--f-display); font-weight:800; font-size:1.3rem; color:var(--fort, #FFF7E6); padding-top:7px; margin:0}
 .bes-etapes p{margin:0; color:var(--mist)}
 .bes-cites{display:grid; gap:14px}
+/* lot 174 : sans bande rouge sous On en parle */ html.clair .cta-final{background:none !important}
 .bes-science-c{margin-top:18px; padding:20px 22px; border-radius:6px; background:#EFE6D2 var(--washi) 0 0 / 256px 256px; color:#1F1A14; box-shadow:0 26px 50px -30px rgba(0,0,0,.9), inset 0 0 0 1px rgba(120,90,40,.18)}
 .bes-science-c a{color:#8E2A1B}
 .bes-science{max-width:62ch; margin:0; line-height:1.65}
