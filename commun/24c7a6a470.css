@@ -470,3 +470,13 @@ html:not(.clair) .lunes .lune-c .lune-nom{color:#E2C57E!important}
  html body #p-tarifs section#tarifs.p-hero.tarif{padding-top:calc(var(--hd, 60px) + 28px)!important}
  html body #p-tarifs section#tarifs.p-hero.tarif p.body{display:none!important}
 }
+/* Tarifs : texte d'intro remonté, sur un léger nuage, et formules plus haut */
+@media (min-width:1001px){
+ html body #p-tarifs section#tarifs.p-hero.tarif .txt{row-gap:6px!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif p.body{margin:0 auto!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif{padding-bottom:0!important}
+ html body #p-tarifs section#formules.lunes-sec{padding-top:8px!important}
+}
+html body #p-tarifs section#tarifs.p-hero.tarif p.body{position:relative;isolation:isolate}
+html body #p-tarifs section#tarifs.p-hero.tarif p.body::before{content:"";position:absolute;inset:-14px -48px;z-index:-1;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,250,240,.82) 0%,rgba(255,250,240,.6) 45%,rgba(255,250,240,0) 72%);filter:blur(6px);pointer-events:none}
+html:not(.clair) body #p-tarifs section#tarifs.p-hero.tarif p.body::before{background:radial-gradient(ellipse at center,rgba(12,18,34,.78) 0%,rgba(12,18,34,.55) 45%,rgba(12,18,34,0) 72%)}
