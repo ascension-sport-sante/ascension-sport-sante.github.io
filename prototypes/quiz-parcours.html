@@ -1,0 +1,38 @@
+<section class="quiz" id="trouver" aria-labelledby="quiz-t">
+<style>
+.quiz{--acc:#C9A55C;--sur:#1A1714;--fond:rgba(12,18,34,.62);--trait:rgba(201,165,92,.38);--doux:rgba(255,247,230,.8);max-width:900px;margin:0 auto;padding:clamp(1.4rem,3vw,2.2rem);border-radius:22px;border:1px solid var(--trait);background:var(--fond);backdrop-filter:blur(6px);text-align:left}
+html.clair .quiz{--acc:#9E1B14;--sur:#fff;--fond:rgba(255,253,248,.84);--trait:rgba(158,27,20,.22);--doux:#5E574E}
+.quiz-wrap{padding-block:clamp(2.5rem,6vw,4.5rem);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.quiz h2{margin:0 0 .3rem;font-family:"Shippori Mincho",Georgia,serif;font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:600}
+.quiz .q-i{margin:0 0 1.4rem;color:var(--doux)}
+.quiz .q-q{font-weight:700;margin:0 0 .6rem}
+.q-ch{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.4rem}
+.q-ch button{font:inherit;color:inherit;background:transparent;min-height:52px;padding:.45rem 1.1rem;border:1px solid var(--trait);border-radius:14px;cursor:pointer;text-align:left;line-height:1.3}
+.q-ch button small{display:block;opacity:.8;font-size:.85em}
+.q-ch button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:var(--sur)}
+.q-ch button:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.q-res{border-top:1px dashed var(--trait);padding-top:1.3rem;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.2rem;align-items:center}
+.q-res .q-sceau{grid-row:1/span 2;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--acc);font-family:"Shippori Mincho",Georgia,serif;font-size:1.7rem;color:var(--acc)}
+.q-res .q-nom{margin:0;font-family:"Shippori Mincho",Georgia,serif;font-size:clamp(1.6rem,3vw,2.1rem)}
+.q-res .q-txt{margin:0;color:var(--doux)}
+.q-act{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.9rem;align-items:center}
+.q-re{font:inherit;background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px}
+@media (max-width:560px){.q-res{grid-template-columns:1fr}.q-res .q-sceau{grid-row:auto}.q-act .btn{width:100%;justify-content:center}}
+</style>
+<h2 id="quiz-t">Trouver mon parcours</h2>
+<p class="q-i">Deux questions, et je vous montre le parcours fait pour vous.</p>
+<div class="q-etape" data-e="1"><p class="q-q">C’est pour qui ?</p>
+<div class="q-ch"><button type="button" data-pour="moi" aria-pressed="false">Pour moi</button><button type="button" data-pour="enfant" aria-pressed="false">Pour mon enfant ou mon ado</button><button type="button" data-pour="proche" aria-pressed="false">Pour un proche</button></div></div>
+<div class="q-etape" data-e="2" hidden><p class="q-q">Qu’est-ce qui ressemble le plus à la situation ?</p>
+<div class="q-ch"><button type="button" data-p="eveil" aria-pressed="false">Repartir en douceur<small>douleurs, maladie, handicap ou âge</small></button><button type="button" data-p="elan" aria-pressed="false">Retrouver la forme<small>énergie, force, endurance</small></button><button type="button" data-p="envol" aria-pressed="false">Aller plus loin<small>s’entraîner plus intensément</small></button></div></div>
+<div class="q-res" hidden aria-live="polite"><span class="q-sceau" aria-hidden="true"></span><p class="q-nom"></p><p class="q-txt"></p>
+<div class="q-act"><a class="btn q-voir" href="/">Découvrir</a><a class="btn ghost" href="/bilan/">Être rappelé</a><button type="button" class="q-re">Recommencer</button></div></div>
+<script>(function(){var q=document.currentScript.parentNode,P={eveil:["Éveil","Repartir de loin : douleurs, maladie, handicap, âge. On réveille le corps, à votre rythme.","/activite-physique-adaptee-domicile/"],elan:["Élan","Retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.","/remise-en-forme-domicile/"],envol:["Envol","Se dépasser : s’entraîner plus intensément et viser plus haut.","/preparation-physique-domicile/"],plume:["Plume","Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser.","/coach-sportif-enfants/"]},
+E2=q.querySelector('[data-e="2"]'),R=q.querySelector(".q-res");
+function presse(b){b.parentNode.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))})}
+function montre(k){var p=P[k];R.querySelector(".q-sceau").textContent=p[0].charAt(0);R.querySelector(".q-nom").textContent="Votre parcours : "+p[0];R.querySelector(".q-txt").textContent=p[1];var v=R.querySelector(".q-voir");v.href=p[2];v.textContent="Découvrir "+p[0];R.hidden=false}
+q.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+if(b.dataset.pour){presse(b);R.hidden=true;if(b.dataset.pour==="enfant"){E2.hidden=true;montre("plume")}else{E2.hidden=false;E2.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed","false")})}}
+else if(b.dataset.p){presse(b);montre(b.dataset.p)}
+else if(b.classList.contains("q-re")){q.querySelectorAll("[aria-pressed]").forEach(function(x){x.setAttribute("aria-pressed","false")});E2.hidden=true;R.hidden=true}})})();</script>
+</section>
