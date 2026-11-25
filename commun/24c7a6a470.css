@@ -161,3 +161,71 @@ html:is(.som-vu, .r-vu) :is(.fondvid, .to-m, .soleil-coin){animation-play-state:
   html.clair .p-hero.methode .txt::after{content:""; position:absolute; inset:-40px -60px -40px -150px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.92), rgba(250,245,234,.84) 52%, rgba(250,245,234,.55) 74%, rgba(250,245,234,0))}
 }
 html.clair .p-hero.methode .txt :is(p, p *, h2, h2 *){text-shadow:0 0 10px rgba(251,248,242,1), 0 0 22px rgba(251,248,242,.95), 0 0 46px rgba(251,248,242,.7) !important}
+
+/* Liste validée : accueil, formulaire unique, pages parcours, Méthode */
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* « À domicile · Paris » plus lisible */
+.hero-pro h1.titre-or .to-t small{font-size:17px!important;letter-spacing:.22em!important}
+@media (max-width:860px){.hero-pro h1.titre-or .to-t small{font-size:15px!important;letter-spacing:.18em!important}}
+/* Ligne d'offre sous les boutons : le vrai prix d'abord, le crédit d'impôt à côté */
+.offre-une{margin:16px auto 0;font:600 1rem/1.6 var(--f-body);color:#1B1814;text-shadow:0 0 10px rgba(255,248,235,.95),0 0 3px rgba(255,248,235,.95)}
+.offre-une strong{font-weight:800}
+.offre-une .pv{display:inline-block;padding:1px 10px;border-radius:999px;background:#E1EEE7;color:#1F4A3E;font-weight:800;font-size:.95em;text-shadow:none}
+html:not(.clair) .offre-une{color:#EEE7DA;text-shadow:0 0 10px rgba(8,12,24,.95),0 0 3px rgba(8,12,24,.95)}
+html:not(.clair) .offre-une .pv{background:rgba(140,195,175,.2);color:#CDE9DE}
+@media (max-width:860px){.hero-pro .h-txt>.offre-une{order:2;font-size:.95rem;margin-top:12px}}
+/* « On en parle ? » de l'accueil : les étapes en une ligne et le formulaire */
+.cta-final .cta-box.cta-form{display:block!important;text-align:center;max-width:680px;margin-inline:auto}
+.cta-form .cta-etapes{margin:10px auto 0;max-width:40rem;font-weight:600}
+.cta-form .r-ici{margin:22px auto 0;text-align:left}
+.cta-form .note-ci{margin:18px auto 0;max-width:46rem;font-size:.82rem;line-height:1.5;opacity:.8}
+/* Formulaire de la page et de l'accueil = celui de la fenêtre */
+.r-ici .r-appel{margin:0 0 16px;padding:0 0 14px;border-top:0;border-bottom:1px solid rgba(201,165,92,.2)}
+.r-ici .r-sub{margin:16px 0 8px;text-align:center}
+.r-ici .r-chips{justify-content:center}
+.r-ici .r-ici-n{margin:12px 0 0;text-align:center;font-size:.9rem;opacity:.85}
+/* Petit titre de la fenêtre en or, numéro en vert à contour */
+html.clair .r-modal .r-etape{color:#765A22!important}
+html.clair :is(.r-modal,.r-ici) .r-appel .tel-btn{background:transparent!important;border:1.5px solid #2C5A4C!important;color:#1F4A3E!important;box-shadow:none!important}
+html.clair :is(.r-modal,.r-ici) .r-appel .tel-btn :is(b,svg){color:#1F4A3E!important}
+/* Pages parcours : ce qui vous inquiète, ce que je fais */
+.situ-sec .o-chips.situ{justify-content:center;max-width:720px;margin:0 auto}
+.aida .peurs{max-width:920px;margin:0 auto;display:grid;gap:12px}
+.aida .peurs-h,.aida .peurs-r{display:grid;grid-template-columns:1fr 1.45fr;gap:28px;align-items:center}
+.aida .peurs-h{padding:0 26px;font:800 .8125rem/1.3 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:#765A22}
+.aida .peurs-r{padding:22px 26px;border-radius:16px;background:rgba(255,252,246,.88);border:1px solid rgba(176,138,60,.34);box-shadow:0 14px 30px -22px rgba(70,50,22,.45)}
+.aida .peurs-q{margin:0;font:800 1.2rem/1.35 var(--f-display);color:#5A5248;text-align:left}
+.aida .peurs-a{margin:0;padding-left:34px;position:relative;font:500 1.03rem/1.6 var(--f-body);color:#1B1814;text-align:left}
+.aida .peurs-a::before{content:"\2713";position:absolute;left:0;top:2px;width:22px;height:22px;border-radius:50%;background:#2C5A4C;color:#fff;font:800 12px/22px var(--f-body);text-align:center}
+html:not(.clair) .aida .peurs-h{color:#E2C57E}
+html:not(.clair) .aida .peurs-r{background:rgba(18,25,44,.86);border-color:rgba(226,197,126,.3);box-shadow:0 18px 36px -24px rgba(0,0,0,.85)}
+html:not(.clair) .aida .peurs-q{color:#CFC6B8}
+html:not(.clair) .aida .peurs-a{color:#EEE7DA}
+html:not(.clair) .aida .peurs-a::before{background:#8CC3AF;color:#0F1424}
+.aida .peurs-ex{margin:18px 0 0;text-align:center}
+.cta-box .cta-appel{max-width:36rem;margin:10px auto 0}
+@media (max-width:700px){.aida .peurs-h{display:none}.aida .peurs-r{grid-template-columns:1fr;gap:10px;padding:18px}.aida .peurs-q{font-size:1.125rem}}
+/* Méthode : un seul panneau, celui du médaillon choisi */
+.trio .pil-choix{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 0 0}
+.trio .pil-choix button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(176,138,60,.5);background:rgba(255,252,246,.85);color:#1B1814;font:700 .95rem/1 var(--f-body);cursor:pointer}
+.trio .pil-choix button[aria-pressed="true"]{background:#2C5A4C;border-color:#2C5A4C;color:#fff}
+html:not(.clair) .trio .pil-choix button{background:rgba(18,25,44,.86);color:#EEE7DA;border-color:rgba(226,197,126,.4)}
+html:not(.clair) .trio .pil-choix button[aria-pressed="true"]{background:#8CC3AF;border-color:#8CC3AF;color:#0F1424}
+.trio ol.pillars.pillars4{grid-column:1/-1;display:flex!important;justify-content:center;margin:12px auto 0!important;max-width:560px}
+.trio ol.pillars.pillars4>li.pillar{flex:1 1 auto;max-width:560px}
+.trio ol.pillars.pillars4>li.pillar:not(.ch-on){display:none!important}
+.trio .c-astre{cursor:pointer}
+.trio .c-astre.ch-on .c-med{filter:drop-shadow(0 0 16px rgba(244,213,141,.95))}
+/* Liste : le formulaire tient dans l'écran du téléphone, couleurs du texte */
+.cta-final{grid-template-columns:minmax(0,1fr)!important}
+.cta-final .wrap,.cta-form,.r-ici{min-width:0;max-width:100%}
+.r-ici .r-chips{grid-template-columns:repeat(auto-fit,minmax(min(100%,104px),1fr))!important}
+.r-ici .chip span{white-space:normal}
+html.clair .cta-form :is(p,.r-sub),html.clair .cta-box .cta-appel{color:#2A2620!important}
+html.clair .cta-form .r-sub small{color:#5A5248!important}
+html.clair :is(.r-modal,.r-ici) .r-appel .tel-btn *{color:#1F4A3E!important;-webkit-text-fill-color:#1F4A3E!important}
+.r-ici{grid-template-columns:minmax(0,1fr)!important}
+.r-ici>*{min-width:0}
+.r-ici .r-chips.r-chips{flex-wrap:wrap!important}
+@media (max-width:560px){.r-ici .r-chips.r-chips{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,104px),1fr))!important;flex-wrap:wrap!important;justify-content:stretch!important;width:100%!important;max-width:100%!important;margin-inline:0!important}}
+html.clair .cta-form .note-ci{text-shadow:0 0 8px rgba(255,248,235,.95),0 0 2px rgba(255,248,235,.95);opacity:1}
