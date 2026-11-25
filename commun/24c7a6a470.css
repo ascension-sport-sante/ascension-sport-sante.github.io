@@ -266,3 +266,9 @@ html:not(.clair) #prestations .card-p p:not(.cp-tag){color:#EEE7DA;font-size:1.0
 .meth-parcours>.wrap{min-width:0;max-width:100%}
 .meth-parcours ol.chemin.frise{min-width:0}
 .meth-parcours ol.chemin.frise>li.etape{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
+/* Flèche « Voir la suite » plus bas dans la page */
+.suite-fleche{position:fixed;right:calc(18px + env(safe-area-inset-right, 0px));bottom:18px;z-index:60;width:44px;height:44px;padding:0;border:0;border-radius:50%;cursor:pointer;background:var(--murasaki,#9E1B14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FBF8F2' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / 22px no-repeat;box-shadow:0 10px 22px -10px #9e1b14bf;opacity:0;transition:opacity .35s ease}
+.suite-fleche.on{opacity:1}
+.suite-fleche[hidden]{display:none!important}
+.suite-fleche:focus-visible{outline:3px solid rgba(176,138,60,.55);outline-offset:3px}
+@media print{.suite-fleche{display:none!important}}
