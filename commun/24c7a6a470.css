@@ -6,8 +6,8 @@ html.clair :is(a, button, input, select, textarea, summary, [tabindex]):focus-vi
 /* la photo d'Ilyas : un cadre papier au filet doré (plus d'arche bleu nuit, reste du mode sombre) */
 html.clair .photo-res{background:#F6EEDC !important; border:1px solid rgba(176,138,62,.75) !important; box-shadow:0 0 0 6px rgba(251,248,242,.6), 0 26px 50px -28px rgba(60,40,10,.45) !important}
 html.clair header.top, html.clair header.top.solid, html.clair header.top.on{background:rgba(247,243,236,.985) !important}
-html.clair .fondvid{background:#F3EDE3 url(/fond/essai/kin_lum_pc.webp) 50% 0%/cover no-repeat !important}
-@media (max-width:860px){ html.clair .fondvid{background-image:url(/fond/essai/kin_lum_tel.webp) !important; background-position:50% 50% !important} }
+html.clair .fondvid{background:#F3EDE3 url(/fond/essai/kin_lum_tel.webp) 50% 50%/cover no-repeat !important}
+@media (min-width:861px){ html.clair .fondvid{background-image:url(/fond/essai/kin_lum_pc.webp) !important; background-position:50% 0% !important} }
 /* l'action principale : un bouton de laque vermillon au fil d'or, partout */
 html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta){background:linear-gradient(180deg, #A82418, #7A120B) !important; color:#FFF6E6 !important; border:1px solid #E4C27A !important; text-shadow:none !important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 0 0 1px rgba(0,0,0,.06), 0 10px 26px rgba(40,24,6,.28) !important; font-weight:700}
