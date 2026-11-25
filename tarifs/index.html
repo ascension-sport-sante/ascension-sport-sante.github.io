@@ -31,6 +31,14 @@ html.clair body .btn.btn.ghost{color:#1F4A3E!important;border-color:#2C5A4C!impo
 html.clair body .btn.btn.ghost:hover{background:#E1EEE7!important}
 html.clair body .lunes .lune-c a.btn.btn.ghost{border-color:#2C5A4C!important;color:#1F4A3E!important}
 html.clair body .lunes.onglets .lunes-tabs button[aria-selected=true]{background:#2C5A4C!important;border-color:#2C5A4C!important}
+
+/* Revue du 25/11/2026 : petits titres en or foncé (le vermillon reste pour la signature et le sceau) */
+html.clair body .eyebrow.eyebrow:not(.titre-or),html.clair body .kicker.kicker,html.clair body .o-k.o-k{color:#765A22!important}
+html body .lune-badge{background:#2C5A4C!important;color:#fff!important;border-color:#2C5A4C!important}
+html body .c-sceau{color:#fff!important}
+/* Cibles tactiles d'au moins 44 px */
+.nv-aa{width:44px!important;height:44px!important}
+.theme-btn.en-tete{width:44px!important;height:44px!important}
 </style><style id="prix-rassurant">html.clair .lunes .lune-p b{color:#1A1714!important}.lunes .lune-v,.calc .calc-f{font-size:1rem!important;opacity:1!important;line-height:2.2}.lunes .lune-v b,.calc .calc-f b{display:inline-block;font-size:1.7rem;font-weight:800;line-height:1.2;padding:.12em .6em;margin:0 .15em;border-radius:999px;background:rgba(226,197,126,.16);color:#F1D58E}html.clair .lunes .lune-v b,html.clair .calc .calc-f b{background:#E1EEE7;color:#1F4A3E}</style><link rel="stylesheet" href="/commun/ed0198b24e.css"><!-- lot 156 -->
 <link rel="preload" href="/three-r128.min.js" as="script" media="(min-width:861px)">
 <link rel="stylesheet" href="/commun/70a0a805fa.css">
@@ -380,7 +388,7 @@ html.clair body #p-reserver ul.o-chips.o-chips2 b{color:#9E1B14 !important}
     <div class="wrap" data-res>
       <div class="txt">
         <h2 role="heading" aria-level="1" class="rv">Tarifs</h2>
-        <p class="body rv">Des séances d’1h, chez vous, à Paris et en proche banlieue, matériel fourni. Les prix sont par séance, déplacement et matériel compris. Juste en dessous, ce qui reste pour vous : l’État prend en charge la moitié, avec le crédit d’impôt*.</p>
+        <p class="body rv">Des séances d’1h, chez vous, à Paris et en proche banlieue, matériel fourni. Prix par séance, déplacement et matériel compris. En vert : ce qui reste pour vous après le crédit d’impôt*.</p>
         <!--@prix--><!--/@prix-->
       </div>
     </div>
@@ -408,7 +416,7 @@ html.clair .calc{--acc:#2C5A4C;--sur:#fff;--fond:rgba(255,253,248,.78);--trait:r
 .calc-r{margin-top:1.4rem;padding-top:1.2rem;border-top:1px dashed var(--trait);display:grid;grid-template-columns:1fr auto;gap:.3rem 1.5rem;align-items:end}
 .calc-r p{margin:0}
 .calc-p b{font-family:"Shippori Mincho",Georgia,serif;font-size:clamp(2.2rem,5vw,2.8rem);line-height:1;color:inherit}
-.calc-f,.calc-n{color:var(--doux);font-size:.95rem}
+.calc-f,.calc-n{color:var(--doux);font-size:.95rem}.calc-p b,.calc-f b,.calc-n,.calc-e{font-variant-numeric:tabular-nums}
 .calc-e{grid-column:1/-1;font-weight:700}
 .calc-e:empty{display:none}
 .calc-r .btn{grid-row:1/span 3;grid-column:2;align-self:center}
