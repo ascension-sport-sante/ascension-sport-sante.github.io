@@ -1,0 +1,54 @@
+<title>Ascension Paix</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap">
+<style>
+/* Une page de papier, une colonne de lecture, deux boutons : le calme qu'on montre. */
+:root{--bg:#F7F2E8;--fg:#24211E;--doux:#5E574E;--vert:#2C5A4C;--or:#765A22;--filet:rgba(36,33,30,.14);--btn-fg:#fff;
+--f-titre:"Cormorant Garamond",Georgia,"Times New Roman",serif;--f-texte:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1424;--fg:#EEE7DA;--doux:#B9B0A2;--vert:#5FA08B;--or:#E2C57E;--filet:rgba(238,231,218,.16);--btn-fg:#0F1424;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1424;--fg:#EEE7DA;--doux:#B9B0A2;--vert:#5FA08B;--or:#E2C57E;--filet:rgba(238,231,218,.16);--btn-fg:#0F1424;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-texte)}
+main{max-width:64ch;margin:0 auto;padding-block:clamp(40px,8vw,96px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.sur{margin:0;color:var(--or);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+h1{font:600 clamp(2.4rem,6vw,3.4rem)/1.05 var(--f-titre);margin:.4rem 0 1rem;text-wrap:balance}
+.chapeau{font-size:1.08rem;color:var(--doux);margin:0 0 2rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 3rem}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--vert)}
+.btn.plein{background:var(--vert);color:var(--btn-fg)}
+.btn.vide{color:var(--vert)}
+.btn:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+h2{font:600 1.6rem/1.2 var(--f-titre);margin:0 0 1rem}
+ol{margin:0;padding:0;list-style:none;display:grid;gap:0}
+li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.2rem 1rem;padding:1rem 0;border-top:1px solid var(--filet)}
+li:last-child{border-bottom:1px solid var(--filet)}
+.n{font:600 1.3rem/1.3 var(--f-titre);color:var(--or)}
+li b{display:block}
+li span.d{color:var(--doux)}
+.pages{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;margin:1rem 0 2.5rem}
+.pages a{color:var(--vert);font-weight:600}
+.note{font-size:.92rem;color:var(--doux)}
+</style>
+<main>
+  <p class="sur">Prototype · rien n’est publié</p>
+  <h1>Ascension, version « paix »</h1>
+  <p class="chapeau">Le même site, les mêmes peintures et la même identité japonaise, avec moins de choses qui bougent et parlent en même temps. À parcourir sur ordinateur et sur téléphone.</p>
+  <div class="actions">
+    <a class="btn plein" href="site/index.html">Ouvrir le prototype</a>
+    <a class="btn vide" href="https://ascension-sport-sante.github.io/" target="_blank" rel="noopener">Voir le site actuel</a>
+  </div>
+
+  <h2>Ce qui change</h2>
+  <ol>
+    <li><span class="n">1</span><div><b>Un seul mouvement</b><span class="d">Les portes restent. Les pétales tombent quelques secondes puis se posent. Plus d’encre qui suit la souris, de grain ni de curseur spécial.</span></div></li>
+    <li><span class="n">2</span><div><b>La peinture en fenêtres</b><span class="d">On lit sur du papier ; la peinture se montre en haut de page et dans une bande de respiration.</span></div></li>
+    <li><span class="n">3</span><div><b>Moins de boîtes</b><span class="d">Les encadrés restent seulement pour ce qui se compare ou se remplit : formules, calculateur, formulaire.</span></div></li>
+    <li><span class="n">4</span><div><b>Une lecture tranquille</b><span class="d">Une seule échelle de texte, les longs paragraphes à gauche, des lignes courtes, moins de petits titres en capitales, un rythme régulier entre les sections.</span></div></li>
+    <li><span class="n">5</span><div><b>Accueil plus court</b><span class="d">Une phrase d’accroche, « satisfait ou remboursé · sans engagement · matériel fourni » sous le bouton, trois étapes, le prix en une ligne, un seul exemple de bilan, et le formulaire directement en bas.</span></div></li>
+    <li><span class="n">6</span><div><b>Chaque page a un rôle</b><span class="d">Méthode : le comment et les bilans. À propos : vous, votre philosophie et vos sept principes. Tarifs : les mentions obligatoires sous le calculateur, lisibles.</span></div></li>
+  </ol>
+
+  <h2 style="margin-top:2.5rem">Aller directement à</h2>
+  <p class="pages"><a href="site/index.html">Accueil</a><a href="site/methode/index.html">Méthode</a><a href="site/a-propos/index.html">À propos</a><a href="site/tarifs/index.html">Tarifs</a><a href="site/bilan/index.html">Être rappelé</a></p>
+  <p class="note">Le formulaire du prototype n’envoie rien. Le site en ligne n’a pas été modifié.</p>
+</main>

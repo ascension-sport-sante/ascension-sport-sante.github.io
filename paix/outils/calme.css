@@ -1,0 +1,69 @@
+/* Prototype « Paix » : moins de mouvement, papier pour lire, une échelle de texte, moins d'encadrés. */
+:root{--papier:#F7F2E8;--papier-2:#F0E8D8;--filet-calme:rgba(26,23,20,.12)}
+html:not(.clair){--papier:#0F1424;--papier-2:#131A2C;--filet-calme:rgba(255,247,230,.14)}
+
+/* 1. Un seul mouvement signature : les portes ; les pétales se posent ; plus d'encre, de grain ni de curseur spécial */
+.sakura-pluie{transition:opacity 2.5s ease}
+html.calme-pose .sakura-pluie{opacity:0!important;pointer-events:none}
+.encre-pc,.cur,.grain,.asc-voie,.fondvid video{display:none!important}
+html,body{cursor:auto!important}
+a,button,summary,label,[role=button],[role=tab]{cursor:pointer!important}
+
+/* 2. La peinture en fenêtres : les sections de lecture sur papier, la peinture en haut et en respirations */
+main section.sec:not(.p-hero):not(.cta-final):not(.respiration){background-color:var(--papier)!important;background-image:url(../washi.webp)!important;background-blend-mode:multiply}
+html:not(.clair) main section.sec:not(.p-hero):not(.cta-final):not(.respiration){background-image:none!important}
+main section.sec.papier-2{background-color:var(--papier-2)!important}
+.respiration{-webkit-mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(transparent,#000 22%,#000 78%,transparent);height:min(42vh,360px);background:url(../fond/jour/pc/enfants.webp) center 40%/cover fixed!important}
+.respiration.nuages{background-image:url(../fond/jour/pc/reserver.webp)!important}
+html:not(.clair) .respiration{background-image:url(../fond/pc/enfants.webp)!important}
+html:not(.clair) .respiration.nuages{background-image:url(../fond/pc/reserver.webp)!important}
+@media (max-width:860px){.respiration{height:220px;background-attachment:scroll!important;background-image:url(../fond/jour/enfants.webp)!important}.respiration.nuages{background-image:url(../fond/jour/reserver.webp)!important}
+html:not(.clair) .respiration{background-image:url(../fond/enfants.webp)!important}html:not(.clair) .respiration.nuages{background-image:url(../fond/reserver.webp)!important}}
+
+/* 3. Une échelle de texte */
+main section:not(.hero):not(.p-hero) p:not(.lune-p):not(.o-k):not(.lune-v):not(.calc-p):not(.eyebrow),main section:not(.hero):not(.p-hero) li{font-size:clamp(1rem,.97rem + .15vw,1.0625rem)!important;line-height:1.65!important}
+main section:not(.hero):not(.p-hero) h2{font-size:clamp(1.75rem,1.35rem + 1.6vw,2.45rem)!important;line-height:1.2!important}
+main section:not(.hero):not(.p-hero) h3{font-size:clamp(1.15rem,1.08rem + .35vw,1.35rem)!important}
+
+/* 7. Moins de petits titres en capitales : on les garde dans les hauts de page */
+main section:not(.hero):not(.p-hero) .eyebrow:not(.titre-or){display:none!important}
+
+/* 8. Un rythme régulier */
+main section.sec:not(.p-hero):not(.respiration){padding-block:clamp(64px,8vw,120px)!important}
+main details{border-bottom:1px solid var(--filet-calme)!important}
+
+/* Trois étapes partout */
+@media (min-width:861px){.steps.trois{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+
+/* Réassurance sous les boutons, prix en une ligne */
+.rassure{margin:.9rem auto 0;font-size:.95rem;opacity:.85;text-align:center}
+.prix-ligne .wrap{max-width:62ch;text-align:center}
+.prix-ligne .grand{font-size:1.3em;font-weight:800}
+.prix-ligne .pv{font-size:.92em}
+.prix-ligne .pv b{color:#1F4A3E}
+html:not(.clair) .prix-ligne .pv b{color:#E2C57E}
+.prix-ligne .note{font-size:.85rem!important;opacity:.75;margin-top:.8rem}
+.cta-final .r-ici{max-width:520px;margin:1.2rem auto 0}
+
+/* 14. Tarifs : mentions obligatoires visibles, à gauche, sous le calculateur */
+.mentions-calme{max-width:68ch;margin:2rem auto 0;padding:1rem 1.2rem;border-left:2px solid var(--filet-calme);text-align:left!important;font-size:.88rem!important;line-height:1.6!important;opacity:.85}
+
+/* Bandeau du prototype */
+.bandeau-proto{position:relative;z-index:5;display:flex;flex-wrap:wrap;gap:.4rem 1rem;justify-content:center;align-items:center;padding:.45rem 1rem;background:#24211E;color:#F4EFE6;font:600 13px/1.3 system-ui,sans-serif}
+.bandeau-proto a{color:#F0D58E}
+
+/* Accueil : le prix descend dans sa propre section, la réassurance reste sous le bouton */
+.hero-pro .offre-l{display:none!important}
+@media (max-width:860px){.hero-pro .h-txt>.rassure{order:2}}
+.hero-pro .rassure{text-align:inherit;margin-inline:0}
+.cta-final .cta-box{display:block!important;text-align:center}
+.cta-final .cta-box>p{max-width:46ch;margin:.6rem auto 0}
+.cta-final .r-ici .btn{width:100%;margin-top:1rem}
+.cta-final .r-ici .r-grid2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;text-align:left}
+@media (max-width:560px){.cta-final .r-ici .r-grid2{grid-template-columns:1fr}}
+.cta-final .r-ici input{width:100%}
+.voir-bilan{margin-top:1.2rem}
+.lien-parcours{margin-top:2rem;text-align:center}
+.prix-ligne .wrap{margin-inline:auto!important}
+.prix-ligne p{text-align:center!important;margin-inline:auto!important}
+.cta-final .cta-box>p,.cta-final .rassure{color:inherit!important}

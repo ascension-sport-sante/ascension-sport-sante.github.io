@@ -1,0 +1,163 @@
+
+/* ===== mode clair définitif : feuille d'or + vermillon laqué ===== */
+/* le fond : l'illustration à la feuille d'or, directement (plus de vidéo de jour) */
+html.clair .fondvid video{display:none !important}
+html.clair :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible{outline:3px solid #9E1B14 !important; outline-offset:3px !important}
+/* la photo d'Ilyas : un cadre papier au filet doré (plus d'arche bleu nuit, reste du mode sombre) */
+html.clair .photo-res{background:#F6EEDC !important; border:1px solid rgba(176,138,62,.75) !important; box-shadow:0 0 0 6px rgba(251,248,242,.6), 0 26px 50px -28px rgba(60,40,10,.45) !important}
+html.clair header.top, html.clair header.top.solid, html.clair header.top.on{background:rgba(247,243,236,.985) !important}
+html.clair .fondvid{background:url(../fond/essai/kin_lum_tel.webp) 50% 50%/cover no-repeat,url(data:image/webp;base64,UklGRggBAABXRUJQVlA4IPwAAAAQBwCdASoYACIAPsFSo0ynpKMiMBVYAPAYCUATplewygFYl8hZQapL8pnegYQX77aMXxqfeUz7XyY7Izwf0LnWAAD+4Y5TeQskqA5TnRmVYnEiCNey1IrUBFk8jw0Kll6e6/UNcrkjc/VJCNSYpDTCbg6t4SZjdItU6/cFZzhmzFoXmkTR5IzZnLHQZIdIREz2ZGGkjWhwkzZSOfdn4NxjcmdPjfL8Mza/PT7TNjyNxfnNdNJiFdW/7fIYs2UJOsDIxxI6H6o/qMXuXhzUbrSASI77xc0hPw1dFV6vpQrF4T/CbZomcK921gNJpBQIZoE5PRK0LWc6LE2gAAA=) 50% 50%/cover no-repeat,#F3EDE3 !important}
+@media (min-width:861px){ html.clair .fondvid{background-image:url(../fond/essai/kin_lum_pc.webp),url(data:image/webp;base64,UklGRvIBAABXRUJQVlA4IOYBAABQCgCdASowACAAPrlGnUqnI6KhtVv4AOAXCWYAnTKEhLgKvAYX+403c3ijZn1IDqUmOslmVaeqAN97fKmUWLBX/HTBGxFfSe34f1yHOjhvznRdaHDjK3JWm2YAAP7q1wezLhHar4ajTyLWSQjFcpIaOrq7rnb89KkQqd4xKbFY/3vigIq4LVV8x/hdiq2xZ1tj4HmP/wWnkna74Y6UvTxYmpF/vjHlOeDgpH4aCko0U4BHPvm1tQWzdxxKaXyco1fLBaTnYIeUYyujcNclnS2yofTvUqbMD36C/+75SeTQAk7qvZPsSQkHygn2fpjJwRBEJ7JoGJXPyRo62hodTpk7GHYpa6QpFJ+A+NzWwJtu+QSxZ6f5YMLbxOUICBoIrs1bxmme5yXEppZ2u0PHnDBIHEhu9Q4+2+GJ87Kja9P05comGRKi6/s9kCm8a4wPPY5sUQlcuEZFjNEMp6L0cPljvw+Jn/lac6WGvgzh+BP4gynsSMOPKiBS187H54VnSPBwBGD8+Wr/7fD5MoXyIybT+lDekiMROrHAOW6RSe3sPKlW2o8A9Na6xwtMU0/JfCAfx8TBabE9U3godoM7mqFqUWCZXeqU5VTmyFwxqLhkGzCalyd5UPhh2tlX4NWTgVsAZEpHwAA=) !important; background-position:50% 0%,50% 0% !important} }
+/* l'action principale : un bouton de laque vermillon au fil d'or, partout */
+html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta){background:linear-gradient(180deg, #A82418, #7A120B) !important; color:#FFF6E6 !important; border:1px solid #E4C27A !important; text-shadow:none !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18), 0 0 0 1px rgba(0,0,0,.06), 0 10px 26px rgba(40,24,6,.28) !important; font-weight:700}
+html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta) *{color:#FFF6E6 !important; -webkit-text-fill-color:#FFF6E6 !important}
+@media (hover:hover){ html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta):hover{background:linear-gradient(180deg, #B52A1D, #861610) !important} }
+html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta)::before, html.clair :is(.btn:not(.ghost), .sm-cta, .rp-go, .nv-cta)::after{display:none !important}
+html.clair :is(.btn, .sm-cta) .braises{display:none !important}
+/* le téléphone : une pastille crème au texte vermillon */
+html.clair :is(a.tel-btn, .nv-tel, .sm-tel){background:rgba(255,250,240,.85) !important; color:#8E1A12 !important; border:1px solid rgba(158,27,20,.55) !important; text-shadow:none !important}
+html.clair :is(a.tel-btn, .nv-tel, .sm-tel) *{color:#8E1A12 !important; -webkit-text-fill-color:#8E1A12 !important}
+html.clair :is(a.tel-btn, .nv-tel, .sm-tel) .ic-tel{color:#8E1A12 !important; fill:none; stroke:currentColor}
+/* le haut de l'accueil : encre noire et vermillon, contour blanc renforcé, lettres plus solides */
+html.clair.illus .hero-pro :is(.slogan, .slogan *){color:#070504 !important; text-shadow:0 0 14px rgba(251,248,242,.95), 0 0 30px rgba(251,248,242,.8), 0 0 60px rgba(251,248,242,.55) !important}
+html.clair.illus .hero-pro .slogan em, html.clair.illus .hero-pro .slogan em *{color:#9E1B14 !important; -webkit-text-fill-color:#9E1B14 !important}
+html.clair.illus .hero-pro .titre-or .to-m{-webkit-text-fill-color:#070504 !important; color:#070504 !important}
+html.clair.illus .hero-pro :is(.titre-or, .titre-or *){text-shadow:0 0 14px rgba(251,248,242,.95), 0 0 30px rgba(251,248,242,.8), 0 0 60px rgba(251,248,242,.55) !important}
+html.clair.illus .hero-pro .titre-or small, html.clair.illus .hero-pro :is(.publics, .publics *){color:#74120C !important; -webkit-text-fill-color:#74120C !important}
+html.clair.illus .hero-pro :is(.lede, .lede *, .publics, .publics *, .tel-hero > :not(a), .titre-or small){text-shadow:0 0 14px rgba(251,248,242,.95), 0 0 30px rgba(251,248,242,.8), 0 0 60px rgba(251,248,242,.55) !important}
+html.clair.illus .hero-pro .lede{font-weight:700 !important; font-size:1.07em !important; color:#070504 !important; letter-spacing:.008em}
+html.clair.illus .hero-pro .lede :is(strong, b){font-weight:800 !important; color:#070504 !important}
+html.clair.illus .hero-pro :is(.publics, .publics *){font-weight:800 !important; font-size:1.04em}
+html.clair.illus .hero-pro .titre-or small{font-weight:800 !important}
+html.clair.illus .hero-pro .tel-hero{font-weight:800 !important; color:#070504 !important}
+/* le haut des autres pages : même traitement (le texte repose directement sur l'illustration) */
+html.clair.illus .p-hero :is(h1, h1 *, h2, h2 *, .slogan, .slogan *){text-shadow:0 0 14px rgba(251,248,242,.95), 0 0 30px rgba(251,248,242,.8), 0 0 60px rgba(251,248,242,.55) !important}
+html.clair.illus .p-hero :is(p, p *, li, .eyebrow, small){text-shadow:0 0 14px rgba(251,248,242,.95), 0 0 30px rgba(251,248,242,.8), 0 0 60px rgba(251,248,242,.55) !important}
+html.clair.illus .p-hero :is(p, li){color:#070504 !important; font-weight:600}
+/* fenêtre bilan : la bande du bouton a exactement la teinte de la fenêtre */
+html.clair .r-modal .r-step[data-step="3"] .r-nav{background:linear-gradient(180deg, rgba(251,248,242,0), rgba(251,248,242,.95) 26%, #FBF8F2) !important}
+/* ===== la barre du haut et le pied de page : jade profond, la couleur des montagnes (choix d'Ilyas) ===== */
+html.clair header.top, html.clair header.top.solid, html.clair header.top.on{background:linear-gradient(180deg, #33594F, #284A42) !important; border-bottom:1px solid rgba(233,201,126,.3) !important; box-shadow:0 6px 18px -12px rgba(0,0,0,.35) !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important}
+html.clair header.top::before, html.clair header.top::after{display:none !important}
+html.clair header.top :is(.nv-l, .nv-l *){color:#F4EBD8 !important; -webkit-text-fill-color:#F4EBD8 !important; text-shadow:none !important}
+html.clair header.top .nv-l svg{stroke:currentColor}
+html.clair header.top .brand b{color:#E9C97E !important; -webkit-text-fill-color:#E9C97E !important; text-shadow:none !important}
+html.clair header.top .brand small{color:#D9CDB2 !important; -webkit-text-fill-color:#D9CDB2 !important; text-shadow:none !important}
+html.clair header.top .wrap :is(.nv-tel, .nv-aa, .nv-menu-btn){color:#F1D58E !important; border:1px solid rgba(233,201,126,.6) !important; background:rgba(255,255,255,.04) !important; text-shadow:none !important}
+html.clair header.top .wrap :is(.nv-tel, .nv-aa, .nv-menu-btn) *{color:#F1D58E !important; -webkit-text-fill-color:#F1D58E !important; stroke:currentColor}
+html.clair header.top .wrap .nv-aa[aria-pressed="true"]{background:#E9C97E !important}
+html.clair header.top .wrap .nv-aa[aria-pressed="true"] *{color:#16120A !important; -webkit-text-fill-color:#16120A !important}
+html.clair :is(header.top, footer.pied) .brand img.feather{filter:sepia(.75) saturate(2.4) brightness(1.02) drop-shadow(0 1px 2px rgba(0,0,0,.35)) !important}
+html.clair :is(header.top, footer.pied) .brand img.ring{filter:brightness(.78) sepia(1) saturate(3.6) hue-rotate(-6deg) !important; opacity:1 !important}
+html.clair :is(header.top, footer.pied) :is(a, button):focus-visible{outline-color:#F1D58E !important}
+html.clair footer.pied{background:linear-gradient(180deg, #2E544A, #213F38) !important; border-top:1px solid rgba(233,201,126,.3) !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important}
+html.clair footer.pied::before, html.clair footer.pied::after{display:none !important}
+html.clair footer.pied :is(h3, p, a, span, small, b, button){color:#F4EBD8 !important; -webkit-text-fill-color:#F4EBD8 !important; text-shadow:none !important}
+html.clair footer.pied .brand b{color:#E9C97E !important; -webkit-text-fill-color:#E9C97E !important}
+html.clair footer.pied :is(.brand small, .pied-a p, .pied-l, .pied-l *){color:#D9CDB2 !important; -webkit-text-fill-color:#D9CDB2 !important}
+html.clair footer.pied .pied-g :is(.tel-btn, .lien-btn){color:#F1D58E !important; border:1px solid rgba(233,201,126,.6) !important; background:rgba(255,255,255,.04) !important}
+html.clair footer.pied .pied-g :is(.tel-btn, .lien-btn) :is(*, b, span, svg){color:#F1D58E !important; -webkit-text-fill-color:#F1D58E !important; stroke:currentColor}
+html.clair footer.pied .pied-l{border-top-color:rgba(233,201,126,.3) !important}
+@media (hover:hover){ html.clair footer.pied :is(nav a, .pied-c > a, .pied-l a):hover{color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important; text-decoration:underline; text-underline-offset:3px} html.clair header.top .nv-l:hover{color:#FFFFFF !important; -webkit-text-fill-color:#FFFFFF !important} }
+/* ===== Lot 141 (demandes d'Ilyas) ===== */
+/* plus de contour blanc autour des lettres : là où le texte repose sur l'illustration, une lueur de papier diffuse, sans bord */
+html.clair main :is(h1, h2, h3, h4, p, li, dt, dd, figcaption, blockquote, small, label, span, a, strong, em, b){text-shadow:none !important}
+html.clair :is(.sec-head, .apr-sous, .cta-box, .apr-citation){position:relative; isolation:isolate}
+html.clair :is(.sec-head, .apr-sous)::before{content:""; position:absolute; inset:-30px -64px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.8), rgba(250,245,234,.48) 58%, rgba(250,245,234,0))}
+html.clair .apr-sous::before{inset:-16px -40px}
+/* « On en parle ? » : plus de rectangle, le texte seul sur sa lueur */
+html.clair .cta-box{background:none !important; border:0 !important; box-shadow:none !important}
+html.clair .cta-box p{max-width:40em; margin-inline:auto}
+html.clair .cta-box::before{content:""; position:absolute; inset:-36px -60px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.84), rgba(250,245,234,.52) 60%, rgba(250,245,234,0)) !important}
+/* « Sur le terrain » : papier chaud, filet de feuille d'or, médaillon, le lieu en jade */
+html.clair .apr-terrain li{background:linear-gradient(90deg, #B98A3A, #EBCB82 50%, #B98A3A) top / 100% 3px no-repeat, linear-gradient(165deg, #FFFBF2 0%, #F5E8CE 100%) !important;
+  border:1px solid rgba(176,138,62,.45) !important; border-radius:14px !important; padding:16px 16px 14px !important; box-shadow:0 16px 30px -20px rgba(70,45,10,.55), inset 0 1px 0 rgba(255,255,255,.75) !important}
+html.clair .apr-terrain li b{color:#1F1A15 !important}
+html.clair .apr-terrain li > span:not(.k){color:#2E544A !important; font-weight:600}
+html.clair :is(.apr-terrain, .apr-engage) li .vgx{box-shadow:0 0 0 2px #FBF6EA, 0 0 0 3.4px #B98A3A, 0 8px 16px -8px rgba(70,45,10,.55) !important}
+/* « Mes engagements » : liseré laque vermillon → or, médaillon, « jamais » en vermillon */
+html.clair .apr-engage li{background:linear-gradient(180deg, #9E1B14, #C9A55C) left / 4px 100% no-repeat, linear-gradient(165deg, #FFFBF2 0%, #F4E6CA 100%) !important;
+  border:1px solid rgba(176,138,62,.45) !important; border-radius:14px !important; padding:18px 20px 18px 22px !important; box-shadow:0 18px 34px -22px rgba(70,45,10,.6), inset 0 1px 0 rgba(255,255,255,.75) !important}
+html.clair .apr-engage b{color:#1F1A15 !important}
+html.clair .apr-engage b em{color:#9E1B14 !important}
+html.clair .apr-engage li > span:not(.k){color:#3A322A !important}
+@media (hover:hover){ html.clair :is(.apr-terrain, .apr-engage) li:hover{box-shadow:0 24px 40px -22px rgba(70,45,10,.65), inset 0 1px 0 rgba(255,255,255,.75) !important} }
+/* la citation : plus d'encadré, un grand guillemet vermillon et la phrase sur sa lueur */
+html.clair .apr-citation{background:none !important; border:0 !important; box-shadow:none !important; padding:30px 28px 18px 84px !important; max-width:880px}
+html.clair .apr-citation::before{content:"“"; position:absolute; left:10px; top:-6px; font-family:var(--f-display); font-weight:800; font-size:118px; line-height:1; color:#9E1B14}
+html.clair .apr-citation::after{content:""; position:absolute; inset:-24px -48px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.86), rgba(250,245,234,.55) 60%, rgba(250,245,234,0))}
+html.clair .apr-citation blockquote{color:#1F1A15 !important; font-size:clamp(1.2rem, 2.6vw, 1.44rem) !important; line-height:1.5 !important}
+html.clair .apr-citation figcaption{display:flex; align-items:center; gap:12px; color:#9E1B14 !important; font-weight:700; letter-spacing:.04em}
+html.clair .apr-citation figcaption::before{content:""; width:38px; height:2px; background:linear-gradient(90deg, #C9A55C, #9E1B14)}
+@media (max-width:640px){ html.clair .apr-citation{padding:46px 6px 12px 10px !important} html.clair .apr-citation::before{left:0; top:-14px; font-size:84px} }
+/* ===== Lot 142 : barre du haut plus fine (les deux thèmes) — 72 → 58 px sur ordinateur, 64 → 54 px au téléphone ===== */
+header.top .wrap{height:58px}
+header.top .brand .mini{width:34px; height:34px}
+header.top .brand small{font-size:.7rem}
+header.top .nv-l{height:40px}
+header.top .nv-cta{min-height:40px; height:40px; font-size:.95rem}
+header.top :is(.nv-aa, .nv-tel){height:38px; min-height:38px}
+header.top .nv-aa{width:38px}
+@media (max-width:860px){
+  header.top .wrap{height:54px}
+  header.top .brand .mini{width:32px; height:32px}
+  header.top :is(.nv-menu-btn, .nv-cta, .nv-tel){height:44px; min-height:44px}
+}
+/* les pages légales et le kit : leur haut de page passe sous la barre au téléphone (sections resserrées à 48 px) */
+@media (max-width:860px){ .page > section:first-child:is(.legal-sec, .kit-sec){padding-top:88px} }
+/* ===== Lot 143 : l'ensō du logo visible (le masque de l'animation « tracé » de l'accueil ne s'applique pas à la barre ni au pied de page) ===== */
+html.clair .brand .sigil .ring, html.clair .brand .mini .ring{-webkit-mask:none !important; mask:none !important}
+/* ===== Lot 143 : un titre atteint par un lien reçoit le focus (lecteurs d'écran) sans cadre rouge autour ===== */
+html.clair :is(h1, h2, h3)[tabindex="-1"]:is(:focus, :focus-visible), :is(h1, h2, h3)[tabindex="-1"]:is(:focus, :focus-visible){outline:none !important}
+/* ===== Lot 144 : la constellation de la Méthode en mode clair ===== */
+html.clair .constel .c-orbite circle{stroke:#A97E2E}
+html.clair .constel :is(.c-eau, .c-onde){stroke:#86652B}
+html.clair .constel .c-bras-halo{stroke:#FFF8E8; opacity:.6}
+html.clair .constel .c-fil{stroke:#7A5A22; opacity:.85}
+html.clair .trio:is([data-on="0"], [data-on="1"], [data-on="2"]) .constel .c-fil{opacity:.55}
+html.clair .trio[data-on="0"] .c-fil[data-i="0"], html.clair .trio[data-on="1"] .c-fil[data-i="1"], html.clair .trio[data-on="2"] .c-fil[data-i="2"],
+html.clair .constel:has(.c-astre[data-i="0"]:hover) .c-fil[data-i="0"], html.clair .constel:has(.c-astre[data-i="1"]:hover) .c-fil[data-i="1"], html.clair .constel:has(.c-astre[data-i="2"]:hover) .c-fil[data-i="2"]{stroke:#9E1B14; opacity:1}
+html.clair .constel .c-astre b{color:#9E1B14 !important; background:linear-gradient(180deg, #FFFBF1, #F4EAD3); box-shadow:inset 0 0 0 1px rgba(158,27,20,.45), 0 6px 14px -6px rgba(90,50,10,.45)}
+html.clair .constel .c-etoile{fill:#C9902A}
+/* ===== Lot 147 : pied de page — titres de colonne à l'écriture de la marque, liens réguliers et bien alignés ===== */
+footer.pied .pied-g{column-gap:clamp(24px, 3vw, 48px)}
+@media (min-width:981px){ footer.pied .pied-g{grid-template-columns:minmax(0, 1.25fr) minmax(0, .9fr) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.15fr)} }
+footer.pied .pied-g h3{position:relative; margin:0 0 10px; padding-bottom:12px; font:700 .74rem/1.45 var(--f-mark); letter-spacing:.18em; text-transform:uppercase; color:var(--gold); text-wrap:balance}
+footer.pied .pied-g h3::after{content:""; position:absolute; left:0; bottom:0; width:28px; height:1px; background:currentColor; opacity:.75}
+footer.pied .pied-g nav{gap:0; align-items:start}
+footer.pied .pied-g nav a{display:flex; align-items:flex-start; min-height:44px; padding:11px 0; font-size:.95rem; font-weight:500; line-height:1.4; text-wrap:balance; overflow-wrap:normal}
+html.clair footer.pied .pied-g h3{color:#E9C97E !important; -webkit-text-fill-color:#E9C97E !important}
+/* ===== Lot 148 : les trois fils en mode clair ===== */
+html.clair .constel.fils .c-fil-fond{stroke:#FFF8E8; opacity:.7}
+html.clair .constel.fils .c-fil{stroke:#6A4A1C; opacity:1}
+html.clair .constel.fils .c-lueur{stroke:#C42A1C !important; filter:drop-shadow(0 0 1.4px rgba(235,130,60,.85)) !important}
+html.clair .constel.fils .c-flotte::before{box-shadow:0 0 0 2.5px rgba(196,42,28,.8), 0 0 28px 9px rgba(233,150,70,.55)}
+/* ===== Lot 149 : pages par besoin — le haut de page remplit le premier écran, tout centré ===== */
+.besoin .bes-hero{display:grid; align-content:center; min-height:calc(100svh - 76px); padding:14px 0 22px}
+.besoin .bes-hero .wrap{max-width:860px}
+.besoin .bes-ariane{text-align:center; margin:0 0 clamp(6px, 1.6vh, 16px)}
+.besoin .bes-lune{width:clamp(108px, min(28vw, 17vh), 190px); margin:0 auto clamp(10px, 2vh, 20px)}
+.besoin .bes-hero h1{font-size:clamp(2.2rem, min(6.4vw, 7.4vh), 4rem); margin-top:clamp(4px, 1vh, 10px)}
+.besoin .bes-hero .lede{font-size:clamp(1.02rem, min(2.6vw, 2.4vh), 1.2rem); margin:clamp(10px, 1.8vh, 18px) auto clamp(16px, 2.6vh, 26px)}
+/* ===== Lot 150 : le haut des pages par besoin sur les écrans peu hauts ===== */
+@media (max-width:860px) and (max-height:780px){
+  .besoin .bes-lune{width:clamp(76px, 12.5vh, 96px); margin-bottom:8px}
+  .besoin .bes-ariane{margin-bottom:4px; font-size:.86rem}
+  .besoin .bes-hero .lede{font-size:.98rem; margin:8px auto 14px}
+  .besoin .bes-actions{gap:8px}
+}
+@media (max-width:860px) and (max-height:690px){ .besoin .bes-lune{display:none} }
+/* ===== Lot 151 : menu et fenêtre sans latence (le blocage du défilement attend la fin du fondu) ===== */
+#sommaire.som{transition:opacity .16s ease-out, visibility 0s linear .16s}
+#sommaire.som.on{transition:opacity .2s ease-out}
+html:is(.som-vu, .r-vu) :is(.aa-pill, .theme-btn){display:none !important}
+@media (prefers-reduced-motion: reduce){ #sommaire.som, #sommaire.som.on{transition:none} }
+/* ===== Lot 152 : animations de fond en pause derrière le menu et la fenêtre ===== */
+html:is(.som-vu, .r-vu) :is(.fondvid, .to-m, .soleil-coin){animation-play-state:paused !important}
+/* ===== Lot 154 : la Méthode, texte du haut plus lisible (brume de papier, comme derrière les titres) ===== */
+@media (min-width:861px){
+  html.clair .p-hero.methode .txt{position:relative; isolation:isolate}
+  html.clair .p-hero.methode .txt::after{content:""; position:absolute; inset:-40px -60px -40px -150px; z-index:-1; pointer-events:none; background:radial-gradient(closest-side, rgba(250,245,234,.92), rgba(250,245,234,.84) 52%, rgba(250,245,234,.55) 74%, rgba(250,245,234,0))}
+}
+html.clair .p-hero.methode .txt :is(p, p *, h2, h2 *){text-shadow:0 0 10px rgba(251,248,242,1), 0 0 22px rgba(251,248,242,.95), 0 0 46px rgba(251,248,242,.7) !important}

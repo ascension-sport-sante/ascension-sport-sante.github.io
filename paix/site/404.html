@@ -1,0 +1,46 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><script>window.__R=""</script><title>Ascension</title><meta http-equiv="refresh" content="0; url=/"><meta name="robots" content="noindex"><style id="amelio">
+/* Pastille « Textes plus grands » retirée : le réglage reste dans l'en-tête (Aa) et dans le menu. */
+.aa-pill{display:none!important}
+/* Bouton clair / sombre rangé dans l'en-tête, à côté de Aa (PC) ; dans le menu sur téléphone. */
+.theme-btn.en-tete{position:static!important;inset:auto!important;transform:none!important;width:38px!important;height:38px!important;min-height:0!important;padding:0!important;margin:0!important;border-radius:12px!important;border:1px solid rgba(201,165,92,.7)!important;background:rgba(12,18,34,.62)!important;color:#FFF7E6!important;box-shadow:none!important;display:inline-grid!important;place-items:center;gap:0!important;flex:none}
+html.clair .theme-btn.en-tete{border-color:rgba(233,201,126,.6)!important;background:rgba(255,255,255,.04)!important;color:#F1D58E!important}
+.theme-btn.en-tete svg{width:18px!important;height:18px!important;margin:0!important}
+.theme-btn.en-tete .theme-t{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;white-space:nowrap!important}
+@media (max-width:860px){.theme-btn,.theme-btn.en-tete{display:none!important}}
+/* Situations rangées sous Éveil dans le menu Parcours. */
+.nv-menu .nv-sous{display:flex;flex-wrap:wrap;gap:.2rem .9rem;margin:-.35rem 0 .45rem;padding:0 .9rem 0 3.4rem;font-size:.86rem;line-height:1.5}
+.nv-menu .nv-sous a{display:inline!important;padding:.1rem 0!important;margin:0!important;background:none!important;border:0!important;min-height:0!important;box-shadow:none!important;text-decoration:underline;text-underline-offset:3px;opacity:.92}
+.sit-liens a{text-decoration:underline;text-underline-offset:3px}
+
+/* Boutons verts (choix du 25/11/2026) */
+html body .btn.btn.btn:not(.ghost),html body .nv-cta.nv-cta.nv-cta{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important;text-shadow:none!important}
+html.clair body .btn.btn.ghost{color:#1F4A3E!important;border-color:#2C5A4C!important}
+html.clair body .btn.btn.ghost:hover{background:#E1EEE7!important}
+
+/* Revue du 25/11/2026 : petits titres en or foncé (le vermillon reste pour la signature et le sceau) */
+html.clair body .eyebrow.eyebrow:not(.titre-or),html.clair body .kicker.kicker,html.clair body .o-k.o-k{color:#765A22!important}
+html body .lune-badge{background:#2C5A4C!important;color:#fff!important;border-color:#2C5A4C!important}
+html body .c-sceau{color:#fff!important}
+/* Cibles tactiles d'au moins 44 px */
+.nv-aa{width:44px!important;height:44px!important}
+.theme-btn.en-tete{width:44px!important;height:44px!important}
+
+/* Retouches : encadrés plus sobres, tous les boutons « Choisir » pleins */
+html body .aida .aida-plus>summary{text-decoration:none!important;background-image:none!important;box-shadow:none!important;border-bottom:0!important}
+html body .aida .aida-plus>summary::before{display:none!important}
+html body .aida-ex a,html body .aida-ex .bil-lien{background-image:none!important;box-shadow:none!important;border-bottom:0!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important;text-decoration-color:currentColor!important}
+html body .lunes .lune-c a.btn.btn.ghost{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important}
+
+/* Audit UX : sceaux lisibles, bouton du menu et choix sélectionnés en vert */
+html body figure>.sceau{color:#fff!important}
+html.clair body .sm-cta.sm-cta,html.clair body .sm-cta.sm-cta:hover{background:linear-gradient(#336B5B,#22473D)!important;color:#fff!important}
+html.clair body .chip.chip input:checked+span{background:#2C5A4C!important;border-color:#2C5A4C!important;color:#fff!important}
+html.clair body .r-quand .chip.chip input:checked+span{background:#E1EEE7!important;border-color:#2C5A4C!important;color:#1F4A3E!important}
+html body .r-err-ici.r-err-ici{margin:.35rem 0 0!important;font-weight:700!important;font-size:.95rem!important;color:#B3261E!important}
+html:not(.clair) body .r-err-ici.r-err-ici{color:#F2A99F!important}
+/* Accueil sur téléphone : bouton et numéro juste sous le titre, puis l'explication */
+@media (max-width:860px){.hero-pro .h-txt>.actions{order:1}.hero-pro .h-txt>.tel-hero{order:2;margin-top:0!important}.hero-pro .h-txt>.lede{order:3;margin-top:8px!important}.hero-pro .h-txt>.offre-l{order:4}.hero-pro .pe-fleche{display:none!important}}
+</style></head><body style="background:#0C1222;color:#ECE6D8;font-family:sans-serif;text-align:center;padding:40px"><a href="index.html" style="color:#C9A55C">Retour à l'accueil d'Ascension</a></body></html>
+<script>/* amélio : bouton clair / sombre dans l'en-tête ; entrée « Clair ou sombre » du menu */
+(function(){var b=document.querySelector(".theme-btn"),a=document.querySelector(".nv-aa");if(b&&a){a.insertAdjacentElement("afterend",b);b.classList.add("en-tete")}
+document.addEventListener("click",function(e){if(e.target.closest&&e.target.closest(".som-theme")){var t=document.querySelector(".theme-btn");if(t)t.click()}})})();</script>
