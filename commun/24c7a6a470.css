@@ -244,3 +244,25 @@ html:not(.clair) #prestations .card-p p:not(.cp-tag){color:#EEE7DA;font-size:1.0
 @media (max-width:860px){#prestations .card-p .vgx{grid-row:1 / span 4!important}}
 /* « À domicile · Paris et proche banlieue » tient sur une ligne au téléphone */
 @media (max-width:430px){.hero-pro h1.titre-or .to-t small{font-size:13.5px!important;letter-spacing:.1em!important}}
+/* Méthode : les 5 étapes en frise, en paysage ; sur téléphone, on les fait glisser */
+.meth-parcours ol.chemin.frise{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;max-width:1120px;margin:8px auto 0!important;padding:0!important;list-style:none;position:relative}
+.meth-parcours ol.chemin.frise::before,.meth-parcours ol.chemin.frise::after,.meth-parcours ol.chemin.frise li::before,.meth-parcours ol.chemin.frise li::after{display:none!important}
+.meth-parcours ol.chemin.frise>li.etape{position:relative!important;display:flex!important;flex-direction:column;align-items:center;margin:0!important;padding:0!important;width:auto!important;left:auto!important;right:auto!important;transform:none!important;opacity:1;grid-column:auto!important;grid-row:auto!important}
+.meth-parcours ol.chemin.frise>li.etape+li.etape::before{content:"";display:block!important;position:absolute;top:36px;right:calc(50% + 44px);width:calc(100% - 72px);height:1.5px;background:rgba(176,138,60,.6)}
+.meth-parcours ol.chemin.frise .k{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:72px!important;height:72px!important;margin:0 0 12px!important;flex:none;z-index:1}
+.meth-parcours ol.chemin.frise .et-t{width:100%!important;max-width:none!important;flex:1;margin:0!important;padding:18px 16px!important;text-align:center!important;left:auto!important;right:auto!important;transform:none!important}
+.meth-parcours ol.chemin.frise .et-t :is(h3,p,small){text-align:center!important}
+.meth-parcours ol.chemin.frise .et-t h3{margin:4px 0 8px!important}
+.meth-parcours ol.chemin.frise .et-t p{margin:0!important;font-size:1rem!important;line-height:1.55!important}
+.meth-parcours .frise-aide{display:none}
+@media (max-width:860px){
+ .meth-parcours ol.chemin.frise{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 16px 14px!important;margin:8px -20px 0!important;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+ .meth-parcours ol.chemin.frise::-webkit-scrollbar{display:none}
+ .meth-parcours ol.chemin.frise>li.etape{flex:0 0 min(78vw,320px);scroll-snap-align:center}
+ .meth-parcours ol.chemin.frise>li.etape+li.etape::before{display:none!important}
+ .meth-parcours .frise-aide{display:block;margin:6px 0 0;text-align:center;font-size:.9rem;opacity:.8}
+}
+.meth-parcours{grid-template-columns:minmax(0,1fr)!important}
+.meth-parcours>.wrap{min-width:0;max-width:100%}
+.meth-parcours ol.chemin.frise{min-width:0}
+.meth-parcours ol.chemin.frise>li.etape{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important}
