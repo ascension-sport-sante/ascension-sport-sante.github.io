@@ -205,17 +205,23 @@ html:not(.clair) .aida .peurs-a::before{background:#8CC3AF;color:#0F1424}
 .aida .peurs-ex{margin:18px 0 0;text-align:center}
 .cta-box .cta-appel{max-width:36rem;margin:10px auto 0}
 @media (max-width:700px){.aida .peurs-h{display:none}.aida .peurs-r{grid-template-columns:1fr;gap:10px;padding:18px}.aida .peurs-q{font-size:1.125rem}}
-/* Méthode : un seul panneau, celui du médaillon choisi */
-.trio .pil-choix{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:24px 0 0}
-.trio .pil-choix button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(176,138,60,.5);background:rgba(255,252,246,.85);color:#1B1814;font:700 .95rem/1 var(--f-body);cursor:pointer}
-.trio .pil-choix button[aria-pressed="true"]{background:#2C5A4C;border-color:#2C5A4C;color:#fff}
-html:not(.clair) .trio .pil-choix button{background:rgba(18,25,44,.86);color:#EEE7DA;border-color:rgba(226,197,126,.4)}
-html:not(.clair) .trio .pil-choix button[aria-pressed="true"]{background:#8CC3AF;border-color:#8CC3AF;color:#0F1424}
-.trio ol.pillars.pillars4{grid-column:1/-1;display:flex!important;justify-content:center;margin:12px auto 0!important;max-width:560px}
-.trio ol.pillars.pillars4>li.pillar{flex:1 1 auto;max-width:560px}
-.trio ol.pillars.pillars4>li.pillar:not(.ch-on){display:none!important}
+/* Méthode : la fenêtre d’un médaillon s’ouvre quand on le touche */
+.trio{position:relative}
+.trio ol.pillars.pillars4{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;margin:0!important;padding:0!important;border:0!important}
 .trio .c-astre{cursor:pointer}
-.trio .c-astre.ch-on .c-med{filter:drop-shadow(0 0 16px rgba(244,213,141,.95))}
+.trio .c-astre.ch-on .c-med,.trio .c-astre:hover .c-med{filter:drop-shadow(0 0 14px rgba(244,213,141,.95))}
+.pil-fen{position:absolute;z-index:20;width:min(540px,92vw);padding:28px 28px 24px;border-radius:16px;background:rgba(255,252,246,.97);border:1px solid rgba(176,138,60,.45);box-shadow:0 24px 48px -20px rgba(70,50,22,.55);text-align:center}
+.pil-fen[hidden]{display:none!important}
+.pil-fen .k{display:block;width:96px;height:96px;margin:0 auto 10px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px #fff,0 0 0 3.5px #B08A3C}
+.pil-fen .k svg{display:block;width:100%;height:100%}
+.pil-fen h4{margin:0 0 8px;font:800 1.65rem/1.2 var(--f-display);color:#1B1814}
+.pil-fen p{margin:0;font:500 1.05rem/1.55 var(--f-body);color:#2A2620}
+.pil-fen .pil-plus{margin:14px 0 0;padding-top:14px;border-top:1px solid rgba(176,138,60,.3);text-align:left;font-size:1rem;line-height:1.65}
+.pil-fen .pil-src{margin:12px 0 0;text-align:left;font-size:.8rem;line-height:1.45;opacity:.75}
+.pil-fen .pil-src cite{font-style:italic}
+.pil-x{position:absolute;top:8px;right:8px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(176,138,60,.45);background:#fff;font:700 20px/1 var(--f-body);color:#1B1814;cursor:pointer}
+html:not(.clair) .pil-fen{background:rgba(18,25,44,.97);border-color:rgba(226,197,126,.4);box-shadow:0 24px 48px -20px rgba(0,0,0,.85)}
+html:not(.clair) .pil-fen h4{color:#EEE7DA}html:not(.clair) .pil-fen p{color:#CFC6B8}html:not(.clair) .pil-x{background:#141c31;color:#EEE7DA}
 /* Liste : le formulaire tient dans l'écran du téléphone, couleurs du texte */
 .cta-final{grid-template-columns:minmax(0,1fr)!important}
 .cta-final .wrap,.cta-form,.r-ici{min-width:0;max-width:100%}
@@ -229,3 +235,12 @@ html.clair :is(.r-modal,.r-ici) .r-appel .tel-btn *{color:#1F4A3E!important;-web
 .r-ici .r-chips.r-chips{flex-wrap:wrap!important}
 @media (max-width:560px){.r-ici .r-chips.r-chips{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(min(100%,104px),1fr))!important;flex-wrap:wrap!important;justify-content:stretch!important;width:100%!important;max-width:100%!important;margin-inline:0!important}}
 html.clair .cta-form .note-ci{text-shadow:0 0 8px rgba(255,248,235,.95),0 0 2px rgba(255,248,235,.95);opacity:1}
+/* Accueil : parcours, phrase en gras sous chaque nom, texte lisible, boutons alignés */
+#prestations .card-p .cp-tag{margin:-4px 0 0;font:800 1.0625rem/1.3 var(--f-body);color:#1F4A3E;max-width:none;text-shadow:0 0 8px rgba(255,248,235,.95),0 0 2px rgba(255,248,235,.95)}
+html.clair #prestations .card-p p:not(.cp-tag){color:#2A2620;font-size:1.0625rem;font-weight:500;line-height:1.55;text-shadow:0 0 8px rgba(255,248,235,.95),0 0 2px rgba(255,248,235,.95)}
+html:not(.clair) #prestations .card-p .cp-tag{color:#CDE9DE;text-shadow:0 0 8px rgba(8,12,24,.95)}
+html:not(.clair) #prestations .card-p p:not(.cp-tag){color:#EEE7DA;font-size:1.0625rem}
+@media (min-width:861px){#prestations .cards4{align-items:stretch}#prestations .card-p{grid-template-rows:auto auto auto 1fr auto!important;height:100%}#prestations .card-p .lien{align-self:end}}
+@media (max-width:860px){#prestations .card-p .vgx{grid-row:1 / span 4!important}}
+/* « À domicile · Paris et proche banlieue » tient sur une ligne au téléphone */
+@media (max-width:430px){.hero-pro h1.titre-or .to-t small{font-size:13.5px!important;letter-spacing:.1em!important}}
