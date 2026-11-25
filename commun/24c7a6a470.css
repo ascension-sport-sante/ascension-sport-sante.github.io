@@ -277,3 +277,78 @@ html:not(.clair) #prestations .card-p p:not(.cp-tag){color:#EEE7DA;font-size:1.0
  main .page > section.sec:not(:first-of-type):not([hidden]){min-height:calc(100vh - var(--hd, 60px));display:grid!important;grid-template-columns:minmax(0,1fr);align-content:center;box-sizing:border-box}
  .suite-fleche{right:auto!important;left:50%;margin-left:-22px}
 }
+/* Tarifs : première séance, choix du rythme, deux formules, à deux */
+.tf .wrap{max-width:1040px;margin-inline:auto}
+.tf .lune-c,.tf .lune-duo{position:relative;border-radius:16px;border:1px solid rgba(176,138,60,.34);background:rgba(255,252,246,.9);box-shadow:0 14px 30px -22px rgba(70,50,22,.45)}
+html:not(.clair) .tf .lune-c,html:not(.clair) .tf .lune-duo{background:rgba(18,25,44,.9);border-color:rgba(226,197,126,.3)}
+.tf .lune-m{display:block;border-radius:50%}
+.tf .tf-lune{margin:2px 0 0;font:600 .9rem/1.3 var(--f-body);letter-spacing:.06em;color:#765A22}
+html:not(.clair) .tf .tf-lune{color:#E2C57E}
+.tf .o-k{margin:0 0 4px}
+.tf .lune-p{display:flex;align-items:baseline;gap:8px;margin:14px 0 6px}
+.tf .lune-p b{font:800 2.6rem/1 var(--f-display)}
+.tf .lune-p b small{font-size:.55em}
+.tf .lune-v{margin:0}
+.tf .lune-v b{display:inline-block;padding:2px 10px;border-radius:999px;background:#E1EEE7;color:#1F4A3E;font-weight:800}
+html:not(.clair) .tf .lune-v b{background:rgba(140,195,175,.2);color:#CDE9DE}
+.tf-premiere{display:grid;grid-template-columns:96px minmax(0,1fr) auto auto;gap:12px 28px;align-items:center;padding:22px 28px;margin:0 auto 48px}
+.tf-premiere .lune-m{width:96px;height:96px}
+.tf-premiere .tf-h{margin:0!important;font:800 1.7rem/1.2 var(--f-display)!important;text-align:left}
+.tf-premiere .tf-px .lune-p{margin-top:0}
+.tf-premiere .tf-sr{margin:6px 0 0;font-weight:700;font-size:.95rem}
+.tf-ens{text-align:center}
+.tf-h2{margin:0 0 14px!important}
+.tf-rythme{border:0;margin:0 auto 22px;padding:0}
+.tf-rythme legend{margin:0 auto 10px;font-weight:700}
+.tf-ch{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.tf-c input{position:absolute;opacity:0;pointer-events:none}
+.tf-c span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #2C5A4C;color:#1F4A3E;font-weight:700;cursor:pointer;background:rgba(255,252,246,.85)}
+.tf-c input:checked+span{background:#2C5A4C;color:#fff}
+.tf-c input:focus-visible+span{outline:3px solid rgba(176,138,60,.6);outline-offset:2px}
+html:not(.clair) .tf-c span{border-color:#8CC3AF;color:#CDE9DE;background:rgba(18,25,44,.85)}html:not(.clair) .tf-c input:checked+span{background:#8CC3AF;color:#0F1424}
+.tf-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch;text-align:left}
+.tf-g .lune-c{display:flex;flex-direction:column;padding:26px 26px 22px}
+.tf-g .lune-reco{border:2px solid rgba(176,138,60,.7)}
+.tf-g .lune-m{width:84px;height:84px;margin:0 0 10px}
+.tf-g h3{margin:0!important;font:800 1.6rem/1.2 var(--f-display)!important;text-align:left!important}
+.tf-total{margin:12px 0 0;padding:10px 12px;border-radius:12px;background:rgba(176,138,60,.1);font-size:.98rem}
+.tf-total .t{font-size:1.1rem}
+.tf-eco{margin:8px 0 0;font-weight:700;color:#1F4A3E}
+html:not(.clair) .tf-eco{color:#CDE9DE}
+.tf-g .btn{margin:16px 0 0;width:100%}
+.tf-g ul{margin:14px 0 0;padding-left:1.1em}
+.tf-g li{margin:0 0 6px}
+.tf-g .lune-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);margin:0}
+.tf-g .lune-cadeau{margin-top:14px}
+.tf-deux{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px 22px;align-items:center;padding:18px 24px;margin:28px 0 0;text-align:left}
+.tf-deux .lune-m{width:64px;height:64px}
+.tf-deux h3{margin:0 0 4px!important;font:800 1.3rem/1.2 var(--f-display)!important}
+.tf-deux h3 .tf-lune{display:inline;margin-left:8px;font-size:.85rem}
+.tf-deux p{margin:0 0 4px}
+.tf-note{margin:18px 0 0;text-align:center;font-size:.85rem;opacity:.85}
+#questions .makis:not(.tout) .faq-cache{display:none!important}
+#questions .faq-plus{display:flex;margin:18px auto 0}
+#questions .tf-mentions{max-width:46rem;margin:28px auto 0;text-align:left;font-size:.8rem;line-height:1.55;opacity:.8}
+@media (max-width:860px){
+ .tf-premiere{grid-template-columns:72px minmax(0,1fr);padding:18px}
+ .tf-premiere .lune-m{width:72px;height:72px}
+ .tf-premiere .tf-px,.tf-premiere .btn{grid-column:1 / -1}
+ .tf-premiere .btn{width:100%}
+ .tf-g{grid-template-columns:minmax(0,1fr)}
+ .tf-g .lune-reco{order:-1;margin-top:8px}
+ .tf-deux{grid-template-columns:56px minmax(0,1fr)}
+ .tf-deux .lune-m{width:56px;height:56px}
+ .tf-deux .btn{grid-column:1 / -1;width:100%}
+}
+.tf .tf-premiere,.tf .tf-deux,.tf .tf-g .lune-c{width:auto!important;max-width:none!important;min-width:0!important;margin-left:0!important;margin-right:0!important}
+.tf .tf-premiere{display:grid!important;grid-template-columns:96px minmax(0,1fr) auto auto!important;margin-bottom:48px!important}
+.tf .tf-deux{display:grid!important;grid-template-columns:64px minmax(0,1fr) auto!important}
+.tf .tf-premiere>*,.tf .tf-deux>*{min-width:0}
+.tf .lc-sceau{flex:none;display:grid;place-items:center;width:58px;height:58px;border-radius:12px;background:#A32117;color:#FBF6EC;font:700 1.02rem/1 var(--f-display);transform:rotate(-6deg);box-shadow:0 6px 14px -6px rgba(120,20,10,.55),inset 0 0 0 2px rgba(251,246,236,.32)}
+.tf .lc-t{display:grid;gap:3px;line-height:1.25}
+.tf .lc-t b{font:700 1.25rem/1.05 var(--f-display);color:#9E1B14}
+.tf .lc-t small{font-size:.86rem;opacity:.85}
+.tf .lune-cadeau{display:flex;align-items:center;gap:13px;padding:9px 12px 9px 10px;border-radius:14px;text-align:left;border:1.5px dashed rgba(201,165,92,.7);background:linear-gradient(135deg,rgba(201,165,92,.24),rgba(201,165,92,.07))}
+html:not(.clair) .tf .lc-t b{color:#E2C57E}
+.tf .lune-badge{padding:7px 16px;border-radius:999px;white-space:nowrap;background:#2C5A4C;color:#fff;font:700 .78rem/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;z-index:2}
+@media (max-width:860px){.tf .tf-premiere{grid-template-columns:72px minmax(0,1fr)!important}.tf .tf-deux{grid-template-columns:56px minmax(0,1fr)!important}}
