@@ -121,6 +121,12 @@ html body .c-sceau{color:#fff!important}
 /* Cibles tactiles d'au moins 44 px */
 .nv-aa{width:44px!important;height:44px!important}
 .theme-btn.en-tete{width:44px!important;height:44px!important}
+
+/* Retouches : encadrés plus sobres, tous les boutons « Choisir » pleins */
+html body .aida .aida-plus>summary{text-decoration:none!important;background-image:none!important;box-shadow:none!important;border-bottom:0!important}
+html body .aida .aida-plus>summary::before{display:none!important}
+html body .aida-ex a,html body .aida-ex .bil-lien{background-image:none!important;box-shadow:none!important;border-bottom:0!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important;text-decoration-color:currentColor!important}
+html body .lunes .lune-c a.btn.btn.ghost{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important}
 </style></head><body><p><a href="/remise-en-forme-domicile/">Remise en forme à domicile</a></p></body></html>
 <script>/* amélio : bouton clair / sombre dans l'en-tête ; entrée « Clair ou sombre » du menu */
 (function(){var b=document.querySelector(".theme-btn"),a=document.querySelector(".nv-aa");if(b&&a){a.insertAdjacentElement("afterend",b);b.classList.add("en-tete")}

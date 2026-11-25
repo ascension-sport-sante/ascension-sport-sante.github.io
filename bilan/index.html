@@ -37,6 +37,12 @@ html body .c-sceau{color:#fff!important}
 /* Cibles tactiles d'au moins 44 px */
 .nv-aa{width:44px!important;height:44px!important}
 .theme-btn.en-tete{width:44px!important;height:44px!important}
+
+/* Retouches : encadrés plus sobres, tous les boutons « Choisir » pleins */
+html body .aida .aida-plus>summary{text-decoration:none!important;background-image:none!important;box-shadow:none!important;border-bottom:0!important}
+html body .aida .aida-plus>summary::before{display:none!important}
+html body .aida-ex a,html body .aida-ex .bil-lien{background-image:none!important;box-shadow:none!important;border-bottom:0!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important;text-decoration-color:currentColor!important}
+html body .lunes .lune-c a.btn.btn.ghost{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important}
 </style><style>@media (max-width:860px){.p-hero.contact{min-height:0!important;padding-top:calc(env(safe-area-inset-top,0px) + 5.25rem)!important}.p-hero.contact>.wrap>.txt{min-height:0!important;padding-top:0!important}.p-hero.contact .txt h2{font-size:clamp(2rem,9vw,2.5rem)!important;margin-bottom:.4rem!important}.p-hero.contact form.r-ici{margin-top:1rem!important}}</style><link rel="stylesheet" href="/commun/ed0198b24e.css"><!-- lot 156 -->
 <link rel="preload" href="/three-r128.min.js" as="script" media="(min-width:861px)">
 <link rel="stylesheet" href="/commun/70a0a805fa.css">
@@ -361,7 +367,7 @@ html.clair body #p-reserver ul.o-chips.o-chips2 b{color:#9E1B14 !important}
       <div class="nv-drop">
         <button class="nv-l" type="button" data-nav="prestations" aria-expanded="false" aria-controls="nv-prest">Parcours<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="nv-menu" id="nv-prest" hidden>
-          <a href="/activite-physique-adaptee-domicile/" data-nav="sante"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-sante"/></svg></span><span><b>Éveil</b><small>Repartir de loin : douleurs, maladie, handicap, âge</small></span></a><div class="nv-sous" aria-label="Éveil, selon votre situation"><a href="/mal-de-dos/">Mal de dos</a><a href="/coach-sportif-senior/">Après 60 ans</a><a href="/reprise-apres-maladie/">Après une maladie</a><a href="/sport-sur-ordonnance/">Sport sur ordonnance</a></div>
+          <a href="/activite-physique-adaptee-domicile/" data-nav="sante"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-sante"/></svg></span><span><b>Éveil</b><small>Repartir de loin : douleurs, maladie, handicap, âge</small></span></a>
           <a href="/remise-en-forme-domicile/" data-nav="forme"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-forme"/></svg></span><span><b>Élan</b><small>Retrouver la forme : énergie, force, endurance</small></span></a>
           <a href="/preparation-physique-domicile/" data-nav="envol"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-aube"/></svg></span><span><b>Envol</b><small>Se dépasser : s’entraîner plus intensément</small></span></a>
           <a href="/coach-sportif-enfants/" data-nav="enfants"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-enfant"/></svg></span><span><b>Plume</b><small>Enfants et ados : bouger, prendre confiance</small></span></a>

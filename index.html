@@ -37,6 +37,12 @@ html body .c-sceau{color:#fff!important}
 /* Cibles tactiles d'au moins 44 px */
 .nv-aa{width:44px!important;height:44px!important}
 .theme-btn.en-tete{width:44px!important;height:44px!important}
+
+/* Retouches : encadrés plus sobres, tous les boutons « Choisir » pleins */
+html body .aida .aida-plus>summary{text-decoration:none!important;background-image:none!important;box-shadow:none!important;border-bottom:0!important}
+html body .aida .aida-plus>summary::before{display:none!important}
+html body .aida-ex a,html body .aida-ex .bil-lien{background-image:none!important;box-shadow:none!important;border-bottom:0!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important;text-decoration-color:currentColor!important}
+html body .lunes .lune-c a.btn.btn.ghost{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important}
 </style><link rel="stylesheet" href="/commun/ed0198b24e.css"><!-- lot 156 -->
 <link rel="preload" href="/three-r128.min.js" as="script" media="(min-width:861px)">
 <link rel="stylesheet" href="/commun/70a0a805fa.css">
@@ -396,7 +402,7 @@ html.clair body #p-reserver ul.o-chips.o-chips2 b{color:#9E1B14 !important}
       <div class="nv-drop">
         <button class="nv-l" type="button" data-nav="prestations" aria-expanded="false" aria-controls="nv-prest">Parcours<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="nv-menu" id="nv-prest" hidden>
-          <a href="/activite-physique-adaptee-domicile/" data-nav="sante"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-sante"/></svg></span><span><b>Éveil</b><small>Repartir de loin : douleurs, maladie, handicap, âge</small></span></a><div class="nv-sous" aria-label="Éveil, selon votre situation"><a href="/mal-de-dos/">Mal de dos</a><a href="/coach-sportif-senior/">Après 60 ans</a><a href="/reprise-apres-maladie/">Après une maladie</a><a href="/sport-sur-ordonnance/">Sport sur ordonnance</a></div>
+          <a href="/activite-physique-adaptee-domicile/" data-nav="sante"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-sante"/></svg></span><span><b>Éveil</b><small>Repartir de loin : douleurs, maladie, handicap, âge</small></span></a>
           <a href="/remise-en-forme-domicile/" data-nav="forme"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-forme"/></svg></span><span><b>Élan</b><small>Retrouver la forme : énergie, force, endurance</small></span></a>
           <a href="/preparation-physique-domicile/" data-nav="envol"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-aube"/></svg></span><span><b>Envol</b><small>Se dépasser : s’entraîner plus intensément</small></span></a>
           <a href="/coach-sportif-enfants/" data-nav="enfants"><span class="vgx"><svg class="vg" aria-hidden="true" focusable="false"><use href="#vg-enfant"/></svg></span><span><b>Plume</b><small>Enfants et ados : bouger, prendre confiance</small></span></a>
@@ -471,8 +477,8 @@ html.clair .quiz{--acc:#2C5A4C;--sur:#fff;--fond:rgba(255,253,248,.84);--trait:r
 <div class="q-etape" data-e="2" hidden><p class="q-q">Qu’est-ce qui ressemble le plus à la situation ?</p>
 <div class="q-ch"><button type="button" data-p="eveil" aria-pressed="false">Repartir en douceur<small>douleurs, maladie, handicap ou âge</small></button><button type="button" data-p="elan" aria-pressed="false">Retrouver la forme<small>énergie, force, endurance</small></button><button type="button" data-p="envol" aria-pressed="false">Aller plus loin<small>s’entraîner plus intensément</small></button></div></div>
 <div class="q-res" hidden aria-live="polite"><span class="q-sceau vgx" aria-hidden="true"><svg class="vg" focusable="false"><use href="#vg-sante"/></svg></span><p class="q-nom"></p><p class="q-txt"></p>
-<div class="q-act"><a class="btn q-voir" href="/">Découvrir</a><a class="btn ghost" href="/bilan/">Être rappelé</a><button type="button" class="q-re">Recommencer</button></div></div>
-<script>(function(){var q=document.currentScript.parentNode,P={eveil:["Éveil","Repartir de loin : douleurs, maladie, handicap, âge. On réveille le corps, à votre rythme.","/activite-physique-adaptee-domicile/","vg-sante"],elan:["Élan","Retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.","/remise-en-forme-domicile/","vg-forme"],envol:["Envol","Se dépasser : s’entraîner plus intensément et viser plus haut.","/preparation-physique-domicile/","vg-aube"],plume:["Plume","Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser.","/coach-sportif-enfants/","vg-enfant"]},
+<div class="q-act"><a class="btn q-voir" href="/">Découvrir</a><button type="button" class="q-re">Recommencer</button></div></div>
+<script>(function(){var q=document.currentScript.parentNode,P={eveil:["Éveil","Repartir de loin : douleurs, maladie, handicap, âge. On réveille le corps, à votre rythme.","/activite-physique-adaptee-domicile/","vg-sante"],elan:["Élan","Retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.","/remise-en-forme-domicile/","vg-forme"],envol:["Envol","Se dépasser : s’entraîner plus intensément et viser plus haut.","/preparation-physique-domicile/","vg-aube"],plume:["Plume","Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser. Plume s’adapte à son objectif : reprendre en douceur, se remettre en forme ou progresser dans son sport.","/coach-sportif-enfants/","vg-enfant"]},
 E2=q.querySelector('[data-e="2"]'),R=q.querySelector(".q-res");
 function presse(b){b.parentNode.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))})}
 function montre(k){var p=P[k];R.querySelector(".q-sceau").innerHTML='<svg class="vg" aria-hidden="true" focusable="false"><use href="#'+p[3]+'"/></svg>';R.querySelector(".q-nom").textContent="Votre parcours : "+p[0];R.querySelector(".q-txt").textContent=p[1];var v=R.querySelector(".q-voir");v.href=p[2];v.textContent="Découvrir "+p[0];R.hidden=false}
