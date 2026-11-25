@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="fr" data-proto-nom="Prototype C · Humain et éditorial">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ascension, prototype C</title>
+<meta name="description" content="Prototype C : direction humaine et éditoriale pour Ascension Sport-Santé.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Shippori+Mincho+B1:wght@600;700&display=swap">
+<link rel="stylesheet" href="commun/proto.css">
+<script src="commun/proto.js"></script>
+<style>
+/* Concept : « Le carnet ». Une lettre de l'enseignant, puis le carnet de suivi : des personnes,
+   des minutes, des objectifs du quotidien. Encre bleue, annotations vermillon, police très lisible. */
+:root{
+  --papier:#FBF8F3; --texte:#2A2B33; --doux:#575A66; --bleu:#24345E; --vermillon:#9E1B14;
+  --sauge:#E4EBE2; --sable:#F1E8D9; --filet:#D9D1C3;
+  --t:"Shippori Mincho B1","Hiragino Mincho ProN",Georgia,serif; --c:"Atkinson Hyperlegible",Verdana,system-ui,sans-serif;
+  --max:1160px; --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+html.grand{font-size:118.75%}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--papier);color:var(--texte);font:400 1.1875rem/1.7 var(--c)}
+img{max-width:100%;display:block}
+a{color:var(--bleu)}
+:focus-visible{outline:3px solid var(--vermillon);outline-offset:3px}
+h1,h2,h3{font-family:var(--t);font-weight:700;color:var(--bleu);margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+section{padding-block:clamp(4rem,8vw,7rem)}
+.h2{font-size:clamp(2rem,3.6vw,2.9rem)}
+.chapo{margin-top:1rem;max-width:40rem;color:var(--doux)}
+.note-v{font-style:italic;color:var(--vermillon)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:0 1.7rem;border-radius:10px;font:700 1.05rem/1 var(--c);text-decoration:none;border:2px solid var(--vermillon);cursor:pointer}
+.btn-p{background:var(--vermillon);color:#fff}.btn-p:hover{background:#7E150F;border-color:#7E150F}
+.btn-l{background:#fff;color:var(--vermillon)}.btn-l:hover{background:#FBEDEA}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--papier)}
+.tete{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--papier);border-bottom:1px solid var(--filet)}
+.tete .wrap{display:flex;align-items:center;gap:1.5rem;min-height:78px}
+.marque{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--bleu);margin-right:auto}
+.marque img{width:46px;height:46px}
+.marque b{font:700 1.45rem/1 var(--t)}
+.marque small{display:block;font:400 .85rem var(--c);color:var(--doux);margin-top:.15rem}
+.nav{display:flex;gap:1.4rem;align-items:center}
+.nav a{text-decoration:none;color:var(--texte);font-size:1rem}
+.nav a:hover{color:var(--bleu);text-decoration:underline;text-underline-offset:5px}
+.grand-btn{min-height:44px;padding:0 .9rem;border:2px solid var(--filet);border-radius:10px;background:#fff;font:700 1rem var(--c);color:var(--bleu);cursor:pointer;white-space:nowrap}
+.grand-btn[aria-pressed="true"]{border-color:var(--bleu);background:var(--sauge)}
+.menu-btn{display:none}
+.nav .btn{display:none}
+@media (max-width:1020px){
+  .menu-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 1.1rem;border:2px solid var(--bleu);border-radius:10px;background:#fff;color:var(--bleu);font:700 1rem var(--c);cursor:pointer}
+  .tete .btn-tete{display:none}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--papier);border-bottom:1px solid var(--filet);padding:.5rem var(--gr) 1.5rem var(--gl);display:none}
+  .nav.ouvert{display:flex}
+  .nav a{padding:1rem 0;border-bottom:1px solid var(--filet);font-size:1.15rem}
+  .nav .btn{display:flex;margin-top:1rem;color:#fff}
+}
+@media (max-width:520px){.grand-btn .long{display:none}.marque small{display:none}}
+
+/* Héros : la lettre */
+.bandeau{margin:0;height:clamp(170px,26vw,320px);overflow:hidden;position:relative}
+.bandeau img{width:100%;height:100%;object-fit:cover;object-position:60% 22%}
+.bandeau figcaption{position:absolute;right:var(--gr);bottom:.6rem;font-size:.85rem;color:#2A2B33;background:rgba(251,248,243,.85);padding:.15rem .6rem;border-radius:6px}
+.lettre{padding-block:clamp(3rem,6vw,5rem) clamp(3rem,6vw,4.5rem)}
+.lettre .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.bonjour{font:italic 400 1.35rem var(--c);color:var(--vermillon);margin-bottom:.6rem}
+.lettre h1{font-size:clamp(2.3rem,4.4vw,3.7rem);line-height:1.12}.lettre h1 span{display:block}
+.lettre .corps{margin-top:1.5rem;max-width:36rem;font-size:1.25rem}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2rem}
+.debut{margin-top:1.4rem;font-weight:700;color:var(--bleu)}
+.photo{position:relative;margin:0}
+.photo .cadre{aspect-ratio:4/5;background:var(--sable);border-radius:14px;display:grid;place-items:center;text-align:center;color:var(--doux);font-size:1rem;padding:1.5rem;border:2px dashed #CDBFA6}
+.photo .cadre img{width:45%;margin:0 auto 1rem;opacity:.85}
+.photo figcaption{margin-top:.8rem;font-size:1rem;color:var(--doux)}
+.photo figcaption b{color:var(--bleu)}
+@media (max-width:860px){.lettre .wrap{grid-template-columns:1fr}.photo{max-width:300px}}
+.objectifs{background:var(--sauge);padding-block:2.5rem}
+.objectifs .wrap{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:2rem;align-items:center}
+.objectifs h2{font-size:1.5rem}
+.objectifs ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.9rem 2rem}
+.objectifs li{display:flex;gap:.8rem;align-items:flex-start}
+.objectifs li::before{content:"";flex:none;width:22px;height:22px;margin-top:.3rem;border-radius:50%;border:2px solid var(--bleu);background:radial-gradient(circle,var(--bleu) 0 4px,transparent 5px)}
+.objectifs .petit{grid-column:2;font-size:.95rem;color:var(--doux)}
+@media (max-width:760px){.objectifs .wrap{grid-template-columns:1fr}.objectifs ul{grid-template-columns:1fr}.objectifs .petit{grid-column:1}}
+
+/* Approche */
+.approche .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.approche .texte p+p{margin-top:1.1rem}
+.approche .texte p{max-width:36rem}
+.exergue{margin:0;font:600 clamp(1.45rem,2.4vw,1.9rem)/1.5 var(--t);color:var(--bleu);border-left:4px solid var(--vermillon);padding-left:1.5rem}
+.exergue footer{font:400 1rem var(--c);color:var(--doux);margin-top:1rem}
+@media (max-width:860px){.approche .wrap{grid-template-columns:1fr}}
+
+/* Parcours */
+.parcours{background:var(--sable)}
+.grille-p{margin-top:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.pc{background:var(--papier);border-radius:16px;padding:1.75rem;display:grid;grid-template-columns:96px minmax(0,1fr);gap:1.25rem;align-items:start}
+.pc .sil{width:96px;height:96px;border-radius:50%;background:var(--sauge);display:grid;place-items:center;overflow:hidden}
+.pc .sil img{height:76px;width:auto}
+.pc h3{font-size:1.75rem}
+.pc .pour{font-weight:700;color:var(--doux);font-size:1rem;margin:.2rem 0 .5rem}
+.pc details{margin-top:.9rem}
+.pc summary{cursor:pointer;color:var(--bleu);font-weight:700;min-height:44px;display:inline-flex;align-items:center}
+.pc details ul{margin:.3rem 0 0;padding-left:1.2rem;font-size:1.05rem;display:grid;gap:.3rem}
+@media (max-width:860px){.grille-p{grid-template-columns:1fr}}
+@media (max-width:440px){.pc{grid-template-columns:1fr}.pc .sil{width:80px;height:80px}}
+
+/* Une séance */
+.seq{list-style:none;margin:2.75rem 0 0;padding:0;display:grid;gap:2.25rem;counter-reset:s;max-width:52rem}
+.seq>li{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:1.25rem;counter-increment:s}
+.seq>li::before{content:counter(s);width:3.25rem;height:3.25rem;border-radius:50%;background:var(--bleu);color:#fff;display:grid;place-items:center;font:700 1.35rem var(--t)}
+.seq h3{font-size:1.45rem;margin:.55rem 0 .4rem}
+.seq p{color:var(--texte)}
+.minutes{margin-top:1.4rem}
+.barre{display:grid;grid-template-columns:1fr 2fr;border-radius:10px;overflow:hidden;border:2px solid var(--bleu)}
+.barre div{padding:.8rem 1rem;font-size:1rem;line-height:1.4}
+.barre div:first-child{background:var(--sable);border-right:2px solid var(--bleu)}
+.barre div:last-child{background:var(--sauge)}
+.barre b{display:block;color:var(--bleu)}
+.reglet{display:grid;grid-template-columns:1fr 2fr;font-size:.9rem;color:var(--doux);margin-top:.35rem}
+.reglet span:last-child{display:flex;justify-content:space-between}
+
+/* Exemples de bilans */
+.exemples .avert{display:inline-block;margin-top:1rem;background:var(--sable);border-radius:8px;padding:.3rem .8rem;font-size:1rem}
+.grille-e{margin-top:2.25rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+.ex{background:#fff;border:1px solid var(--filet);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.ex img{aspect-ratio:520/412;object-fit:cover;border-bottom:1px solid var(--filet)}
+.ex div{padding:1rem 1.1rem 1.2rem;display:grid;gap:.3rem}
+.ex h3{font-size:1.35rem}
+.ex .par{font-size:.95rem;color:var(--doux)}
+.ex .obj{font-size:1.02rem}
+.ex .prog{font-weight:700;color:var(--bleu)}
+.ex .fictif{font-size:.85rem;color:var(--vermillon);font-style:italic}
+@media (max-width:980px){.grille-e{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.grille-e{grid-template-columns:1fr}}
+
+/* Méthode */
+.methode{background:var(--bleu);color:#fff}
+.methode h2{color:#fff}
+.methode .chapo{color:#D5DBEA}
+.qualites{list-style:none;margin:2.75rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem}
+.qualites img{width:120px;height:120px;border-radius:50%;margin-bottom:1rem;border:3px solid rgba(255,255,255,.85)}
+.qualites h3{color:#fff;font-size:1.45rem;margin-bottom:.35rem}
+.qualites p{color:#D5DBEA;font-size:1.05rem}
+@media (max-width:860px){.qualites{grid-template-columns:1fr 1fr}}
+@media (max-width:460px){.qualites{grid-template-columns:1fr}.qualites li{display:grid;grid-template-columns:88px 1fr;gap:1rem}.qualites img{width:88px;height:88px}}
+
+/* Tarifs */
+.lignes{margin-top:2.5rem;border-top:2px solid var(--bleu)}
+.ligne{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) auto;gap:1.5rem;align-items:center;padding:1.6rem 1rem;border-bottom:1px solid var(--filet)}
+.ligne.reco{background:var(--sauge)}
+.ligne h3{font-size:1.6rem}
+.ligne .reco-t{font:italic 400 1rem var(--c);color:var(--vermillon);margin-left:.5rem}
+.ligne .desc{color:var(--doux);font-size:1.05rem;margin-top:.25rem}
+.prix b{font:700 2.6rem/1 var(--t);color:var(--bleu)}
+.prix span{display:block;font-size:.95rem;color:var(--doux);margin-top:.2rem}
+.prix .fisc{font-size:.88rem;margin-top:.35rem}
+.note{margin-top:1.25rem;font-size:.9rem;color:var(--doux);max-width:52rem}
+@media (max-width:760px){.ligne{grid-template-columns:1fr;gap:.8rem;padding:1.4rem .5rem}.ligne .btn{width:100%}}
+
+/* Questions */
+.questions{background:var(--sable)}
+.faq{margin-top:2rem;max-width:48rem;border-top:1px solid var(--filet)}
+.faq details{border-bottom:1px solid var(--filet)}
+.faq summary{cursor:pointer;padding:1.2rem 0;font:700 1.2rem var(--c);color:var(--bleu);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding:0 0 1.3rem;max-width:42rem}
+
+/* Contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.signature{font:700 2rem var(--t);color:var(--bleu);margin-top:1.5rem}
+form,.f-merci{background:#fff;border:2px solid var(--filet);border-radius:16px;padding:clamp(1.5rem,3vw,2.5rem);display:grid;gap:1.4rem}
+.champ label,.champ legend{display:block;font-weight:700;font-size:1.15rem;margin-bottom:.5rem;padding:0;color:var(--texte)}
+.champ input,.champ select{width:100%;min-height:58px;border:2px solid #A9A190;border-radius:10px;background:#fff;padding:0 1rem;font:400 1.2rem var(--c);color:var(--texte)}
+.champ input:focus,.champ select:focus{outline:3px solid var(--bleu);outline-offset:1px}
+.champ input[aria-invalid="true"]{border-color:var(--vermillon)}
+fieldset.champ{border:0;margin:0;padding:0}
+.choix{display:flex;flex-wrap:wrap;gap:.6rem}
+.choix label{display:inline-flex;align-items:center;gap:.6rem;min-height:52px;padding:0 1.1rem;border:2px solid #A9A190;border-radius:10px;font-weight:400;font-size:1.1rem;margin:0;cursor:pointer}
+.choix input{width:22px;height:22px;accent-color:var(--bleu)}
+.choix label:has(input:checked){border-color:var(--bleu);background:var(--sauge)}
+.f-erreur{color:var(--vermillon);font-weight:700}
+.f-note,.f-proto{font-size:1rem;color:var(--doux)}
+.f-merci{min-height:300px;align-content:center;font-size:1.25rem}
+form .btn{width:100%}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+/* Pied */
+.pied{background:var(--bleu);color:#E3E7F1;padding-block:3.5rem 2.5rem}
+.pied a{color:#fff;text-decoration:none}.pied a:hover{text-decoration:underline}
+.pied .haut{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid #3B4A78}
+.pied .marque{color:#fff}.pied .marque small{color:#C8CFE0}
+.pied .marque .rond{width:50px;height:50px;border-radius:50%;background:var(--papier);display:grid;place-items:center}
+.pied .marque .rond img{width:40px;height:40px}
+.pied .sign{font:700 1.4rem/1.35 var(--t);color:#fff;margin-top:1rem;max-width:17rem}
+.pied h2{font:700 1rem var(--c);color:#fff;margin-bottom:.7rem}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem;font-size:1rem}
+.pied .bas{display:flex;flex-wrap:wrap;gap:.5rem 2rem;padding-top:1.4rem;font-size:.92rem}
+@media (max-width:760px){.pied .haut{grid-template-columns:1fr 1fr}.pied .haut>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="tete">
+  <div class="wrap">
+    <a class="marque" href="#haut"><img src="img/porte_logo_jour.webp" alt="" width="46" height="46"><span><b>Ascension</b><small>Sport-Santé à domicile</small></span></a>
+    <button class="grand-btn" type="button" id="grand" aria-pressed="false">A+<span class="long"> Textes plus grands</span></button>
+    <button class="menu-btn" type="button" data-menu aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#approche">Mon approche</a><a href="#parcours">Parcours</a><a href="#seance">Une séance</a><a href="#tarifs">Tarifs</a><a href="#questions">Questions</a>
+      <a class="btn btn-p" href="#contact">Être rappelé</a>
+    </nav>
+    <a class="btn btn-p btn-tete" href="#contact">Être rappelé</a>
+  </div>
+</header>
+
+<main id="haut">
+<figure class="bandeau" data-si="avec"><img src="img/montagne.webp" alt="Peinture à la feuille d’or : collines, nuages et soleil rouge." width="1800" height="1200"><figcaption>Illustration du site Ascension</figcaption></figure>
+<section class="lettre" aria-labelledby="t-heros">
+  <div class="wrap">
+    <div>
+      <p class="bonjour">Bonjour,</p>
+      <h1 id="t-heros"><span>Le sport adapté à&nbsp;vous.</span> <span>Chez vous.</span></h1>
+      <p class="corps">Je m’appelle Ilyas, je suis enseignant en activité physique adaptée. Je viens chez vous, avec le matériel, pour vous aider à bouger mieux, à votre rythme, quels que soient votre âge et votre santé.</p>
+      <div class="actions"><a class="btn btn-p" href="#contact">Être rappelé</a><a class="btn btn-l" href="#seance">Comment se passe une séance</a></div>
+      <p class="debut">Premières séances à partir de janvier 2027, à Paris et en proche banlieue.</p>
+    </div>
+    <figure class="photo">
+      <div class="cadre"><div><img src="img/porte_logo_jour.webp" alt="">Emplacement de la photo d’Ilyas</div></div>
+      <figcaption><b>Ilyas EL AOUADI</b>, enseignant en activité physique adaptée</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="objectifs" aria-labelledby="t-obj">
+  <div class="wrap">
+    <h2 id="t-obj">Des objectifs de tous les jours</h2>
+    <ul>
+      <li>Monter vos escaliers sans vous arrêter</li>
+      <li>Vous relever seul d’une chaise</li>
+      <li>Porter vos courses jusqu’à chez vous</li>
+      <li>Jouer avec vos enfants ou petits-enfants</li>
+    </ul>
+    <p class="petit">Ce sont des exemples : nous fixons ensemble les vôtres, dès la première séance.</p>
+  </div>
+</section>
+
+<section class="approche" id="approche" aria-labelledby="t-app">
+  <div class="wrap">
+    <div class="texte">
+      <h2 class="h2" id="t-app">Mon approche</h2>
+      <p class="chapo" style="margin-bottom:1.5rem">D’abord vous écouter, ensuite avancer ensemble.</p>
+      <p>Je pars de ce que vous pouvez faire aujourd’hui, pas de ce que vous devriez faire. Chaque séance est préparée pour vous, puis ajustée à votre forme du jour.</p>
+      <p>Les séances ont lieu chez vous : sans foule, sans bruit et sans le regard des autres. J’apporte tout le matériel.</p>
+      <p>Vos progrès se mesurent. Au départ, à six semaines et à la fin, vous recevez un bilan écrit, clair, avec vos chiffres et vos objectifs.</p>
+    </div>
+    <blockquote class="exergue">« Ado, j’avais mal au genou. Ce qui m’a aidé, ce n’est pas d’arrêter complètement, c’est de rebouger, doucement, un peu plus chaque semaine. Aujourd’hui, je fais pareil avec vous. »<footer>Ilyas</footer></blockquote>
+  </div>
+</section>
+
+<section class="parcours" id="parcours" aria-labelledby="t-par">
+  <div class="wrap">
+    <h2 class="h2" id="t-par">Quatre parcours, selon votre situation</h2>
+    <p class="chapo">Vous n’êtes pas sûr du vôtre ? Ce n’est pas grave : nous le choisissons ensemble au téléphone.</p>
+    <div class="grille-p">
+      <article class="pc"><div class="sil"><img src="img/case_gma.webp" alt=""></div><div><h3>Éveil</h3><p class="pour">Vous repartez de loin</p><p>Douleurs, maladie, handicap ou âge : on réveille le corps, à votre rythme.</p>
+        <details><summary>En savoir plus</summary><ul><li>Se lever, marcher, garder l’équilibre</li><li>Doux au départ, un peu plus chaque semaine</li></ul></details></div></article>
+      <article class="pc"><div class="sil"><img src="img/case_couple.webp" alt=""></div><div><h3>Élan</h3><p class="pour">Vous voulez retrouver la forme</p><p>Énergie, force, endurance : on s’y remet, et ça tient.</p>
+        <details><summary>En savoir plus</summary><ul><li>Force, endurance et mobilité à chaque séance</li><li>Une à deux séances par semaine</li></ul></details></div></article>
+      <article class="pc"><div class="sil"><img src="img/case_dad.webp" alt=""></div><div><h3>Envol</h3><p class="pour">Vous voulez aller plus loin</p><p>Vous entraîner plus intensément et viser plus haut.</p>
+        <details><summary>En savoir plus</summary><ul><li>Préparation physique vers votre objectif</li><li>Puissance, vitesse, endurance</li></ul></details></div></article>
+      <article class="pc"><div class="sil"><img src="img/case_kid.webp" alt=""></div><div><h3>Plume</h3><p class="pour">Pour votre enfant ou votre ado</p><p>Bouger en s’amusant, prendre confiance, progresser.</p>
+        <details><summary>En savoir plus</summary><ul><li>Coordination, motricité, confiance</li><li>Par le jeu, avec un objectif clair</li></ul></details></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="seance" id="seance" aria-labelledby="t-sea">
+  <div class="wrap">
+    <h2 class="h2" id="t-sea">Comment ça se passe, étape par étape</h2>
+    <ol class="seq">
+      <li><div><h3>On s’appelle</h3><p>Vous laissez votre prénom et votre numéro. Je vous rappelle, vous me dites ce qui vous amène, je réponds à vos questions.</p></div></li>
+      <li><div><h3>La première séance, chez vous</h3><p>Elle dure une heure.</p>
+        <div class="minutes" aria-label="Déroulé de la première heure"><div class="barre"><div><b>Le bilan</b>Quelques tests simples et vos objectifs</div><div><b>La séance</b>On bouge déjà, à votre niveau</div></div><div class="reglet" aria-hidden="true"><span>0 min</span><span><span>20 min</span><span>60 min</span></span></div></div></div></li>
+      <li><div><h3>Vos séances, ajustées à chaque fois</h3><p>Chaque séance est préparée pour vous et adaptée à votre forme du jour.</p></div></li>
+      <li><div><h3>Vos progrès, noir sur blanc</h3><p>Nous refaisons les tests du bilan à six semaines et à la fin. Vous voyez ce qui a changé.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="exemples" aria-labelledby="t-ex" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" id="t-ex">À quoi ressemble un bilan</h2>
+    <p class="avert">Exemples avec des personnes fictives, pour vous montrer le suivi.</p>
+    <div class="grille-e">
+      <article class="ex"><img src="img/eveil-senior-vignette.webp" alt="Première page du bilan d’Odette." width="520" height="412"><div><h3>Odette</h3><p class="par">Éveil, après 60 ans</p><p class="obj">« Aller seule à la boulangerie »</p><p class="prog">3 → 7 sur 10</p><p class="fictif">Personne fictive</p></div></article>
+      <article class="ex"><img src="img/eveil-fauteuil-vignette.webp" alt="Première page du bilan de Karim." width="520" height="412"><div><h3>Karim</h3><p class="par">Éveil, en fauteuil</p><p class="obj">« Monter seul la rampe de mon immeuble »</p><p class="prog">3 → 8 sur 10</p><p class="fictif">Personne fictive</p></div></article>
+      <article class="ex"><img src="img/elan-adulte-vignette.webp" alt="Première page du bilan de Thomas." width="520" height="412"><div><h3>Thomas</h3><p class="par">Élan, remise en forme</p><p class="obj">Récupération après l’effort</p><p class="prog">Objectif atteint</p><p class="fictif">Personne fictive</p></div></article>
+      <article class="ex"><img src="img/plume-enfant-vignette.webp" alt="Première page du bilan de Lina." width="520" height="412"><div><h3>Lina</h3><p class="par">Plume, enfant</p><p class="obj">« Jouer à chat sans m’arrêter »</p><p class="prog">3 → 7 sur 10</p><p class="fictif">Personne fictive</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="methode" id="methode" aria-labelledby="t-met">
+  <div class="wrap">
+    <h2 class="h2" id="t-met">La méthode Ensō</h2>
+    <p class="chapo">L’ensō est un cercle tracé d’un seul geste. À chaque séance, on fait le tour du corps avec quatre qualités.</p>
+    <ul class="qualites">
+      <li><img src="img/force.webp" alt=""><div><h3>Force</h3><p>Pour porter, vous relever, monter les escaliers.</p></div></li>
+      <li><img src="img/cardio.webp" alt=""><div><h3>Endurance</h3><p>Pour marcher plus longtemps et récupérer plus vite.</p></div></li>
+      <li><img src="img/eau.webp" alt=""><div><h3>Mobilité</h3><p>Pour vous baisser, vous tourner, sans gêne.</p></div></li>
+      <li><img src="img/coord.webp" alt=""><div><h3>Coordination</h3><p>Pour l’équilibre et des gestes plus sûrs.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="tarifs" id="tarifs" aria-labelledby="t-tar">
+  <div class="wrap">
+    <h2 class="h2" id="t-tar">Tarifs</h2>
+    <p class="chapo">Des séances d’une heure, chez vous, matériel fourni. Le prix est celui de la séance ; le montant après crédit d’impôt est indiqué en dessous.</p>
+    <div class="lignes">
+      <div class="ligne"><div><h3>Nouvelle Lune</h3><p class="desc">La première séance : vingt minutes de bilan, quarante minutes de séance. Satisfait ou remboursé.</p></div><p class="prix"><b>38 €</b><span>la séance</span><span class="fisc">Soit 19 € après crédit d’impôt<sup>1</sup></span></p><a class="btn btn-l" href="#contact" data-formule="nouvelle-lune">Choisir Nouvelle Lune</a></div>
+      <div class="ligne"><div><h3>Clair de Lune</h3><p class="desc">Ensuite, à la séance. Sans engagement : vous arrêtez quand vous voulez.</p></div><p class="prix"><b>78 €</b><span>la séance</span><span class="fisc">Soit 39 € après crédit d’impôt<sup>1</sup></span></p><a class="btn btn-l" href="#contact" data-formule="clair-de-lune">Choisir Clair de Lune</a></div>
+      <div class="ligne reco"><div><h3>Trois Lunes <span class="reco-t">je vous la recommande</span></h3><p class="desc">12 séances sur 3 mois, pour changer durablement. 240 € de moins que 12 séances Clair de Lune.</p></div><p class="prix"><b>58 €</b><span>la séance</span><span class="fisc">Soit 29 € après crédit d’impôt<sup>1</sup></span></p><a class="btn btn-p" href="#contact" data-formule="trois-lunes">Choisir Trois Lunes</a></div>
+      <div class="ligne"><div><h3>Éclipse</h3><p class="desc">À deux, en couple, entre amis ou en famille : une heure pour deux, le même suivi pour chacun.</p></div><p class="prix"><b>98 €</b><span>la séance pour deux</span><span class="fisc">Soit 49 € après crédit d’impôt<sup>1</sup>, 24,50 € chacun</span></p><a class="btn btn-l" href="#contact" data-formule="eclipse">Choisir Éclipse</a></div>
+    </div>
+    <p class="note"><sup>1</sup> Crédit d’impôt de 50 % des services à la personne (article 199 sexdecies du code général des impôts), sous réserve de l’enregistrement de ma déclaration, en cours.</p>
+  </div>
+</section>
+
+<section class="questions" id="questions" aria-labelledby="t-q">
+  <div class="wrap">
+    <h2 class="h2" id="t-q">Vos questions</h2>
+    <div class="faq">
+      <details><summary>Et si la première séance ne me plaît pas ?</summary><p>Elle vous est remboursée. C’est le principe de Nouvelle Lune : vous essayez sans risque.</p></details>
+      <details><summary>Dois-je acheter du matériel ?</summary><p>Non. J’apporte tout ce qu’il faut pour la séance.</p></details>
+      <details><summary>Où intervenez-vous ?</summary><p>À Paris et en proche banlieue, chez vous. Si votre commune n’est pas sûre, demandez-moi au téléphone.</p></details>
+      <details><summary>Comment fonctionne le crédit d’impôt ?</summary><p>Les services à la personne ouvrent droit à un crédit d’impôt de 50 %. Il s’appliquera une fois ma déclaration enregistrée ; je vous le confirmerai avant votre première séance.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-cont">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="t-cont">Être rappelé</h2>
+      <p class="chapo">Écrivez votre prénom et votre numéro. Je vous rappelle moi-même, pour en parler simplement. L’appel ne vous engage à rien.</p>
+      <p class="debut">Premières séances à partir de janvier 2027.</p>
+      <p class="signature">Ilyas</p>
+    </div>
+    <form data-rappel novalidate aria-labelledby="t-cont">
+      <div class="champ"><label for="f-prenom">Votre prénom</label><input id="f-prenom" name="prenom" autocomplete="given-name" aria-describedby="f-prenom-err"><p class="f-erreur" id="f-prenom-err"></p></div>
+      <div class="champ"><label for="f-tel">Votre numéro de téléphone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="f-tel-err"><p class="f-erreur" id="f-tel-err"></p></div>
+      <fieldset class="champ"><legend>C’est pour</legend><div class="choix"><label><input type="radio" name="pour" id="f-pour-1" value="moi" checked>Moi</label><label><input type="radio" name="pour" id="f-pour-2" value="enfant">Mon enfant</label><label><input type="radio" name="pour" id="f-pour-3" value="proche">Un proche</label></div></fieldset>
+      <div class="champ"><label for="f-formule">Formule envisagée (facultatif)</label><select id="f-formule" name="formule"><option value="">Je ne sais pas encore</option><option value="nouvelle-lune">Nouvelle Lune, la première séance</option><option value="clair-de-lune">Clair de Lune, à la séance</option><option value="trois-lunes">Trois Lunes, sur 3 mois</option><option value="eclipse">Éclipse, à deux</option></select></div>
+      <button class="btn btn-p" type="submit">Être rappelé</button>
+      <p class="f-note">Vos coordonnées servent uniquement à vous rappeler.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="haut">
+      <div><a class="marque" href="#haut"><span class="rond"><img src="img/porte_logo_jour.webp" alt="" width="40" height="40"></span><span><b>Ascension</b><small>Sport-Santé à domicile</small></span></a><p class="sign">Le sport adapté à vous. Chez vous.</p></div>
+      <div><h2>Parcours</h2><ul><li><a href="#parcours">Éveil</a></li><li><a href="#parcours">Élan</a></li><li><a href="#parcours">Envol</a></li><li><a href="#parcours">Plume</a></li></ul></div>
+      <div><h2>Pratique</h2><ul><li><a href="#seance">Une séance</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#questions">Questions</a></li></ul></div>
+      <div><h2>Informations</h2><ul><li><a href="#haut">Mentions légales</a></li><li><a href="#haut">Confidentialité</a></li><li><a href="#haut">Conditions de vente</a></li></ul></div>
+    </div>
+    <div class="bas"><span>Ilyas EL AOUADI, entrepreneur individuel</span><span>SIRET 133 247 395 00014</span><span>Carte professionnelle n° 08325ED0042</span></div>
+  </div>
+</footer>
+<script>
+(function(){var b=document.getElementById("grand"),d=document.documentElement,K="asc-proto-grand";
+function set(on){d.classList.toggle("grand",on);b.setAttribute("aria-pressed",String(on));try{localStorage.setItem(K,on?"1":"0")}catch(e){}}
+try{set(localStorage.getItem(K)==="1")}catch(e){}
+b.addEventListener("click",function(){set(!d.classList.contains("grand"))});})();
+</script>
+</body>
+</html>

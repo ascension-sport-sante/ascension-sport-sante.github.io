@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="fr" data-proto-nom="Prototype B · Identité contemporaine">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ascension, prototype B</title>
+<meta name="description" content="Prototype B : direction contemporaine et distinctive pour Ascension Sport-Santé.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@600&display=swap">
+<link rel="stylesheet" href="commun/proto.css">
+<script src="commun/proto.js"></script>
+<style>
+/* Concept : « Le cercle ». L'ensō devient un système graphique : anneaux, disques, sceaux.
+   Grands aplats encre de nuit et vermillon, typographie gothique japonaise très grasse. */
+:root{
+  --nuit:#141A2E; --nuit-2:#1E2642; --kinari:#F2ECE1; --kinari-2:#E6DDCC; --vermillon:#C8381F; --vermillon-txt:#9E1B14;
+  --or:#E0B25B; --brume:#AEB5CB; --encre:#141A2E; --gris:#5A5F70;
+  --eveil:#E0B25B; --elan:#C8381F; --envol:#2F4C8F; --plume:#2F7A5F;
+  --g:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif; --m:"Shippori Mincho",Georgia,serif;
+  --max:1240px; --gl:max(16px,env(safe-area-inset-left,0px)); --gr:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--kinari);color:var(--encre);font:400 1.125rem/1.7 var(--g);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+h1,h2,h3{margin:0;font-family:var(--g);font-weight:900;line-height:1.02;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gl);padding-right:var(--gr)}
+section{padding-block:clamp(4.5rem,9vw,8rem)}
+.h2{font-size:clamp(2.3rem,5vw,4.2rem)}
+.chapo{max-width:36rem;margin-top:1.25rem;font-size:1.15rem}
+.sombre{background:var(--nuit);color:var(--kinari)}
+.sombre .chapo{color:var(--brume)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 1.7rem;border-radius:999px;font:700 1.02rem/1 var(--g);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-v{background:var(--vermillon);color:#fff}
+.btn-v:hover{background:#A92C17}
+.btn-c{border-color:currentColor;background:transparent}
+.btn-n{background:var(--nuit);color:var(--kinari)}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--nuit)}
+.tete{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--nuit);color:var(--kinari);border-bottom:1px solid #2B3454}
+.tete .wrap{display:flex;align-items:center;gap:2rem;min-height:72px}
+.marque{display:flex;align-items:center;gap:.7rem;text-decoration:none;margin-right:auto}
+.marque .rond{width:44px;height:44px;border-radius:50%;background:var(--kinari);display:grid;place-items:center}
+.marque .rond img{width:34px}
+.marque b{font:900 1.3rem/1 var(--g);letter-spacing:.04em}
+.nav{display:flex;gap:1.6rem;align-items:center}
+.nav a{text-decoration:none;font-weight:500;font-size:1rem}
+.nav a:not(.btn):hover{color:var(--or)}
+.nav .btn{min-height:46px}
+.menu-btn{display:none}
+@media (max-width:960px){
+  .menu-btn{display:inline-flex;min-height:48px;padding:0 1.2rem;border-radius:999px;border:2px solid var(--kinari);background:none;color:var(--kinari);font:700 1rem var(--g);cursor:pointer;align-items:center}
+  .nav{position:absolute;left:0;right:0;top:100%;background:var(--nuit);flex-direction:column;align-items:stretch;gap:0;padding:.5rem var(--gr) 1.5rem var(--gl);display:none;border-bottom:1px solid #2B3454}
+  .nav.ouvert{display:flex}
+  .nav a:not(.btn){padding:1rem 0;border-bottom:1px solid #2B3454;font-size:1.15rem}
+  .nav .btn{margin-top:1rem;min-height:54px}
+}
+
+/* Héros */
+.heros{background:var(--nuit);color:var(--kinari);padding-block:clamp(3rem,6vw,5.5rem) clamp(4rem,7vw,6.5rem);overflow:hidden}
+.heros .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.heros h1{font-size:clamp(3.1rem,7.6vw,7rem)}
+.heros h1 span{display:block}
+.heros h1 .l3{color:var(--or)}
+.heros .chapo{color:var(--brume)}
+.actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.25rem}
+.debut{margin-top:1.5rem;color:var(--or);font-weight:700;font-size:1rem}
+.disque{position:relative;width:100%;max-width:520px;aspect-ratio:1;justify-self:center}
+.disque svg{width:100%;height:100%;overflow:visible}
+.arc{fill:none;stroke-width:14;stroke-linecap:round;stroke-dasharray:260 1200;animation:trace 1.4s cubic-bezier(.3,.7,.2,1) both}
+.arc:nth-of-type(2){animation-delay:.15s}.arc:nth-of-type(3){animation-delay:.3s}.arc:nth-of-type(4){animation-delay:.45s}
+@keyframes trace{from{stroke-dasharray:0 1000}}
+.soleil{transform-origin:250px 250px;animation:lever 1.2s .2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes lever{from{transform:translateY(40px) scale(.85);opacity:0}}
+.disque .plume{position:absolute;left:39%;top:17%;width:26%;transform:rotate(28deg);filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+.etiq{font:700 14px var(--g);fill:var(--or);letter-spacing:.02em}
+@media (max-width:860px){.heros .wrap{grid-template-columns:1fr}.disque{max-width:300px}}
+
+/* Accompagnement */
+.accomp .grand{font:700 clamp(1.7rem,3.3vw,2.9rem)/1.25 var(--g);letter-spacing:-.01em;max-width:58rem}
+.accomp .grand em{font-style:normal;display:block;margin-top:.4em}
+.sceaux{list-style:none;margin:3.5rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:1.5rem}
+.sceau{width:200px;aspect-ratio:1;border-radius:50%;border:2px solid var(--encre);display:grid;place-content:center;text-align:center;padding:1.5rem;gap:.3rem}
+.sceau b{font:900 1.5rem/1.1 var(--g)}
+.sceau span{font-size:.95rem;color:var(--gris);line-height:1.35}
+.sceau.v{background:var(--vermillon);border-color:var(--vermillon);color:#fff}.sceau.v span{color:#fff}
+@media (max-width:560px){.sceaux{gap:.9rem;justify-content:center}.sceau{width:min(150px,42vw);padding:.8rem}.sceau b{font-size:1.15rem}.sceau span{font-size:.82rem}}
+
+/* Parcours */
+.parcours .grille{margin-top:3rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.pc{border-radius:28px;padding:2rem 1.6rem 1.75rem;display:flex;flex-direction:column;gap:1rem;min-height:440px;color:#fff;position:relative;overflow:hidden}
+.pc.eveil{background:var(--eveil);color:var(--encre)}.pc.elan{background:var(--elan)}.pc.envol{background:var(--envol)}.pc.plume{background:var(--plume)}
+.pc svg{width:84px;height:84px}
+.pc h3{font-size:clamp(2.4rem,3.6vw,3.2rem)}
+.pc p{font-size:1.02rem;line-height:1.55}
+.pc details{margin-top:auto}
+.pc summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;min-height:48px;padding:0 1.2rem;border-radius:999px;border:2px solid currentColor;font-weight:700}
+.pc summary::-webkit-details-marker{display:none}
+.pc details[open] summary{background:rgba(255,255,255,.18)}
+.pc details ul{margin:1rem 0 0;padding-left:1.1rem;font-size:.98rem;line-height:1.5;display:grid;gap:.35rem}
+@media (max-width:1000px){.parcours .grille{grid-template-columns:1fr 1fr}.pc{min-height:0}}
+@media (max-width:560px){.parcours .grille{grid-template-columns:1fr}}
+
+/* Méthode */
+.methode .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem);align-items:center}
+.roue{position:relative;width:min(460px,100%);aspect-ratio:1;justify-self:center}
+.anneau{position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from -45deg,var(--vermillon) 0 90deg,var(--kinari-2) 90deg 360deg);transition:transform .6s cubic-bezier(.3,.7,.2,1)}
+.anneau::after{content:"";position:absolute;inset:13%;border-radius:50%;background:var(--kinari)}
+.roue:has(#q2[aria-selected="true"]) .anneau{transform:rotate(90deg)}
+.roue:has(#q3[aria-selected="true"]) .anneau{transform:rotate(180deg)}
+.roue:has(#q4[aria-selected="true"]) .anneau{transform:rotate(270deg)}
+.roue [role=tab]{position:absolute;min-height:48px;padding:0 1.1rem;border-radius:999px;border:2px solid var(--encre);background:var(--kinari);font:700 1rem var(--g);color:var(--encre);cursor:pointer;z-index:1}
+.roue [role=tab][aria-selected="true"]{background:var(--encre);color:var(--kinari)}
+#q1{top:0;left:50%;transform:translateX(-50%)}#q2{right:0;top:50%;transform:translateY(-50%)}#q3{bottom:0;left:50%;transform:translateX(-50%)}#q4{left:0;top:50%;transform:translateY(-50%)}
+.roue .milieu{position:absolute;inset:27%;display:grid;place-items:center}
+.roue .milieu img{width:100%;border-radius:50%;display:none}
+.roue:has(#q1[aria-selected="true"]) .m1,.roue:has(#q2[aria-selected="true"]) .m2,.roue:has(#q3[aria-selected="true"]) .m3,.roue:has(#q4[aria-selected="true"]) .m4{display:block}
+.qp{display:none}.qp.actif{display:block}
+.qp h3{font-size:2rem;margin:2rem 0 .6rem}
+.qp p{max-width:30rem}
+@media (max-width:860px){.methode .wrap{grid-template-columns:1fr}}
+
+/* Déroulement */
+.etapes{list-style:none;margin:3.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;position:relative}
+.etapes::before{content:"";position:absolute;left:40px;right:40px;top:40px;height:2px;background:#3A4466}
+.etapes li{position:relative}
+.jauge{width:80px;height:80px;border-radius:50%;background:conic-gradient(var(--vermillon) calc(var(--p)*1%),#3A4466 0);display:grid;place-items:center;margin-bottom:1.4rem}
+.jauge b{width:62px;height:62px;border-radius:50%;background:var(--nuit);display:grid;place-items:center;font:900 1.5rem var(--g);color:var(--kinari)}
+.etapes h3{font-size:1.45rem;letter-spacing:-.01em;line-height:1.2;margin-bottom:.5rem}
+.etapes p{color:var(--brume);font-size:1rem}
+@media (max-width:860px){.etapes{grid-template-columns:1fr 1fr}.etapes::before{display:none}}
+@media (max-width:520px){.etapes{grid-template-columns:1fr}}
+
+/* Tarifs */
+.onglets-t{display:none}
+.grille-t{margin-top:3rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.offre{background:var(--nuit-2);border-radius:28px;padding:1.75rem 1.5rem 1.75rem;display:flex;flex-direction:column;border:2px solid transparent}
+.offre.reco{border-color:var(--vermillon)}
+.offre .lune{width:84px;height:84px;border-radius:50%}
+.offre .badge{align-self:flex-start;background:var(--vermillon);color:#fff;font-weight:700;font-size:.85rem;padding:.25rem .8rem;border-radius:999px;margin-bottom:.6rem}
+.offre .top{display:flex;justify-content:space-between;align-items:start;gap:1rem}
+.offre h3{font-size:1.8rem;margin-top:1.2rem}
+.offre .pour{color:var(--brume);font-size:.98rem;margin-top:.4rem;min-height:3.1em}
+.prix{margin-top:1.4rem;display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.prix b{font:900 3.4rem/1 var(--g);letter-spacing:-.03em}
+.prix span{color:var(--brume);font-size:.95rem}
+.fisc{margin-top:.5rem;font-size:.86rem;color:var(--brume)}
+.offre ul{margin:1.2rem 0 1.6rem;padding-left:1.1rem;font-size:.98rem;display:grid;gap:.4rem}
+.offre .btn{margin-top:auto}
+.note{margin-top:1.5rem;font-size:.86rem;color:var(--brume);max-width:52rem}
+@media (max-width:1080px){.grille-t{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .onglets-t{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:2rem}
+  .onglets-t button{min-height:58px;border-radius:18px;border:2px solid #3A4466;background:transparent;color:var(--kinari);font:700 1rem var(--g);text-align:left;padding:.5rem .9rem;line-height:1.25;cursor:pointer}
+  .onglets-t button small{display:block;font-weight:400;color:var(--brume);font-size:.85rem}
+  .onglets-t button[aria-selected="true"]{background:var(--kinari);color:var(--encre);border-color:var(--kinari)}
+  .onglets-t button[aria-selected="true"] small{color:var(--gris)}
+  .grille-t{grid-template-columns:1fr;margin-top:1rem}.offre{display:none}.offre.actif{display:flex}
+}
+
+/* Confiance */
+.confiance .haut{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.photo{width:clamp(140px,18vw,220px);aspect-ratio:1;border-radius:50%;background:var(--kinari-2);display:grid;place-items:center;text-align:center;font-size:.9rem;color:var(--gris);padding:1rem;border:2px dashed #B8AE9B}
+.citation{font:600 clamp(1.4rem,2.4vw,2rem)/1.45 var(--m);margin:0;max-width:44rem}
+.citation footer{font:500 1rem var(--g);color:var(--gris);margin-top:.9rem}
+.confiance .sceaux{margin-top:3.5rem}
+@media (max-width:640px){.confiance .haut{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--vermillon);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,6vw,5rem);align-items:start}
+.contact .chapo{color:#FFE7DF}
+.contact .debut{color:#fff}
+form,.f-merci{background:var(--kinari);color:var(--encre);border-radius:28px;padding:clamp(1.5rem,3vw,2.5rem);display:grid;gap:1.3rem}
+.champ label,.champ legend{display:block;font-weight:700;margin-bottom:.45rem;padding:0}
+.champ input,.champ select{width:100%;min-height:56px;border:2px solid #C9BFAD;border-radius:16px;background:#fff;padding:0 1.1rem;font:400 1.1rem var(--g);color:var(--encre)}
+.champ input:focus,.champ select:focus{outline:3px solid var(--nuit);outline-offset:1px}
+.champ input[aria-invalid="true"]{border-color:var(--vermillon-txt)}
+fieldset.champ{border:0;margin:0;padding:0}
+.choix{display:flex;flex-wrap:wrap;gap:.6rem}
+.choix label{display:inline-flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1.1rem;border-radius:999px;border:2px solid #C9BFAD;background:#fff;font-weight:500;margin:0;cursor:pointer}
+.choix input{accent-color:var(--vermillon-txt)}
+.choix label:has(input:checked){border-color:var(--nuit);background:var(--nuit);color:var(--kinari)}
+.f-erreur{color:var(--vermillon-txt);font-weight:700}
+.f-note,.f-proto{font-size:.9rem;color:var(--gris)}
+.f-merci{min-height:300px;align-content:center;font-size:1.2rem}
+form .btn{width:100%}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+/* Pied */
+.pied{background:var(--nuit);color:var(--kinari);padding-block:4rem 2.5rem}
+.pied .haut{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid #2B3454}
+.pied .sign{font:900 1.7rem/1.15 var(--g);margin-top:1.2rem;max-width:18rem}
+.pied h2{font:700 1rem var(--g);color:var(--or);margin-bottom:.8rem}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.pied a{text-decoration:none}.pied a:hover{color:var(--or)}
+.pied .bas{display:flex;flex-wrap:wrap;gap:.5rem 2rem;padding-top:1.5rem;font-size:.88rem;color:var(--brume)}
+@media (max-width:760px){.pied .haut{grid-template-columns:1fr 1fr}.pied .haut>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="tete">
+  <div class="wrap">
+    <a class="marque" href="#haut"><span class="rond"><img src="img/porte_logo_jour.webp" alt="" width="34" height="36"></span><b>ASCENSION</b></a>
+    <button class="menu-btn" type="button" data-menu aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#parcours">Parcours</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#confiance">Votre enseignant</a>
+      <a class="btn btn-v" href="#contact">Être rappelé</a>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+<section class="heros" aria-labelledby="t-heros">
+  <div class="wrap">
+    <div>
+      <h1 id="t-heros"><span>Le sport</span><span>adapté à&nbsp;vous.</span><span class="l3">Chez vous.</span></h1>
+      <p class="chapo">Activité physique adaptée à domicile, à Paris et en proche banlieue. Pour les enfants, les adultes et les seniors, avec ou sans pathologie.</p>
+      <div class="actions"><a class="btn btn-v" href="#contact">Être rappelé</a><a class="btn btn-c" href="#tarifs">Voir les tarifs</a></div>
+      <p class="debut">Premières séances à partir de janvier 2027</p>
+    </div>
+    <div class="disque">
+      <svg viewBox="0 0 500 500" role="img" aria-labelledby="t-disque"><title id="t-disque">Le cercle de la méthode Ensō : force, endurance, mobilité et coordination autour d’un soleil vermillon.</title>
+        <circle class="arc" cx="250" cy="250" r="226" stroke="#E0B25B" transform="rotate(-78 250 250)"/>
+        <circle class="arc" cx="250" cy="250" r="226" stroke="#E0B25B" transform="rotate(12 250 250)"/>
+        <circle class="arc" cx="250" cy="250" r="226" stroke="#E0B25B" transform="rotate(102 250 250)"/>
+        <circle class="arc" cx="250" cy="250" r="226" stroke="#E0B25B" transform="rotate(-168 250 250)"/>
+        <g class="soleil"><circle cx="250" cy="250" r="150" fill="#C8381F"/>
+          <g data-si="avec"><clipPath id="cl"><circle cx="250" cy="250" r="150"/></clipPath>
+            <g clip-path="url(#cl)"><path d="M10 470 L212 196 Q250 160 288 196 L490 470 Z" fill="#0D1222"/>
+            <path d="M212 196 Q250 160 288 196 L322 242 L300 232 L284 252 L262 230 L246 250 L228 228 L208 246 L192 230 L178 238 Z" fill="#F2ECE1"/></g></g>
+        </g>
+        <text class="etiq" x="250" y="12" text-anchor="middle">Force</text>
+        <text class="etiq" x="496" y="255" text-anchor="end">Endurance</text>
+        <text class="etiq" x="250" y="500" text-anchor="middle">Mobilité</text>
+        <text class="etiq" x="4" y="255" text-anchor="start">Coordination</text>
+      </svg>
+      <img class="plume" data-si="sans" src="img/plume_nuit.webp" alt="" width="354" height="571">
+    </div>
+  </div>
+</section>
+
+<section class="accomp" id="accompagnement" aria-labelledby="t-acc">
+  <div class="wrap">
+    <h2 class="vh" id="t-acc">L’accompagnement</h2>
+    <p class="grand">J’aide chacun à progresser dans son corps, chez lui, à partir de ce qu’il peut faire aujourd’hui. <em>Sans foule, sans bruit, sans regard.</em></p>
+    <ul class="sceaux">
+      <li class="sceau v"><b>Chez vous</b><span>Paris et proche banlieue</span></li>
+      <li class="sceau"><b>1 heure</b><span>par séance, préparée pour vous</span></li>
+      <li class="sceau"><b>Matériel</b><span>fourni, rien à acheter</span></li>
+      <li class="sceau"><b>Tout âge</b><span>enfants, adultes, seniors</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="parcours sombre" id="parcours" aria-labelledby="t-par">
+  <div class="wrap">
+    <h2 class="h2" id="t-par">Quatre parcours</h2>
+    <p class="chapo">Choisissez selon ce qui vous amène. Nous l’ajustons ensemble à la première séance.</p>
+    <div class="grille">
+      <article class="pc eveil"><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M8 60 A34 34 0 0 1 76 60 Z" fill="currentColor"/><rect x="2" y="64" width="80" height="4" fill="currentColor"/></svg>
+        <h3>Éveil</h3><p>Vous repartez de loin : douleurs, maladie, handicap ou âge. On réveille le corps, à votre rythme.</p>
+        <details><summary>Le détail</summary><ul><li>Après une maladie, avec des douleurs ou après 60 ans</li><li>Se lever, marcher, garder l’équilibre</li><li>Doux au départ, un peu plus chaque semaine</li></ul></details></article>
+      <article class="pc elan"><svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="50" cy="42" r="26" fill="currentColor"/><rect x="2" y="30" width="16" height="4" rx="2" fill="currentColor"/><rect x="6" y="40" width="12" height="4" rx="2" fill="currentColor"/><rect x="2" y="50" width="16" height="4" rx="2" fill="currentColor"/></svg>
+        <h3>Élan</h3><p>Vous voulez retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.</p>
+        <details><summary>Le détail</summary><ul><li>Les adultes qui veulent reprendre</li><li>Force, endurance, mobilité à chaque séance</li><li>Une à deux séances par semaine</li></ul></details></article>
+      <article class="pc envol"><svg viewBox="0 0 84 84" aria-hidden="true"><circle cx="42" cy="30" r="24" fill="currentColor"/><rect x="2" y="70" width="80" height="4" fill="currentColor"/></svg>
+        <h3>Envol</h3><p>Vous voulez vous entraîner plus intensément et viser plus haut.</p>
+        <details><summary>Le détail</summary><ul><li>Les personnes déjà actives</li><li>Puissance, vitesse, endurance</li><li>Un programme vers votre objectif</li></ul></details></article>
+      <article class="pc plume"><svg viewBox="0 0 84 84" aria-hidden="true"><path d="M70 6 C40 12 18 36 16 70 L22 74 C30 46 48 26 70 6 Z" fill="currentColor"/><path d="M14 78 L30 58" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>Plume</h3><p>Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser.</p>
+        <details><summary>Le détail</summary><ul><li>Enfants et adolescents, tous niveaux</li><li>Coordination, motricité, confiance</li><li>Par le jeu, avec un objectif clair</li></ul></details></article>
+    </div>
+  </div>
+</section>
+
+<section class="methode" id="methode" aria-labelledby="t-met">
+  <div class="wrap">
+    <div class="roue" data-onglets role="tablist" aria-label="Les quatre qualités">
+      <div class="anneau" aria-hidden="true"></div>
+      <div class="milieu" aria-hidden="true"><img class="m1" src="img/force.webp" alt=""><img class="m2" src="img/cardio.webp" alt=""><img class="m3" src="img/eau.webp" alt=""><img class="m4" src="img/coord.webp" alt=""></div>
+      <button role="tab" id="q1" aria-controls="qp1" aria-selected="true">Force</button>
+      <button role="tab" id="q2" aria-controls="qp2" aria-selected="false">Endurance</button>
+      <button role="tab" id="q3" aria-controls="qp3" aria-selected="false">Mobilité</button>
+      <button role="tab" id="q4" aria-controls="qp4" aria-selected="false">Coordination</button>
+    </div>
+    <div>
+      <h2 class="h2" id="t-met">La méthode Ensō</h2>
+      <p class="chapo">Un cercle tracé d’un seul geste. À chaque séance, on fait le tour du corps : quatre qualités, rien d’oublié. Touchez une qualité pour la découvrir.</p>
+      <div class="qp" id="qp1" role="tabpanel" aria-labelledby="q1"><h3>Force</h3><p>Pour porter vos courses, vous relever d’une chaise, monter les escaliers sans vous arrêter.</p></div>
+      <div class="qp" id="qp2" role="tabpanel" aria-labelledby="q2"><h3>Endurance</h3><p>Pour marcher plus longtemps, jouer plus longtemps, et récupérer plus vite.</p></div>
+      <div class="qp" id="qp3" role="tabpanel" aria-labelledby="q3"><h3>Mobilité</h3><p>Pour vous baisser, vous tourner, attraper ce qui est en hauteur, sans gêne.</p></div>
+      <div class="qp" id="qp4" role="tabpanel" aria-labelledby="q4"><h3>Coordination</h3><p>Pour l’équilibre, l’adresse, et des gestes plus sûrs au quotidien.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="deroule sombre" id="deroule" aria-labelledby="t-der">
+  <div class="wrap">
+    <h2 class="h2" id="t-der">Comment ça se passe</h2>
+    <ol class="etapes">
+      <li><span class="jauge" style="--p:25"><b>1</b></span><h3>On s’appelle</h3><p>Vous laissez votre prénom et votre numéro, je vous rappelle.</p></li>
+      <li><span class="jauge" style="--p:50"><b>2</b></span><h3>Première séance chez vous</h3><p>Vingt minutes de bilan, quarante minutes de séance.</p></li>
+      <li><span class="jauge" style="--p:75"><b>3</b></span><h3>Des séances ajustées</h3><p>Préparées pour vous, adaptées à votre forme du jour.</p></li>
+      <li><span class="jauge" style="--p:100"><b>4</b></span><h3>Vos progrès en chiffres</h3><p>Un bilan écrit au départ, à six semaines et à la fin.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tarifs sombre" id="tarifs" aria-labelledby="t-tar" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" id="t-tar">Tarifs</h2>
+    <p class="chapo">Des séances d’une heure, chez vous, matériel fourni.</p>
+    <div class="onglets-t" role="tablist" aria-label="Formules" data-onglets>
+      <button role="tab" id="ta-1" aria-controls="o-1" aria-selected="true">Nouvelle Lune<small>Pour commencer</small></button>
+      <button role="tab" id="ta-2" aria-controls="o-2" aria-selected="false">Clair de Lune<small>À la séance</small></button>
+      <button role="tab" id="ta-3" aria-controls="o-3" aria-selected="false">Trois Lunes<small>Sur 3 mois</small></button>
+      <button role="tab" id="ta-4" aria-controls="o-4" aria-selected="false">Éclipse<small>À deux</small></button>
+    </div>
+    <div class="grille-t">
+      <div class="offre" id="o-1" role="tabpanel" aria-labelledby="ta-1"><img class="lune" src="img/lune-nouvelle-lune.webp" alt="" width="84" height="84"><h3>Nouvelle Lune</h3><p class="pour">La première séance, pour faire connaissance.</p>
+        <p class="prix"><b>38 €</b><span>la séance</span></p><p class="fisc">Soit 19 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>20 min de bilan, 40 min de séance</li><li>Satisfait ou remboursé</li></ul><a class="btn btn-c" href="#contact" data-formule="nouvelle-lune">Choisir Nouvelle Lune</a></div>
+      <div class="offre" id="o-2" role="tabpanel" aria-labelledby="ta-2"><img class="lune" src="img/lune-clair-de-lune.webp" alt="" width="84" height="84"><h3>Clair de Lune</h3><p class="pour">Ensuite, à la séance, quand vous voulez.</p>
+        <p class="prix"><b>78 €</b><span>la séance</span></p><p class="fisc">Soit 39 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>Sans engagement</li><li>Vous arrêtez quand vous voulez</li></ul><a class="btn btn-c" href="#contact" data-formule="clair-de-lune">Choisir Clair de Lune</a></div>
+      <div class="offre reco" id="o-3" role="tabpanel" aria-labelledby="ta-3"><div class="top"><img class="lune" src="img/lune-trois-lunes.webp" alt="" width="84" height="84"><span class="badge">Recommandé</span></div><h3>Trois Lunes</h3><p class="pour">Trois mois pour changer durablement.</p>
+        <p class="prix"><b>58 €</b><span>la séance</span></p><p class="fisc">Soit 29 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>12 séances sur 3 mois</li><li>240 € de moins que 12 séances Clair de Lune</li></ul><a class="btn btn-v" href="#contact" data-formule="trois-lunes">Choisir Trois Lunes</a></div>
+      <div class="offre" id="o-4" role="tabpanel" aria-labelledby="ta-4"><img class="lune" src="img/lune-eclipse.webp" alt="" width="84" height="84"><h3>Éclipse</h3><p class="pour">À deux : en couple, entre amis ou en famille.</p>
+        <p class="prix"><b>98 €</b><span>pour deux</span></p><p class="fisc">Soit 49 € après crédit d’impôt<sup>1</sup>, 24,50 € chacun</p>
+        <ul><li>1 h pour deux, chez vous</li><li>Le même suivi pour chacun</li></ul><a class="btn btn-c" href="#contact" data-formule="eclipse">Choisir Éclipse</a></div>
+    </div>
+    <p class="note"><sup>1</sup> Crédit d’impôt de 50 % des services à la personne (article 199 sexdecies du code général des impôts), sous réserve de l’enregistrement de ma déclaration, en cours.</p>
+  </div>
+</section>
+
+<section class="confiance" id="confiance" aria-labelledby="t-con">
+  <div class="wrap">
+    <h2 class="h2" id="t-con" style="margin-bottom:2.5rem">Votre enseignant</h2>
+    <div class="haut">
+      <div class="photo">Photo d’Ilyas à venir</div>
+      <blockquote class="citation">« Ado, j’avais mal au genou. Ce qui m’a aidé, c’est de rebouger, doucement, un peu plus chaque semaine. Aujourd’hui, je fais pareil avec vous. »<footer>Ilyas EL AOUADI, enseignant en activité physique adaptée</footer></blockquote>
+    </div>
+    <ul class="sceaux">
+      <li class="sceau"><b>APA-S</b><span>Licence STAPS, Paris Nanterre, 2026</span></li>
+      <li class="sceau"><b>STAPS</b><span>Éducation et motricité, Toulon, 2022</span></li>
+      <li class="sceau"><b>Carte pro</b><span>n° 08325ED0042</span></li>
+      <li class="sceau"><b>SIRET</b><span>133 247 395 00014</span></li>
+      <li class="sceau v"><b>Remboursé</b><span>si la 1<sup>re</sup> séance ne vous convient pas</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-cont">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="t-cont">Être rappelé</h2>
+      <p class="chapo">Votre prénom et votre numéro suffisent. Je vous rappelle moi-même, et l’appel ne vous engage à rien.</p>
+      <p class="debut">Premières séances à partir de janvier 2027</p>
+    </div>
+    <form data-rappel novalidate aria-labelledby="t-cont">
+      <div class="champ"><label for="f-prenom">Votre prénom</label><input id="f-prenom" name="prenom" autocomplete="given-name" aria-describedby="f-prenom-err"><p class="f-erreur" id="f-prenom-err"></p></div>
+      <div class="champ"><label for="f-tel">Votre numéro de téléphone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="f-tel-err"><p class="f-erreur" id="f-tel-err"></p></div>
+      <fieldset class="champ"><legend>C’est pour</legend><div class="choix"><label><input type="radio" name="pour" id="f-pour-1" value="moi" checked>Moi</label><label><input type="radio" name="pour" id="f-pour-2" value="enfant">Mon enfant</label><label><input type="radio" name="pour" id="f-pour-3" value="proche">Un proche</label></div></fieldset>
+      <div class="champ"><label for="f-formule">Formule envisagée (facultatif)</label><select id="f-formule" name="formule"><option value="">Je ne sais pas encore</option><option value="nouvelle-lune">Nouvelle Lune, la première séance</option><option value="clair-de-lune">Clair de Lune, à la séance</option><option value="trois-lunes">Trois Lunes, sur 3 mois</option><option value="eclipse">Éclipse, à deux</option></select></div>
+      <button class="btn btn-n" type="submit">Être rappelé</button>
+      <p class="f-note">Vos coordonnées servent uniquement à vous rappeler.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="haut">
+      <div><a class="marque" href="#haut"><span class="rond"><img src="img/porte_logo_jour.webp" alt="" width="34" height="36"></span><b>ASCENSION</b></a><p class="sign">Le sport adapté à vous. Chez vous.</p></div>
+      <div><h2>Parcours</h2><ul><li><a href="#parcours">Éveil</a></li><li><a href="#parcours">Élan</a></li><li><a href="#parcours">Envol</a></li><li><a href="#parcours">Plume</a></li></ul></div>
+      <div><h2>Pratique</h2><ul><li><a href="#methode">Méthode Ensō</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Être rappelé</a></li></ul></div>
+      <div><h2>Informations</h2><ul><li><a href="#haut">Mentions légales</a></li><li><a href="#haut">Confidentialité</a></li><li><a href="#haut">Conditions de vente</a></li></ul></div>
+    </div>
+    <div class="bas"><span>Ilyas EL AOUADI, entrepreneur individuel</span><span>SIRET 133 247 395 00014</span><span>Carte professionnelle n° 08325ED0042</span></div>
+  </div>
+</footer>
+</body>
+</html>

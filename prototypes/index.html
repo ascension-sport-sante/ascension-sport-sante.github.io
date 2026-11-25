@@ -1,0 +1,157 @@
+<title>Refonte Ascension</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Shippori+Mincho:wght@600&display=swap">
+<style>
+/* Page de comparaison : sobre, au service des captures. Colonnes de prototypes, puis tableau et recommandation. */
+:root{--bg:#F6F3EE;--surface:#FFFFFF;--fg:#1D1A17;--doux:#5E574E;--filet:#DDD6CB;--accent:#9E1B14;--accent-bg:#F6E5E2;
+  --t:"Shippori Mincho",Georgia,serif;--c:"Manrope",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171513;--surface:#211E1B;--fg:#EEE8DF;--doux:#B5ACA0;--filet:#3A352F;--accent:#E8776A;--accent-bg:#3A1F1C;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#171513;--surface:#211E1B;--fg:#EEE8DF;--doux:#B5ACA0;--filet:#3A352F;--accent:#E8776A;--accent-bg:#3A1F1C;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--c);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:1240px;margin:0 auto;padding-block:2.5rem 4rem}
+h1,h2,h3{font-family:var(--t);font-weight:600;line-height:1.2;margin:0;text-wrap:balance}
+h1{font-size:clamp(2rem,4vw,2.8rem)}
+h2{font-size:1.6rem;margin:3.5rem 0 1rem}
+p{margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.intro{max-width:46rem;color:var(--doux);margin-top:.8rem}
+.bascule{display:inline-flex;margin-top:1.5rem;border:1px solid var(--filet);border-radius:999px;background:var(--surface);overflow:hidden}
+.bascule button{font:600 .95rem var(--c);border:0;background:none;color:var(--fg);padding:.6rem 1.2rem;cursor:pointer;min-height:44px}
+.bascule button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+[data-m="sans"] .si-avec,[data-m="avec"] .si-sans{display:none}
+.protos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:2rem}
+.proto{background:var(--surface);border:1px solid var(--filet);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.vues{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:6px;background:var(--filet);padding:6px}
+.vues img{width:100%;height:auto;display:block;border-radius:4px;background:#ddd}
+.corps{padding:1.2rem 1.25rem 1.4rem;display:grid;gap:.8rem}
+.corps .lettre{font:700 .85rem var(--c);color:var(--accent)}
+.corps h3{font-size:1.35rem}
+.dir{color:var(--doux)}
+.nuancier{display:flex;gap:4px;flex-wrap:wrap}
+.nuancier span{display:inline-flex;align-items:flex-end;width:58px;height:44px;border-radius:4px;padding:3px 4px;font-size:.66rem;font-weight:700;border:1px solid rgba(0,0,0,.08)}
+.typo{font-size:.9rem;color:var(--doux)}
+.liens{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+.liens a{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:6px;font-weight:700;text-decoration:none;border:1.5px solid var(--accent)}
+.liens a.plein{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .liens a.plein{color:#1D1A17}}
+:root[data-theme="dark"] .liens a.plein{color:#1D1A17}
+details.plus{border-top:1px solid var(--filet);padding-top:.6rem}
+details.plus summary{cursor:pointer;font-weight:700;min-height:40px;display:flex;align-items:center}
+details.plus dl{margin:.4rem 0 0;display:grid;gap:.6rem;font-size:.95rem}
+details.plus dt{font-weight:700}
+details.plus dd{margin:0;color:var(--doux)}
+@media (max-width:1000px){.protos{grid-template-columns:1fr}.proto{max-width:720px}}
+.tableau{overflow-x:auto;border:1px solid var(--filet);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.95rem}
+th,td{text-align:left;padding:.8rem 1rem;border-bottom:1px solid var(--filet);vertical-align:top}
+thead th{font-family:var(--t);font-size:1.05rem}
+tbody th{font-weight:700;width:18%}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.reco{background:var(--accent-bg);border-radius:10px;padding:1.5rem 1.6rem;display:grid;gap:.8rem;max-width:62rem}
+.reco p,.liste{max-width:58rem}
+.liste{margin:0;padding-left:1.2rem;display:grid;gap:.5rem}
+.deux{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+@media (max-width:860px){.deux{grid-template-columns:1fr}}
+.petit{font-size:.9rem;color:var(--doux)}
+</style>
+
+<div class="page" id="page" data-m="sans">
+  <h1>Refonte Ascension : trois directions</h1>
+  <p class="intro">Trois prototypes de la page d’accueil, avec les mêmes contenus pour comparer seulement le style. Chacun se parcourt sur PC et sur téléphone : menu, parcours, méthode, tarifs et formulaire fonctionnent (rien n’est envoyé). Un bouton en haut de chaque prototype passe de la version sans montagne à la version avec.</p>
+  <div class="bascule" role="group" aria-label="Captures affichées"><button type="button" data-v="sans" aria-pressed="true">Sans montagne</button><button type="button" data-v="avec" aria-pressed="false">Avec montagne</button></div>
+
+  <div class="protos">
+    <article class="proto">
+      <div class="vues"><img class="si-sans" src="captures/a-premium-pc-sans.webp" alt="Prototype A sur PC, sans montagne" width="1440" height="900" loading="lazy"><img class="si-sans" src="captures/a-premium-mob-sans.webp" alt="Prototype A sur téléphone, sans montagne" width="540" height="1170" loading="lazy"><img class="si-avec" src="captures/a-premium-pc-avec.webp" alt="Prototype A sur PC, avec montagne" width="1440" height="900" loading="lazy"><img class="si-avec" src="captures/a-premium-mob-avec.webp" alt="Prototype A sur téléphone, avec montagne" width="540" height="1170" loading="lazy"></div>
+      <div class="corps">
+        <p class="lettre">Prototype A</p><h3>Premium minimal</h3>
+        <p class="dir">Beaucoup d’air, une seule œuvre encadrée comme dans une galerie, des filets fins, le vermillon réservé aux boutons.</p>
+        <div class="nuancier" aria-label="Couleurs"><span style="background:#F6F3EE;color:#1A1714">F6F3EE</span><span style="background:#1A1714;color:#fff">1A1714</span><span style="background:#5E574E;color:#fff">5E574E</span><span style="background:#DDD6CB;color:#1A1714">DDD6CB</span><span style="background:#9E1B14;color:#fff">9E1B14</span></div>
+        <p class="typo">Titres : Shippori Mincho. Texte : Manrope, 18 px.</p>
+        <div class="liens"><a class="plein" href="a-premium.html#sans-montagne">Ouvrir A</a><a href="a-premium.html#avec-montagne">A avec montagne</a></div>
+        <details class="plus"><summary>Points forts et limites</summary><dl>
+          <dt>Points forts</dt><dd>Le plus rassurant et le plus « professionnel de santé ». Très lisible, hiérarchie nette, fidèle à la marque actuelle (ensō, vermillon, mincho).</dd>
+          <dt>Limites</dt><dd>Le moins mémorable des trois : sans la peinture, il peut sembler froid. Peu d’émotion humaine tant qu’il n’y a pas votre photo.</dd>
+          <dt>Sur téléphone</dt><dd>Très propre : texte, puis bouton, puis l’œuvre. Tarifs en onglets.</dd>
+          <dt>Vers un vrai site</dt><dd>Le plus simple à industrialiser : peu d’effets, composants réguliers, site très léger.</dd></dl></details>
+      </div>
+    </article>
+
+    <article class="proto">
+      <div class="vues"><img class="si-sans" src="captures/b-identite-pc-sans.webp" alt="Prototype B sur PC, sans montagne" width="1440" height="900" loading="lazy"><img class="si-sans" src="captures/b-identite-mob-sans.webp" alt="Prototype B sur téléphone, sans montagne" width="540" height="1170" loading="lazy"><img class="si-avec" src="captures/b-identite-pc-avec.webp" alt="Prototype B sur PC, avec montagne" width="1440" height="900" loading="lazy"><img class="si-avec" src="captures/b-identite-mob-avec.webp" alt="Prototype B sur téléphone, avec montagne" width="540" height="1170" loading="lazy"></div>
+      <div class="corps">
+        <p class="lettre">Prototype B</p><h3>Identité contemporaine</h3>
+        <p class="dir">L’ensō devient un système : anneaux, disque vermillon, sceaux ronds, une couleur par parcours, une roue interactive pour la méthode.</p>
+        <div class="nuancier" aria-label="Couleurs"><span style="background:#141A2E;color:#fff">141A2E</span><span style="background:#F2ECE1;color:#141A2E">F2ECE1</span><span style="background:#C8381F;color:#fff">C8381F</span><span style="background:#E0B25B;color:#141A2E">E0B25B</span><span style="background:#2F4C8F;color:#fff">2F4C8F</span><span style="background:#2F7A5F;color:#fff">2F7A5F</span></div>
+        <p class="typo">Titres et texte : Zen Kaku Gothic New (très gras). Citations : Shippori Mincho.</p>
+        <div class="liens"><a class="plein" href="b-identite.html#sans-montagne">Ouvrir B</a><a href="b-identite.html#avec-montagne">B avec montagne</a></div>
+        <details class="plus"><summary>Points forts et limites</summary><dl>
+          <dt>Points forts</dt><dd>Le plus mémorable et le plus moderne. Les couleurs par parcours aident à savoir où l’on est. La roue rend la méthode Ensō concrète.</dd>
+          <dt>Limites</dt><dd>Les grands fonds sombres et la typo très grasse font moins « soin » et moins calme. Plus risqué pour un public âgé ou fragile.</dd>
+          <dt>Sur téléphone</dt><dd>Fort impact ; le titre et le bouton arrivent avant le cercle. Plus long à faire défiler.</dd>
+          <dt>Vers un vrai site</dt><dd>Effort moyen : animations, roue, couleurs à décliner sur toutes les pages.</dd></dl></details>
+      </div>
+    </article>
+
+    <article class="proto">
+      <div class="vues"><img class="si-sans" src="captures/c-humain-pc-sans.webp" alt="Prototype C sur PC, sans montagne" width="1440" height="900" loading="lazy"><img class="si-sans" src="captures/c-humain-mob-sans.webp" alt="Prototype C sur téléphone, sans montagne" width="540" height="1170" loading="lazy"><img class="si-avec" src="captures/c-humain-pc-avec.webp" alt="Prototype C sur PC, avec montagne" width="1440" height="900" loading="lazy"><img class="si-avec" src="captures/c-humain-mob-avec.webp" alt="Prototype C sur téléphone, avec montagne" width="540" height="1170" loading="lazy"></div>
+      <div class="corps">
+        <p class="lettre">Prototype C</p><h3>Humain et éditorial</h3>
+        <p class="dir">Une lettre de l’enseignant, puis un carnet : objectifs du quotidien, première heure minute par minute, exemples de bilans, questions fréquentes.</p>
+        <div class="nuancier" aria-label="Couleurs"><span style="background:#FBF8F3;color:#24345E">FBF8F3</span><span style="background:#24345E;color:#fff">24345E</span><span style="background:#2A2B33;color:#fff">2A2B33</span><span style="background:#9E1B14;color:#fff">9E1B14</span><span style="background:#E4EBE2;color:#24345E">E4EBE2</span><span style="background:#F1E8D9;color:#24345E">F1E8D9</span></div>
+        <p class="typo">Titres : Shippori Mincho B1. Texte : Atkinson Hyperlegible, 19 px, conçue pour la basse vision. Bouton « Textes plus grands ».</p>
+        <div class="liens"><a class="plein" href="c-humain.html#sans-montagne">Ouvrir C</a><a href="c-humain.html#avec-montagne">C avec montagne</a></div>
+        <details class="plus"><summary>Points forts et limites</summary><dl>
+          <dt>Points forts</dt><dd>Le plus rassurant pour les seniors et les proches : on comprend tout de suite qui vient, pour quoi, comment et combien. Le meilleur pour les appels.</dd>
+          <dt>Limites</dt><dd>Il repose sur votre photo : sans elle, la lettre perd de sa force. Visuellement moins spectaculaire que B.</dd>
+          <dt>Sur téléphone</dt><dd>Le plus confortable : grands caractères, grands champs, boutons de 56 px.</dd>
+          <dt>Vers un vrai site</dt><dd>Effort faible à moyen : structure simple, contenus à écrire pour chaque page.</dd></dl></details>
+      </div>
+    </article>
+  </div>
+
+  <h2>Comparaison</h2>
+  <div class="tableau"><table>
+    <thead><tr><th scope="col">Critère</th><th scope="col">A · Premium minimal</th><th scope="col">B · Identité contemporaine</th><th scope="col">C · Humain et éditorial</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Première impression</th><td>Calme, haut de gamme</td><td>Forte, moderne, mémorable</td><td>Chaleureuse, proche</td></tr>
+      <tr><th scope="row">Lisibilité pour les seniors</th><td>Bonne</td><td>Correcte</td><td>La meilleure</td></tr>
+      <tr><th scope="row">Confiance « santé »</th><td>Très bonne</td><td>Bonne</td><td>Très bonne</td></tr>
+      <tr><th scope="row">Pousse à appeler</th><td>Bonne</td><td>Bonne</td><td>La meilleure</td></tr>
+      <tr><th scope="row">Fidélité à la marque</th><td>Forte</td><td>Réinterprétée</td><td>Forte, plus douce</td></tr>
+      <tr><th scope="row">Effort pour un vrai site</th><td>Faible</td><td>Moyen</td><td>Faible à moyen</td></tr>
+    </tbody></table></div>
+  <p class="petit" style="margin-top:.6rem">Vérifié sur les trois : aucun débordement sur téléphone, aucune erreur dans la console, contrôle automatique d’accessibilité (axe) sans erreur après corrections. Non testé : lecteur d’écran, vrais appareils, réseau mobile.</p>
+
+  <h2>Recommandation</h2>
+  <div class="reco">
+    <p><strong>Partir de C, avec la finition de A et un seul élément fort de B.</strong></p>
+    <ul class="liste">
+      <li><strong>De C</strong> : la lettre d’accueil, les objectifs du quotidien, la première heure minute par minute, les exemples de bilans, les questions, la police très lisible et le bouton « Textes plus grands ». C’est ce qui parle le mieux à vos clients et à leurs proches.</li>
+      <li><strong>De A</strong> : la retenue (filets fins, beaucoup d’air, vermillon réservé aux actions) et, si vous gardez la montagne, la peinture présentée comme une œuvre encadrée plutôt qu’en fond.</li>
+      <li><strong>De B</strong> : la roue interactive de la méthode Ensō et une couleur discrète par parcours, pour savoir où l’on est.</li>
+    </ul>
+    <p>Pour la montagne, je conseille la version sans : elle respecte votre consigne et l’ensō avec la plume porte déjà l’identité.</p>
+  </div>
+
+  <h2>Ce que la refonte corrige</h2>
+  <div class="deux">
+    <ul class="liste">
+      <li>Une seule action partout : « Être rappelé » (au lieu de quatre noms).</li>
+      <li>Le vrai prix en grand, le montant après crédit d’impôt plus petit avec une note, sous réserve de l’enregistrement de la déclaration.</li>
+      <li>« Premières séances à partir de janvier 2027 » près des boutons.</li>
+      <li>Un formulaire de quatre champs, sans question de santé.</li>
+    </ul>
+    <ul class="liste">
+      <li>SIRET, carte professionnelle et diplômes visibles.</li>
+      <li>Exemples de bilans marqués « personne fictive » sur chaque carte.</li>
+      <li>Pas de pastilles qui recouvrent le contenu, contrastes conformes.</li>
+      <li>Pages beaucoup plus légères : ni vidéos de fond, ni moteur 3D.</li>
+    </ul>
+  </div>
+</div>
+<script>
+(function(){var p=document.getElementById("page");document.querySelectorAll(".bascule button").forEach(function(b){b.addEventListener("click",function(){p.dataset.m=b.dataset.v;document.querySelectorAll(".bascule button").forEach(function(x){x.setAttribute("aria-pressed",String(x===b))});});});})();
+</script>

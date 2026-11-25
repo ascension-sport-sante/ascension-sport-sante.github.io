@@ -1,0 +1,16 @@
+/* Commun aux trois prototypes : bandeau de prototype, version avec / sans montagne, utilitaires. */
+.proto-band{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;justify-content:center;
+  padding:.45rem max(16px,env(safe-area-inset-right,0px)) .45rem max(16px,env(safe-area-inset-left,0px));
+  background:#24211E;color:#F4EFE6;font:500 13px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif}
+.proto-band .pb-nom{font-weight:700}
+.proto-band .pb-m{display:inline-flex;border:1px solid #6d665d;border-radius:999px;overflow:hidden}
+.proto-band button{font:inherit;color:inherit;background:none;border:0;padding:.3rem .8rem;cursor:pointer}
+.proto-band button[aria-pressed="true"]{background:#F4EFE6;color:#24211E}
+.proto-band a{color:#F4EFE6;text-underline-offset:3px}
+.proto-band :focus-visible{outline:2px solid #F0C36A;outline-offset:2px}
+html.capture .proto-band{display:none}
+[data-montagne="sans"] [data-si="avec"],[data-montagne="avec"] [data-si="sans"]{display:none!important}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.f-erreur{margin:.35rem 0 0;font-size:.9em}
+.f-erreur:empty{display:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

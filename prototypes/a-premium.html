@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="fr" data-proto-nom="Prototype A · Premium minimal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ascension, prototype A</title>
+<meta name="description" content="Prototype A : direction premium minimale pour Ascension Sport-Santé.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Shippori+Mincho:wght@500;600&display=swap">
+<link rel="stylesheet" href="commun/proto.css">
+<script src="commun/proto.js"></script>
+<style>
+/* Concept : « Ma », l'espace. Une seule œuvre encadrée, beaucoup d'air, une grille stricte,
+   le vermillon réservé à l'action. */
+:root{
+  --fond:#F6F3EE; --papier:#FCFBF8; --encre:#1A1714; --pierre:#5E574E; --filet:#DDD6CB;
+  --vermillon:#9E1B14; --vermillon-fonce:#7E150F; --or:#A9842F;
+  --titre:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  --texte:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --max:1200px; --g:max(16px,env(safe-area-inset-left,0px)); --gd:max(16px,env(safe-area-inset-right,0px));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--fond);color:var(--encre);font:400 1.125rem/1.65 var(--texte);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--vermillon);outline-offset:3px}
+h1,h2,h3{font-family:var(--titre);font-weight:500;line-height:1.15;margin:0;text-wrap:balance;letter-spacing:.005em}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--g);padding-right:var(--gd)}
+section{padding-block:clamp(4.5rem,9vw,8rem)}
+.sur{color:var(--pierre);font-size:.95rem;font-weight:500;margin-bottom:1rem}
+.h2{font-size:clamp(2rem,3.6vw,3rem)}
+.intro{max-width:34rem;color:var(--pierre);margin-top:1.25rem}
+
+/* Boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 1.6rem;border-radius:2px;
+  font:600 1rem/1 var(--texte);text-decoration:none;border:1.5px solid var(--vermillon);cursor:pointer;transition:background .2s,color .2s}
+.btn-plein{background:var(--vermillon);color:#fff}
+.btn-plein:hover{background:var(--vermillon-fonce);border-color:var(--vermillon-fonce)}
+.btn-ligne{background:transparent;color:var(--vermillon)}
+.btn-ligne:hover{background:var(--vermillon);color:#fff}
+.lien{font-weight:600;color:var(--encre);text-underline-offset:6px;text-decoration-thickness:1px}
+.lien:hover{color:var(--vermillon)}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--fond)}
+.tete{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--fond) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--filet)}
+.tete .wrap{display:flex;align-items:center;gap:2rem;min-height:76px}
+.marque{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
+.marque img{width:42px;height:42px}
+.marque b{font:600 1.35rem/1 var(--titre);letter-spacing:.06em}
+.marque small{display:block;font:500 .78rem/1.2 var(--texte);color:var(--pierre);margin-top:.2rem}
+.nav{display:flex;gap:1.75rem;align-items:center}
+.nav a{font-size:.98rem;font-weight:500;text-decoration:none;padding:.4rem 0;border-bottom:1px solid transparent}
+.nav a:hover{border-color:var(--encre)}
+.menu-btn{display:none}
+@media (max-width:960px){
+  .tete .wrap{gap:1rem}
+  .menu-btn{display:inline-flex;min-height:48px;padding:0 1rem;border:1px solid var(--filet);background:var(--papier);font:600 1rem var(--texte);border-radius:2px;cursor:pointer;color:var(--encre)}
+  .tete .btn{display:none}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--papier);border-bottom:1px solid var(--filet);padding:.5rem var(--gd) 1.25rem var(--g);display:none}
+  .nav.ouvert{display:flex}
+  .nav a{padding:1rem 0;border-bottom:1px solid var(--filet);font-size:1.1rem}
+  .nav .btn{display:flex;margin-top:1rem}
+}
+.nav .btn{display:none}
+@media (max-width:960px){.nav .btn{display:flex}}
+
+/* Héros */
+.heros{padding-block:clamp(3rem,7vw,6.5rem) clamp(4rem,8vw,7rem)}
+.heros .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.heros h1{font-size:clamp(2.5rem,4.6vw,4rem);line-height:1.08;font-weight:500}
+.heros h1 span{display:block}
+.heros .chapo{margin-top:1.75rem;max-width:30rem;color:var(--pierre);font-size:1.15rem}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.75rem;margin-top:2.25rem}
+.debut{margin-top:1.75rem;font-size:.95rem;color:var(--pierre);display:flex;align-items:center;gap:.6rem}
+.debut::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--vermillon)}
+.tableau{margin:0;background:var(--papier);padding:clamp(14px,2vw,26px);border:1px solid var(--filet);box-shadow:0 30px 60px -40px rgba(26,23,20,.35)}
+.tableau .toile{aspect-ratio:5/4;overflow:hidden;background:url(img/washi.webp) #F1EBE0;display:grid;place-items:center}
+.tableau .toile img{width:100%;height:100%;object-fit:cover;object-position:62% 50%;animation:pose 1.6s cubic-bezier(.2,.7,.2,1) both}
+.tableau .toile img.enso{width:62%;height:auto;object-fit:contain}
+.tableau figcaption{display:flex;justify-content:space-between;gap:1rem;margin-top:.9rem;font-size:.85rem;color:var(--pierre)}
+@keyframes pose{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@media (max-width:860px){.heros .wrap{grid-template-columns:1fr}.tableau .toile{aspect-ratio:4/3}}
+
+/* Accompagnement */
+.accomp .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,6vw,6rem)}
+.faits{margin:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--filet)}
+.faits div{padding:1.5rem 1.5rem 1.75rem 0;border-bottom:1px solid var(--filet)}
+.faits div:nth-child(odd){padding-right:2rem;border-right:1px solid var(--filet)}
+.faits div:nth-child(even){padding-left:2rem}
+.faits dt{font:500 1.35rem/1.3 var(--titre);margin-bottom:.5rem}
+.faits dd{margin:0;color:var(--pierre);font-size:1rem}
+@media (max-width:860px){.accomp .wrap{grid-template-columns:1fr}}
+@media (max-width:560px){.faits{grid-template-columns:1fr}.faits div:nth-child(n){padding:1.25rem 0;border-right:0}}
+
+/* Parcours */
+.parcours{background:var(--papier);border-block:1px solid var(--filet)}
+.liste{margin-top:3rem;border-top:1px solid var(--encre)}
+.liste details{border-bottom:1px solid var(--filet)}
+.liste summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:minmax(10rem,2fr) minmax(0,5fr) auto;gap:2rem;align-items:baseline;padding:1.75rem 0}
+.liste summary::-webkit-details-marker{display:none}
+.liste summary h3{font-size:clamp(1.9rem,3vw,2.6rem)}
+.liste summary p{color:var(--pierre)}
+.liste summary .ouvrir{font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--vermillon)}
+.liste summary .ouvrir::after{content:" +";}
+.liste details[open] summary .ouvrir::after{content:" −"}
+.liste summary:hover h3{color:var(--vermillon)}
+.detail{display:grid;grid-template-columns:minmax(10rem,2fr) repeat(3,minmax(0,1fr));gap:2rem;padding:0 0 2rem}
+.detail h4{font:600 .95rem var(--texte);margin:0 0 .4rem}
+.detail p{font-size:1rem;color:var(--pierre)}
+@media (max-width:860px){.liste summary{grid-template-columns:1fr;gap:.4rem}.detail{grid-template-columns:1fr;gap:1rem}.detail>span{display:none}}
+
+/* Méthode */
+.methode .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem);align-items:center}
+.cercle{position:relative;aspect-ratio:1;max-width:460px;width:100%;justify-self:center}
+.cercle svg{width:100%;height:100%;overflow:visible}
+.cercle .q{position:absolute;font:500 1.15rem var(--titre);background:var(--fond);padding:.2rem .6rem}
+.q1{top:-2%;left:50%;transform:translateX(-50%)}.q2{right:-6%;top:50%;transform:translateY(-50%)}
+.q3{bottom:-2%;left:50%;transform:translateX(-50%)}.q4{left:-6%;top:50%;transform:translateY(-50%)}
+.cercle .centre{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:.95rem;color:var(--pierre)}
+.qualites{margin:2rem 0 0;padding:0;list-style:none;display:grid;gap:1.1rem}
+.qualites li{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding-top:1.1rem;border-top:1px solid var(--filet)}
+.qualites b{font:500 1.15rem var(--titre)}
+.qualites span{color:var(--pierre);font-size:1rem}
+@media (max-width:860px){.methode .wrap{grid-template-columns:1fr}.cercle{max-width:320px}.qualites li{grid-template-columns:1fr;gap:.2rem}}
+
+/* Déroulement */
+.etapes{list-style:none;margin:3.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem;counter-reset:e}
+.etapes li{counter-increment:e;border-top:1px solid var(--encre);padding-top:1.5rem}
+.etapes li::before{content:counter(e);display:block;font:500 2.8rem/1 var(--titre);color:var(--vermillon);margin-bottom:1.25rem}
+.etapes h3{font-size:1.35rem;margin-bottom:.6rem}
+.etapes p{color:var(--pierre);font-size:1rem}
+@media (max-width:860px){.etapes{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.etapes{grid-template-columns:1fr}}
+
+/* Tarifs */
+.tarifs{background:var(--papier);border-block:1px solid var(--filet)}
+.tarifs .tete-sec{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1.5rem}
+.onglets-t{display:none}
+.grille-t{margin-top:3rem;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--filet);background:var(--fond)}
+.offre{padding:2rem 1.75rem 2.25rem;border-right:1px solid var(--filet);display:flex;flex-direction:column;position:relative}
+.offre:last-child{border-right:0}
+.offre.reco{background:var(--papier);box-shadow:inset 0 3px 0 var(--vermillon)}
+.offre .badge{position:absolute;top:1rem;right:1rem;font-size:.8rem;font-weight:600;color:var(--vermillon)}
+.offre h3{font-size:1.7rem}
+.offre .pour{color:var(--pierre);font-size:.98rem;margin-top:.35rem;min-height:3.2em}
+.prix{margin-top:1.5rem;display:flex;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.prix b{font:500 3.2rem/1 var(--titre)}
+.prix span{color:var(--pierre);font-size:.95rem}
+.fisc{margin-top:.6rem;font-size:.85rem;color:var(--pierre);padding-top:.6rem;border-top:1px dashed var(--filet)}
+.offre ul{margin:1.25rem 0 1.75rem;padding:0;list-style:none;font-size:.98rem;display:grid;gap:.5rem}
+.offre li{padding-left:1.1rem;position:relative}
+.offre li::before{content:"";position:absolute;left:0;top:.7em;width:6px;height:1px;background:var(--encre)}
+.offre .btn{margin-top:auto;width:100%}
+.note{margin-top:1.5rem;font-size:.85rem;color:var(--pierre);max-width:52rem}
+@media (max-width:1060px){.grille-t{grid-template-columns:1fr 1fr}.offre:nth-child(2){border-right:0}.offre:nth-child(-n+2){border-bottom:1px solid var(--filet)}}
+@media (max-width:760px){
+  .onglets-t{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:2rem}
+  .onglets-t button{min-height:56px;border:1px solid var(--filet);background:var(--fond);font:600 1rem var(--texte);color:var(--encre);border-radius:2px;cursor:pointer;text-align:left;padding:.5rem .9rem;line-height:1.25}
+  .onglets-t button small{display:block;font-weight:500;color:var(--pierre);font-size:.85rem}
+  .onglets-t button[aria-selected="true"]{border-color:var(--encre);background:var(--papier);box-shadow:inset 0 -3px 0 var(--vermillon)}
+  .grille-t{grid-template-columns:1fr;margin-top:1rem}
+  .offre{display:none;border:0!important}.offre.actif{display:flex}
+}
+
+/* Confiance */
+.confiance .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem)}
+.portrait{aspect-ratio:4/5;border:1px solid var(--filet);background:url(img/washi.webp) #EFE8DC;display:grid;place-items:center;text-align:center;color:var(--pierre);font-size:.9rem;margin-top:2rem}
+.portrait img{width:38%;opacity:.5;margin:0 auto .75rem}
+.citation{font:500 clamp(1.35rem,2.2vw,1.75rem)/1.45 var(--titre);margin:0;max-width:36rem}
+.citation footer{font:500 1rem var(--texte);color:var(--pierre);margin-top:1rem}
+.preuves{margin:3rem 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--filet)}
+.preuves li{padding:1.4rem 1.5rem 1.4rem 0;border-bottom:1px solid var(--filet)}
+.preuves li:nth-child(odd){border-right:1px solid var(--filet)}
+.preuves li:nth-child(even){padding-left:1.5rem}
+.preuves b{display:block;font:500 1.15rem var(--titre);margin-bottom:.3rem}
+.preuves span{font-size:.95rem;color:var(--pierre)}
+@media (max-width:860px){.confiance .wrap{grid-template-columns:1fr}.portrait{max-width:260px}}
+@media (max-width:560px){.preuves{grid-template-columns:1fr}.preuves li:nth-child(n){padding:1.2rem 0;border-right:0}}
+
+/* Contact */
+.contact{background:var(--encre);color:#F3EEE6}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,6vw,6rem)}
+.contact .intro{color:#C9C1B5}
+.contact .debut{color:#C9C1B5}
+.contact .debut::before{background:#E06A55}
+form,.f-merci{background:var(--papier);color:var(--encre);padding:clamp(1.5rem,3vw,2.5rem);display:grid;gap:1.4rem}
+.champ label,.champ legend{display:block;font-weight:600;font-size:1rem;margin-bottom:.45rem;padding:0}
+.champ input,.champ select{width:100%;min-height:54px;border:1px solid #B9B0A3;border-radius:2px;background:#fff;padding:0 1rem;font:400 1.1rem var(--texte);color:var(--encre)}
+.champ input:focus,.champ select:focus{outline:2px solid var(--vermillon);outline-offset:1px;border-color:var(--vermillon)}
+.champ input[aria-invalid="true"]{border-color:var(--vermillon);border-width:2px}
+fieldset.champ{border:0;margin:0;padding:0}
+.choix{display:flex;flex-wrap:wrap;gap:.6rem}
+.choix label{display:inline-flex;align-items:center;gap:.5rem;min-height:48px;padding:0 1rem;border:1px solid #B9B0A3;border-radius:2px;font-weight:500;margin:0;cursor:pointer;background:#fff}
+.choix input{width:auto;min-height:0;accent-color:var(--vermillon)}
+.choix label:has(input:checked){border-color:var(--encre);box-shadow:inset 0 0 0 1px var(--encre)}
+.f-erreur{color:var(--vermillon);font-weight:600}
+.f-note{font-size:.88rem;color:var(--pierre)}
+.f-merci{align-content:center;min-height:300px;font-size:1.2rem}
+.f-proto{font-size:.88rem;color:var(--pierre)}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+/* Pied */
+.pied{padding-block:4rem 2.5rem;background:var(--fond)}
+.pied .haut{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid var(--filet)}
+.pied .sign{font:500 1.4rem/1.3 var(--titre);margin-top:1rem;max-width:16rem}
+.pied h2{font:600 .95rem var(--texte);margin-bottom:.9rem}
+.pied ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;font-size:.98rem}
+.pied a{text-decoration:none}.pied a:hover{text-decoration:underline}
+.pied .bas{display:flex;flex-wrap:wrap;gap:.5rem 2rem;padding-top:1.5rem;font-size:.85rem;color:var(--pierre)}
+@media (max-width:760px){.pied .haut{grid-template-columns:1fr 1fr}.pied .haut>div:first-child{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<header class="tete">
+  <div class="wrap">
+    <a class="marque" href="#haut"><img src="img/porte_logo_jour.webp" alt="" width="42" height="42"><span><b>ASCENSION</b><small>Sport-Santé à domicile</small></span></a>
+    <button class="menu-btn" type="button" data-menu aria-controls="nav" aria-expanded="false">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="#accompagnement">Accompagnement</a><a href="#parcours">Parcours</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#confiance">Votre enseignant</a>
+      <a class="btn btn-plein" href="#contact">Être rappelé</a>
+    </nav>
+    <a class="btn btn-plein" href="#contact">Être rappelé</a>
+  </div>
+</header>
+
+<main id="haut">
+<section class="heros" aria-labelledby="t-heros">
+  <div class="wrap">
+    <div>
+      <p class="sur">Enseignant en activité physique adaptée, à Paris</p>
+      <h1 id="t-heros"><span>Le sport adapté à&nbsp;vous.</span><span>Chez vous.</span></h1>
+      <p class="chapo">Des séances d’une heure à domicile pour les enfants, les adultes et les seniors, avec ou sans pathologie. Le matériel est fourni.</p>
+      <div class="actions"><a class="btn btn-plein" href="#contact">Être rappelé</a><a class="lien" href="#tarifs">Voir les tarifs</a></div>
+      <p class="debut">Premières séances à partir de janvier 2027</p>
+    </div>
+    <figure class="tableau">
+      <div class="toile" data-si="avec"><img src="img/montagne.webp" alt="Peinture à la feuille d’or : un paysage de collines et de nuages sous un soleil rouge." width="1800" height="1200"></div>
+      <div class="toile" data-si="sans"><img class="enso" src="img/porte_logo_jour.webp" alt="Le logo d’Ascension : un ensō vermillon traversé d’une plume dorée." width="480" height="504"></div>
+      <figcaption data-si="sans"><span>Ensō : le cercle tracé d’un seul geste.</span><span>Il a donné son nom à la méthode.</span></figcaption>
+      <figcaption data-si="avec"><span>À Paris et en proche banlieue</span><span>Séances individuelles ou à deux</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="accomp" id="accompagnement" aria-labelledby="t-acc">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="t-acc">Un accompagnement à votre mesure</h2>
+      <p class="intro">Je pars de ce que vous pouvez faire aujourd’hui, et nous avançons ensemble, une séance après l’autre. Chaque progrès se mesure, et vous le voyez.</p>
+    </div>
+    <dl class="faits">
+      <div><dt>Chez vous</dt><dd>À Paris et en proche banlieue. J’apporte tout le matériel.</dd></div>
+      <div><dt>Pour tous</dt><dd>Enfants, adultes, seniors, avec ou sans pathologie.</dd></div>
+      <div><dt>Sur mesure</dt><dd>Chaque séance est préparée pour vous, puis ajustée à votre forme du jour.</dd></div>
+      <div><dt>Au calme</dt><dd>Sans foule, sans bruit et sans le regard des autres.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="parcours" id="parcours" aria-labelledby="t-par">
+  <div class="wrap">
+    <h2 class="h2" id="t-par">Quatre parcours, selon ce qui vous amène</h2>
+    <p class="intro">Choisissez celui qui vous ressemble. Nous l’ajustons ensemble à la première séance.</p>
+    <div class="liste">
+      <details><summary><h3>Éveil</h3><p>Vous repartez de loin : douleurs, maladie, handicap ou âge. On réveille le corps, à votre rythme.</p><span class="ouvrir">Le détail</span></summary>
+        <div class="detail"><span></span><div><h4>Pour qui</h4><p>Après une maladie, avec des douleurs, une mobilité réduite, ou simplement après 60 ans.</p></div><div><h4>Ce qu’on travaille</h4><p>Se lever, marcher, garder l’équilibre, retrouver confiance dans son corps.</p></div><div><h4>Le rythme</h4><p>Doux au départ, puis un peu plus chaque semaine.</p></div></div></details>
+      <details><summary><h3>Élan</h3><p>Vous voulez retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.</p><span class="ouvrir">Le détail</span></summary>
+        <div class="detail"><span></span><div><h4>Pour qui</h4><p>Les adultes qui veulent reprendre une activité régulière.</p></div><div><h4>Ce qu’on travaille</h4><p>La force, l’endurance et la mobilité, à chaque séance.</p></div><div><h4>Le rythme</h4><p>Une à deux séances par semaine pour que les progrès durent.</p></div></div></details>
+      <details><summary><h3>Envol</h3><p>Vous voulez vous entraîner plus intensément et viser plus haut.</p><span class="ouvrir">Le détail</span></summary>
+        <div class="detail"><span></span><div><h4>Pour qui</h4><p>Les personnes déjà actives qui préparent un objectif.</p></div><div><h4>Ce qu’on travaille</h4><p>La préparation physique : puissance, vitesse, endurance.</p></div><div><h4>Le rythme</h4><p>Un programme construit vers votre objectif.</p></div></div></details>
+      <details><summary><h3>Plume</h3><p>Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser.</p><span class="ouvrir">Le détail</span></summary>
+        <div class="detail"><span></span><div><h4>Pour qui</h4><p>Les enfants et les adolescents, quel que soit leur niveau.</p></div><div><h4>Ce qu’on travaille</h4><p>La coordination, la motricité et la confiance en soi.</p></div><div><h4>Le rythme</h4><p>Des séances par le jeu, avec un objectif clair.</p></div></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="methode" id="methode" aria-labelledby="t-met">
+  <div class="wrap">
+    <div class="cercle" aria-hidden="true">
+      <svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="170" fill="none" stroke="#1A1714" stroke-width="2" stroke-dasharray="1010 58" transform="rotate(-62 200 200)"/>
+        <circle cx="200" cy="30" r="6" fill="#9E1B14"/><circle cx="370" cy="200" r="6" fill="#9E1B14"/><circle cx="200" cy="370" r="6" fill="#9E1B14"/><circle cx="30" cy="200" r="6" fill="#9E1B14"/></svg>
+      <span class="q q1">Force</span><span class="q q2">Endurance</span><span class="q q3">Mobilité</span><span class="q q4">Coordination</span>
+      <span class="centre">Une séance,<br>quatre qualités</span>
+    </div>
+    <div>
+      <h2 class="h2" id="t-met">La méthode Ensō : tout le corps, à chaque séance</h2>
+      <p class="intro">L’ensō est un cercle tracé d’un seul geste. Comme lui, chaque séance fait le tour du corps : rien n’est oublié, tout progresse ensemble.</p>
+      <ul class="qualites">
+        <li><b>Force</b><span>Pour porter, se relever, monter les escaliers.</span></li>
+        <li><b>Endurance</b><span>Pour marcher plus longtemps et récupérer plus vite.</span></li>
+        <li><b>Mobilité</b><span>Pour se baisser, se tourner, bouger sans gêne.</span></li>
+        <li><b>Coordination</b><span>Pour l’équilibre, l’adresse et des gestes plus sûrs.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="deroule" id="deroule" aria-labelledby="t-der" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="h2" id="t-der">Comment ça se passe</h2>
+    <ol class="etapes">
+      <li><h3>On s’appelle</h3><p>Laissez votre prénom et votre numéro. Je vous rappelle et je réponds à vos questions.</p></li>
+      <li><h3>La première séance chez vous</h3><p>Une heure : vingt minutes de bilan avec quelques tests simples, puis quarante minutes de séance.</p></li>
+      <li><h3>Des séances ajustées</h3><p>Chaque séance est préparée pour vous et adaptée à votre forme du jour.</p></li>
+      <li><h3>Vos progrès, noir sur blanc</h3><p>Un bilan écrit au départ, à six semaines et à la fin : vos chiffres et vos objectifs.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="tarifs" id="tarifs" aria-labelledby="t-tar">
+  <div class="wrap">
+    <div class="tete-sec">
+      <div><h2 class="h2" id="t-tar">Tarifs</h2><p class="intro">Des séances d’une heure, chez vous, matériel fourni.</p></div>
+    </div>
+    <div class="onglets-t" role="tablist" aria-label="Formules" data-onglets>
+      <button role="tab" id="ta-1" aria-controls="o-1" aria-selected="true">Nouvelle Lune<small>Pour commencer</small></button>
+      <button role="tab" id="ta-2" aria-controls="o-2" aria-selected="false">Clair de Lune<small>À la séance</small></button>
+      <button role="tab" id="ta-3" aria-controls="o-3" aria-selected="false">Trois Lunes<small>Sur 3 mois</small></button>
+      <button role="tab" id="ta-4" aria-controls="o-4" aria-selected="false">Éclipse<small>À deux</small></button>
+    </div>
+    <div class="grille-t">
+      <div class="offre" id="o-1" role="tabpanel" aria-labelledby="ta-1"><h3>Nouvelle Lune</h3><p class="pour">La première séance, pour faire connaissance.</p>
+        <p class="prix"><b>38 €</b><span>la séance</span></p><p class="fisc">Soit 19 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>1 h : 20 min de bilan, 40 min de séance</li><li>Satisfait ou remboursé</li></ul>
+        <a class="btn btn-ligne" href="#contact" data-formule="nouvelle-lune">Choisir Nouvelle Lune</a></div>
+      <div class="offre" id="o-2" role="tabpanel" aria-labelledby="ta-2"><h3>Clair de Lune</h3><p class="pour">Ensuite, à la séance, quand vous voulez.</p>
+        <p class="prix"><b>78 €</b><span>la séance</span></p><p class="fisc">Soit 39 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>Sans engagement</li><li>Vous arrêtez quand vous voulez</li></ul>
+        <a class="btn btn-ligne" href="#contact" data-formule="clair-de-lune">Choisir Clair de Lune</a></div>
+      <div class="offre reco" id="o-3" role="tabpanel" aria-labelledby="ta-3"><span class="badge">Recommandé</span><h3>Trois Lunes</h3><p class="pour">Trois mois pour changer durablement.</p>
+        <p class="prix"><b>58 €</b><span>la séance</span></p><p class="fisc">Soit 29 € après crédit d’impôt<sup>1</sup></p>
+        <ul><li>12 séances sur 3 mois</li><li>240 € de moins que 12 séances Clair de Lune</li></ul>
+        <a class="btn btn-plein" href="#contact" data-formule="trois-lunes">Choisir Trois Lunes</a></div>
+      <div class="offre" id="o-4" role="tabpanel" aria-labelledby="ta-4"><h3>Éclipse</h3><p class="pour">À deux : en couple, entre amis ou en famille.</p>
+        <p class="prix"><b>98 €</b><span>la séance pour deux</span></p><p class="fisc">Soit 49 € après crédit d’impôt<sup>1</sup>, 24,50 € chacun</p>
+        <ul><li>1 h pour deux, chez vous</li><li>Le même suivi pour chacun</li></ul>
+        <a class="btn btn-ligne" href="#contact" data-formule="eclipse">Choisir Éclipse</a></div>
+    </div>
+    <p class="note"><sup>1</sup> Crédit d’impôt de 50 % des services à la personne (article 199 sexdecies du code général des impôts), sous réserve de l’enregistrement de ma déclaration, en cours.</p>
+  </div>
+</section>
+
+<section class="confiance" id="confiance" aria-labelledby="t-con">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="t-con">Votre enseignant</h2>
+      <div class="portrait"><div><img src="img/enso.webp" alt="" style="filter:invert(1)">Photo d’Ilyas à venir</div></div>
+    </div>
+    <div>
+      <blockquote class="citation">« Ado, j’avais mal au genou. Ce qui m’a aidé, ce n’est pas d’arrêter, c’est de rebouger, doucement, un peu plus chaque semaine. Aujourd’hui, je fais pareil avec vous. »
+        <footer>Ilyas EL AOUADI, enseignant en activité physique adaptée</footer></blockquote>
+      <ul class="preuves">
+        <li><b>Licence STAPS APA-S</b><span>Activité physique adaptée et santé, Université Paris Nanterre, 2026</span></li>
+        <li><b>Licence STAPS Éducation et motricité</b><span>Université de Toulon, 2022</span></li>
+        <li><b>Carte professionnelle</b><span>Éducateur sportif, n° 08325ED0042</span></li>
+        <li><b>Entreprise immatriculée</b><span>SIRET 133 247 395 00014</span></li>
+        <li><b>Satisfait ou remboursé</b><span>Si la première séance ne vous convient pas, elle vous est remboursée.</span></li>
+        <li><b>Des bilans écrits</b><span>Au départ, à six semaines et à la fin. <a class="lien" href="#confiance">Voir un exemple (personne fictive)</a></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="t-cont">
+  <div class="wrap">
+    <div>
+      <h2 class="h2" id="t-cont">Être rappelé</h2>
+      <p class="intro">Laissez votre prénom et votre numéro : je vous rappelle moi-même. L’appel ne vous engage à rien.</p>
+      <p class="debut">Premières séances à partir de janvier 2027</p>
+    </div>
+    <form data-rappel novalidate aria-labelledby="t-cont">
+      <div class="champ"><label for="f-prenom">Votre prénom</label><input id="f-prenom" name="prenom" autocomplete="given-name" aria-describedby="f-prenom-err"><p class="f-erreur" id="f-prenom-err"></p></div>
+      <div class="champ"><label for="f-tel">Votre numéro de téléphone</label><input id="f-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="f-tel-err"><p class="f-erreur" id="f-tel-err"></p></div>
+      <fieldset class="champ"><legend>C’est pour</legend><div class="choix"><label><input type="radio" name="pour" id="f-pour-1" value="moi" checked>Moi</label><label><input type="radio" name="pour" id="f-pour-2" value="enfant">Mon enfant</label><label><input type="radio" name="pour" id="f-pour-3" value="proche">Un proche</label></div></fieldset>
+      <div class="champ"><label for="f-formule">Formule envisagée (facultatif)</label><select id="f-formule" name="formule"><option value="">Je ne sais pas encore</option><option value="nouvelle-lune">Nouvelle Lune, la première séance</option><option value="clair-de-lune">Clair de Lune, à la séance</option><option value="trois-lunes">Trois Lunes, sur 3 mois</option><option value="eclipse">Éclipse, à deux</option></select></div>
+      <button class="btn btn-plein" type="submit">Être rappelé</button>
+      <p class="f-note">Vos coordonnées servent uniquement à vous rappeler.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="pied">
+  <div class="wrap">
+    <div class="haut">
+      <div><a class="marque" href="#haut"><img src="img/porte_logo_jour.webp" alt="" width="42" height="42"><span><b>ASCENSION</b><small>Sport-Santé à domicile</small></span></a><p class="sign">Le sport adapté à vous. Chez vous.</p></div>
+      <div><h2>Parcours</h2><ul><li><a href="#parcours">Éveil</a></li><li><a href="#parcours">Élan</a></li><li><a href="#parcours">Envol</a></li><li><a href="#parcours">Plume</a></li></ul></div>
+      <div><h2>Pratique</h2><ul><li><a href="#methode">Méthode Ensō</a></li><li><a href="#tarifs">Tarifs</a></li><li><a href="#contact">Être rappelé</a></li></ul></div>
+      <div><h2>Informations</h2><ul><li><a href="#haut">Mentions légales</a></li><li><a href="#haut">Confidentialité</a></li><li><a href="#haut">Conditions de vente</a></li></ul></div>
+    </div>
+    <div class="bas"><span>Ilyas EL AOUADI, entrepreneur individuel</span><span>SIRET 133 247 395 00014</span><span>Carte professionnelle n° 08325ED0042</span><span>Paris et proche banlieue</span></div>
+  </div>
+</footer>
+</body>
+</html>
