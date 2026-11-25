@@ -23,9 +23,7 @@ for f in glob.glob(os.path.join(D, '**/*.html'), recursive=True):
         t = re.sub(r'<p class="lede reveal" style="--d:\.2">.*?</p>', '<p class="lede reveal" style="--d:.2">J’aide les enfants, les adultes et les seniors, avec ou sans pathologie, à progresser chez eux : <strong>force, mobilité, endurance et coordination</strong> à chaque séance.</p>', t, count=1, flags=re.S)
         t = rep(t, '<a class="btn ghost" href="#prestations">Voir les parcours</a></div>', TEL + '</div>', 'accueil téléphone à côté du bouton')
         t = re.sub(r'<!--@tel-hero-->.*?<!--/@tel-hero-->', '', t, count=1, flags=re.S)
-        i, j = section(t, 'class="hero hero-pro')
-        t = t[:j] + ('<div class="preuves" aria-label="En bref"><ul><li>Licence STAPS en activité physique adaptée</li><li>Carte professionnelle d’éducateur sportif</li>'
-                     '<li>Paris et proche banlieue</li><li>Déplacement et matériel compris</li></ul></div>') + t[j:]
+        t = rep(t, TEL + '</div>', TEL + '</div><ul class="preuves-hero reveal" style="--d:.4" aria-label="En bref"><li>Licence STAPS en activité physique adaptée</li><li>Carte professionnelle</li><li>Paris et proche banlieue</li><li>Matériel compris</li></ul>', 'accueil preuves sous les boutons')
         t = rep(t, '<h2 class="rv">Qu’est-ce qui vous amène ?</h2>', '<h2 class="rv">Qu’est-ce qui vous amène ?</h2><p class="body rv">Quatre parcours selon votre point de départ. Chacun commence par un bilan chez vous.</p>', 'accueil intro parcours')
         i, j = section(t, 'class="sec pro-sec cta-final')
         t = t[:i] + ('<section class="sec pro-sec" id="prix-court" data-obs><div class="wrap"><div class="sec-head"><p class="eyebrow">Tarifs</p><h2>Des prix clairs</h2>'

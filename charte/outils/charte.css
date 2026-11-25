@@ -76,11 +76,10 @@ main :is(.etape .k,.pillar .k,.scroll .k,.medecin .k,.apr-carte .k,.apr-engage .
 @media (min-width:701px){main nav.suite{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:880px;margin-inline:auto}}
 
 /* ---------- Nouveaux blocs ---------- */
-.preuves{padding:18px 16px;border-block:1px solid var(--ch-trait);background:rgba(255,252,246,.55)}
-html:not(.clair) .preuves{background:rgba(12,18,34,.6)}
-.preuves ul{list-style:none;margin:0 auto;padding:0;max-width:1080px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 32px}
-.preuves li{display:flex;align-items:center;gap:10px;font:600 .95rem/1.35 var(--ch-texte);color:var(--ch-encre)}
-.preuves li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#9E1B14}
+.preuves-hero{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;width:min(1040px,94vw);margin-inline:calc((100% - min(1040px,94vw)) / 2)!important}
+.preuves-hero li{display:flex;align-items:center;gap:9px;font:700 .95rem/1.35 var(--ch-texte);color:var(--ch-encre);text-shadow:0 0 10px rgba(255,248,235,.95),0 0 3px rgba(255,248,235,.95)}
+html:not(.clair) .preuves-hero li{text-shadow:0 0 10px rgba(8,12,24,.95),0 0 3px rgba(8,12,24,.95)}
+.preuves-hero li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:#9E1B14}
 .ch-texte{max-width:42rem;margin:0 auto;text-align:left}
 .ch-texte p{margin:0 0 1em;font-size:var(--ch-t-corps);line-height:1.7;color:var(--ch-encre)}
 .ch-liste{list-style:none;margin:0 auto;padding:0;max-width:46rem;display:grid;gap:16px}
@@ -105,7 +104,8 @@ main .cta-final .cta-box p{color:var(--ch-doux)!important}
 @media (max-width:700px){
   main :is(.hero-pro,.p-hero) .actions,main .ch-actions{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important;width:100%}
   main :is(.hero-pro,.p-hero) .actions>*,main .ch-actions>*{width:100%!important;min-height:52px!important;height:auto!important;padding-block:12px!important;margin:0!important;flex:none!important}
-  .preuves ul{flex-direction:column;align-items:flex-start;max-width:24rem;gap:8px}
+  main .hero-pro .h-txt>.preuves-hero{order:4;flex-direction:column;align-items:flex-start;gap:8px;width:max-content;max-width:100%;margin:18px auto 0!important;text-align:left}
+  .preuves-hero li{font-size:.875rem}
 }
 main .bes-situ li,main .bes-situ li span{color:var(--ch-encre)!important}
 @media (min-width:1001px){main ol.pillars.pillars4,main .voies.voies4{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}}
