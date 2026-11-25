@@ -272,3 +272,8 @@ html:not(.clair) #prestations .card-p p:not(.cp-tag){color:#EEE7DA;font-size:1.0
 .suite-fleche[hidden]{display:none!important}
 .suite-fleche:focus-visible{outline:3px solid rgba(176,138,60,.55);outline-offset:3px}
 @media print{.suite-fleche{display:none!important}}
+/* Ordinateur : une section par écran, contenu centré, la flèche en bas au centre */
+@media (min-width:861px){
+ main .page > section.sec:not(:first-of-type):not([hidden]){min-height:calc(100vh - var(--hd, 60px));display:grid!important;grid-template-columns:minmax(0,1fr);align-content:center;box-sizing:border-box}
+ .suite-fleche{right:auto!important;left:50%;margin-left:-22px}
+}
