@@ -1,0 +1,1530 @@
+[
+ {
+  "cat": "titre",
+  "sig": "H1 Manrope 14px 800 center rgb(116,18,12) none",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "COACH SPORT-SANTÉ\nÀ DOMICILE · PARIS",
+  "img": "titre-0.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H2 Shippori Mincho 46px 800 center rgb(27,24,20) none",
+  "n": 35,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "Qu’est-ce qui vous amène ?",
+  "img": "titre-1.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 26px 800 center rgb(27,24,20) none",
+  "n": 4,
+  "pages": [
+   "index"
+  ],
+  "ex": "Éveil",
+  "img": "titre-2.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 20px 800 center rgb(27,24,20) none",
+  "n": 4,
+  "pages": [
+   "index"
+  ],
+  "ex": "On s’appelle",
+  "img": "titre-3.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H2 Shippori Mincho 46px 800 start rgb(27,24,20) none",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "Ilyas",
+  "img": "titre-4.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H2 Shippori Mincho 54px 800 center rgb(27,24,20) none",
+  "n": 10,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "On en parle ?",
+  "img": "titre-5.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 13px 800 rgb(116,18,12) esp5",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "À DOMICILE · PARIS",
+  "img": "etiquette-6.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 14px 800 rgb(118,90,34) esp4",
+  "n": 50,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "PARCOURS",
+  "img": "etiquette-7.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 13px 700 rgb(158,27,20) esp2",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "PHOTO À VENIR",
+  "img": "etiquette-8.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg ic-tel tel-btn 16px carré",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "",
+  "img": "icone-9.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx card-p 192px carré",
+  "n": 4,
+  "pages": [
+   "index"
+  ],
+  "ex": "",
+  "img": "icone-10.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.6) ombre fond",
+  "n": 12,
+  "pages": [
+   "index",
+   "methode",
+   "bilan"
+  ],
+  "ex": "Odette\nÉveil · après 60 ans\n« Aller seule à la boulangerie »",
+  "img": "carte-11.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r210 bord1 rgba(176,138,62,0.75) ombre fond",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "PHOTO À VENIR",
+  "img": "carte-12.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond dégradé bord rgb(34,71,61) rgb(255,255,255) r12 h52 16px 700",
+  "n": 25,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "Être rappelé",
+  "img": "bouton-13.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(255,250,240,0.85) bord rgba(158,27,20,0.55) rgb(27,24,20) r12 h44 15px 700",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "07 82 34 87 91",
+  "img": "bouton-14.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgb(237,227,210) bord rgb(44,90,76) rgb(31,74,62) r12 h52 16px 700",
+  "n": 4,
+  "pages": [
+   "index",
+   "methode",
+   "a-propos"
+  ],
+  "ex": "Vous hésitez ? Deux questions pour trouver votre parcours",
+  "img": "bouton-15.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(243,237,227,0.62) bord rgba(176,138,60,0.48) rgb(26,23,20) r12 h52 16px 700",
+  "n": 5,
+  "pages": [
+   "index",
+   "methode"
+  ],
+  "ex": "En savoir plus sur moi",
+  "img": "bouton-16.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 19px lh1.65 center rgb(7,5,4) max820px",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "J’aide les enfants, les adultes et les seniors, avec ou sans",
+  "img": "texte-17.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.65 center rgb(38,33,29) max258px",
+  "n": 4,
+  "pages": [
+   "index"
+  ],
+  "ex": "Vous repartez de loin : douleurs, maladie, handicap ou âge. ",
+  "img": "texte-18.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(44,41,36) max1440px",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "Vous hésitez ? Deux questions pour trouver votre parcours",
+  "img": "texte-19.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.65 center rgb(38,33,29) max270px",
+  "n": 4,
+  "pages": [
+   "index"
+  ],
+  "ex": "Laissez votre prénom et votre numéro, je vous rappelle. Vous",
+  "img": "texte-20.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(38,33,29) max660px",
+  "n": 3,
+  "pages": [
+   "index",
+   "methode"
+  ],
+  "ex": "Au départ, à 6 semaines et à la fin, vous recevez un bilan c",
+  "img": "texte-21.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 start rgb(38,33,29) max684px",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "Ado, j’avais mal au genou. Ce qui m’a aidé, ce n’est pas d’a",
+  "img": "texte-22.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(158,27,20) max529px",
+  "n": 8,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "La première séance dure 1h, chez vous : satisfait ou rembour",
+  "img": "texte-23.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut110 bas90 titre:center",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "COACH SPORT-SANTÉ\nÀ DOMICILE · PARIS",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut88 bas88 titre:center",
+  "n": 32,
+  "pages": [
+   "index",
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "Qu’est-ce qui vous amène ?",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut88 bas88 titre:start",
+  "n": 1,
+  "pages": [
+   "index"
+  ],
+  "ex": "Ilyas",
+  "img": null
+ },
+ {
+  "cat": "titre",
+  "sig": "H2/1 Shippori Mincho 58px 800 left rgb(27,24,20) none",
+  "n": 5,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode"
+  ],
+  "ex": "Réveiller son corps, en confiance.",
+  "img": "titre-24.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 13px 600 rgb(7,5,4) esp2",
+  "n": 4,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "VOUS VOUS RECONNAISSEZ ?",
+  "img": "etiquette-25.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg vg tag 104px carré",
+  "n": 4,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "",
+  "img": "icone-26.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg vg km 88px carré",
+  "n": 18,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "",
+  "img": "icone-27.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.48)  fond",
+  "n": 4,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "Avec une douleur, une maladie ou une opération derrière soi,",
+  "img": "carte-28.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(43,36,26,0.14) ombre fond",
+  "n": 25,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "Le coach : Ilyas\nMon parcours, mes diplômes",
+  "img": "carte-29.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 left rgb(7,5,4) max640px",
+  "n": 9,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "J’aide celles et ceux qui repartent de loin à bouger de nouv",
+  "img": "texte-30.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 17px lh1.70 start rgb(38,33,29) max598px",
+  "n": 4,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "Avec une douleur, une maladie ou une opération derrière soi,",
+  "img": "texte-31.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.65 center rgb(44,41,36) max598px",
+  "n": 1,
+  "pages": [
+   "activite-physique-adaptee-domicile"
+  ],
+  "ex": "Voir un exemple de bilan : Odette · Karim, en fauteuil",
+  "img": "texte-32.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut128 bas28 titre:left",
+  "n": 4,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "Réveiller son corps, en confiance.",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut88 bas88 titre:-",
+  "n": 7,
+  "pages": [
+   "activite-physique-adaptee-domicile",
+   "remise-en-forme-domicile",
+   "preparation-physique-domicile",
+   "coach-sportif-enfants",
+   "methode",
+   "a-propos",
+   "tarifs"
+  ],
+  "ex": "",
+  "img": null
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 21px 800 start rgb(27,24,20) none",
+  "n": 11,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "Le bilan chez vous",
+  "img": "titre-33.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 21px 800 right rgb(27,24,20) none",
+  "n": 10,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "Un programme pour vous",
+  "img": "titre-34.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 14px 700 rgb(158,27,20) esp3",
+  "n": 21,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "ÉTAPE 1",
+  "img": "etiquette-35.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 80px rond",
+  "n": 21,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "",
+  "img": "icone-36.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.255)  fond",
+  "n": 25,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "ÉTAPE 1\nLe bilan chez vous\n\nVotre objectif, vos habitudes, v",
+  "img": "carte-37.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.60 start rgb(38,33,29) max328px",
+  "n": 7,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "methode"
+  ],
+  "ex": "Votre objectif, vos habitudes, votre santé, puis des tests s",
+  "img": "texte-38.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.60 right rgb(38,33,29) max328px",
+  "n": 6,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants",
+   "methode"
+  ],
+  "ex": "Les séances suivent votre objectif et votre niveau : on ne t",
+  "img": "texte-39.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 15px lh1.65 center rgb(38,33,29) max1200px",
+  "n": 2,
+  "pages": [
+   "remise-en-forme-domicile",
+   "coach-sportif-enfants"
+  ],
+  "ex": "Rédigé par Ilyas, enseignant en activité physique adaptée · ",
+  "img": "texte-40.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H1 Shippori Mincho 64px 800 center rgb(27,24,20) none",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Après 60 ans, rester fort et autonome, chez vous",
+  "img": "titre-41.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "img halo bes-lune 184px carré",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-72.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx bes-lune 96px rond",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-43.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 56px rond",
+  "n": 7,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode",
+   "a-propos"
+  ],
+  "ex": "",
+  "img": "icone-44.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span sceau washi-c 48px carré",
+  "n": 5,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "OMS",
+  "img": "icone-45.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "img ring sigil 64px carré",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-46.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "img feather sigil 40px carré",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-47.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span hanko-i bes-sign 32px carré",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-48.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx  48px rond",
+  "n": 12,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": "icone-49.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.38)  fond",
+  "n": 3,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos",
+   "methode"
+  ],
+  "ex": "Je suis enseignant en activité physique adaptée : adapter l’",
+  "img": "carte-50.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r6 sansbord ombre fond",
+  "n": 6,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "OMS\nChez les personnes âgées, l’activité physique contribue ",
+  "img": "carte-51.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.25)  fond",
+  "n": 12,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Je n'ai jamais fait de sport.",
+  "img": "carte-52.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.255) ombre fond",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Ilyas, enseignant en activité physique adaptée et santé. Lic",
+  "img": "carte-53.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r14 bord1 rgba(176,138,60,0.4)  fond",
+  "n": 12,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Sport sur ordonnance",
+  "img": null
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgb(237,227,210) bord rgb(44,90,76) rgb(31,74,62) r12 h52 16px 600",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Comment ça se passe",
+  "img": "bouton-60.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(243,237,226,0.78) bord rgba(176,138,60,0.4) rgb(158,27,20) r14 h84 18px 700",
+  "n": 6,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Sport sur ordonnance",
+  "img": "bouton-61.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(243,237,226,0.78) bord rgba(176,138,60,0.4) rgb(158,27,20) r14 h72 18px 700",
+  "n": 6,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Mal de dos",
+  "img": "bouton-62.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Shippori Mincho 20px lh1.45 center rgb(7,5,4) max534px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "J’aide les plus de 60 ans à garder leur équilibre, leur forc",
+  "img": "texte-63.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 19px lh1.65 center rgb(7,5,4) max690px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Se relever d'une chaise sans les mains, monter l'escalier sa",
+  "img": "texte-64.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.60 start rgb(38,33,29) max662px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Je suis enseignant en activité physique adaptée : adapter l’",
+  "img": "texte-65.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.60 start rgb(38,33,29) max288px",
+  "n": 4,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Une heure : votre santé, vos habitudes, ce qui vous gêne au ",
+  "img": "texte-66.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.60 right rgb(38,33,29) max288px",
+  "n": 4,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Équilibre, renforcement des jambes et du dos, endurance douc",
+  "img": "texte-67.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 15px lh1.65 center rgb(38,33,29) max780px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Rédigé par Ilyas, enseignant en activité physique adaptée · ",
+  "img": "texte-68.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 start rgb(31,26,20) max699px",
+  "n": 1,
+  "pages": [
+   "coach-sportif-senior"
+  ],
+  "ex": "Avec l’âge, la puissance (la force produite vite, par exempl",
+  "img": "texte-69.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 start rgb(38,33,29) max636px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Ilyas, enseignant en activité physique adaptée et santé. Lic",
+  "img": "texte-70.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(38,33,29) max720px",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Le plus simple, c’est un appel : vous me posez vos questions",
+  "img": "texte-71.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut14 bas22 titre:center",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Après 60 ans, rester fort et autonome, chez vous",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut56 bas56 titre:center",
+  "n": 13,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "Pour qui ?",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut56 bas56 titre:-",
+  "n": 2,
+  "pages": [
+   "coach-sportif-senior",
+   "mal-de-dos"
+  ],
+  "ex": "",
+  "img": null
+ },
+ {
+  "cat": "titre",
+  "sig": "H4/2 Shippori Mincho 20px 800 center rgb(7,5,4) none",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "La force",
+  "img": "titre-79.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 21px 800 center rgb(27,24,20) none",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Éveil",
+  "img": "titre-80.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H2 Shippori Mincho 58px 800 center rgb(27,24,20) none",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Tomber sept fois, se relever huit.",
+  "img": "titre-81.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 19px 800 center rgb(27,24,20) none",
+  "n": 7,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Droiture",
+  "img": "titre-82.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Cinzel 12px 700 rgb(158,27,20) esp2",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "FORCE",
+  "img": "etiquette-83.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 12px 700 rgb(116,18,12) esp1",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "SYSTÈME MUSCULO-SQUELETTIQUE",
+  "img": "etiquette-84.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 14px 500 rgb(116,18,12) esp3",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "VOUS VENEZ POUR…",
+  "img": "etiquette-85.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg svg c-med 128px carré",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "",
+  "img": "icone-86.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span c-sceau c-coeur 88px carré",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Vous",
+  "img": "icone-87.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 64px rond",
+  "n": 8,
+  "pages": [
+   "methode",
+   "a-propos"
+  ],
+  "ex": "",
+  "img": "icone-88.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 96px rond",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "",
+  "img": "icone-89.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg daru-svg daru-btn 200px carré",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "",
+  "img": "icone-90.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 72px rond",
+  "n": 7,
+  "pages": [
+   "methode"
+  ],
+  "ex": "",
+  "img": "icone-91.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord1 rgba(176,138,60,0.33)  fond",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "SYSTÈME MUSCULO-SQUELETTIQUE\nLa force\n\nPuissance, explosivit",
+  "img": "carte-92.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 sansbord  fond",
+  "n": 7,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Droiture\n\nUn bilan honnête, des objectifs réalistes.",
+  "img": "carte-93.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(243,237,227,0.62) bord rgba(176,138,60,0.48) rgb(26,23,20) r99 h44 16px 700",
+  "n": 6,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Perdre du poids",
+  "img": "bouton-94.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 left rgb(7,5,4) max543px",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "À chaque séance, on travaille la force, la mobilité, l’endur",
+  "img": "texte-95.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 17px lh1.65 center rgb(7,5,4) max228px",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Puissance, explosivité, endurance musculaire : selon votre p",
+  "img": "texte-96.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 15px lh1.65 center rgb(38,33,29) max432px",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Choisissez votre objectif : les exemples ci-dessous s’adapte",
+  "img": "texte-97.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.60 start rgb(38,33,29) max642px",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Vous venez avec une ordonnance ? Avec votre accord, j’envoie",
+  "img": "texte-98.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.60 center rgb(38,33,29) max342px",
+  "n": 4,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Repartir de loin : douleur, maladie chronique, handicap, rep",
+  "img": "texte-99.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 14px lh1.60 center rgb(26,23,20) max760px",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Dans les quatre cas : un bilan, des objectifs à vous, des pr",
+  "img": "texte-100.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(7,5,4) max662px",
+  "n": 3,
+  "pages": [
+   "methode",
+   "a-propos",
+   "bilan"
+  ],
+  "ex": "Progresser, ce n’est pas ne jamais tomber : c’est se relever",
+  "img": "texte-101.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(38,33,29) max537px",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Les sept vertus du bushido : c’est ainsi que je travaille av",
+  "img": "texte-102.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.65 center rgb(38,33,29) max288px",
+  "n": 3,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Un bilan honnête, des objectifs réalistes.",
+  "img": "texte-103.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut92 bas28 titre:left",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Tout votre corps, à chaque séance.",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut110 bas110 titre:center",
+  "n": 1,
+  "pages": [
+   "methode"
+  ],
+  "ex": "Tomber sept fois, se relever huit.",
+  "img": null
+ },
+ {
+  "cat": "titre",
+  "sig": "H2/1 Shippori Mincho 58px 800 center rgb(27,24,20) none",
+  "n": 3,
+  "pages": [
+   "a-propos",
+   "tarifs",
+   "bilan"
+  ],
+  "ex": "Moi, c’est Ilyas.",
+  "img": "titre-104.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 22px 800 start rgb(27,24,20) none",
+  "n": 2,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "Sur le terrain",
+  "img": "titre-105.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 20px 800 start rgb(27,24,20) none",
+  "n": 4,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "La première visite",
+  "img": "titre-106.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg vg tag 80px carré",
+  "n": 1,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "",
+  "img": "icone-107.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span vgx k 48px rond",
+  "n": 5,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "",
+  "img": "icone-108.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r14 bord1 rgba(176,138,62,0.45) ombre fond",
+  "n": 9,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "Élèves du secondaire\nProfesseur d’EPS stagiaire, Internat Sa",
+  "img": "carte-109.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(7,5,4) max442px",
+  "n": 1,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "Chez vous, je me concentre entièrement sur vous.",
+  "img": "texte-110.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(38,33,29) max474px",
+  "n": 1,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "Des diplômes universitaires et une carte professionnelle.",
+  "img": "texte-111.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 start rgb(38,33,29) max384px",
+  "n": 4,
+  "pages": [
+   "a-propos"
+  ],
+  "ex": "Quelques questions, puis je regarde comment vous bougez : ma",
+  "img": "texte-112.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut92 bas28 titre:center",
+  "n": 2,
+  "pages": [
+   "a-propos",
+   "bilan"
+  ],
+  "ex": "Moi, c’est Ilyas.",
+  "img": null
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 27px 800 center rgb(27,24,20) none",
+  "n": 4,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Nouvelle Lune",
+  "img": "titre-113.png"
+ },
+ {
+  "cat": "titre",
+  "sig": "H3 Shippori Mincho 21px 800 left rgb(27,24,20) none",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Combien je paie vraiment ?",
+  "img": "titre-114.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 14px 800 rgb(118,90,34) esp3",
+  "n": 4,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "POUR COMMENCER",
+  "img": "etiquette-115.png"
+ },
+ {
+  "cat": "etiquette",
+  "sig": "Manrope 12px 700 rgb(255,255,255) esp1",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "RECOMMANDÉ",
+  "img": "etiquette-116.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "img lune-m offre 112px rond",
+  "n": 4,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "",
+  "img": "icone-117.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "span lc-sceau lune-cadeau 64px carré",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "240€",
+  "img": "icone-118.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r18 bord2 rgba(176,138,60,0.55) ombre fond",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "RECOMMANDÉ\n\nLE PARCOURS · 3 MOIS\n\nTrois Lunes\n\nTrois mois po",
+  "img": "carte-119.png"
+ },
+ {
+  "cat": "carte",
+  "sig": "r14 bord1 rgba(176,138,60,0.7)  fond",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "240€\nofferts\nsur 12 séances, par rapport à Clair de Lune",
+  "img": "carte-120.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(7,5,4) max614px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Des séances d’1h, chez vous, à Paris et en proche banlieue, ",
+  "img": "texte-121.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh2.20 center rgb(38,33,29) max259px",
+  "n": 3,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Soit 19€ pour vous après crédit d’impôt*",
+  "img": "texte-122.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh2.20 center rgb(38,33,29) max257px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Soit 29€ pour vous après crédit d’impôt*",
+  "img": "texte-123.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 center rgb(38,33,29) max574px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "* Crédit d’impôt de 50 % des services à la personne (article",
+  "img": "texte-124.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 left rgb(94,87,78) max794px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Choisissez une formule et un rythme : le calcul se fait tout",
+  "img": "texte-125.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh2.20 left rgb(94,87,78) max565px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Soit 116€ pour vous après crédit d’impôt*",
+  "img": "texte-126.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 18px lh1.65 left rgb(44,41,36) max794px",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Avec Trois Lunes : 80€ de moins qu’à la séance (Clair de Lun",
+  "img": "texte-127.png"
+ },
+ {
+  "cat": "section",
+  "sig": "haut124 bas16 titre:center",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Tarifs",
+  "img": null
+ },
+ {
+  "cat": "section",
+  "sig": "haut40 bas96 titre:start",
+  "n": 1,
+  "pages": [
+   "tarifs"
+  ],
+  "ex": "Les formules",
+  "img": null
+ },
+ {
+  "cat": "icone",
+  "sig": "span oc-i  48px rond",
+  "n": 4,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "",
+  "img": "icone-128.png"
+ },
+ {
+  "cat": "icone",
+  "sig": "svg ic-tel tel-btn 24px carré",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "",
+  "img": "icone-129.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond dégradé bord rgb(34,71,61) rgb(255,255,255) r12 h56 17px 700",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "Être rappelé",
+  "img": "bouton-130.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(255,250,240,0.85) bord rgba(158,27,20,0.55) rgb(142,26,18) r12 h56 18px 400",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "07 82 34 87 91",
+  "img": "bouton-131.png"
+ },
+ {
+  "cat": "bouton",
+  "sig": "fond rgba(243,237,227,0.62) bord rgba(176,138,60,0.48) rgb(26,23,20) r12 h44 18px 700",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "ascension.santepro@gmail.com",
+  "img": "bouton-132.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.55 center rgb(7,5,4) max620px",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "Au téléphone, quelques minutes suffisent : vous me dites ce ",
+  "img": "texte-133.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 16px lh1.45 center rgb(7,5,4) max370px",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "Si je suis en séance, laissez votre prénom sur le répondeur ",
+  "img": "texte-134.png"
+ },
+ {
+  "cat": "texte",
+  "sig": "Manrope 14px lh1.65 center rgb(7,5,4) max501px",
+  "n": 1,
+  "pages": [
+   "bilan"
+  ],
+  "ex": "Vos coordonnées servent uniquement à vous recontacter. Confi",
+  "img": "texte-135.png"
+ }
+]

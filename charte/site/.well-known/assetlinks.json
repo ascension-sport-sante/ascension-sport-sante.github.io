@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "fr.apppourmoi.app_pour_moi",
+      "sha256_cert_fingerprints": [
+        "E8:DC:96:32:4D:B0:D4:27:40:CC:C6:E2:23:A9:DF:3F:AC:DC:BA:3C:DB:E3:09:4F:15:40:A7:FE:18:07:D6:CA"
+      ]
+    }
+  }
+]

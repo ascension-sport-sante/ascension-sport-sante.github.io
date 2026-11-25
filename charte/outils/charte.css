@@ -1,0 +1,112 @@
+/* Charte Ascension (prototype) : une règle par rôle, appliquée partout.
+   Titres : 3 tailles. Petits titres : 1 style. Icônes : 3 tailles selon leur rôle.
+   Cartes : 1 style (+ 1 variante « recommandé »). Actions : bouton plein, bouton contour, lien fléché.
+   Alignement : en-têtes centrés, paragraphes longs à gauche, jamais à droite. Espacements sur une échelle. */
+:root{
+  --ch-vert:#2C5A4C;--ch-vert-f:#1F4A3E;--ch-or:#765A22;--ch-trait:rgba(176,138,60,.34);--ch-encre:#1B1814;--ch-doux:#4A443C;
+  --ch-carte:rgba(255,252,246,.8);--ch-ombre:0 14px 30px -22px rgba(70,50,22,.45);--ch-survol:rgba(44,90,76,.08);
+  --ch-t-hero:clamp(2.5rem,1.55rem + 3.1vw,4rem);--ch-t-2:clamp(1.85rem,1.3rem + 1.8vw,2.7rem);--ch-t-3:clamp(1.2rem,1.12rem + .3vw,1.375rem);
+  --ch-t-lede:clamp(1.0625rem,1rem + .25vw,1.1875rem);--ch-t-corps:clamp(1rem,.97rem + .12vw,1.0625rem);--ch-t-label:.8125rem;
+  --ch-e-section:clamp(64px,4.5vw + 40px,104px);--ch-e-tete:clamp(28px,1.6vw + 18px,44px);
+  --ch-r-carte:16px;--ch-r-btn:12px;--ch-ic-l:clamp(96px,5vw + 56px,136px);--ch-ic-m:72px;--ch-ic-s:48px;
+  --ch-titre:"Shippori Mincho","Shippori Mincho B1",Georgia,serif;--ch-texte:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+html:not(.clair){--ch-vert:#8CC3AF;--ch-vert-f:#B7DCCD;--ch-or:#E2C57E;--ch-trait:rgba(226,197,126,.3);--ch-encre:#EEE7DA;--ch-doux:#CFC6B8;
+  --ch-carte:rgba(18,25,44,.86);--ch-ombre:0 18px 36px -24px rgba(0,0,0,.85);--ch-survol:rgba(140,195,175,.12)}
+
+/* ---------- Rythme : toutes les sections respirent pareil ---------- */
+main section.sec:not(.p-hero){padding-block:var(--ch-e-section)!important}
+main .sec-head{text-align:center!important;max-width:46rem;margin:0 auto var(--ch-e-tete)!important}
+main .sec-head>.eyebrow{margin:0 0 10px!important}
+main .sec-head>h2{margin:0!important}
+main .sec-head>p:not(.eyebrow){margin:14px auto 0!important;max-width:40rem;font-size:var(--ch-t-lede)!important;line-height:1.6!important;color:var(--ch-doux)!important;text-align:center!important}
+
+/* ---------- Titres : trois tailles seulement ---------- */
+main .p-hero :is(h1,h2[aria-level="1"]),main .hero-pro .slogan,main .bes-hero h1{font-size:var(--ch-t-hero)!important;line-height:1.08!important;text-wrap:balance}
+main section:not(.hero):not(.p-hero):not(.bes-hero) h2:not(.lunes-titre),main .p-hero.philo h2{font-size:var(--ch-t-2)!important;line-height:1.15!important;text-wrap:balance}
+main h3{font-size:var(--ch-t-3)!important;line-height:1.25!important;text-wrap:balance}
+
+/* ---------- Petits titres : un seul style (or, capitales espacées) ---------- */
+main :is(.eyebrow:not(.titre-or),.et-t small,.reconnais,.pillar small.tech,.lune-c .o-k,.obj-q,.ph-txt){
+  font:800 var(--ch-t-label)/1.35 var(--ch-texte)!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:var(--ch-or)!important}
+
+/* ---------- Texte courant ---------- */
+main section:not(.hero):not(.p-hero) :is(p.body,.acc-r p,.apr-carte p,.et-t p,.col-txt p){font-size:var(--ch-t-corps)!important;line-height:1.65!important}
+main :is(.et-t,.et-t h3,.et-t p,.acc-r p,.aida-c p){text-align:left!important}
+
+/* ---------- Cartes : un seul style ---------- */
+main :is(.suite-c,.etape .et-t,.bil-c,.acc-i,.bes-autres a,.apr-terrain li,.scroll,.washi-c,.aida-c,.pillar,.medecin,.bes-carte,.lune-c,.apr-carte,.ch-carte,.apr-engage li){border-radius:var(--ch-r-carte)!important}
+html.clair main :is(.suite-c,.etape .et-t,.bil-c,.acc-i,.bes-autres a,.apr-terrain li,.scroll,.washi-c,.aida-c,.medecin,.bes-carte,.lune-c,.apr-carte,.ch-carte,.apr-engage li){
+  border:1px solid var(--ch-trait)!important;background:var(--ch-carte)!important;box-shadow:var(--ch-ombre)!important}
+html.clair main .lune-c.lune-reco{border:2px solid rgba(176,138,60,.7)!important}
+main .bes-autres a{color:var(--ch-encre)!important}
+main .bes-autres a::after{content:"→";margin-left:auto;color:var(--ch-vert);font-weight:700}
+
+/* ---------- Actions : plein, contour, lien fléché ---------- */
+main :is(.btn.ghost,a.lien:not(.card-p .lien):not(.voie-c .lien),.hero-pro .tel-btn,.cta-final .tel-btn,.quiz-ouvre .btn,.bes-actions .btn.ghost,.btn-tel){
+  align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px!important;border-radius:var(--ch-r-btn)!important;
+  border:1.5px solid var(--ch-vert)!important;background:transparent!important;color:var(--ch-vert-f)!important;
+  font:700 1rem/1.2 var(--ch-texte)!important;letter-spacing:0!important;box-shadow:none!important;text-decoration:none!important}
+main :is(.btn.ghost,a.lien:not(.card-p .lien):not(.voie-c .lien),.hero-pro .tel-btn,.cta-final .tel-btn,.quiz-ouvre .btn,.bes-actions .btn.ghost,.btn-tel):hover{background:var(--ch-survol)!important}
+main :is(.btn-tel,.hero-pro .tel-btn) :is(b,span){font:inherit!important;color:inherit!important;letter-spacing:.02em!important}
+main .btn-tel svg{width:18px;height:18px}
+main .card-p .lien,main .voie-c .lien,main .lien-t{display:inline-flex!important;align-items:center;gap:6px;min-height:44px;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;
+  color:var(--ch-vert-f)!important;font:700 1rem/1.2 var(--ch-texte)!important;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}
+main .card-p:hover .lien,main .lien-t:hover{text-decoration-color:currentColor}
+main .lien-t::after{content:"→"}
+main :is(.actions,.ch-actions){display:flex!important;flex-wrap:wrap;gap:12px;align-items:center}
+main .hero-pro .actions,main .cta-final .ch-actions,main .ch-actions.centre{justify-content:center}
+main .quiz-ouvre{padding-inline:16px;text-align:center}
+
+/* ---------- Icônes : trois tailles selon le rôle ---------- */
+main #prestations .card-p .vgx,main .voie-c .k{width:var(--ch-ic-l)!important;height:var(--ch-ic-l)!important}
+main :is(.etape .k,.pillar .k,.scroll .k,.medecin .k,.suite-c .km,.apr-carte .k,.apr-engage .k,.ch-liste .k){width:var(--ch-ic-m)!important;height:var(--ch-ic-m)!important;flex:none}
+main :is(.apr-terrain .k,.bes-autres a .vgx){width:var(--ch-ic-s)!important;height:var(--ch-ic-s)!important;flex:none}
+main :is(.etape .k,.pillar .k,.scroll .k,.medecin .k,.apr-carte .k,.apr-engage .k,.ch-liste .k,.apr-terrain .k)>.vgx{width:100%!important;height:100%!important}
+
+/* ---------- Parcours de l'accueil : carte courte centrée, rangée à gauche sur téléphone ---------- */
+@media (max-width:700px){
+  main #prestations .card-p{text-align:left!important;column-gap:16px}
+  main #prestations .card-p :is(h3,p){text-align:left!important}
+  main #prestations .card-p .vgx{width:var(--ch-ic-m)!important;height:var(--ch-ic-m)!important}
+  main .actions>.btn,main .ch-actions>.btn,main .ch-actions>.btn-tel,main .actions>.btn-tel{flex:1 1 100%}
+}
+
+/* ---------- « À lire ensuite » : une rangée, jamais une carte orpheline ---------- */
+@media (min-width:701px){main nav.suite{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;max-width:880px;margin-inline:auto}}
+
+/* ---------- Nouveaux blocs ---------- */
+.preuves{padding:18px 16px;border-block:1px solid var(--ch-trait);background:rgba(255,252,246,.55)}
+html:not(.clair) .preuves{background:rgba(12,18,34,.6)}
+.preuves ul{list-style:none;margin:0 auto;padding:0;max-width:1080px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 32px}
+.preuves li{display:flex;align-items:center;gap:10px;font:600 .95rem/1.35 var(--ch-texte);color:var(--ch-encre)}
+.preuves li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#9E1B14}
+.ch-texte{max-width:42rem;margin:0 auto;text-align:left}
+.ch-texte p{margin:0 0 1em;font-size:var(--ch-t-corps);line-height:1.7;color:var(--ch-encre)}
+.ch-liste{list-style:none;margin:0 auto;padding:0;max-width:46rem;display:grid;gap:16px}
+.ch-liste li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 20px;align-items:start;padding:24px}
+.ch-liste .k{grid-row:span 2}
+.ch-liste h3{margin:4px 0 0!important;text-align:left}
+.ch-liste p{margin:0;font-size:var(--ch-t-corps);line-height:1.65;color:var(--ch-doux);text-align:left}
+@media (max-width:560px){.ch-liste li{grid-template-columns:1fr;padding:20px}.ch-liste .k{grid-row:auto;width:var(--ch-ic-s)!important;height:var(--ch-ic-s)!important}}
+.ch-situ{list-style:none;margin:0 auto;padding:0;max-width:52rem;display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.ch-situ li>*{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--ch-trait);background:var(--ch-carte);
+  font:600 .95rem/1.2 var(--ch-texte);color:var(--ch-encre);text-decoration:none}
+.ch-situ a{color:var(--ch-vert-f)!important}
+.ch-situ a::after{content:"→";font-weight:700}
+.ch-situ a:hover{border-color:var(--ch-vert)}
+.ch-centre{text-align:center;margin:var(--ch-e-tete) 0 0}
+.ch-note{margin:14px 0 0;text-align:center;font-size:.95rem;color:var(--ch-doux)}
+.cta-final .ch-sous{max-width:34rem;margin:12px auto 0;color:var(--ch-doux);text-align:center}
+.cta-final .ch-actions{margin-top:24px}
+main .btn-tel{display:inline-flex!important}
+main .cta-final .cta-box{display:block!important;text-align:center!important}
+main .cta-final .cta-box p{color:var(--ch-doux)!important}
+@media (max-width:700px){
+  main :is(.hero-pro,.p-hero) .actions,main .ch-actions{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:10px!important;width:100%}
+  main :is(.hero-pro,.p-hero) .actions>*,main .ch-actions>*{width:100%!important;min-height:52px!important;height:auto!important;padding-block:12px!important;margin:0!important;flex:none!important}
+  .preuves ul{flex-direction:column;align-items:flex-start;max-width:24rem;gap:8px}
+}
+main .bes-situ li,main .bes-situ li span{color:var(--ch-encre)!important}
+@media (min-width:1001px){main ol.pillars.pillars4,main .voies.voies4{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important}}
+@media (min-width:701px) and (max-width:1000px){main ol.pillars.pillars4,main .voies.voies4{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important}}

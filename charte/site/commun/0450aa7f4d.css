@@ -1,0 +1,30 @@
+/* ===== Lot 157 : menu du téléphone sans blocage, prestations expliquées ===== */
+.som.sm .sm-tuiles.sm-offres{display:flex; flex-direction:column; gap:8px}
+.som.sm .sm-offres .sm-tu{display:flex; align-items:center; justify-content:flex-start; gap:14px; width:100%; height:auto; min-height:78px; padding:10px 12px 10px 10px; text-align:left; border-radius:16px}
+.som.sm .sm-offres .sm-tu .km{flex:none; width:56px; height:56px}
+.som.sm .sm-offres .tx{flex:1; min-width:0; display:flex; flex-direction:column; gap:4px}
+.som.sm .sm-offres .tx b{font:700 1.14rem/1.15 var(--f-display, serif); color:var(--fort, #F3E9D2)}
+.som.sm .sm-offres .tx small{font:500 .92rem/1.35 var(--f-body); color:var(--mist, #B9B4C8); text-wrap:pretty}
+.som.sm .sm-offres .sm-ch{flex:none}
+.som.sm .sm-offres .sm-ici{flex:none; display:none}
+.som.sm .sm-offres .sm-tu.ici:has(.sm-ici) .sm-ch{display:none}
+.som.sm .sm-offres .sm-tu{position:relative}
+.som.sm .sm-offres .sm-tu.ici .sm-ici{display:inline-block; position:absolute; top:10px; right:12px; padding:3px 9px; font-size:.7rem}
+.som.sm .sm-puces{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none}
+.som.sm .sm-pu{display:inline-flex; align-items:center; min-height:44px; padding:8px 16px; border-radius:999px; border:1px solid rgba(201,165,92,.35); background:rgba(236,230,216,.05);
+  color:var(--fort, #F3E9D2); font:600 .95rem/1.2 var(--f-body); text-decoration:none; -webkit-tap-highlight-color:transparent}
+.som.sm .sm-pu:active{background:rgba(236,230,216,.1)}
+.som.sm .sm-pu:focus-visible{outline:3px solid var(--gold); outline-offset:3px}
+@media (hover:hover) and (pointer:fine){ .som.sm .sm-pu:hover{border-color:var(--gold)} }
+.som.sm .sm-corps .sm-aides{margin:0; justify-content:flex-start; flex-wrap:wrap; gap:10px}
+.som.sm .sm-bas-l{display:flex; gap:10px; align-items:stretch}
+.som.sm .sm-bas-l .sm-tel{flex:0 0 auto; width:auto; min-height:54px; margin:0; padding:0 18px}
+.som.sm .sm-bas-l .sm-cta{flex:1 1 auto; width:auto; min-width:0; min-height:54px; padding:0 16px}
+@media (max-width:389px){ .som.sm .sm-bas-l{gap:8px} .som.sm .sm-bas-l .sm-tel{padding:0 12px; gap:7px} .som.sm .sm-bas-l .sm-cta{padding:0 10px; font-size:.95rem; white-space:nowrap} }
+@media (max-width:339px){ .som.sm .sm-bas-l .sm-tel span{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap} }
+@media (max-height:720px){ .som.sm .sm-offres .sm-tu{min-height:70px; padding-block:8px} .som.sm .sm-offres .sm-tu .km{width:48px; height:48px} .som.sm .sm-bas-l .sm-tel, .som.sm .sm-bas-l .sm-cta{min-height:50px} }
+/* au téléphone : le menu apparaît d'un seul fondu court, sans construire ses lignes une à une */
+@media (hover:none), (max-width:860px){
+  .js-anim .som.on .sm-anim, .som.on .sm-anim{animation:none !important}
+  .js-anim #sommaire.som.on{animation:som-fondu .2s ease-out}
+}
