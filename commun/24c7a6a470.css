@@ -442,3 +442,31 @@ html:not(.clair) .lunes .lune-c .lune-nom{color:#E2C57E!important}
  .tf3 .lunes-g .lune-c .lune-badge{top:-9px!important;left:auto!important;right:12px!important;transform:none!important;font-size:.62rem!important;padding:4px 9px!important}
  .tf3 .tf-panier{margin-top:16px!important}
 }
+/* Tarifs : tout le bloc des formules tient dans le premier écran sur ordinateur */
+@media (min-width:1001px){
+ #tarifs.p-hero.tarif{min-height:0!important;padding-top:calc(var(--hd, 60px) + 8px)!important;padding-bottom:10px!important}
+ #tarifs.p-hero.tarif .wrap,#tarifs.p-hero.tarif .txt{min-height:0!important;padding-top:0!important;padding-bottom:0!important}
+ #tarifs.p-hero.tarif h2{font-size:clamp(2.2rem,1.4rem + 1.4vw,2.9rem)!important;margin:0!important;line-height:1.1!important}
+ #tarifs.p-hero.tarif p.body{max-width:62rem!important;margin:8px auto 0!important;font-size:1rem!important;line-height:1.5!important}
+ #formules.lunes-sec{min-height:0!important;padding-top:14px!important;padding-bottom:72px!important;align-content:start!important}
+ .tf-panier .pa-sous{margin-bottom:10px}
+}
+@media (min-width:1001px) and (max-height:820px){
+ .tf3 .lunes-g{gap:12px!important}
+ .tf3 .lunes-g .lune-c{padding:12px 12px 12px!important}
+ .tf3 .lunes-g .lune-c .lune-m{width:44px!important;height:44px!important}
+ .tf3 .lunes-g .lune-c h3{font-size:1.3rem!important}
+ .tf3 .lunes-g .lune-c .lune-p b{font-size:2rem!important}
+ .tf-panier{padding:16px 20px!important}
+ .tf-panier .calc-p b{font-size:1.9rem!important}
+}
+@media (min-width:1001px){
+ html body #p-tarifs section#tarifs.p-hero.tarif{padding-top:calc(var(--hd, 60px) + 34px)!important;padding-bottom:6px!important;min-height:0!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif .fil{top:calc(var(--hd, 60px) + 6px)!important}
+ html body #p-tarifs section#formules.lunes-sec{padding-top:12px!important}
+ html body #p-tarifs .tf-panier .note-ci-t{font-size:.75rem!important;line-height:1.4!important;margin-top:8px!important}
+}
+@media (min-width:1001px) and (max-height:820px){
+ html body #p-tarifs section#tarifs.p-hero.tarif{padding-top:calc(var(--hd, 60px) + 28px)!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif p.body{display:none!important}
+}
