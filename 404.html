@@ -30,6 +30,16 @@ html body .aida .aida-plus>summary{text-decoration:none!important;background-ima
 html body .aida .aida-plus>summary::before{display:none!important}
 html body .aida-ex a,html body .aida-ex .bil-lien{background-image:none!important;box-shadow:none!important;border-bottom:0!important;text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:4px!important;text-decoration-color:currentColor!important}
 html body .lunes .lune-c a.btn.btn.ghost{background-image:linear-gradient(#336B5B,#22473D)!important;border-color:#22473D!important;color:#fff!important}
+
+/* Audit UX : sceaux lisibles, bouton du menu et choix sélectionnés en vert */
+html body figure>.sceau{color:#fff!important}
+html.clair body .sm-cta.sm-cta,html.clair body .sm-cta.sm-cta:hover{background:linear-gradient(#336B5B,#22473D)!important;color:#fff!important}
+html.clair body .chip.chip input:checked+span{background:#2C5A4C!important;border-color:#2C5A4C!important;color:#fff!important}
+html.clair body .r-quand .chip.chip input:checked+span{background:#E1EEE7!important;border-color:#2C5A4C!important;color:#1F4A3E!important}
+html body .r-err-ici.r-err-ici{margin:.35rem 0 0!important;font-weight:700!important;font-size:.95rem!important;color:#B3261E!important}
+html:not(.clair) body .r-err-ici.r-err-ici{color:#F2A99F!important}
+/* Accueil sur téléphone : bouton et numéro juste sous le titre, puis l'explication */
+@media (max-width:860px){.hero-pro .h-txt>.actions{order:1}.hero-pro .h-txt>.tel-hero{order:2;margin-top:0!important}.hero-pro .h-txt>.lede{order:3;margin-top:8px!important}.hero-pro .h-txt>.offre-l{order:4}.hero-pro .pe-fleche{display:none!important}}
 </style></head><body style="background:#0C1222;color:#ECE6D8;font-family:sans-serif;text-align:center;padding:40px"><a href="/" style="color:#C9A55C">Retour à l'accueil d'Ascension</a></body></html>
 <script>/* amélio : bouton clair / sombre dans l'en-tête ; entrée « Clair ou sombre » du menu */
 (function(){var b=document.querySelector(".theme-btn"),a=document.querySelector(".nv-aa");if(b&&a){a.insertAdjacentElement("afterend",b);b.classList.add("en-tete")}
