@@ -352,3 +352,7 @@ html:not(.clair) .tf-eco{color:#CDE9DE}
 html:not(.clair) .tf .lc-t b{color:#E2C57E}
 .tf .lune-badge{padding:7px 16px;border-radius:999px;white-space:nowrap;background:#2C5A4C;color:#fff;font:700 .78rem/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;z-index:2}
 @media (max-width:860px){.tf .tf-premiere{grid-template-columns:72px minmax(0,1fr)!important}.tf .tf-deux{grid-template-columns:56px minmax(0,1fr)!important}}
+/* Tarifs (version d'origine améliorée) : nom de lune sous le titre, note sous le simulateur */
+.lunes .lune-c .lune-nom{margin-top:2px!important;font:600 .92rem/1.3 var(--f-body)!important;letter-spacing:.06em;color:#765A22!important}
+html:not(.clair) .lunes .lune-c .lune-nom{color:#E2C57E!important}
+.lunes-sec .note-ci-t{max-width:46rem;margin:14px auto 0;text-align:center;font-size:.85rem;opacity:.85}
