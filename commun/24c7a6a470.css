@@ -538,3 +538,10 @@ html:not(.clair) .tf-panier .pa-tag{color:#EEE7DA!important}
 .r-formule .r-fo-n{display:block;margin-top:2px;font-size:.78rem;opacity:.8}
 .tf-panier .pa-eng:not(:empty){font-size:.84rem!important;line-height:1.45!important;padding:8px 10px}
 @media (min-width:1001px){.tf-panier .calc-r>*{margin:0 0 4px!important}.tf-panier .pa-r{margin-bottom:8px}}
+/* Estimation allégée : ce qui est déjà sur la carte choisie n'est pas répété */
+.tf-panier #pa-lune,.tf-panier #pa-tag,.tf-panier #calc-n{display:none!important}
+.tf-panier p.pa-k{display:inline!important;margin:0!important}
+.tf-panier p.pa-k::after{content:" · "}
+.tf-panier #calc-t{display:inline!important;font:800 1.15rem/1.3 var(--f-display)!important;letter-spacing:.02em;text-transform:none}
+.tf-panier .pa-r{margin-top:12px!important}
+.tf-panier .calc-e{font-size:.95rem!important;opacity:.85}
