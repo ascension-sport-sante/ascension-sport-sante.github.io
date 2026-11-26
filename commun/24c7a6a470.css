@@ -1033,3 +1033,22 @@ html:not(.clair) .ema-dlg h3,html:not(.clair) .ema-dlg-x{color:#f3e7cf!important
  #p-coach .cha b{font-size:.95rem}
  #p-coach .cha-l{gap:6px;margin-bottom:10px}
 }
+/* Téléphone : échelle de texte plus fine et plus « pro » (16 px pour le texte, titres plus mesurés) ; le mode confort garde les grandes tailles */
+@media (max-width:860px){
+ html:not(.confort){--base:1rem}
+ html:not(.confort) body{line-height:1.58}
+ html:not(.confort) #principal p.body{font-size:1rem}
+ html:not(.confort) #principal h1:not(.eyebrow),html:not(.confort) #principal [role=heading][aria-level="1"]:not(.eyebrow){font-size:clamp(1.7rem,7.6vw,1.95rem)!important;line-height:1.15}
+ html:not(.confort) #principal h2{font-size:clamp(1.42rem,6.3vw,1.62rem)!important;line-height:1.2}
+ html:not(.confort) #principal h2.ink,html:not(.confort) #principal .p-hero h2[role=heading]{font-size:clamp(1.75rem,8vw,2rem)!important;line-height:1.12}
+ html:not(.confort) #principal :is(#prestations,#trouver,#deroule,#parcours) h3{font-size:1.18rem!important;line-height:1.25}
+ html:not(.confort) #principal #grades h4{font-size:1.08rem!important}
+ html:not(.confort) header.top .nv-cta,html:not(.confort) header.top .som-btn{font-size:.94rem}
+ #principal h1,#principal h2,#principal h3{text-wrap:balance}
+ #principal p{text-wrap:pretty}
+}
+/* Téléphone, comme sur ordinateur : une section par écran, contenu centré ; la flèche rouge guide de section en section */
+@media (max-width:860px){
+ main .page > section.sec:not(:first-of-type):not([hidden]){min-height:calc(100vh - var(--hd, 56px));min-height:calc(100dvh - var(--hd, 56px));display:grid!important;grid-template-columns:minmax(0,1fr);align-content:center;box-sizing:border-box}
+}
+@media (max-width:860px){.suite-fleche.gauche{right:auto!important;left:calc(18px + env(safe-area-inset-left, 0px))}}
