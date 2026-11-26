@@ -17,11 +17,11 @@
 - Après 60 ans : équilibre, force, autonomie : https://ascension-sport-sante.github.io/coach-sportif-senior/
 
 ## Tarifs
-- Séances d'une heure à domicile, matériel fourni. Prix après le crédit d'impôt de 50 % des services à la personne (avec l'avance immédiate de l'Urssaf, on ne règle que sa moitié) :
-  - Aube, la première séance : 19€ (38€ avant crédit d'impôt), satisfait ou remboursé.
-  - Zénith, parcours de 3 mois : 29€ la séance (58€), 1 à 3 séances par semaine, bilans à 6 et 12 semaines.
-  - Éclat, à la séance sans engagement : 39€ (78€).
-  - Éclipse, une séance pour deux : 49€ (98€).
+- Séances d'une heure à domicile, déplacement et matériel compris. Prix TTC, puis le montant après le crédit d'impôt de 50 % des services à la personne (sous réserve de l'enregistrement de la déclaration, en cours) :
+  - Aube, la première séance : 38€ (19€ après crédit d'impôt), satisfait ou remboursé.
+  - Éclat, à la séance sans engagement : 78€ (39€ après crédit d'impôt).
+  - Zénith, parcours de 12 semaines : 58€ la séance (29€ après crédit d'impôt), 1 à 3 séances par semaine, bilans à 6 et 12 semaines.
+  - Éclipse, une séance pour deux personnes d'un même foyer : 98€ (49€ après crédit d'impôt).
 - Détail : https://ascension-sport-sante.github.io/tarifs/
 
 ## Zone d'intervention
