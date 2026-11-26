@@ -88,3 +88,6 @@ v.addEventListener("ended",function(){m._reste--;if(m._reste>0&&(Date.now()-m._t
 m.addEventListener("click",function(){jouer(m,calme()?1:3)});
 if("IntersectionObserver" in window&&!calme()){var vu=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!m._fait){setTimeout(function(){if(m._fait)return;var r=m.getBoundingClientRect();if(r.width&&r.right>0&&r.left<innerWidth&&r.bottom>0&&r.top<innerHeight){m._fait=1;vu.disconnect();jouer(m,3)}},1200)}})},{threshold:.6});vu.observe(m)}});
 })();
+;(function(){/* À propos et Méthode : la flèche du premier écran montre la suite du haut de page en entier, sans le début de la section suivante */
+document.addEventListener("click",function(e){var f=e.target.closest&&e.target.closest(".pe-fleche");if(!f)return;var hero=f.closest("section");if(!hero||!hero.closest("#p-coach,#p-methode"))return;var s=hero.querySelector("[data-pe]");if(!s)return;var hd=document.querySelector("header.top"),h=hd?Math.max(0,hd.getBoundingClientRect().bottom):0;hero.style.paddingBottom="";var a=s.getBoundingClientRect().top-hero.getBoundingClientRect().top,besoin=Math.ceil(a-h-16+innerHeight-hero.offsetHeight);if(besoin>0)hero.style.paddingBottom=(parseFloat(getComputedStyle(hero).paddingBottom)||0)+besoin+"px"},true);
+})();

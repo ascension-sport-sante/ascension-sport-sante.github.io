@@ -36,3 +36,6 @@
   };
   document.addEventListener("click", function(e){ var t = e.target.closest && e.target.closest("[data-bilan]"); if (!t) return; e.preventDefault(); e.stopPropagation(); ouvrir(t.getAttribute("data-bilan"), t); }, true);
 })();
+;(function(){/* Ordinateur : toucher une page l'agrandit à la largeur de la fenêtre, un second toucher revient aux pages entières */
+document.addEventListener("click",function(e){var im=e.target.closest&&e.target.closest(".bilv-p img");if(!im||innerWidth<861)return;var p=im.parentNode,z=p.classList.toggle("bilv-zoom");requestAnimationFrame(function(){im.scrollIntoView({block:"start"})});im.setAttribute("title",z?"Revenir aux pages entières":"Agrandir cette page")});
+})();

@@ -618,3 +618,222 @@ html body .est-photo .halo{z-index:2}
 html body .est-vid{cursor:pointer}
 html body .est-photo .est-v{position:absolute;inset:9%;width:82%;height:82%;border-radius:50%;clip-path:circle(50%);object-fit:cover;z-index:1;filter:none;opacity:0;transition:opacity .45s ease;pointer-events:none}
 html body .est-vid.joue .est-v{opacity:1}
+/* À propos, nouvelle mise en page : une section par écran, sans grands vides ; chapitres et engagements à déplier */
+#p-coach .ap-sec{padding-block:clamp(26px,5vh,56px)!important}
+#p-coach .ap-sec .sec-head{margin-bottom:clamp(14px,2.6vh,26px)!important;gap:8px}
+#p-coach .ap-chaps{display:grid;gap:12px;align-items:start;width:100%;max-width:1120px;margin-inline:auto}
+#p-coach .ap-trois{grid-template-columns:repeat(3,minmax(0,1fr))}
+#p-coach .ap-deux{grid-template-columns:repeat(2,minmax(0,1fr));max-width:980px}
+#p-coach .ap-chap summary{align-items:flex-start;padding:16px 18px;font-weight:400;font-size:1rem;text-align:left}
+#p-coach .ap-ch{display:grid;gap:6px}
+#p-coach .ap-ch .apr-quand{margin:0}
+#p-coach .ap-tz{color:var(--text);line-height:1.5}
+#p-coach .ap-lire{font-weight:700;font-size:.9rem;color:#e8c77e}
+html.clair #p-coach .ap-lire{color:#9E1B14}
+#p-coach .ap-lire::after{content:"Lire la suite"}
+#p-coach details[open] .ap-lire::after{content:"Réduire"}
+#p-coach .ap-chap .acc-r,#p-coach .ap-eng .acc-r{padding:0 18px 16px;text-align:left}
+#p-coach .ap-chap .acc-r p{line-height:1.6}
+#p-coach .ap-engs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start;width:100%;max-width:1000px;margin-inline:auto}
+#p-coach .ap-eng:last-child{grid-column:1/-1}
+#p-coach .ap-eng summary{align-items:center;padding:12px 16px;text-align:left}
+#p-coach .ap-et{display:flex;align-items:center;gap:12px}
+#p-coach .ap-et .k{flex:none;width:42px;height:42px;margin:0}
+#p-coach .ap-et .k .vgx{width:100%;height:100%}
+#p-coach .ap-et b{font-family:var(--f-display);font-weight:800;font-size:1.03rem;line-height:1.3}
+#p-coach .ap-et b em{font-style:normal;color:#e8c77e}
+html.clair #p-coach .ap-et b em{color:#9E1B14}
+#p-coach .ap-eng .acc-r{padding-left:70px}
+#p-coach .est-s{margin:8px 0 0;font-size:.8rem;line-height:1.45;color:#5d5140}
+#p-coach .est-s a{color:#9E1B14;font-weight:700}
+#p-coach .apr-fin .apr-grande{margin:0 auto clamp(14px,3vh,28px)}
+#p-coach .ap-suite{display:grid;justify-items:center;gap:10px;width:100%;margin-top:clamp(18px,4vh,40px)}
+#p-coach .diplomes-sec .apr-sous{margin:clamp(14px,2.6vh,26px) 0 10px}
+@media (max-width:860px){
+ #p-coach #sensei .moonbox{display:none}
+ #p-coach > section.ap-sec{min-height:calc(100vh - var(--hd,60px));min-height:calc(100dvh - var(--hd,60px));display:grid;align-content:center;box-sizing:border-box}
+ #p-coach .ap-trois,#p-coach .ap-deux,#p-coach .ap-engs{grid-template-columns:1fr;gap:8px}
+ #p-coach .ap-chap summary{padding:13px 14px}
+ #p-coach .ap-chap .acc-r,#p-coach .ap-eng .acc-r{padding:0 14px 14px}
+ #p-coach .ap-eng summary{padding:10px 12px}
+ #p-coach .ap-et .k{width:36px;height:36px}
+ #p-coach .ap-et b{font-size:.98rem}
+ #p-coach .diplomes-sec .sceaux{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+ #p-coach .diplomes-sec .sceau{display:grid;justify-items:center;text-align:center;gap:6px}
+ #p-coach .diplomes-sec .sceau .sh{width:46px;height:46px}
+ #p-coach .diplomes-sec .sceau .st strong{font-size:.8rem;line-height:1.25}
+ #p-coach .diplomes-sec .sceau .st span{font-size:.72rem}
+ #p-coach .apr-terrain{grid-template-columns:1fr;gap:6px}
+ #p-coach .apr-terrain li{padding:8px 12px}
+ #p-coach .apr-terrain b{font-size:.95rem}
+ #p-coach .apr-terrain span{font-size:.82rem}
+}
+/* À propos : réglages fins (titre de chapitre + « Lire la suite » sur la même ligne ; texte toujours sombre et lisible) */
+#p-coach .ap-chap summary::after{display:none}
+#p-coach .ap-ch{grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:4px;width:100%}
+#p-coach .ap-ch .apr-quand{grid-column:1;grid-row:1;align-self:center}
+#p-coach .ap-lire{grid-column:2;grid-row:1;align-self:center;white-space:nowrap}
+#p-coach .ap-tz{grid-column:1/-1;grid-row:2;font-size:1.02rem;color:#efe6d2}
+html.clair #p-coach .ap-tz{color:#2b2118}
+#p-coach .ap-lire::after{content:"Lire la suite \25BE"}
+#p-coach details[open] .ap-lire::after{content:"Réduire \25B4"}
+#p-coach .apr-fin .apr-grande blockquote{font-size:clamp(1.35rem,2.6vw,2rem)}
+#p-coach .ap-suite .suite{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:12px;width:100%}
+#p-coach .ap-suite .suite-c{width:auto;min-height:0;grid-template-columns:48px minmax(0,1fr) auto;grid-template-rows:auto;justify-items:start;text-align:left;padding:10px 14px 10px 10px}
+#p-coach .ap-suite .suite-c .km{width:48px;height:48px}
+@media (max-width:860px){
+ #p-coach .ap-sec h2{font-size:clamp(1.5rem,6.6vw,1.9rem)!important}
+ #p-coach details:not([open]) .ap-tz{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+ #p-coach .ap-tz{font-size:.97rem}
+ #p-coach .ap-lire{font-size:.84rem}
+ #p-coach #sport .sec-head p.body{display:none}
+ #p-coach .est .moonbox{width:132px}
+ #p-coach .est{gap:6px}
+ #p-coach .est h3{font-size:1.12rem}
+ #p-coach .est-t{font-size:.9rem;line-height:1.45}
+ #p-coach .rouleau{padding-block:18px 16px}
+ #p-coach .rouleau-hint{margin-top:8px}
+ #p-coach .apr-terrain{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #p-coach .apr-terrain li{display:block}
+ #p-coach .apr-terrain li>.k{display:none}
+ #p-coach .apr-terrain b{display:block;font-size:.9rem;line-height:1.25}
+ #p-coach .apr-terrain span:not(.k){display:block;font-size:.76rem;line-height:1.3;margin-top:2px}
+ #p-coach .apr-fin .apr-grande blockquote{font-size:1.3rem}
+ #p-coach .apr-fin .apr-grande figcaption{margin-top:8px}
+ #p-coach .apr-fin .cta-box{gap:14px}
+ #p-coach .ap-suite{margin-top:16px;gap:8px}
+ #p-coach .ap-suite .suite{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #p-coach .ap-suite .suite-c{grid-template-columns:36px minmax(0,1fr);gap:8px;padding:8px}
+ #p-coach .ap-suite .suite-c .km{width:36px;height:36px}
+ #p-coach .ap-suite .suite-c b{font-size:.95rem}
+ #p-coach .ap-suite .suite-c small{font-size:.74rem}
+ #p-coach .ap-suite .suite-c .fl{display:none}
+}
+/* À propos, « Ce que le sport m'a appris » : cartes plus larges sur téléphone, cercles adaptés aux écrans bas */
+#p-coach .est .moonbox{width:clamp(110px,21vh,190px)}
+@media (max-height:760px) and (min-width:861px){#p-coach #sport .sec-head p.body{display:none}#p-coach .est-t{font-size:.92rem;line-height:1.45}#p-coach .est h3{font-size:1.15rem}#p-coach .rouleau{padding-block:20px 18px}}
+@media (max-width:860px){
+ #p-coach .estampes{padding:0 6%}
+ #p-coach .est{flex:0 0 88%;padding:4px 14px}
+ #p-coach .est .moonbox{width:clamp(100px,17vh,132px)}
+}
+@media (max-width:860px){
+ #p-coach .apr-terrain li{padding:8px 10px!important}
+ #p-coach .apr-terrain li b{font-size:.92rem!important;line-height:1.2!important}
+ #p-coach .apr-terrain li span:not(.k){font-size:.76rem!important;line-height:1.3!important}
+ #p-coach .diplomes-sec .apr-sous{font-size:1.15rem;margin:14px 0 8px}
+}
+@media (max-height:760px){
+ #p-coach .apr-fin .apr-grande blockquote{font-size:clamp(1.2rem,2.2vw,1.55rem)}
+ #p-coach .apr-fin .cta-box{gap:12px}
+ #p-coach .apr-fin .cta-box h2{font-size:clamp(1.5rem,2.4vw,1.9rem)}
+}
+@media (min-width:861px){
+ #p-coach .ap-chap summary{padding:20px 22px}
+ #p-coach .ap-tz{font-size:1.12rem}
+ #p-coach .ap-ch .apr-quand{font-size:.9rem}
+ #p-coach .ap-eng summary{padding:14px 18px}
+ #p-coach .ap-et .k{width:48px;height:48px}
+ #p-coach .ap-et b{font-size:1.12rem}
+ #p-coach .ap-eng .acc-r{padding-left:78px}
+}
+/* Méthode, nouvelle mise en page : une section par écran, sans grands vides ; parcours cliquables en entier */
+#p-methode .m-sec{padding-block:clamp(26px,5vh,56px)!important}
+#p-methode .m-sec .sec-head{margin-bottom:clamp(14px,2.6vh,26px)!important;gap:8px}
+#p-methode .voies4{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px}
+#p-methode a.voie-c{position:relative;color:inherit;text-decoration:none;cursor:pointer;gap:8px;padding:20px 16px 18px}
+#p-methode a.voie-c .k{width:84px;height:84px}
+#p-methode a.voie-c:focus-visible{outline:3px solid #b08a3c;outline-offset:3px}
+#p-methode .voie-go{position:absolute;right:14px;bottom:10px;font-size:1.2rem;color:#9E1B14;transition:transform .2s ease}
+html:not(.clair) #p-methode .voie-go{color:#e8c77e}
+@media (hover:hover){#p-methode a.voie-c:hover .voie-go{transform:translateX(4px)}#p-methode a.voie-c:hover h3{text-decoration:underline;text-underline-offset:4px}}
+#p-methode .voies-source{margin-top:clamp(10px,2vh,18px)}
+#p-methode .cta-final .cta-box{gap:clamp(12px,2.4vh,28px)}
+#p-methode .ap-suite{display:grid;justify-items:center;gap:10px;width:100%;margin-top:clamp(18px,4vh,40px)}
+#p-methode .ap-suite .suite{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:12px;width:100%}
+#p-methode .ap-suite .suite-c{width:auto;min-height:0;grid-template-columns:48px minmax(0,1fr) auto;grid-template-rows:auto;justify-items:start;text-align:left;padding:10px 14px 10px 10px}
+#p-methode .ap-suite .suite-c .km{width:48px;height:48px}
+@media (max-width:860px){
+ #p-methode > section.m-sec{min-height:calc(100vh - var(--hd,60px));min-height:calc(100dvh - var(--hd,60px));display:grid;align-content:center;box-sizing:border-box}
+ #p-methode .m-sec h2{font-size:clamp(1.5rem,6.6vw,1.9rem)!important}
+ #p-methode .voies4{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
+ #p-methode a.voie-c{grid-template-columns:1fr!important;justify-items:center!important;text-align:center!important;padding:12px 10px 22px;gap:4px}
+ #p-methode a.voie-c .k{grid-row:auto!important;width:52px;height:52px}
+ #p-methode a.voie-c h3{font-size:1.08rem}
+ #p-methode a.voie-c p{font-size:.82rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+ #p-methode .voie-go{right:50%;margin-right:-.4em;bottom:4px;font-size:1rem}
+ #p-methode .voies-source{font-size:.82rem}
+ #p-methode .voies-source small{font-size:.72rem}
+ #p-methode .ap-suite{margin-top:16px;gap:8px}
+ #p-methode .ap-suite .suite{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #p-methode .ap-suite .suite-c{grid-template-columns:36px minmax(0,1fr);gap:8px;padding:8px}
+ #p-methode .ap-suite .suite-c .km{width:36px;height:36px}
+ #p-methode .ap-suite .suite-c b{font-size:.95rem}
+ #p-methode .ap-suite .suite-c small{font-size:.74rem}
+ #p-methode .ap-suite .suite-c .fl{display:none}
+}
+@media (max-width:860px){
+ #p-methode #parcours .sec-head p.body{display:none}
+ #p-methode .etape .k{width:56px;height:56px}
+ #p-methode .medecin{padding:10px 12px;gap:10px}
+ #p-methode .medecin .k{display:none}
+ #p-methode .medecin p{font-size:.84rem;line-height:1.45}
+ #p-methode .bil-c{padding-bottom:10px}
+ #p-methode .bil-n{margin-top:6px;font-size:.78rem}
+ #p-methode a.voie-c p{-webkit-line-clamp:3}
+ #p-methode a.voie-c .k{width:46px;height:46px}
+ #p-methode .principes .sec-head p.body{font-size:.95rem;line-height:1.5}
+ #p-methode .scrolls{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ #p-methode .scroll{padding:12px 10px!important;gap:4px}
+ #p-methode .scroll .k{width:44px!important;height:44px!important;margin:0 auto 2px!important}
+ #p-methode .scroll h3{font-size:1.02rem}
+ #p-methode .scroll p{font-size:.8rem!important;line-height:1.35}
+ #p-methode .depli{margin-top:10px}
+}
+@media (min-width:861px) and (max-height:760px){
+ #p-methode #parcours .sec-head p.body{display:none}
+ #p-methode .etape .k{width:60px;height:60px}
+ #p-methode .scroll{padding-block:12px!important}
+ #p-methode .scroll .k{width:46px!important;height:46px!important}
+ #p-methode .scroll p{font-size:.9rem!important}
+ #p-methode .principes .sec-head p.body{font-size:.98rem}
+}
+/* Bilans d'exemple : la visionneuse s'ouvre en grand (pages entières côte à côte sur ordinateur, plein écran sur téléphone) */
+html body .bilv{z-index:1000}
+@media (min-width:861px){
+ html body .bilv-b{width:min(1480px,96vw)!important;height:94vh!important;max-height:none!important}
+ html body .bilv-p{display:flex!important;flex-wrap:wrap;justify-content:center;align-content:flex-start;gap:18px;padding:16px 18px 20px}
+ html body .bilv-p img{width:auto!important;max-width:100%!important;height:calc(94vh - 250px)!important;max-height:1287px;object-fit:contain;cursor:zoom-in}
+ html body .bilv-p.bilv-zoom img{height:auto!important;width:min(100%,980px)!important;cursor:zoom-out}
+}
+@media (max-width:860px){
+ html body .bilv-b{width:100%!important;height:100vh!important;height:100dvh!important;max-height:none!important;border-radius:0!important}
+ html body .bilv-h{padding:10px 12px 2px}
+ html body .bilv-h h3{font-size:1.15rem}
+ html body .bilv-x{width:40px;height:40px}
+ html body .bilv-tabs{padding:6px 12px 8px;gap:6px}
+ html body .bilv-tabs button{min-height:40px;padding:6px 12px;font-size:.9rem}
+ html body .bilv-p{padding:8px 6px;gap:10px}
+ html body .bilv-p img{max-width:100%!important;border-radius:4px}
+ html body .bilv-pied{padding:8px 12px 12px}
+}
+/* Méthode, « Vos progrès » : les 4 bilans en bande à faire glisser sur téléphone, plus petits sur les écrans bas */
+@media (max-width:860px){
+ #p-methode .bil-g{display:flex!important;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding:2px 4px 6px;margin-inline:-4px}
+ #p-methode .bil-g::-webkit-scrollbar{display:none}
+ #p-methode .bil-c{flex:0 0 46%;scroll-snap-align:start}
+}
+@media (min-width:861px) and (max-height:760px){#p-methode .bil-g{max-width:900px;margin-inline:auto}}
+@media (max-width:860px){#p-methode .bil-c{flex-basis:43%}#p-methode .bil-n::after{content:" Faites glisser pour voir les 4."}}
+@media (max-width:860px){
+ #p-coach .rouleau-hint{margin-top:4px;font-size:.8rem}
+ #p-coach .est-t{line-height:1.4}
+ #p-methode .principes .sec-head{margin-bottom:10px!important}
+ #p-methode .principes .sec-head p.body{font-size:.92rem;line-height:1.45}
+ #p-methode .scroll h3{margin:0}
+}
+@media (max-width:860px){
+ #p-methode a.voie-c{padding:10px 8px 20px}
+ #p-methode a.voie-c .k{width:42px;height:42px}
+ #p-methode .voies-source{margin-top:8px;line-height:1.35}
+}
