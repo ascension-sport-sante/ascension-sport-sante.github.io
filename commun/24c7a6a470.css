@@ -1057,3 +1057,56 @@ html:not(.clair) .ema-dlg h3,html:not(.clair) .ema-dlg-x{color:#f3e7cf!important
  .suite-fleche.droite{left:auto!important;right:calc(22px + env(safe-area-inset-right, 0px))!important;margin-left:0!important}
  .suite-fleche.gauche{right:auto!important;left:calc(22px + env(safe-area-inset-left, 0px))!important;margin-left:0!important}
 }
+/* Ordinateur : « À lire ensuite » sur une seule ligne, jusqu'à 3 cartes */
+@media (min-width:861px){html body main section.suite-sec nav.suite{width:min(1120px,100%)!important;flex-wrap:nowrap!important}}
+/* Téléphone, pages parcours : le médaillon du parcours en grand, à la place du disque doré vide */
+@media (max-width:860px){
+ html body .p-hero .moonbox .moon[data-moon]::before{display:none!important}
+ html body .p-hero .moonbox .moon[data-moon] .moonc{display:none!important}
+ html body .p-hero .moonbox .moon[data-moon] .tag.vgt{position:absolute!important;inset:9% auto auto 9%!important;right:auto!important;bottom:auto!important;width:82%!important;height:82%!important;box-shadow:0 0 0 3px #fff6e6,0 0 0 5px #c9a55c,0 16px 34px -12px rgba(60,40,20,.6)!important}
+}
+/* Téléphone : sections resserrées pour tenir en un écran (accueil, parcours) */
+@media (max-width:860px){
+ #prestations .cards4{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ #prestations .card-p{display:flex!important;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 8px 12px!important}
+ #prestations .card-p .vgx{width:58px!important;height:58px!important;margin:0 0 4px!important}
+ #prestations .card-p h3{font-size:1.1rem!important;margin:0!important}
+ #prestations .card-p .cp-tag{font-size:.82rem;margin:0!important}
+ #prestations .card-p p:not(.cp-tag){font-size:.84rem;line-height:1.38;margin:2px 0 0!important;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+ #prestations .card-p .lien{min-height:36px!important;padding:0 14px!important;margin-top:6px!important;font-size:.86rem}
+ #apropos .photo-res{max-width:150px!important;margin-inline:auto!important}
+ .aida .peurs-h{display:none}
+ .aida .peurs-r{padding:10px 12px!important;gap:4px!important}
+ .aida .peurs-q{font-size:.95rem!important;line-height:1.3}
+ .aida .peurs-a{font-size:.86rem!important;line-height:1.42}
+ .aida .peurs{gap:8px!important}
+ .aida .peurs-ex{font-size:.82rem}
+ .fusion .bes-cites{display:flex!important;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;padding:4px 2px 8px}
+ .fusion .bes-cites::-webkit-scrollbar{display:none}
+ .fusion .bes-cites>figure{flex:0 0 86%;scroll-snap-align:center;margin:0!important}
+ .fusion .bes-cites::after{content:"";flex:0 0 1px}
+}
+@media (max-width:860px){
+ html:not(.confort) #principal #prestations .card-p p:not(.cp-tag){font-size:.84rem!important;line-height:1.38!important}
+ html:not(.confort) #principal #prestations .card-p .cp-tag{font-size:.8rem!important}
+ html:not(.confort) #principal #prestations .card-p h3{font-size:1.08rem!important}
+ html:not(.confort) #principal .fusion .bes-cites blockquote{font-size:1rem!important;line-height:1.45!important}
+ html:not(.confort) #principal .fusion .bes-cites figcaption{font-size:.78rem!important}
+ html:not(.confort) #principal #apropos .col-txt p{font-size:.95rem!important;line-height:1.5}
+ #apropos .sceaux{gap:8px!important}
+}
+@media (max-width:860px){
+ html:not(.confort) #principal #prestations .card-p p:not(.cp-tag){-webkit-line-clamp:2}
+ #prestations .card-p .vgx{width:50px!important;height:50px!important}
+ #prestations .sec-head{margin-bottom:10px!important}
+ #apropos .photo-res{max-width:118px!important}
+ #apropos .sceaux{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important}
+ #apropos .sceau{display:grid!important;justify-items:center;text-align:center;gap:4px!important}
+ #apropos .sceau .sh{width:42px!important;height:42px!important}
+ #apropos .sceau .st strong{font-size:.74rem!important;line-height:1.25!important}
+ #apropos .sceau .st span{font-size:.68rem!important}
+ .aida .sec-head{margin-bottom:10px!important}
+ html:not(.confort) #principal .aida .peurs-q{font-size:.92rem!important}
+ html:not(.confort) #principal .aida .peurs-a{font-size:.84rem!important;line-height:1.38!important}
+ .aida .peurs-r{padding:8px 11px!important}
+}
