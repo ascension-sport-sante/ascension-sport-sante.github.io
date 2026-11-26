@@ -609,3 +609,8 @@ html body #prestations .card-p:focus-visible .lien{outline:3px solid var(--pc1);
 /* Téléphone (sans 3D), thème clair : on garde la peinture dorée, sans l'ancienne image grise par-dessus */
 html.clair.illus.nogl body::after{display:none!important;background:none!important}
 html.clair.illus body::before{height:auto!important;bottom:0!important}
+/* À propos, étape « La barre » : la vraie photo dans le cercle, à la place de la silhouette */
+html body .est-photo{cursor:default}
+html body .est-photo::before{display:none!important}
+html body .est-photo .est-ph{position:absolute;inset:9%;width:82%;height:82%;border-radius:50%;object-fit:cover;z-index:1;filter:sepia(.4) saturate(.8) brightness(1.04);box-shadow:0 0 0 1px rgba(70,50,25,.22),0 8px 20px -10px rgba(60,40,20,.55)}
+html body .est-photo .halo{z-index:2}
