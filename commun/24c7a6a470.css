@@ -951,3 +951,39 @@ html.ema-on{overflow:hidden}
  #p-coach .cha-p{padding:14px 22px}
  #p-coach .cha-lead{font-size:1.1rem}
 }
+@media (max-width:860px){
+ #p-coach .cha:nth-of-type(1){margin-top:18px}
+ #p-coach .cha:nth-of-type(2){margin-top:9px}
+ #p-coach .cha-trace{top:12px;height:28px}
+ #p-coach .cha-k{width:44px;height:44px}
+ #p-coach .cha[aria-selected=true]::after{margin-top:4px;height:3px}
+ #p-coach .cha-q{margin-top:6px}
+ #p-coach .cha-p p{font-size:.9rem;line-height:1.45}
+ #p-coach .cha-lead{font-size:1rem;margin-bottom:6px!important}
+ #p-coach .ap-hist .sec-head{margin-bottom:10px!important}
+}
+/* Écrans d'ordinateur bas (portables) : on resserre pour qu'une section tienne toujours en un écran */
+@media (min-width:861px) and (max-height:760px){
+ #p-coach .ap-sec,#p-methode .m-sec{padding-block:16px!important}
+ #p-coach .ap-sec .sec-head,#p-methode .m-sec .sec-head{margin-bottom:12px!important;gap:4px}
+ #p-coach .ap-sec h2,#p-methode .m-sec h2{font-size:clamp(1.55rem,4.4vh,2.1rem)!important}
+ #p-coach .ap-sec .sec-head p.body,#p-methode .m-sec .sec-head p.body{font-size:.95rem}
+ #p-coach .diplomes-sec .apr-sous{margin:12px 0 8px}
+ #p-coach .apr-terrain li{padding:8px 12px}
+ #p-methode .etape .k{width:52px;height:52px}
+ #p-methode .medecin{padding:10px 14px}
+ #p-methode .medecin p{font-size:.88rem}
+ #p-methode .bil-g{max-width:820px}
+ #p-methode a.voie-c{padding:14px 12px 16px}
+ #p-methode a.voie-c .k{width:64px;height:64px}
+ #p-methode a.voie-c p{font-size:.9rem;line-height:1.45}
+ #p-methode .voies-source{margin-top:8px;font-size:.85rem}
+ #p-methode .scrolls{gap:10px}
+ #p-methode .scroll .k{width:40px!important;height:40px!important}
+ #p-methode .scroll h3{font-size:1.05rem}
+}
+@media (max-width:860px){
+ #p-coach .ema-p{font-size:.8rem;line-height:1.33}
+ #p-coach .ema-t{font-size:.94rem}
+ #p-coach .ap-vision .sec-head{margin-bottom:10px!important}
+}
