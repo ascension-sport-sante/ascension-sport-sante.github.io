@@ -546,10 +546,10 @@ html:not(.clair) .tf-panier .pa-tag{color:#EEE7DA!important}
 .tf-panier .pa-r{margin-top:12px!important}
 .tf-panier .calc-e{font-size:.95rem!important;opacity:.85}
 /* Tarifs : chaque formule aux couleurs de son médaillon (cartes et estimation) */
-#lc-nouvelle-lune,.tf-panier[data-f="lc-nouvelle-lune"]{--g:linear-gradient(172deg,#2B2452 0%,#6A3963 52%,#A2463E 100%);--glow:radial-gradient(90% 45% at 50% 100%,rgba(255,170,110,.32),rgba(255,170,110,0) 70%);--refl:rgba(255,255,255,.10);--bord:#E8875F;--fa:#FFC9A3;--txt:#FFF4E6;--fd:rgba(255,244,230,.85);--pill:#FFD9BF;--pillt:#6E2A1E;--ring:#2B2452;--on:#FFC9A3;--ont:#3A1A22}
+#lc-nouvelle-lune,.tf-panier[data-f="lc-nouvelle-lune"]{--g:linear-gradient(172deg,#2B2452 0%,#6A3963 52%,#A2463E 100%);--glow:radial-gradient(90% 45% at 50% 100%,rgba(255,170,110,.32),rgba(255,170,110,0) 70%);--refl:rgba(255,255,255,.10);--bord:#E8875F;--fa:#FFC9A3;--txt:#FFF4E6;--fd:#FFF1E4;--pill:#FFD9BF;--pillt:#6E2A1E;--ring:#2B2452;--on:#FFC9A3;--ont:#3A1A22}
 #lc-clair-de-lune,.tf-panier[data-f="lc-clair-de-lune"]{--g:linear-gradient(165deg,#FFF9E6 0%,#DDEEF4 100%);--glow:radial-gradient(80% 50% at 50% 0%,rgba(255,236,170,.55),rgba(255,236,170,0) 70%);--refl:rgba(255,255,255,.55);--bord:#D9B54A;--fa:#2D6A88;--txt:#1F2E36;--fd:#3D5260;--pill:#C9E3EE;--pillt:#174B61;--ring:#FFF9E6;--on:#2D6A88;--ont:#fff}
 #lc-trois-lunes,.tf-panier[data-f="lc-trois-lunes"]{--g:linear-gradient(170deg,#FFF6D2 0%,#FBDD84 55%,#F2B941 100%);--glow:radial-gradient(70% 45% at 50% 0%,rgba(255,255,255,.95),rgba(255,250,225,.4) 45%,rgba(255,250,225,0) 75%);--refl:rgba(255,255,255,.35);--bord:#D9961C;--fa:#1C3A66;--txt:#1E2A3A;--fd:#3A3A30;--pill:#1C3A66;--pillt:#FFE7A0;--ring:#FFF6D2;--on:#1C3A66;--ont:#FFE7A0}
-#lc-eclipse,.tf-panier[data-f="lc-eclipse"]{--g:linear-gradient(170deg,#1D1734 0%,#110D22 100%);--glow:radial-gradient(60% 40% at 50% 18%,rgba(255,140,60,.38),rgba(255,140,60,0) 70%);--refl:rgba(255,255,255,.06);--bord:#E07A3A;--fa:#FFB062;--txt:#F6EDE4;--fd:rgba(246,237,228,.82);--pill:#FFB062;--pillt:#2A140A;--ring:#1D1734;--on:#FFB062;--ont:#2A140A}
+#lc-eclipse,.tf-panier[data-f="lc-eclipse"]{--g:linear-gradient(170deg,#1D1734 0%,#110D22 100%);--glow:radial-gradient(60% 40% at 50% 18%,rgba(255,140,60,.38),rgba(255,140,60,0) 70%);--refl:rgba(255,255,255,.06);--bord:#E07A3A;--fa:#FFB062;--txt:#F6EDE4;--fd:#EADFD4;--pill:#FFB062;--pillt:#2A140A;--ring:#1D1734;--on:#FFB062;--ont:#2A140A}
 html body #p-tarifs .tf3 .lunes-g .lune-c{background:var(--glow),var(--g)!important;border:1.5px solid var(--bord)!important;box-shadow:0 18px 36px -24px rgba(30,20,10,.6)!important;position:relative;overflow:visible;transition:transform .25s ease,box-shadow .25s ease}
 html body #p-tarifs .tf3 .lunes-g .lune-c::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 55% at 50% 0%,var(--refl),rgba(255,255,255,0) 60%);pointer-events:none}
 html body #p-tarifs .tf3 .lunes-g .lune-c>*:not(.lune-badge){position:relative}
@@ -576,3 +576,8 @@ html body #p-tarifs .tf-panier[data-f] .calc-ch label{color:var(--txt);border-co
 html body #p-tarifs .tf-panier[data-f] .calc-ch label:has(input:checked){background:var(--on)!important;border-color:var(--on)!important;color:var(--ont)!important}
 html body #p-tarifs .tf-panier[data-f] .pa-inc{border-top-color:color-mix(in srgb,var(--txt) 22%,transparent)!important}
 html body #p-tarifs .tf-panier[data-f] .calc-r{border-top-color:color-mix(in srgb,var(--txt) 25%,transparent)!important}
+html body #p-tarifs .tf-panier[data-f] .note-ci-t,html body #p-tarifs .tf-panier[data-f] .calc-e{opacity:1!important}
+@media (max-width:700px){
+ html body #p-tarifs .tf3 .lunes-g #lc-nouvelle-lune{background:linear-gradient(100deg,#2B2452 0%,#5E3560 55%,#7E3838 100%)!important}
+ html body #p-tarifs .tf3 .lunes-g #lc-eclipse{background:radial-gradient(40% 90% at 10% 50%,rgba(255,140,60,.28),rgba(255,140,60,0) 70%),linear-gradient(100deg,#1D1734,#110D22)!important}
+}
