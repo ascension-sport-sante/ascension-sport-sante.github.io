@@ -3,7 +3,7 @@
 > Coach sport-santé et enseignant en activité physique adaptée, à domicile, à Paris et en proche banlieue, depuis Paris 18e. Séances individuelles d'une heure pour enfants, adultes et personnes de plus de 60 ans, avec ou sans pathologie. Matériel fourni.
 
 ## Ce que je propose
-- Première séance (Nouvelle Lune, 1 h à domicile) : 20 min de bilan (santé, force, équilibre, endurance, mobilité) et 40 min de séance, satisfait ou remboursé : https://ascension-sport-sante.github.io/bilan/
+- Première séance (Aube, 1 h à domicile) : 20 min de bilan (santé, force, équilibre, endurance, mobilité) et 40 min de séance, satisfait ou remboursé : https://ascension-sport-sante.github.io/bilan/
 - Éveil, activité physique adaptée à domicile (douleurs, maladie chronique, handicap, âge) : https://ascension-sport-sante.github.io/activite-physique-adaptee-domicile/
 - Élan, remise en forme à domicile (énergie, force, endurance, souplesse) : https://ascension-sport-sante.github.io/remise-en-forme-domicile/
 - Envol, préparation physique à domicile (s'entraîner plus intensément) : https://ascension-sport-sante.github.io/preparation-physique-domicile/
@@ -18,9 +18,9 @@
 
 ## Tarifs
 - Séances d'une heure à domicile, matériel fourni. Prix après le crédit d'impôt de 50 % des services à la personne (avec l'avance immédiate de l'Urssaf, on ne règle que sa moitié) :
-  - Nouvelle Lune, la première séance : 19€ (38€ avant crédit d'impôt), satisfait ou remboursé.
-  - Trois Lunes, parcours de 3 mois : 29€ la séance (58€), 1 à 3 séances par semaine, bilans à 6 et 12 semaines.
-  - Clair de Lune, à la séance sans engagement : 39€ (78€).
+  - Aube, la première séance : 19€ (38€ avant crédit d'impôt), satisfait ou remboursé.
+  - Zénith, parcours de 3 mois : 29€ la séance (58€), 1 à 3 séances par semaine, bilans à 6 et 12 semaines.
+  - Éclat, à la séance sans engagement : 39€ (78€).
   - Éclipse, une séance pour deux : 49€ (98€).
 - Détail : https://ascension-sport-sante.github.io/tarifs/
 
