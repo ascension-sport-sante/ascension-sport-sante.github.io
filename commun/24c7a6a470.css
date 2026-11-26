@@ -597,3 +597,12 @@ html:not(.clair) body #p-tarifs section#tarifs.p-hero.tarif p.body::before{inset
 html body #p-tarifs .tf-panier[data-f] #calc-go{background:linear-gradient(#336B5B,#22473D)!important;color:#fff!important;border:0!important;text-shadow:none!important;box-shadow:0 10px 22px -12px rgba(20,40,34,.8)!important}
 html body #p-tarifs .tf-panier[data-f] #calc-go *{color:#fff!important}
 html body #p-tarifs .tf-panier[data-f] #calc-go::before,html body #p-tarifs .tf-panier[data-f] #calc-go::after{display:none!important}
+/* Accueil : chaque « Découvrir » aux couleurs de son parcours */
+#prestations .card-p[href*="activite-physique"]{--pc1:#357684;--pc2:#245A66;--pcg:rgba(53,118,132,.55)}
+#prestations .card-p[href*="remise-en-forme"]{--pc1:#C24D25;--pc2:#963817;--pcg:rgba(194,77,37,.55)}
+#prestations .card-p[href*="preparation-physique"]{--pc1:#6A4AA0;--pc2:#4A3078;--pcg:rgba(106,74,160,.55)}
+#prestations .card-p[href*="enfants"]{--pc1:#33793A;--pc2:#245A2A;--pcg:rgba(51,121,58,.55)}
+html body #prestations .card-p .lien{background:linear-gradient(var(--pc1),var(--pc2))!important;border:0!important;color:#fff!important;text-shadow:none!important;box-shadow:0 10px 22px -12px var(--pcg)!important;transition:transform .2s ease,box-shadow .2s ease,filter .2s ease}
+html body #prestations .card-p .lien *{color:#fff!important}
+@media (hover:hover){html body #prestations .card-p:hover .lien{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 14px 26px -12px var(--pcg)!important}}
+html body #prestations .card-p:focus-visible .lien{outline:3px solid var(--pc1);outline-offset:3px}
