@@ -581,3 +581,19 @@ html body #p-tarifs .tf-panier[data-f] .note-ci-t,html body #p-tarifs .tf-panier
  html body #p-tarifs .tf3 .lunes-g #lc-nouvelle-lune{background:linear-gradient(100deg,#2B2452 0%,#5E3560 55%,#7E3838 100%)!important}
  html body #p-tarifs .tf3 .lunes-g #lc-eclipse{background:radial-gradient(40% 90% at 10% 50%,rgba(255,140,60,.28),rgba(255,140,60,0) 70%),linear-gradient(100deg,#1D1734,#110D22)!important}
 }
+/* Tarifs : haut de page encore plus compact */
+@media (min-width:1001px){
+ html body #p-tarifs section#tarifs.p-hero.tarif{padding-top:calc(var(--hd, 60px) + 22px)!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif .fil{top:calc(var(--hd, 60px) + 2px)!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif h2{font-size:clamp(2rem,1.3rem + 1.1vw,2.5rem)!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif .txt{row-gap:2px!important}
+ html body #p-tarifs section#tarifs.p-hero.tarif .txt>svg{margin:-2px auto 0!important;height:12px}
+ html body #p-tarifs section#tarifs.p-hero.tarif p.body{font-size:.95rem!important;line-height:1.45!important}
+ html body #p-tarifs section#formules.lunes-sec{padding-top:4px!important}
+}
+/* Tarifs : sans la ligne dorée entre le haut de page et les formules ; nuage plus diffus la nuit */
+html body #p-tarifs .kseam{display:none!important}
+html:not(.clair) body #p-tarifs section#tarifs.p-hero.tarif p.body::before{inset:-22px -70px;filter:blur(14px);background:radial-gradient(ellipse at center,rgba(12,18,34,.62) 0%,rgba(12,18,34,.35) 50%,rgba(12,18,34,0) 75%)}
+html body #p-tarifs .tf-panier[data-f] #calc-go{background:linear-gradient(#336B5B,#22473D)!important;color:#fff!important;border:0!important;text-shadow:none!important;box-shadow:0 10px 22px -12px rgba(20,40,34,.8)!important}
+html body #p-tarifs .tf-panier[data-f] #calc-go *{color:#fff!important}
+html body #p-tarifs .tf-panier[data-f] #calc-go::before,html body #p-tarifs .tf-panier[data-f] #calc-go::after{display:none!important}
