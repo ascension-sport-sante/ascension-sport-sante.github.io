@@ -545,3 +545,34 @@ html:not(.clair) .tf-panier .pa-tag{color:#EEE7DA!important}
 .tf-panier #calc-t{display:inline!important;font:800 1.15rem/1.3 var(--f-display)!important;letter-spacing:.02em;text-transform:none}
 .tf-panier .pa-r{margin-top:12px!important}
 .tf-panier .calc-e{font-size:.95rem!important;opacity:.85}
+/* Tarifs : chaque formule aux couleurs de son médaillon (cartes et estimation) */
+#lc-nouvelle-lune,.tf-panier[data-f="lc-nouvelle-lune"]{--g:linear-gradient(172deg,#2B2452 0%,#6A3963 52%,#A2463E 100%);--glow:radial-gradient(90% 45% at 50% 100%,rgba(255,170,110,.32),rgba(255,170,110,0) 70%);--refl:rgba(255,255,255,.10);--bord:#E8875F;--fa:#FFC9A3;--txt:#FFF4E6;--fd:rgba(255,244,230,.85);--pill:#FFD9BF;--pillt:#6E2A1E;--ring:#2B2452;--on:#FFC9A3;--ont:#3A1A22}
+#lc-clair-de-lune,.tf-panier[data-f="lc-clair-de-lune"]{--g:linear-gradient(165deg,#FFF9E6 0%,#DDEEF4 100%);--glow:radial-gradient(80% 50% at 50% 0%,rgba(255,236,170,.55),rgba(255,236,170,0) 70%);--refl:rgba(255,255,255,.55);--bord:#D9B54A;--fa:#2D6A88;--txt:#1F2E36;--fd:#3D5260;--pill:#C9E3EE;--pillt:#174B61;--ring:#FFF9E6;--on:#2D6A88;--ont:#fff}
+#lc-trois-lunes,.tf-panier[data-f="lc-trois-lunes"]{--g:linear-gradient(170deg,#FFF6D2 0%,#FBDD84 55%,#F2B941 100%);--glow:radial-gradient(70% 45% at 50% 0%,rgba(255,255,255,.95),rgba(255,250,225,.4) 45%,rgba(255,250,225,0) 75%);--refl:rgba(255,255,255,.35);--bord:#D9961C;--fa:#1C3A66;--txt:#1E2A3A;--fd:#3A3A30;--pill:#1C3A66;--pillt:#FFE7A0;--ring:#FFF6D2;--on:#1C3A66;--ont:#FFE7A0}
+#lc-eclipse,.tf-panier[data-f="lc-eclipse"]{--g:linear-gradient(170deg,#1D1734 0%,#110D22 100%);--glow:radial-gradient(60% 40% at 50% 18%,rgba(255,140,60,.38),rgba(255,140,60,0) 70%);--refl:rgba(255,255,255,.06);--bord:#E07A3A;--fa:#FFB062;--txt:#F6EDE4;--fd:rgba(246,237,228,.82);--pill:#FFB062;--pillt:#2A140A;--ring:#1D1734;--on:#FFB062;--ont:#2A140A}
+html body #p-tarifs .tf3 .lunes-g .lune-c{background:var(--glow),var(--g)!important;border:1.5px solid var(--bord)!important;box-shadow:0 18px 36px -24px rgba(30,20,10,.6)!important;position:relative;overflow:visible;transition:transform .25s ease,box-shadow .25s ease}
+html body #p-tarifs .tf3 .lunes-g .lune-c::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(120% 55% at 50% 0%,var(--refl),rgba(255,255,255,0) 60%);pointer-events:none}
+html body #p-tarifs .tf3 .lunes-g .lune-c>*:not(.lune-badge){position:relative}
+html body #p-tarifs .tf3 .lunes-g .lune-c h3,html body #p-tarifs .tf3 .lunes-g .lune-c .lune-nom{color:var(--fa)!important}
+html body #p-tarifs .tf3 .lunes-g .lune-c .lune-nom{opacity:.92}
+html body #p-tarifs .tf3 .lunes-g .lune-c .lune-tag,html body #p-tarifs .tf3 .lunes-g .lune-c .lune-p,html body #p-tarifs .tf3 .lunes-g .lune-c .lune-p *{color:var(--txt)!important}
+html body #p-tarifs .tf3 .lunes-g .lune-c .lune-v b{background:var(--pill)!important;color:var(--pillt)!important}
+html body #p-tarifs .tf3 .lunes-g .lune-c .lune-m{box-shadow:0 0 0 3px var(--ring),0 0 0 5px var(--bord),0 10px 26px -8px var(--bord)!important}
+html body #p-tarifs .tf3 .lunes-g #lc-trois-lunes .lune-badge{background:#1C3A66!important;color:#FFE7A0!important}
+html body #p-tarifs .tf3 .lunes-g .lune-c.choisie{outline:3px solid var(--bord);outline-offset:4px;box-shadow:0 22px 44px -20px var(--bord)!important}
+@media (hover:hover){html body #p-tarifs .tf3 .lunes-g .lune-c:hover{transform:translateY(-3px)!important}}
+/* Le médaillon brille un instant quand on choisit la carte */
+@keyframes medaillon-brille{0%{transform:scale(1);filter:brightness(1)}35%{transform:scale(1.1);filter:brightness(1.35) saturate(1.15)}100%{transform:scale(1);filter:brightness(1)}}
+html body #p-tarifs .tf3 .lunes-g .lune-c .lune-m.brille{animation:medaillon-brille .8s ease-out}
+@media (prefers-reduced-motion:reduce){html body #p-tarifs .tf3 .lunes-g .lune-c .lune-m.brille{animation:none}html body #p-tarifs .tf3 .lunes-g .lune-c{transition:none}}
+/* L'estimation prend la couleur de la formule choisie */
+html body #p-tarifs .tf-panier[data-f]{--acc:var(--on);--sur:var(--ont);--trait:color-mix(in srgb,var(--txt) 28%,transparent);background:var(--glow),var(--g)!important;border:1.5px solid var(--bord)!important;border-top:5px solid var(--bord)!important;color:var(--txt)!important;transition:background .3s ease}
+html body #p-tarifs .tf-panier[data-f] :is(#calc-t,p.pa-k,details.pa-inc>summary,#pa-inc a){color:var(--fa)!important}
+html body #p-tarifs .tf-panier[data-f] :is(legend,.calc-p,.calc-p b,.calc-e,.pa-eng,.pa-eng strong,#pa-inc li,#pa-inc li strong){color:var(--txt)!important}
+html body #p-tarifs .tf-panier[data-f] :is(.calc-n,.calc-f,#calc-pq,.note-ci-t){color:var(--fd)!important}
+html body #p-tarifs .tf-panier[data-f] .calc-f b{background:var(--pill)!important;color:var(--pillt)!important}
+html body #p-tarifs .tf-panier[data-f] .pa-eng{background:color-mix(in srgb,var(--txt) 9%,transparent)!important}
+html body #p-tarifs .tf-panier[data-f] .calc-ch label{color:var(--txt);border-color:color-mix(in srgb,var(--txt) 35%,transparent)!important;background:color-mix(in srgb,var(--txt) 6%,transparent)}
+html body #p-tarifs .tf-panier[data-f] .calc-ch label:has(input:checked){background:var(--on)!important;border-color:var(--on)!important;color:var(--ont)!important}
+html body #p-tarifs .tf-panier[data-f] .pa-inc{border-top-color:color-mix(in srgb,var(--txt) 22%,transparent)!important}
+html body #p-tarifs .tf-panier[data-f] .calc-r{border-top-color:color-mix(in srgb,var(--txt) 25%,transparent)!important}
