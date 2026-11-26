@@ -606,3 +606,6 @@ html body #prestations .card-p .lien{background:linear-gradient(var(--pc1),var(-
 html body #prestations .card-p .lien *{color:#fff!important}
 @media (hover:hover){html body #prestations .card-p:hover .lien{transform:translateY(-2px);filter:brightness(1.08);box-shadow:0 14px 26px -12px var(--pcg)!important}}
 html body #prestations .card-p:focus-visible .lien{outline:3px solid var(--pc1);outline-offset:3px}
+/* Téléphone (sans 3D), thème clair : on garde la peinture dorée, sans l'ancienne image grise par-dessus */
+html.clair.illus.nogl body::after{display:none!important;background:none!important}
+html.clair.illus body::before{height:auto!important;bottom:0!important}
