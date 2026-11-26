@@ -532,3 +532,9 @@ html:not(.clair) .tf-panier .pa-tag{color:#EEE7DA!important}
  .tf3 .lunes-g .lune-c .lune-tag{font-size:.98rem!important}
 }
 @media (max-width:700px){.tf3 .lunes-g .lune-c .lune-m{width:52px!important;height:52px!important}.tf3 .lunes-g .lune-c{grid-template-columns:52px minmax(0,1fr) auto!important}}
+/* Tarifs : engagement de Zénith et confirmation hors ligne */
+.tf-panier .pa-eng:not(:empty){margin:8px 0 0!important;padding:10px 12px;border-radius:12px;background:rgba(176,138,60,.1);font-size:.92rem!important;line-height:1.5!important}
+.tf-panier .pa-conf{margin:8px 0 0!important;font-size:.8rem!important;line-height:1.45!important;opacity:.85;text-align:center}
+.r-formule .r-fo-n{display:block;margin-top:2px;font-size:.78rem;opacity:.8}
+.tf-panier .pa-eng:not(:empty){font-size:.84rem!important;line-height:1.45!important;padding:8px 10px}
+@media (min-width:1001px){.tf-panier .calc-r>*{margin:0 0 4px!important}.tf-panier .pa-r{margin-bottom:8px}}
