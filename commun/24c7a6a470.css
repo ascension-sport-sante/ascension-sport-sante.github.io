@@ -1110,3 +1110,52 @@ html:not(.clair) .ema-dlg h3,html:not(.clair) .ema-dlg-x{color:#f3e7cf!important
  html:not(.confort) #principal .aida .peurs-a{font-size:.84rem!important;line-height:1.38!important}
  .aida .peurs-r{padding:8px 11px!important}
 }
+/* ===== Téléphone, version pensée pour le pouce ===== */
+@media (max-width:860px){
+ /* plus aucun texte coupé par des points de suspension */
+ html body #prestations .card-p p,html body #p-methode a.voie-c p{display:block!important;-webkit-line-clamp:unset!important;-webkit-box-orient:initial!important;overflow:visible!important}
+ /* le haut de page n'est plus poussé vers l'écran suivant : la flèche avance par blocs entiers */
+ main .page > section [data-pe]{margin-top:0!important}
+ /* accueil, parcours : une liste à toucher, texte complet, toute la carte est le lien */
+ #prestations .cards4{grid-template-columns:1fr!important;gap:8px!important}
+ #prestations .card-p{display:grid!important;grid-template-columns:56px minmax(0,1fr) 18px;grid-template-areas:"i t c" "i g c" "i d c";column-gap:12px;row-gap:1px;align-items:center;text-align:left!important;padding:12px 12px 12px 10px!important}
+ #prestations .card-p .vgx{grid-area:i!important;width:56px!important;height:56px!important;margin:0!important;align-self:center}
+ #prestations .card-p h3{grid-area:t!important;text-align:left!important;margin:0!important}
+ #prestations .card-p .cp-tag{grid-area:g!important;text-align:left!important}
+ #prestations .card-p p:not(.cp-tag){grid-area:d!important;text-align:left!important;margin:3px 0 0!important}
+ html:not(.confort) #principal #prestations .card-p p:not(.cp-tag){font-size:.88rem!important;line-height:1.42!important}
+ #prestations .card-p .lien{grid-area:c!important;justify-self:end;min-height:0!important;padding:0!important;margin:0!important;border:0!important;background:none!important;box-shadow:none!important;font-size:0!important}
+ #prestations .card-p .lien span{font-size:1.25rem!important;font-weight:700;color:#9E1B14}
+ /* méthode, les 4 parcours : même liste à toucher */
+ #p-methode .voies4{grid-template-columns:1fr!important;gap:8px!important}
+ #p-methode a.voie-c{display:grid!important;grid-template-columns:48px minmax(0,1fr) 18px!important;grid-template-areas:"i t c" "i d c";column-gap:12px!important;row-gap:2px;align-items:center;justify-items:start!important;text-align:left!important;padding:12px 12px 12px 10px!important}
+ #p-methode a.voie-c .k{grid-area:i!important;width:48px!important;height:48px!important}
+ #p-methode a.voie-c h3{grid-area:t!important;margin:0!important}
+ #p-methode a.voie-c p{grid-area:d!important;font-size:.88rem!important;line-height:1.42!important}
+ #p-methode .voie-go{position:static!important;grid-area:c;justify-self:end;margin:0!important;font-size:1.2rem!important}
+ /* tarifs : lignes de formules lisibles, prix sur deux lignes, plus de texte minuscule */
+ html body .tf3 .lunes-g .lune-c .lune-d{text-transform:none!important;letter-spacing:.01em!important;font-size:.8rem!important;line-height:1.3!important}
+ html body .tf3 .lunes-g .lune-c .lune-p span{font-size:.76rem!important}
+ html body .tf3 .lune-badge{font-size:.75rem!important}
+ /* zones à toucher et petits textes */
+ .fil a{display:inline-block;padding:5px 2px;min-height:24px}
+ html body #p-coach .diplomes-sec .sceau .st span,html body #apropos .sceau .st span{font-size:.76rem!important}
+ html body .suite-c small{font-size:.8rem!important}
+ html body #p-methode .voies-source small,html body #p-methode .voies-source a{font-size:.78rem!important}
+ html body #p-coach .apr-src,html body #p-coach .apr-src a{font-size:.78rem!important}
+}
+@media (max-width:860px){html body .tf3 .lunes-g .lune-c .lune-badge{font-size:.75rem!important}}
+/* petits téléphones : le prix passe sous le nom, rien ne se chevauche */
+@media (max-width:380px){
+ html body #p-tarifs .tf3 .lunes-g .lune-c{grid-template-columns:48px minmax(0,1fr)!important;grid-template-areas:"img t" "img n" "img p" "img v"!important;row-gap:3px!important}
+ html body #p-tarifs .tf3 .lunes-g .lune-c .lune-p{text-align:left!important;display:flex!important;flex-direction:row!important;align-items:baseline!important;gap:6px!important}
+ html body #p-tarifs .tf3 .lunes-g .lune-c .lune-p span{display:inline!important;text-align:left!important;white-space:nowrap}
+ html body #p-tarifs .tf3 .lunes-g .lune-c .lune-v{justify-self:start!important}
+ html body #p-tarifs .tf3 .lunes-g .lune-c .lune-p{flex-wrap:nowrap!important;justify-content:flex-start!important;justify-self:start!important;margin:0!important}
+}
+@media (max-width:860px){
+ /* page « Être rappelé » : pas de flèche par-dessus le formulaire */
+ #p-reserver .pe-fleche{display:none!important}
+ /* accueil : le texte du haut, plus léger et plus lisible */
+ #p-accueil .hero p.lede,#p-accueil .hero .lede{font-weight:500!important}
+}
