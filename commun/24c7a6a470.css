@@ -837,3 +837,117 @@ html body .bilv{z-index:1000}
  #p-methode a.voie-c .k{width:42px;height:42px}
  #p-methode .voies-source{margin-top:8px;line-height:1.35}
 }
+/* À propos, « Mon histoire » : un chemin qui monte en 3 étapes (vert du terrain, bleu nuit de Paris, vermillon du soleil levant) */
+#p-coach .cha-l{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:12px;width:100%;max-width:900px;margin:0 auto clamp(14px,2.6vh,26px)}
+#p-coach .cha-trace{position:absolute;left:12%;top:22px;width:76%;height:64px;z-index:0;pointer-events:none;overflow:visible}
+#p-coach .cha{position:relative;z-index:1;display:grid;justify-items:center;gap:2px;padding:6px 4px 8px;border:0;border-radius:14px;background:none;color:inherit;font:inherit;cursor:pointer;opacity:.8;transition:opacity .2s ease}
+#p-coach .cha:nth-of-type(1){margin-top:56px}
+#p-coach .cha:nth-of-type(2){margin-top:28px}
+#p-coach .cha[aria-selected=true],#p-coach .cha:hover{opacity:1}
+#p-coach .cha:focus-visible{outline:3px solid #b08a3c;outline-offset:2px}
+#p-coach .cha-k{display:block;width:72px;height:72px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px var(--c),0 10px 22px -12px rgba(0,0,0,.5);transition:transform .25s ease,box-shadow .25s ease}
+#p-coach .cha-k .vgx{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden}
+#p-coach .cha[aria-selected=true] .cha-k{transform:scale(1.1);box-shadow:0 0 0 5px var(--c),0 14px 28px -12px rgba(0,0,0,.55)}
+#p-coach .cha-q{margin-top:10px;font:600 .78rem/1.2 var(--f-mark);letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+#p-coach .cha b{font-family:var(--f-display);font-weight:800;font-size:1.25rem;line-height:1.2;color:#1e1a14}
+#p-coach .cha[aria-selected=true]::after{content:"";width:34px;height:4px;margin-top:6px;border-radius:2px;background:var(--c)}
+#p-coach .cha-p{position:relative;max-width:860px;margin:0 auto;padding:clamp(16px,2.4vh,24px) clamp(18px,3vw,30px);border:1px solid rgba(176,138,60,.3);border-top:6px solid var(--c);border-radius:18px;background:rgba(255,252,246,.95);box-shadow:0 18px 40px -26px rgba(60,40,20,.55);text-align:left}
+#p-coach .cha-p p{margin:0;line-height:1.6;color:#3a3127}
+#p-coach .cha-p p+p{margin-top:8px}
+#p-coach .cha-lead{margin:0 0 8px!important;font-family:var(--f-display);font-weight:700;font-size:clamp(1.12rem,1.6vw,1.32rem);line-height:1.4!important;color:var(--c)!important}
+html:not(.clair) #p-coach .cha b{color:#fff4df}
+html:not(.clair) #p-coach .cha-q{color:#e8c77e}
+html:not(.clair) #p-coach .cha-p{background:rgba(14,20,38,.94)}
+html:not(.clair) #p-coach .cha-p p{color:#ddd5c4}
+html:not(.clair) #p-coach .cha-lead{color:#f3e7cf!important}
+/* À propos, « Ce que je crois » : 4 plaquettes de vœux (ema), une couleur par idée ; le texte s'ouvre dans une fenêtre */
+#p-coach .emas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,26px);width:100%;max-width:1100px;margin:0 auto;padding:0;list-style:none}
+#p-coach .emas li{display:flex}
+#p-coach .ema{position:relative;display:flex;width:100%;padding:24px 0 0;border:0;background:none;color:#fff6e6;font:inherit;text-align:center;cursor:pointer;filter:drop-shadow(0 12px 14px rgba(40,25,10,.32));rotate:-1.2deg;transition:transform .25s ease}
+#p-coach .emas li:nth-child(even) .ema{rotate:1.2deg}
+@media (hover:hover){#p-coach .ema:hover{transform:translateY(-5px)}}
+#p-coach .ema:focus-visible{outline:3px solid #b08a3c;outline-offset:4px;border-radius:12px}
+#p-coach .ema-corde{position:absolute;top:0;left:50%;z-index:2;width:2px;height:44px;margin-left:-1px;background:linear-gradient(#8a6a3e,#c9a55c)}
+#p-coach .ema-corde::before{content:"";position:absolute;top:-4px;left:-4px;width:10px;height:10px;border-radius:50%;background:#c9a55c;box-shadow:0 1px 2px rgba(0,0,0,.4)}
+#p-coach .ema-b{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:38px 16px 18px;clip-path:polygon(50% 0,100% 15%,100% 100%,0 100%,0 15%);background:repeating-linear-gradient(97deg,rgba(255,255,255,.045) 0 2px,transparent 2px 11px),linear-gradient(165deg,var(--e2),var(--e1))}
+#p-coach .ema-b::before{content:"";position:absolute;top:16px;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;background:#2a1c10;box-shadow:inset 0 1px 2px rgba(0,0,0,.6),0 0 0 2px rgba(233,199,126,.85)}
+#p-coach .ema-k{display:block;width:56px;height:56px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,236,190,.85)}
+#p-coach .ema-k .vgx{display:block;width:100%;height:100%;border-radius:50%;overflow:hidden}
+#p-coach .ema-t{font-family:var(--f-display);font-weight:800;font-size:1.16rem;line-height:1.2;color:#fff6e6;text-wrap:balance;padding-bottom:6px;border-bottom:1px solid rgba(255,236,190,.45)}
+#p-coach .ema-p{flex:1;font-size:.96rem;line-height:1.45;color:#fbeedd}
+#p-coach .ema-l{margin-top:2px;padding:5px 16px;border:1.5px solid rgba(255,236,190,.75);border-radius:999px;font-weight:700;font-size:.86rem;color:#fff6e6}
+#p-coach .ema-l::after{content:" \203A"}
+.ema-dlg{width:min(720px,94vw);max-height:88vh;padding:0;border:0;border-radius:18px;background:#fffaf2;color:#2b2118;box-shadow:0 30px 80px -20px rgba(30,20,10,.55);overflow:hidden}
+.ema-dlg[open]{display:flex;flex-direction:column}
+.ema-dlg::backdrop{background:rgba(20,14,8,.58)}
+.ema-dlg-h{position:relative;flex:none;padding:18px 66px 16px 22px;background:linear-gradient(135deg,var(--e2,#1F7A64),var(--e1,#155C4B));color:#fff6e6}
+.ema-dlg-k{margin:0;font:600 .76rem/1.2 var(--f-mark);letter-spacing:.16em;text-transform:uppercase;color:#fff6e6;opacity:.92}
+.ema-dlg h3{margin:4px 0 0;font-family:var(--f-display);font-size:1.45rem;line-height:1.2;color:#fff6e6}
+.ema-dlg-x{position:absolute;top:14px;right:14px;display:grid;place-items:center;width:44px;height:44px;border:1.5px solid rgba(255,246,230,.75);border-radius:50%;background:transparent;color:#fff6e6;cursor:pointer}
+.ema-dlg-x svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+.ema-dlg-x:focus-visible{outline:3px solid #fff6e6;outline-offset:2px}
+.ema-dlg-b{padding:18px 22px 22px;overflow:auto;overscroll-behavior:contain;text-align:left}
+.ema-dlg-b p{margin:0;line-height:1.65;color:#3a3127}
+.ema-dlg-b p+p{margin-top:10px}
+.ema-dlg-b .cha-lead{margin:0 0 10px!important;font-family:var(--f-display);font-weight:700;font-size:1.2rem;line-height:1.4;color:var(--e1,#155C4B)!important}
+.ema-dlg-b .apr-src a,.ema-dlg-b a{color:#9E1B14;font-weight:700}
+html:not(.clair) .ema-dlg{background:#141c31;color:#e9e2d2}
+html:not(.clair) .ema-dlg-b p{color:#ddd5c4}
+html:not(.clair) .ema-dlg-b .cha-lead{color:#f3e7cf!important}
+html:not(.clair) .ema-dlg-b a{color:#e8c77e}
+html.ema-on{overflow:hidden}
+/* À propos, « Ce que le sport m'a appris » : le rouleau en soie indigo et or, comme un ciel de nuit */
+#p-coach .rouleau{color:#e9e4d6;background:radial-gradient(circle at 14% 22%,rgba(233,199,126,.55) 0 1.2px,transparent 1.8px) 0 0/170px 150px,radial-gradient(circle at 70% 68%,rgba(233,199,126,.4) 0 1px,transparent 1.6px) 0 0/230px 190px,radial-gradient(120% 95% at 50% 0%,#30457c 0%,#1c2b55 55%,#121b38 100%)!important;box-shadow:inset 0 0 0 1px rgba(233,199,126,.55),inset 0 0 0 7px #172449,inset 0 0 0 8px rgba(233,199,126,.32),inset 0 0 90px rgba(0,0,0,.45),0 26px 50px -30px rgba(10,15,35,.85)!important}
+#p-coach .rouleau::before,#p-coach .rouleau::after{background:linear-gradient(90deg,#1a0f08,#5a3a1c 40%,#e2bf72 50%,#5a3a1c 60%,#1a0f08)!important}
+#p-coach .rouleau .est{border-left-color:rgba(233,199,126,.22)!important}
+#p-coach .rouleau .est-n{color:#e9c77e!important}
+#p-coach .rouleau .est h3{color:#fff4df!important}
+#p-coach .rouleau .est-t{color:#d9dfee!important}
+#p-coach .rouleau .est-s{color:#b4bdd6!important}
+#p-coach .rouleau .est-s a{color:#e9c77e!important}
+#p-coach .rouleau .halo{filter:invert(1) sepia(1) saturate(2.4) hue-rotate(-8deg) brightness(1.02)!important}
+#p-coach .rouleau .est-ph,#p-coach .rouleau .est-v{box-shadow:0 0 0 2px rgba(233,199,126,.75),0 10px 24px -10px rgba(0,0,0,.6)}
+#p-coach .est-vid:focus-visible{outline:3px solid #e9c77e;outline-offset:6px;border-radius:50%}
+@media (max-width:860px){
+ #p-coach .cha-l{gap:6px;margin-bottom:12px}
+ #p-coach .cha-trace{top:14px;height:40px}
+ #p-coach .cha:nth-of-type(1){margin-top:28px}
+ #p-coach .cha:nth-of-type(2){margin-top:14px}
+ #p-coach .cha-k{width:50px;height:50px}
+ #p-coach .cha-q{margin-top:8px;font-size:.66rem;letter-spacing:.1em}
+ #p-coach .cha b{font-size:.98rem}
+ #p-coach .cha-p{padding:14px 14px;border-top-width:5px}
+ #p-coach .cha-p p{font-size:.93rem;line-height:1.5}
+ #p-coach .cha-lead{font-size:1.04rem}
+ #p-coach .emas{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px}
+ #p-coach .ema{padding-top:18px}
+ #p-coach .ema-corde{height:36px}
+ #p-coach .ema-b{padding:32px 10px 12px;gap:6px}
+ #p-coach .ema-b::before{top:13px}
+ #p-coach .ema-k{width:40px;height:40px}
+ #p-coach .ema-t{font-size:.98rem;padding-bottom:4px}
+ #p-coach .ema-p{font-size:.82rem;line-height:1.38}
+ #p-coach .ema-l{padding:3px 12px;font-size:.78rem}
+ .ema-dlg{width:calc(100vw - 16px);max-height:calc(100dvh - 24px)}
+ .ema-dlg-h{padding:14px 60px 12px 16px}
+ .ema-dlg h3{font-size:1.22rem}
+ .ema-dlg-b{padding:14px 16px 18px}
+ .ema-dlg-b p{font-size:.95rem}
+}
+#p-coach .cha-p .apr-src{font-size:.82rem!important;line-height:1.45!important}
+@media (max-width:860px){
+ #p-coach .cha-p .apr-src{font-size:.74rem!important;margin-top:8px!important;padding-top:6px}
+ #p-coach .ema-b{padding:28px 9px 10px;gap:4px}
+ #p-coach .ema-b::before{top:11px;width:9px;height:9px;margin-left:-4.5px}
+ #p-coach .ema-k{width:34px;height:34px}
+ #p-coach .ema-corde{height:32px}
+}
+@media (min-width:861px) and (max-height:760px){
+ #p-coach .cha:nth-of-type(1){margin-top:36px}
+ #p-coach .cha:nth-of-type(2){margin-top:18px}
+ #p-coach .cha-trace{top:16px;height:44px}
+ #p-coach .cha-k{width:58px;height:58px}
+ #p-coach .cha-q{margin-top:8px}
+ #p-coach .cha-p{padding:14px 22px}
+ #p-coach .cha-lead{font-size:1.1rem}
+}
