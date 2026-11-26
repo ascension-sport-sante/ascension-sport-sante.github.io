@@ -1052,3 +1052,8 @@ html:not(.clair) .ema-dlg h3,html:not(.clair) .ema-dlg-x{color:#f3e7cf!important
  main .page > section.sec:not(:first-of-type):not([hidden]){min-height:calc(100vh - var(--hd, 56px));min-height:calc(100dvh - var(--hd, 56px));display:grid!important;grid-template-columns:minmax(0,1fr);align-content:center;box-sizing:border-box}
 }
 @media (max-width:860px){.suite-fleche.gauche{right:auto!important;left:calc(18px + env(safe-area-inset-left, 0px))}}
+/* Ordinateur : la flèche rouge reste au centre en bas, sauf si elle passe sur un texte ou une carte : elle va alors dans un coin libre */
+@media (min-width:861px){
+ .suite-fleche.droite{left:auto!important;right:calc(22px + env(safe-area-inset-right, 0px))!important;margin-left:0!important}
+ .suite-fleche.gauche{right:auto!important;left:calc(22px + env(safe-area-inset-left, 0px))!important;margin-left:0!important}
+}
