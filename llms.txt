@@ -21,7 +21,7 @@
   - Aube, la première séance : 38€ (19€ après crédit d'impôt), satisfait ou remboursé.
   - Éclat, à la séance sans engagement : 78€ (39€ après crédit d'impôt).
   - Zénith, parcours de 12 semaines : 58€ la séance (29€ après crédit d'impôt), 1 à 3 séances par semaine, bilans à 6 et 12 semaines.
-  - Éclipse, une séance pour deux personnes d'un même foyer : 98€ (49€ après crédit d'impôt).
+  - Éclipse, une séance pour deux personnes d'un même foyer fiscal : 98€ (49€ après crédit d'impôt).
 - Détail : https://ascension-sport-sante.github.io/tarifs/
 
 ## Zone d'intervention
