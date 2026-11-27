@@ -47,3 +47,52 @@
     });
   });
 })();
+
+/* Téléphone : hauteur d'écran stable (elle ne change pas quand la barre du navigateur apparaît ou disparaît,
+   ce qui faisait bouger la page toute seule), et petites sections regroupées pour remplir un écran sans grands vides */
+(function () {
+  if (!window.matchMedia) return;
+  var R = document.documentElement, largeur = 0;
+  function ecran() {
+    if (Math.abs(innerWidth - largeur) < 2 && R.style.getPropertyValue("--ecran")) return false;
+    largeur = innerWidth;
+    R.style.setProperty("--ecran", innerHeight + "px");
+    return true;
+  }
+  function ranger() {
+    if (!matchMedia("(max-width:860px)").matches) return;
+    var page = document.querySelector("main .page.on") || document.querySelector("main .page") || document.querySelector("main");
+    if (!page) return;
+    var L = [].filter.call(page.children, function (s) { return s.tagName === "SECTION" && !s.hidden && getComputedStyle(s).display !== "none"; });
+    if (L.length < 3) return;
+    var tete = document.querySelector("header.top"), hd = tete ? Math.max(0, tete.getBoundingClientRect().bottom) : 56;
+    var E = (parseFloat(R.style.getPropertyValue("--ecran")) || innerHeight) - hd;
+    var HAUT = 18, BAS = 64, serre = function (s, h, bs) { s.style.setProperty("padding-top", h + "px", "important"); s.style.setProperty("padding-bottom", bs + "px", "important"); };
+    L.forEach(function (s) { s.removeAttribute("data-avec"); ["min-height", "align-content", "padding-top", "padding-bottom"].forEach(function (k) { s.style.removeProperty(k); }); });
+    /* hauteur de chaque section, tassée (petites marges) */
+    L.forEach(function (s) { s.style.setProperty("min-height", "0px", "important"); serre(s, 6, 12); });
+    var H = L.map(function (s) { return s.offsetHeight; });
+    L.forEach(function (s) { ["min-height", "padding-top", "padding-bottom"].forEach(function (k) { s.style.removeProperty(k); }); });
+    for (var i = 1; i < L.length;) {
+      var tot = H[i], j = i, marge = (HAUT - 6) + (BAS - 12);
+      while (j + 1 < L.length && tot + H[j + 1] + marge <= E) { j++; tot += H[j]; }
+      if (j > i) {
+        for (var k = i; k <= j; k++) {
+          if (k > i) L[k].setAttribute("data-avec", "");
+          serre(L[k], k === i ? HAUT : 6, k === j ? BAS : 12);
+          L[k].style.setProperty("min-height", "0px", "important");
+        }
+        var reste = 0; for (var m = i; m < j; m++) reste += L[m].offsetHeight;
+        L[j].style.setProperty("min-height", Math.ceil(E - reste) + "px", "important");
+        L[j].style.setProperty("align-content", "start", "important");
+      }
+      i = j + 1;
+    }
+  }
+  var t = 0;
+  function plus_tard() { clearTimeout(t); t = setTimeout(ranger, 120); }
+  ecran();
+  if (document.readyState === "complete") ranger(); else addEventListener("load", function () { ranger(); setTimeout(ranger, 700); });
+  addEventListener("resize", function () { if (ecran()) plus_tard(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(plus_tard);
+})();
