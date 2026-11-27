@@ -1,0 +1,26 @@
+{
+  "site": "https://ascension-sport-sante.github.io",
+  "pages": {
+    "/": "/en/",
+    "/a-propos/": "/en/about/",
+    "/methode/": "/en/method/",
+    "/tarifs/": "/en/pricing/",
+    "/bilan/": "/en/assessment/",
+    "/activite-physique-adaptee-domicile/": "/en/adapted-physical-activity-at-home/",
+    "/remise-en-forme-domicile/": "/en/get-fit-at-home/",
+    "/preparation-physique-domicile/": "/en/athletic-training-at-home/",
+    "/coach-sportif-enfants/": "/en/children-and-teens/",
+    "/sport-sur-ordonnance/": "/en/exercise-on-prescription/",
+    "/mal-de-dos/": "/en/back-pain/",
+    "/reprise-apres-maladie/": "/en/exercise-after-illness/",
+    "/coach-sportif-senior/": "/en/fitness-after-60/"
+  },
+  "scripts": {
+    "/commun/6c5dfe3706.js": "/commun/6c5dfe3706-en.js",
+    "/commun/telephone.js": "/commun/telephone-en.js",
+    "/commun/736ce84444.js": "/commun/736ce84444-en.js"
+  },
+  "liens": {
+    "https://www.who.int/fr/publications-detail/9789240014886": "https://www.who.int/publications/i/item/9789240014886"
+  }
+}

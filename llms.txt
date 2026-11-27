@@ -36,3 +36,16 @@ Ilyas, enseignant en activité physique adaptée et santé.
 ## Contact
 - E-mail : ascension.santepro@gmail.com
 - Réserver un bilan : https://ascension-sport-sante.github.io/bilan/
+
+## In English
+Ascension is also available in English: a home health & fitness coach and adapted physical activity teacher in Paris (sessions can be held in English; contractual documents remain in French).
+- Home: https://ascension-sport-sante.github.io/en/
+- About Ilyas: https://ascension-sport-sante.github.io/en/about/
+- Method: https://ascension-sport-sante.github.io/en/method/
+- Pricing: https://ascension-sport-sante.github.io/en/pricing/
+- Get a call back: https://ascension-sport-sante.github.io/en/assessment/
+- Adapted physical activity at home: https://ascension-sport-sante.github.io/en/adapted-physical-activity-at-home/
+- Exercise on prescription: https://ascension-sport-sante.github.io/en/exercise-on-prescription/
+- Back pain: https://ascension-sport-sante.github.io/en/back-pain/
+- Exercising again after an illness: https://ascension-sport-sante.github.io/en/exercise-after-illness/
+- After 60: https://ascension-sport-sante.github.io/en/fitness-after-60/

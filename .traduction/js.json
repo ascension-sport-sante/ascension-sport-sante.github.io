@@ -1,0 +1,853 @@
+{
+ "_lisez-moi": "Phrases des scripts, français -> anglais. Les valeurs envoyées au coach (pour, objectifs, moment) restent en français ; seul l'affichage est traduit.",
+ "/commun/6c5dfe3706.js": [
+  [
+   "Faites défiler : l’ascension commence. Touchez l’écran : vous peignez.",
+   "Scroll: the ascent begins. Touch the screen: you paint."
+  ],
+  [
+   "Sept fois à terre, huit fois debout.",
+   "Down seven times, up eight."
+  ],
+  [
+   "\"je viens chez vous, depuis \"",
+   "\"I come to your home, from \""
+  ],
+  [
+   "\"où je viens\"",
+   "\"where I come\""
+  ],
+  [
+   "t:\"Accueil\",s:\"Le début de l’ascension\"",
+   "t:\"Home\",s:\"The start of the ascent\""
+  ],
+  [
+   "s:\"Enfants et ados : bouger, progresser, prendre confiance\"",
+   "s:\"Children and teens: moving, progressing, gaining confidence\""
+  ],
+  [
+   "s:\"Retrouver la forme : énergie, force, endurance, souplesse\"",
+   "s:\"Getting back in shape: energy, strength, stamina, flexibility\""
+  ],
+  [
+   "s:\"Repartir de loin : douleurs, maladie, handicap, âge\"",
+   "s:\"Starting from far: pain, illness, disability, age\""
+  ],
+  [
+   "s:\"Se dépasser : s’entraîner plus intensément, viser plus haut\"",
+   "s:\"Pushing further: training harder, aiming higher\""
+  ],
+  [
+   "t:\"Le coach : Ilyas\",s:\"Mon parcours, mes diplômes\"",
+   "t:\"The coach: Ilyas\",s:\"My background, my qualifications\""
+  ],
+  [
+   "t:\"La méthode\",s:\"Ma philosophie, ce que l’on travaille, mes principes\"",
+   "t:\"The method\",s:\"My philosophy, what we work on, my principles\""
+  ],
+  [
+   "t:\"Tarifs\",s:function(){return\"Les formules et leurs prix\"}",
+   "t:\"Pricing\",s:function(){return\"Plans and prices\"}"
+  ],
+  [
+   "t:\"Être rappelé\",s:\"Trois questions, et je vous rappelle\"",
+   "t:\"Get a call back\",s:\"Three questions, and I’ll call you back\""
+  ],
+  [
+   "t:\"Le kit de communication\",s:\"Carte, flyer, Instagram\"",
+   "t:\"Communication kit\",s:\"Card, flyer, Instagram\""
+  ],
+  [
+   "t:\"Mentions légales\"",
+   "t:\"Legal notice\""
+  ],
+  [
+   "t:\"Confidentialité\"",
+   "t:\"Privacy\""
+  ],
+  [
+   "t:\"Conditions de vente\"",
+   "t:\"Terms of sale\""
+  ],
+  [
+   "P.t.replace(/^Le coach : /,\"À propos : \")",
+   "P.t.replace(/^The coach: /,\"About: \")"
+  ],
+  [
+   "aria-hidden=\"true\">Vous êtes ici</span>",
+   "aria-hidden=\"true\">You are here</span>"
+  ],
+  [
+   "Fermer</button></div><div class=\"sm-corps\"><p class=\"sm-ey\">Votre parcours</p>",
+   "Close</button></div><div class=\"sm-corps\"><p class=\"sm-ey\">Your programme</p>"
+  ],
+  [
+   "<p class=\"sm-ey\">Le site</p>",
+   "<p class=\"sm-ey\">The site</p>"
+  ],
+  [
+   "ligne(\"methode\",\"Méthode\")+ligne(\"tarifs\",\"Tarifs\")+ligne(\"coach\",\"À propos\")+ligne(null,\"Questions fréquentes\",\"#questions\")",
+   "ligne(\"methode\",\"Method\")+ligne(\"tarifs\",\"Pricing\")+ligne(\"coach\",\"About\")+ligne(null,\"FAQ\",\"#questions\")"
+  ],
+  [
+   "<p class=\"sm-ey\">Pratique</p>",
+   "<p class=\"sm-ey\">Practical</p>"
+  ],
+  [
+   "</span>Textes plus grands</button>",
+   "</span>Larger text</button>"
+  ],
+  [
+   "aria-label=\"Appeler le ",
+   "aria-label=\"Call "
+  ],
+  [
+   "<span>Appeler</span>",
+   "<span>Call</span>"
+  ],
+  [
+   "data-id=\"reserver\">Être rappelé</button>",
+   "data-id=\"reserver\">Get a call back</button>"
+  ],
+  [
+   "aria-label=\"Étape précédente\"",
+   "aria-label=\"Previous step\""
+  ],
+  [
+   "class=\"r-hx\" aria-label=\"Fermer\"",
+   "class=\"r-hx\" aria-label=\"Close\""
+  ],
+  [
+   "\"Appeler Ilyas au \"",
+   "\"Call Ilyas on \""
+  ],
+  [
+   "POUR=[\"Pour moi\",\"Pour mon enfant\",\"Pour un proche\"]",
+   "POUR=[\"Pour moi\",\"Pour mon enfant\",\"Pour un proche\"],POUR_EN=[\"For me\",\"For my child\",\"For a loved one\"]"
+  ],
+  [
+   "\"<span>\"+POUR[pi]+'</span>",
+   "\"<span>\"+POUR_EN[pi]+'</span>"
+  ],
+  [
+   "rEtape.textContent=n<3?\"Être rappelé\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Demande envoyée\":\"Dernière étape\"",
+   "rEtape.textContent=n<3?\"Get a call back\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Request sent\":\"Last step\""
+  ],
+  [
+   "enf?\"Âge de l’enfant\":pr?\"Âge de votre proche\":\"Votre âge\",form.elements.age.placeholder=enf?\"Ex. 9\":pr?\"Ex. 78\":\"Ex. 45\"",
+   "enf?\"Child’s age\":pr?\"Your relative’s age\":\"Your age\",form.elements.age.placeholder=enf?\"e.g. 9\":pr?\"e.g. 78\":\"e.g. 45\""
+  ],
+  [
+   "lp.textContent=pr||en?\"Votre prénom\":\"Prénom\",lt.textContent=pr||en?\"Votre numéro\":\"Téléphone\"",
+   "lp.textContent=pr||en?\"Your first name\":\"First name\",lt.textContent=pr||en?\"Your number\":\"Phone\""
+  ],
+  [
+   "\"<span><small>Vous avez choisi</small><b>\"",
+   "\"<span><small>You chose</small><b>\""
+  ],
+  [
+   "Pour deux personnes d’un même foyer fiscal.</small>",
+   "For two people in the same tax household.</small>"
+  ],
+  [
+   "Confirmée ensuite par un devis et les conditions de vente signés : rien n’est souscrit en ligne.</small>",
+   "Then confirmed by a signed quote and terms of sale (in French): nothing is subscribed online.</small>"
+  ],
+  [
+   "t4.textContent=rate?\"Pas encore envoyée\":\"Presque fini.\"",
+   "t4.textContent=rate?\"Not sent yet\":\"Almost done.\""
+  ],
+  [
+   "Pas de réseau pour l’instant. Votre demande est gardée sur cet appareil : elle partira toute seule dès que la connexion revient, si cette page reste ouverte.",
+   "No network for now. Your request is kept on this device: it will go by itself as soon as the connection comes back, if this page stays open."
+  ],
+  [
+   " Pressé ? Appelez-moi, ou envoyez-la par SMS, elle est déjà rédigée.",
+   " In a hurry? Call me, or send it by text: it’s already written."
+  ],
+  [
+   "Votre demande n’est pas partie : la connexion n’a pas répondu.",
+   "Your request wasn’t sent: the connection didn’t respond."
+  ],
+  [
+   " Appelez-moi, ou envoyez-la en un geste, elle est déjà rédigée.",
+   " Call me, or send it in one tap: it’s already written."
+  ],
+  [
+   " Réessayez, ou envoyez-la en un geste, elle est déjà rédigée.",
+   " Try again, or send it in one tap: it’s already written."
+  ],
+  [
+   "Dernière étape : envoyez-moi votre demande par e-mail, elle est déjà rédigée.",
+   "Last step: send me your request by email, it’s already written."
+  ],
+  [
+   "Dernière étape : choisissez comment m’envoyer votre demande, elle est déjà rédigée.",
+   "Last step: choose how to send me your request, it’s already written."
+  ],
+  [
+   " Je vous rappelle pour fixer la première séance chez vous.",
+   " I’ll call you back to schedule the first session at your home."
+  ],
+  [
+   "Votre demande est bien partie. Je vous rappelle.",
+   "Your request has been sent. I’ll call you back."
+  ],
+  [
+   "\"Indiquez votre prénom.\"",
+   "\"Please enter your first name.\""
+  ],
+  [
+   "\"Il manque un chiffre : un numéro compte 10 chiffres.\"",
+   "\"A digit is missing: a French number has 10 digits (for another country, start with +).\""
+  ],
+  [
+   "\"Il y a un chiffre de trop : un numéro compte 10 chiffres.\"",
+   "\"One digit too many: a French number has 10 digits (for another country, start with +).\""
+  ],
+  [
+   "\"Ce numéro ne semble pas valide. Vérifiez-le.\"",
+   "\"This number doesn’t seem valid. Please check it.\""
+  ],
+  [
+   "\"Indiquez votre numéro de téléphone.\"",
+   "\"Please enter your phone number.\""
+  ],
+  [
+   "L=[fo?\"Bonjour Ilyas, je souhaite être rappelé pour la formule \"+fo.split(\" (\")[0]+\".\":\"Bonjour Ilyas, je souhaite être rappelé pour un bilan à domicile.\"]",
+   "L=[fo?\"Hello Ilyas, I’d like a call back about the plan \"+fo.split(\" (\")[0]+\".\":\"Hello Ilyas, I’d like a call back about a home assessment.\"]"
+  ],
+  [
+   "fo&&L.push(\"Formule : \"+fo)",
+   "fo&&L.push(\"Plan: \"+fo)"
+  ],
+  [
+   "val(\"pour\")&&L.push(\"Pour : \"+val(\"pour\"))",
+   "val(\"pour\")&&L.push(\"For: \"+__en(val(\"pour\")))"
+  ],
+  [
+   "?\"Âge de l’enfant\":val(\"pour\").indexOf(\"proche\")>=0?\"Âge du proche\":\"Âge\")+\" : \"+age+\" ans\"",
+   "?\"Child’s age\":val(\"pour\").indexOf(\"proche\")>=0?\"Relative’s age\":\"Age\")+\": \"+age"
+  ],
+  [
+   "val(\"besoin\")&&L.push(\"Recherche : \"+val(\"besoin\"))",
+   "val(\"besoin\")&&L.push(\"Looking for: \"+val(\"besoin\").split(\", \").map(__en).join(\", \"))"
+  ],
+  [
+   "obj.length&&L.push(\"Ce qui m’amène : \"+obj.join(\", \"))",
+   "obj.length&&L.push(\"What brings me: \"+obj.map(__en).join(\", \"))"
+  ],
+  [
+   "val(\"mot\")&&L.push(\"Précisions : \"+val(\"mot\")),L.push(\"Prénom : \"+val(\"prenom\")),val(\"nom\")&&L.push(\"Nom : \"+val(\"nom\")),L.push(\"Téléphone : \"+val(\"tel\"))",
+   "val(\"mot\")&&L.push(\"Details: \"+val(\"mot\")),L.push(\"First name: \"+val(\"prenom\")),val(\"nom\")&&L.push(\"Last name: \"+val(\"nom\")),L.push(\"Phone: \"+val(\"tel\"))"
+  ],
+  [
+   "adr&&L.push(\"Adresse : \"+adr),val(\"quand\")&&L.push(\"Meilleur moment pour me rappeler : \"+val(\"quand\"))",
+   "adr&&L.push(\"Address: \"+adr),val(\"quand\")&&L.push(\"Best time to call me back: \"+__en(val(\"quand\")))"
+  ],
+  [
+   "(fo?\"Demande \"+fo.split(\" (\")[0]:\"Demande de bilan\")",
+   "(fo?\"Request \"+fo.split(\" (\")[0]:\"Assessment request\")"
+  ],
+  [
+   "message:((fo?\"Formule : \"+fo+\". \":\"\")+val(\"mot\")).slice(0,500)",
+   "message:(\"[Site anglais] \"+(fo?\"Formule : \"+fo+\". \":\"\")+val(\"mot\")).slice(0,500)"
+  ],
+  [
+   "message:(fo?\"Formule : \"+fo+\". \":\"\")+val(\"mot\")",
+   "message:\"[Site anglais] \"+(fo?\"Formule : \"+fo+\". \":\"\")+val(\"mot\")"
+  ],
+  [
+   "<p class=\"lt-k\">Dernier geste</p><h3 id=\"lt-t\" tabindex=\"-1\">Votre demande est prête",
+   "<p class=\"lt-k\">Last step</p><h3 id=\"lt-t\" tabindex=\"-1\">Your request is ready"
+  ],
+  [
+   ".</h3><p>Votre messagerie \"+(ouvert?\"s’est ouverte\":\"va s’ouvrir\")+` avec la demande déjà écrite : appuyez sur <strong>Envoyer</strong>, et elle s'envole jusqu'à moi. Je vous rappelle pour fixer la première séance.</p>",
+   ".</h3><p>Your email app \"+(ouvert?\"has opened\":\"is about to open\")+` with the request already written: tap <strong>Send</strong>, and it flies straight to me. I’ll call you back to schedule the first session.</p>"
+  ],
+  [
+   "(ouvert?\"Rouvrir l’e-mail\":\"Ouvrir l’e-mail\")",
+   "(ouvert?\"Reopen the email\":\"Open the email\")"
+  ],
+  [
+   ">Copier ma demande</button>",
+   ">Copy my request</button>"
+  ],
+  [
+   "<p class=\"lt-p\">Rien ne s'ouvre ? Copiez votre demande et envoyez-la à <strong>",
+   "<p class=\"lt-p\">Nothing opens? Copy your request and send it to <strong>"
+  ],
+  [
+   "<button type=\"button\" class=\"lt-x lt-x2\">Fermer</button>",
+   "<button type=\"button\" class=\"lt-x lt-x2\">Close</button>"
+  ],
+  [
+   "<p class=\"lt-k\">Demande envoyée</p><h3 id=\"lt-t\" tabindex=\"-1\">Merci",
+   "<p class=\"lt-k\">Request sent</p><h3 id=\"lt-t\" tabindex=\"-1\">Thank you"
+  ],
+  [
+   ". C’est parti.</h3>",
+   ". You’re all set.</h3>"
+  ],
+  [
+   "'<p>Je vous rappelle moi-même au <strong class=\"lt-num\">'",
+   "'<p>I’ll call you back myself on <strong class=\"lt-num\">'"
+  ],
+  [
+   "'</strong>, sous 48h, pour fixer la première séance chez vous.</p><p class=\"lt-corr-l\"><button type=\"button\" class=\"lt-corr\">Modifier le numéro</button></p>'",
+   "'</strong>, within 48 hours, to schedule the first session at your home.</p><p class=\"lt-corr-l\"><button type=\"button\" class=\"lt-corr\">Change the number</button></p>'"
+  ],
+  [
+   "\"<p>Je vous rappelle moi-même, sous 48h, pour fixer la première séance chez vous.</p>\"",
+   "\"<p>I’ll call you back myself, within 48 hours, to schedule the first session at your home.</p>\""
+  ],
+  [
+   "'<p class=\"lt-p\">Mon numéro : <strong>'",
+   "'<p class=\"lt-p\">My number: <strong>'"
+  ],
+  [
+   "\"</strong>. Enregistrez-le pour reconnaître mon appel. Si vous ne pouvez pas répondre, je vous laisse un message.</p>\"",
+   "\"</strong>. Save it so you recognise my call. If you can’t answer, I’ll leave you a message.</p>\""
+  ],
+  [
+   "<a class=\"btn\" href=\"#accueil\">Retour à l'accueil</a><button type=\"button\" class=\"btn ghost lt-x\">Fermer</button>",
+   "<a class=\"btn\" href=\"#accueil\">Back to home</a><button type=\"button\" class=\"btn ghost lt-x\">Close</button>"
+  ],
+  [
+   "'<p class=\"lt-p\">La page de confirmation a affiché une erreur ? <a class=\"lt-secours\" href=\"'",
+   "'<p class=\"lt-p\">Did the confirmation page show an error? <a class=\"lt-secours\" href=\"'"
+  ],
+  [
+   "'\" target=\"_blank\" rel=\"noopener\">Envoyez votre demande par e-mail</a>.</p>'",
+   "'\" target=\"_blank\" rel=\"noopener\">Send your request by email</a>.</p>'"
+  ],
+  [
+   "(à envoyer à `",
+   "(to send to `"
+  ],
+  [
+   "cp.textContent=\"Demande copiée\"",
+   "cp.textContent=\"Request copied\""
+  ],
+  [
+   "cp.textContent=\"Sélectionnée : copiez-la\"",
+   "cp.textContent=\"Selected: copy it\""
+  ],
+  [
+   "VTXT=[{cta:\"Être rappelé\"},{cta:\"Demander le bilan de mon enfant\"},{cta:\"Demander un bilan\"}]",
+   "VTXT=[{cta:\"Get a call back\"},{cta:\"Request my child’s assessment\"},{cta:\"Request an assessment\"}]"
+  ],
+  [
+   "\"Votre voie\"",
+   "\"Your path\""
+  ],
+  [
+   "\"La première séance dure 1h, chez vous : satisfait ou remboursé.\"",
+   "\"The first session lasts 1 hour, at your home: satisfaction or your money back.\""
+  ],
+  [
+   "\"Il se relève toujours. Vous aussi, à chaque séance.\"",
+   "\"It always gets back up. So do you, every session.\""
+  ],
+  [
+   "\"Bon, il est plus têtu que vous et moi réunis.\"",
+   "\"Well, it’s more stubborn than you and me put together.\""
+  ],
+  [
+   "\"Plus qu’une !\"",
+   "\"One more!\""
+  ],
+  [
+   "\"Il se relève toujours. Et vous, quel est votre objectif ?\"",
+   "\"It always gets back up. And you, what’s your goal?\""
+  ],
+  [
+   "\"Replier mon histoire\"",
+   "\"Fold my story\""
+  ],
+  [
+   "\"Lire la suite\"",
+   "\"Read more\""
+  ],
+  [
+   "\"Le départ\"",
+   "\"The start\""
+  ],
+  [
+   "\"Trois étapes\"",
+   "\"Three steps\""
+  ],
+  [
+   "\"Votre coach\"",
+   "\"Your coach\""
+  ],
+  [
+   "\"Le sommet\"",
+   "\"The summit\""
+  ],
+  [
+   "\"Voir la suite\"",
+   "\"See more\""
+  ],
+  [
+   "MOTS={accueil:\"chez vous.\",forme:\"gagner en force.\",sante:\"en confiance.\",envol:\"viser plus haut.\",enfants:\"bien dans son corps.\",coach:\"Ilyas.\",methode:\"se relever huit.\",tarifs:\"clairs.\",reserver:\"votre bilan.\"}",
+   "MOTS={accueil:\"at home.\",forme:\"feel good.\",sante:\"with confidence.\",envol:\"aim higher.\",enfants:\"at ease in their body.\",coach:\"Ilyas.\",methode:\"stand up eight.\",tarifs:\"clear.\",reserver:\"call back.\"}"
+  ],
+  [
+   "tests:\"Une heure : votre santé, vos habitudes, ce que vous avez déjà essayé, puis des tests simples d’endurance cardiovasculaire et de force. Ils donnent votre point de départ.\"",
+   "tests:\"One hour: your health, your habits, what you’ve already tried, then simple cardiovascular endurance and strength tests. They give your starting point.\""
+  ],
+  [
+   "objectifs:\"Perdre du poids sans vous dégoûter du sport, retrouver de l’endurance cardiovasculaire et de l’énergie, et tenir dans la durée.\"",
+   "objectifs:\"Lose weight without getting put off exercise, regain cardiovascular endurance and energy, and keep it up over time.\""
+  ],
+  [
+   "seances:\"Progressives et variées : renforcement et cardio, dosés pour que vous teniez semaine après semaine.\"",
+   "seances:\"Progressive and varied: strength and cardio, dosed so you keep going week after week.\""
+  ],
+  [
+   "coeur:\"Renforcement de tout le corps et travail de l’endurance, à une intensité qui vous fait progresser sans vous épuiser.\"",
+   "coeur:\"Whole-body strengthening and endurance work, at an intensity that makes you progress without wearing you out.\""
+  ],
+  [
+   "tests:\"Une heure : votre pratique, vos blessures passées, vos envies, puis des tests de force et de gainage : pompes, tractions, maintien, mobilité des épaules.\"",
+   "tests:\"One hour: your training, past injuries, what you want, then strength and core tests: push-ups, pull-ups, holds, shoulder mobility.\""
+  ],
+  [
+   "objectifs:\"Enchaîner vos premières pompes, réussir une traction, tenir l’équilibre sur les mains, gagner en force sans salle de sport.\"",
+   "objectifs:\"String together your first push-ups, achieve a pull-up, hold a handstand, gain strength without a gym.\""
+  ],
+  [
+   "seances:\"Au poids du corps, en jouant sur la vitesse, l’amplitude et le tempo : chaque séance vous rapproche du palier suivant.\"",
+   "seances:\"Bodyweight training, playing with speed, range and tempo: each session brings you closer to the next level.\""
+  ],
+  [
+   "coeur:\"Des progressions précises au poids du corps, en jouant sur la vitesse, l’amplitude et le tempo. Chaque palier franchi se voit.\"",
+   "coeur:\"Precise bodyweight progressions, playing with speed, range and tempo. Every level you reach shows.\""
+  ],
+  [
+   "tests:\"Une heure : vos activités, vos envies, puis des tests d’équilibre, de réaction et de coordination des bras et des jambes.\"",
+   "tests:\"One hour: your activities, what you want, then tests of balance, reaction and arm and leg coordination.\""
+  ],
+  [
+   "objectifs:\"Être plus agile et plus précis, réagir plus vite, mieux maîtriser votre corps, dans votre sport ou au quotidien.\"",
+   "objectifs:\"Be more agile and precise, react faster, control your body better, in your sport or in daily life.\""
+  ],
+  [
+   "seances:\"Des exercices de rythme, d’équilibre, de réaction et de dissociation, de plus en plus riches au fil des séances.\"",
+   "seances:\"Rhythm, balance, reaction and dissociation exercises, richer and richer as the sessions go by.\""
+  ],
+  [
+   "coeur:\"Rythme, équilibre, réaction et dissociation, avec des enchaînements qui se compliquent à mesure que vous progressez.\"",
+   "coeur:\"Rhythm, balance, reaction and dissociation, with sequences that get more complex as you progress.\""
+  ],
+  [
+   "tests:\"Une heure : votre santé, vos traitements, vos douleurs, vos objectifs, puis des tests simples d’équilibre, de force, de souplesse et d’endurance.\"",
+   "tests:\"One hour: your health, your treatments, your pain, your goals, then simple tests of balance, strength, flexibility and endurance.\""
+  ],
+  [
+   "objectifs:\"Retrouver un dos tranquille, reprendre confiance après une opération, mieux vivre avec une maladie chronique.\"",
+   "objectifs:\"Get a calm back again, regain confidence after surgery, live better with a chronic illness.\""
+  ],
+  [
+   "seances:\"Progressives, adaptées à votre forme du jour et à votre santé. Avec une ordonnance, votre médecin reçoit un compte rendu, avec votre accord.\"",
+   "seances:\"Progressive, adapted to how you feel that day and to your health. With a prescription, your doctor receives a report, with your consent.\""
+  ],
+  [
+   "coeur:\"Des exercices adaptés à votre santé et à vos traitements, avec une intensité ajustée à vos sensations du jour.\"",
+   "coeur:\"Exercises adapted to your health and your treatments, with an intensity adjusted to how you feel that day.\""
+  ],
+  [
+   "tests:\"Une heure : votre santé, vos traitements, votre quotidien, puis des tests simples : se lever d’une chaise, tenir en équilibre, marcher quelques minutes.\"",
+   "tests:\"One hour: your health, your treatments, your daily life, then simple tests: getting up from a chair, keeping your balance, walking for a few minutes.\""
+  ],
+  [
+   "objectifs:\"Monter vos escaliers sans vous arrêter, vous relever seul du sol, marcher plus longtemps sans crainte de tomber.\"",
+   "objectifs:\"Climb your stairs without stopping, get up from the floor on your own, walk for longer without fear of falling.\""
+  ],
+  [
+   "seances:\"Progressives, chez vous, dans votre environnement réel : votre escalier, votre fauteuil, votre couloir.\"",
+   "seances:\"Progressive, at home, in your real environment: your stairs, your armchair, your hallway.\""
+  ],
+  [
+   "coeur:\"Force des jambes, équilibre, se relever du sol : en sécurité, à votre rythme.\"",
+   "coeur:\"Leg strength, balance, getting up from the floor: safely, at your own pace.\""
+  ],
+  [
+   "tests:\"Une heure avec l’enfant et ses parents : ses envies, ses activités, puis des tests sous forme de jeux : sauter, lancer, garder l’équilibre.\"",
+   "tests:\"One hour with the child and their parents: what they like, their activities, then tests in the form of games: jumping, throwing, keeping their balance.\""
+  ],
+  [
+   "objectifs:\"Prendre confiance, mieux coordonner ses mouvements, retrouver le plaisir de bouger, progresser dans son sport.\"",
+   "objectifs:\"Gain confidence, coordinate their movements better, rediscover the joy of moving, progress in their sport.\""
+  ],
+  [
+   "seances:\"Par le jeu, avec un défi à chaque séance, à son rythme.\"",
+   "seances:\"Through play, with a challenge every session, at their own pace.\""
+  ],
+  [
+   "coeur:\"Des jeux et des défis qui travaillent la motricité, la coordination, la vitesse de réaction et la confiance.\"",
+   "coeur:\"Games and challenges that work on motor skills, coordination, reaction speed and confidence.\""
+  ],
+  [
+   "\"Les exemples ci-dessous parlent de : \"+b.textContent.toLowerCase()+\". Touchez à nouveau pour tout revoir.\"",
+   "\"The examples below are about: \"+b.textContent.toLowerCase()+\". Tap again to see everything.\""
+  ],
+  [
+   "\"Lire toute mon histoire\"",
+   "\"Read my whole story\""
+  ],
+  [
+   "\"Taille du texte\"",
+   "\"Text size\""
+  ],
+  [
+   "aria-label=\"Fermer la suggestion\"",
+   "aria-label=\"Close the suggestion\""
+  ],
+  [
+   "\"Voir les sept principes\"",
+   "\"See the seven principles\""
+  ],
+  [
+   "\"Replier les principes\"",
+   "\"Fold the principles\""
+  ],
+  [
+   "\"#accueil\":\"Accueil\"",
+   "\"#accueil\":\"Home\""
+  ],
+  [
+   "\"#forme\":\"Élan\"",
+   "\"#forme\":\"Élan\""
+  ],
+  [
+   "\"#methode\":\"Ma méthode\"",
+   "\"#methode\":\"My method\""
+  ],
+  [
+   "\"#coach\":\"À propos\"",
+   "\"#coach\":\"About\""
+  ],
+  [
+   "\"#tarifs\":\"Tarifs\"",
+   "\"#tarifs\":\"Pricing\""
+  ],
+  [
+   "\"#reserver\":\"Votre bilan\"",
+   "\"#reserver\":\"Your assessment\""
+  ],
+  [
+   "\"#contact\":\"Votre bilan\"",
+   "\"#contact\":\"Your assessment\""
+  ],
+  [
+   "\"#questions\":\"Questions fréquentes\"",
+   "\"#questions\":\"FAQ\""
+  ],
+  [
+   "\"#mentions\":\"Mentions légales\"",
+   "\"#mentions\":\"Legal notice\""
+  ],
+  [
+   "\"#confidentialite\":\"Confidentialité\"",
+   "\"#confidentialite\":\"Privacy\""
+  ],
+  [
+   "\"#cgv\":\"Conditions de vente\"",
+   "\"#cgv\":\"Terms of sale\""
+  ],
+  [
+   "(nom=\"Accueil\")",
+   "(nom=\"Home\")"
+  ],
+  [
+   "\"Touchez la lune : geste suivant\"",
+   "\"Touch the moon: next gesture\""
+  ],
+  [
+   "\"Geste suivant\"",
+   "\"Next gesture\""
+  ],
+  [
+   "\"Lancer la vidéo\"",
+   "\"Play the video\""
+  ],
+  [
+   "\"Mettre la vidéo en pause\"",
+   "\"Pause the video\""
+  ],
+  [
+   "'</span><button type=\"button\" class=\"r-modif\">Modifier</button>'",
+   "'</span><button type=\"button\" class=\"r-modif\">Change</button>'"
+  ],
+  [
+   "(\"0\"+e.slice(3)).replace(/(\\d{2})(?=\\d)/g,\"$1 \")",
+   "(\"+33 \"+e.slice(3,4)+\" \"+e.slice(4).replace(/(\\d{2})(?=\\d)/g,\"$1 \"))"
+  ]
+ ],
+ "/commun/telephone.js": [
+  [
+   "Préciser (facultatif) : pour qui, quand vous appeler",
+   "More details (optional): who it’s for, when to call you"
+  ]
+ ],
+ "/commun/736ce84444.js": [
+  [
+   "\"Au départ\"",
+   "\"At the start\""
+  ],
+  [
+   "\"À 6 semaines\"",
+   "\"At 6 weeks\""
+  ],
+  [
+   "\"À la fin\"",
+   "\"At the end\""
+  ],
+  [
+   "Exemple · personne fictive",
+   "Example · fictional person (report in French)"
+  ],
+  [
+   "class=\"bilv-x\" aria-label=\"Fermer\"",
+   "class=\"bilv-x\" aria-label=\"Close\""
+  ],
+  [
+   "Télécharger ce bilan (PDF)",
+   "Download this report (PDF, in French)"
+  ],
+  [
+   "(/^[AEIOUYÉÈÊ]/.test(B[id].n) ? \"Les bilans d’\" : \"Les bilans de \") + B[id].n",
+   "B[id].n + \"’s assessments\""
+  ],
+  [
+   "\"Revenir aux pages entières\"",
+   "\"Back to whole pages\""
+  ],
+  [
+   "\"Agrandir cette page\"",
+   "\"Enlarge this page\""
+  ]
+ ],
+ "pages": [
+  [
+   "Repartir de loin : douleurs, maladie, handicap, âge. On réveille le corps, à votre rythme.",
+   "Starting from far: pain, illness, disability, age. We wake the body up, at your own pace."
+  ],
+  [
+   "Retrouver la forme : énergie, force, endurance. On s’y remet, et ça tient.",
+   "Getting back in shape: energy, strength, stamina. You get back into it, and it lasts."
+  ],
+  [
+   "Se dépasser : s’entraîner plus intensément et viser plus haut.",
+   "Pushing further: training harder and aiming higher."
+  ],
+  [
+   "Pour votre enfant ou votre ado : bouger en s’amusant, prendre confiance, progresser. Plume s’adapte à son objectif : reprendre en douceur, se remettre en forme ou progresser dans son sport.",
+   "For your child or teen: moving while having fun, gaining confidence, progressing. Plume adapts to their goal: starting again gently, getting back in shape or progressing in their sport."
+  ],
+  [
+   "\"Votre parcours : \"",
+   "\"Your programme: \""
+  ],
+  [
+   "\"Découvrir \"",
+   "\"Discover \""
+  ],
+  [
+   "\"Mode sombre\"",
+   "\"Dark mode\""
+  ],
+  [
+   "\"Mode clair\"",
+   "\"Light mode\""
+  ],
+  [
+   "\"Passer en mode sombre\"",
+   "\"Switch to dark mode\""
+  ],
+  [
+   "\"Passer en mode clair\"",
+   "\"Switch to light mode\""
+  ],
+  [
+   "\"Indiquez votre prénom.\"",
+   "\"Please enter your first name.\""
+  ],
+  [
+   "\"Indiquez votre numéro de téléphone (10 chiffres).\"",
+   "\"Please enter your phone number.\""
+  ],
+  [
+   "\"se passe le bilan\"",
+   "\"does the assessment work\""
+  ],
+  [
+   "\"jamais fait de sport\"",
+   "\"never exercised\""
+  ],
+  [
+   "\"mal au dos\"",
+   "\"back pain\""
+  ],
+  [
+   "\"fonctionne le crédit\"",
+   "\"tax credit work\""
+  ],
+  [
+   "\"dois annuler\"",
+   "\"need to cancel\""
+  ],
+  [
+   "\"arrêter avant la fin\"",
+   "\"stop before the end\""
+  ],
+  [
+   "Voir toutes les questions",
+   "See all questions"
+  ],
+  [
+   "\"sport-sur-ordonnance\":\"Sport sur ordonnance\", \"mal-de-dos\":\"Mal de dos\", \"reprise-apres-maladie\":\"Reprendre après une maladie\", \"coach-sportif-enfants\":\"Enfants et ados\"",
+   "\"sport-sur-ordonnance\":\"Exercise on prescription\", \"mal-de-dos\":\"Back pain\", \"reprise-apres-maladie\":\"Exercising again after an illness\", \"coach-sportif-enfants\":\"Children and teens\""
+  ],
+  [
+   "\"coach-sportif-senior\":\"Après 60 ans\", \"coach-sportif-domicile-paris\":\"Remise en forme\", \"tarifs\":\"Tarifs\"",
+   "\"coach-sportif-senior\":\"After 60\", \"coach-sportif-domicile-paris\":\"Getting fit\", \"tarifs\":\"Pricing\""
+  ],
+  [
+   "\"#accueil\":\"Accueil\", \"#forme\":\"Être en forme\", \"#sante\":\"Prendre soin de sa santé\", \"#enfants\":\"Enfants et ados\", \"#methode\":\"Ma méthode\", \"#coach\":\"À propos\"",
+   "\"#accueil\":\"Home\", \"#forme\":\"Getting fit\", \"#sante\":\"Taking care of your health\", \"#enfants\":\"Children and teens\", \"#methode\":\"My method\", \"#coach\":\"About\""
+  ],
+  [
+   "\"#tarifs\":\"Tarifs et zone\", \"#reserver\":\"Votre bilan\", \"#contact\":\"Votre bilan\", \"#questions\":\"Questions fréquentes\", \"#mentions\":\"Mentions légales\", \"#confidentialite\":\"Confidentialité\", \"#cgv\":\"Conditions de vente\"",
+   "\"#tarifs\":\"Pricing and area\", \"#reserver\":\"Your assessment\", \"#contact\":\"Your assessment\", \"#questions\":\"FAQ\", \"#mentions\":\"Legal notice\", \"#confidentialite\":\"Privacy\", \"#cgv\":\"Terms of sale\""
+  ],
+  [
+   "? \"Votre prénom\" : \"Prénom\"",
+   "? \"Your first name\" : \"First name\""
+  ],
+  [
+   "? \"Votre numéro\" : \"Téléphone\"",
+   "? \"Your number\" : \"Phone\""
+  ],
+  [
+   "\"Votre demande est bien partie. Je vous rappelle.\"",
+   "\"Your request has been sent. I’ll call you back.\""
+  ],
+  [
+   "var L = [\"Bonjour Ilyas, je souhaite être rappelé pour un bilan à domicile.\"];",
+   "var L = [\"Hello Ilyas, I’d like a call back about a home assessment.\"];"
+  ],
+  [
+   "if (d.pour) L.push(\"Pour : \" + d.pour); if (d.besoin) L.push(\"Recherche : \" + d.besoin);",
+   "if (d.pour) L.push(\"For: \" + __en(d.pour)); if (d.besoin) L.push(\"Looking for: \" + __en(d.besoin));"
+  ],
+  [
+   "L.push(\"Prénom : \" + d.prenom); L.push(\"Téléphone : \" + d.tel); if (d.moment) L.push(\"Meilleur moment pour me rappeler : \" + d.moment);",
+   "L.push(\"First name: \" + d.prenom); L.push(\"Phone: \" + d.tel); if (d.moment) L.push(\"Best time to call me back: \" + __en(d.moment));"
+  ],
+  [
+   "Demande envoyée</p>",
+   "Request sent</p>"
+  ],
+  [
+   "tabindex=\\\"-1\\\">Merci",
+   "tabindex=\\\"-1\\\">Thank you"
+  ],
+  [
+   ". C’est parti.</h2>",
+   ". You’re all set.</h2>"
+  ],
+  [
+   "<p>Je vous rappelle moi-même au <strong",
+   "<p>I’ll call you back myself on <strong"
+  ],
+  [
+   ">Corriger</button>, sous 48 h, pour fixer le bilan chez vous.</p>",
+   ">Correct</button>, within 48 hours, to schedule the assessment at your home.</p>"
+  ],
+  [
+   ">Mon numéro : <strong>",
+   ">My number: <strong>"
+  ],
+  [
+   "</strong>. Enregistrez-le pour reconnaître mon appel. Si vous ne pouvez pas répondre, je vous laisse un message.</p>",
+   "</strong>. Save it so you recognise my call. If you can’t answer, I’ll leave you a message.</p>"
+  ],
+  [
+   ">L’accueil du site</a>",
+   ">Home page</a>"
+  ],
+  [
+   "\"Corrigez votre numéro, puis renvoyez la demande : je garderai la bonne.\"",
+   "\"Correct your number, then send the request again: I’ll keep the right one.\""
+  ],
+  [
+   "\"Demande de bilan, \"",
+   "\"Assessment request, \""
+  ],
+  [
+   "Pas encore envoyée</p>",
+   "Not sent yet</p>"
+  ],
+  [
+   "Votre demande n’est pas encore partie.</h2>",
+   "Your request hasn’t been sent yet.</h2>"
+  ],
+  [
+   "\"Pas de réseau pour l’instant. Elle est gardée sur cet appareil et partira toute seule dès que la connexion revient, si cette page reste ouverte.\"",
+   "\"No network for now. It is kept on this device and will go by itself as soon as the connection comes back, if this page stays open.\""
+  ],
+  [
+   "\"La connexion n’a pas répondu.\"",
+   "\"The connection didn’t respond.\""
+  ],
+  [
+   "\" Appelez-moi, ou envoyez-la par SMS : elle est déjà rédigée.\"",
+   "\" Call me, or send it by text: it’s already written.\""
+  ],
+  [
+   "\" Envoyez-la par e-mail : elle est déjà rédigée.\"",
+   "\" Send it by email: it’s already written.\""
+  ],
+  [
+   ">Appeler le ",
+   ">Call "
+  ],
+  [
+   ">Réessayer</button>",
+   ">Try again</button>"
+  ],
+  [
+   "\"Indiquez votre numéro de téléphone.\"",
+   "\"Please enter your phone number.\""
+  ],
+  [
+   "\"Il manque un chiffre : un numéro compte 10 chiffres.\"",
+   "\"A digit is missing: a French number has 10 digits (for another country, start with +).\""
+  ],
+  [
+   "\"Il y a un chiffre de trop : un numéro compte 10 chiffres.\"",
+   "\"One digit too many: a French number has 10 digits (for another country, start with +).\""
+  ],
+  [
+   "\"Ce numéro ne semble pas valide. Vérifiez-le.\"",
+   "\"This number doesn’t seem valid. Please check it.\""
+  ],
+  [
+   "class=\"pil-x\" aria-label=\"Fermer\"",
+   "class=\"pil-x\" aria-label=\"Close\""
+  ]
+ ],
+ "accueil": [
+  [
+   "\"accueil\": \"/\"",
+   "\"accueil\": \"/en/\""
+  ],
+  [
+   "L = \"/\"",
+   "L = \"/en/\""
+  ]
+ ]
+}
