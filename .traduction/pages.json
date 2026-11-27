@@ -13,7 +13,8 @@
     "/sport-sur-ordonnance/": "/en/exercise-on-prescription/",
     "/mal-de-dos/": "/en/back-pain/",
     "/reprise-apres-maladie/": "/en/exercise-after-illness/",
-    "/coach-sportif-senior/": "/en/fitness-after-60/"
+    "/coach-sportif-senior/": "/en/fitness-after-60/",
+    "/confidentialite/": "/en/privacy/"
   },
   "scripts": {
     "/commun/6c5dfe3706.js": "/commun/6c5dfe3706-en.js",
@@ -22,5 +23,13 @@
   },
   "liens": {
     "https://www.who.int/fr/publications-detail/9789240014886": "https://www.who.int/publications/i/item/9789240014886"
+  },
+  "ajouts": {
+    "/confidentialite/": [
+      {
+        "apres": "<article class=\"legal rv\">",
+        "html": "\n<p class=\"legal-note\"><strong>Courtesy translation.</strong> Only the French version of this privacy policy is legally binding: <a href=\"/confidentialite/\" hreflang=\"fr\" lang=\"fr\">read the French version</a>.</p>"
+      }
+    ]
   }
 }

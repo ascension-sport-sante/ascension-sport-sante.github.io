@@ -186,6 +186,9 @@ def fabrique(fr_chemin, en_chemin):
                 corps = remplace_js(corps, JS.get('accueil', []), fr_chemin, obligatoire=False)
             parts[i] = ouv2 + corps + '</script>'
     t = ''.join(parts)
+    for aj in CONF.get('ajouts', {}).get(fr_chemin, []):   # textes propres à la version anglaise
+        if aj['apres'] not in t: ERREURS.append('%s : point d’ajout introuvable « %s »' % (fr_chemin, aj['apres'])); continue
+        t = t.replace(aj['apres'], aj['apres'] + aj['html'], 1)
     t = re.sub(r'<html lang="fr[^"]*"', '<html lang="en"', t, count=1)
     t = ajoute_entete(t, fr_chemin, en_chemin, 'en')
     dest = os.path.join(RACINE, en_chemin.strip('/'), 'index.html')
