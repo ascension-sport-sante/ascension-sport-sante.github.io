@@ -1332,3 +1332,11 @@ html:not(.clair) #p-tarifs .tf-notes{color:#cfd5e1}
 }
 /* Téléphone : le trait rouge toujours centré sous le titre */
 @media (max-width:860px){.brushline{margin-left:auto!important;margin-right:auto!important;align-self:center!important}}
+/* À propos : « Mon histoire » seulement sur ordinateur (sur téléphone, on fait défiler) */
+@media (max-width:860px){#p-coach #sensei .actions{display:none!important}}
+
+/* Fluidité sur téléphone : les blocs apparaissent vite, sans cascade, et les titres se dessinent plus vite */
+@media (max-width:860px){
+  .js-anim .in .rv:not(h2){animation-duration:.28s!important;animation-delay:0s!important}
+  .js-anim .in h2.rv{transition-duration:.45s,.3s,.3s,.3s!important;transition-delay:0s!important}
+}

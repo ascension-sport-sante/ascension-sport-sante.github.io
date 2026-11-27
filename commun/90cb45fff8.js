@@ -19,6 +19,8 @@
   function base(u){ var h = u.getAttribute("href") || u.getAttribute("xlink:href") || ""; return h.charAt(0) === "#" ? h.slice(1).replace(/--fixe$/, "") : ""; }
   function visible(s){
     if (!s.__dedans) return false;
+    /* fluidité : test natif du navigateur, bien plus rapide que de remonter tous les parents */
+    if (s.checkVisibility) return s.checkVisibility({opacityProperty:true, visibilityProperty:true});
     for (var a = s; a && a.nodeType === 1; a = a.parentElement){
       var c = getComputedStyle(a); if (c.display === "none" || c.visibility === "hidden" || +c.opacity === 0) return false;
     }
@@ -28,13 +30,14 @@
   function maj(){
     var n = 0;
     cadres = cadres.filter(function(s){ return s.isConnected; });
-    cadres.forEach(function(s){
-      var v = visible(s);
+    var vus = cadres.map(visible);   /* d'abord toutes les lectures, ensuite les changements : pas d'aller-retour coûteux */
+    cadres.forEach(function(s, i){
+      var v = vus[i];
       s.__uses.forEach(function(u){ var b = u.__b; if (v){ viser(u, b); n++; } else viser(u, b + "--fixe"); });
     });
     if (sprite && sprite.pauseAnimations) try { if (n) { if (sprite.animationsPaused()) sprite.unpauseAnimations(); } else if (!sprite.animationsPaused()) sprite.pauseAnimations(); } catch (x) {}
   }
-  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.__dedans = e.isIntersecting; }); revoir(); }, {rootMargin:"80px 0px"});
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.__dedans = e.isIntersecting; }); revoir(true); }, {rootMargin:"80px 0px"});
   function scan(){
     preparer();
     [].forEach.call(document.querySelectorAll("use"), function(u){
@@ -47,7 +50,9 @@
     });
   }
   var rq = 0;
-  function revoir(){ if (rq) return; rq = requestAnimationFrame(function(){ rq = 0; scan(); maj(); }); }
+  var aScanner = true;
+  /* pendant un défilement rapide, les changements sont regroupés (une fois toutes les 120 ms au plus) */
+  function revoir(sansScan){ if (!sansScan) aScanner = true; if (rq) return; rq = setTimeout(function(){ rq = 0; if (aScanner){ aScanner = false; scan(); } maj(); }, sansScan ? 120 : 16); }
   function plusTard(){ revoir(); setTimeout(revoir, 80); setTimeout(revoir, 450); }   /* menus et fenêtres s'ouvrent en fondu */
   var mo = new MutationObserver(plusTard), vusMenus = new WeakSet();
   function menus(){ [].forEach.call(document.querySelectorAll("#sommaire, #nv-prest, .nv-drop, .r-modal"), function(m){ if (vusMenus.has(m)) return; vusMenus.add(m); mo.observe(m, {attributes:true, attributeFilter:["class", "hidden", "style", "aria-hidden"]}); }); }
