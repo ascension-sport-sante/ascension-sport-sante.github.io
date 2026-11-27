@@ -79,7 +79,7 @@
   ],
   [
    "Fermer</button></div><div class=\"sm-corps\"><p class=\"sm-ey\">Votre parcours</p>",
-   "Close</button></div><div class=\"sm-corps\"><p class=\"sm-ey\">Your programme</p>"
+   "Close</button></div><div class=\"sm-corps\"><p class=\"sm-ey\">Your program</p>"
   ],
   [
    "<p class=\"sm-ey\">Le site</p>",
@@ -307,7 +307,7 @@
   ],
   [
    "\"</strong>. Enregistrez-le pour reconnaître mon appel. Si vous ne pouvez pas répondre, je vous laisse un message.</p>\"",
-   "\"</strong>. Save it so you recognise my call. If you can’t answer, I’ll leave you a message.</p>\""
+   "\"</strong>. Save it so you recognize my call. If you can’t answer, I’ll leave you a message.</p>\""
   ],
   [
    "<a class=\"btn\" href=\"#accueil\">Retour à l'accueil</a><button type=\"button\" class=\"btn ghost lt-x\">Fermer</button>",
@@ -649,7 +649,7 @@
   ],
   [
    "\"Votre parcours : \"",
-   "\"Your programme: \""
+   "\"Your program: \""
   ],
   [
    "\"Découvrir \"",
@@ -773,7 +773,7 @@
   ],
   [
    "</strong>. Enregistrez-le pour reconnaître mon appel. Si vous ne pouvez pas répondre, je vous laisse un message.</p>",
-   "</strong>. Save it so you recognise my call. If you can’t answer, I’ll leave you a message.</p>"
+   "</strong>. Save it so you recognize my call. If you can’t answer, I’ll leave you a message.</p>"
   ],
   [
    ">L’accueil du site</a>",

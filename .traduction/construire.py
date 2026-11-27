@@ -101,7 +101,7 @@ def traduit_balise(m, page):
             if a_traduire(n):
                 t2 = tr(n, page)
                 nv = t2 if t2 is not None else val
-        elif tag == 'meta' and kl == 'content' and nom_meta == 'og:locale': nv = 'en_GB'
+        elif tag == 'meta' and kl == 'content' and nom_meta == 'og:locale': nv = 'en_US'
         elif tag == 'meta' and kl == 'content' and nom_meta == 'og:locale:alternate': nv = 'fr_FR'
         elif kl == 'href' and val in LIENS: nv = LIENS[val]
         elif kl in ('href', 'content') and (val.startswith('/') or val.startswith(SITE)):
