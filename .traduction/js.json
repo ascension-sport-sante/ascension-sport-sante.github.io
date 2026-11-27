@@ -50,8 +50,8 @@
    "t:\"Pricing\",s:function(){return\"Plans and prices\"}"
   ],
   [
-   "t:\"Être rappelé\",s:\"Trois questions, et je vous rappelle\"",
-   "t:\"Get a call back\",s:\"Three questions, and I’ll call you back\""
+   "t:\"Être appelé\",s:\"Trois questions, et je vous rappelle\"",
+   "t:\"Request a call\",s:\"Three questions, and I’ll call you back\""
   ],
   [
    "t:\"Le kit de communication\",s:\"Carte, flyer, Instagram\"",
@@ -106,8 +106,8 @@
    "<span>Call</span>"
   ],
   [
-   "data-id=\"reserver\">Être rappelé</button>",
-   "data-id=\"reserver\">Get a call back</button>"
+   "data-id=\"reserver\">Être appelé</button>",
+   "data-id=\"reserver\">Request a call</button>"
   ],
   [
    "aria-label=\"Étape précédente\"",
@@ -130,8 +130,8 @@
    "\"<span>\"+POUR_EN[pi]+'</span>"
   ],
   [
-   "rEtape.textContent=n<3?\"Être rappelé\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Demande envoyée\":\"Dernière étape\"",
-   "rEtape.textContent=n<3?\"Get a call back\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Request sent\":\"Last step\""
+   "rEtape.textContent=n<3?\"Être appelé\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Demande envoyée\":\"Dernière étape\"",
+   "rEtape.textContent=n<3?\"Request a call\":form.querySelector(\".r-ok\")&&!form.querySelector(\".r-ok\").hidden?\"Request sent\":\"Last step\""
   ],
   [
    "enf?\"Âge de l’enfant\":pr?\"Âge de votre proche\":\"Votre âge\",form.elements.age.placeholder=enf?\"Ex. 9\":pr?\"Ex. 78\":\"Ex. 45\"",
@@ -334,8 +334,8 @@
    "cp.textContent=\"Selected: copy it\""
   ],
   [
-   "VTXT=[{cta:\"Être rappelé\"},{cta:\"Demander le bilan de mon enfant\"},{cta:\"Demander un bilan\"}]",
-   "VTXT=[{cta:\"Get a call back\"},{cta:\"Request my child’s assessment\"},{cta:\"Request an assessment\"}]"
+   "VTXT=[{cta:\"Être appelé\"},{cta:\"Demander le bilan de mon enfant\"},{cta:\"Demander un bilan\"}]",
+   "VTXT=[{cta:\"Request a call\"},{cta:\"Request my child’s assessment\"},{cta:\"Request an assessment\"}]"
   ],
   [
    "\"Votre voie\"",

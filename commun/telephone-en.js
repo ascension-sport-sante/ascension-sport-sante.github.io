@@ -2,7 +2,7 @@
 (function () {
   if (!window.matchMedia || !matchMedia("(max-width:860px)").matches) return;
 
-  // 1) Formulaires « Être rappelé » : prénom, téléphone et le bouton ; le reste se déplie si l'on veut
+  // 1) Formulaires « Être appelé » : prénom, téléphone et le bouton ; le reste se déplie si l'on veut
   document.querySelectorAll("form.r-ici").forEach(function (f) {
     if (f.querySelector(".r-opt")) return;
     var subs = [].filter.call(f.querySelectorAll(".r-sub"), function (p) { return /facultatif/i.test(p.textContent); });

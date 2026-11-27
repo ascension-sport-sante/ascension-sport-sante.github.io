@@ -53,7 +53,8 @@
   var aScanner = true;
   /* pendant un défilement rapide, les changements sont regroupés (une fois toutes les 120 ms au plus) */
   function revoir(sansScan){ if (!sansScan) aScanner = true; if (rq) return; rq = setTimeout(function(){ rq = 0; if (aScanner){ aScanner = false; scan(); } maj(); }, sansScan ? 120 : 16); }
-  function plusTard(){ revoir(); setTimeout(revoir, 80); setTimeout(revoir, 450); }   /* menus et fenêtres s'ouvrent en fondu */
+  var tPlus = 0;   /* menus et fenêtres s'ouvrent en fondu : une seule vérification, une fois l'animation finie, pour ne pas la ralentir */
+  function plusTard(){ clearTimeout(tPlus); tPlus = setTimeout(function(){ revoir(); }, 420); }
   var mo = new MutationObserver(plusTard), vusMenus = new WeakSet();
   function menus(){ [].forEach.call(document.querySelectorAll("#sommaire, #nv-prest, .nv-drop, .r-modal"), function(m){ if (vusMenus.has(m)) return; vusMenus.add(m); mo.observe(m, {attributes:true, attributeFilter:["class", "hidden", "style", "aria-hidden"]}); }); }
   var ajouts = new MutationObserver(function(ms){

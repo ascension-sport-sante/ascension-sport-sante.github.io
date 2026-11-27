@@ -1332,8 +1332,6 @@ html:not(.clair) #p-tarifs .tf-notes{color:#cfd5e1}
 }
 /* Téléphone : le trait rouge toujours centré sous le titre */
 @media (max-width:860px){.brushline{margin-left:auto!important;margin-right:auto!important;align-self:center!important}}
-/* À propos : « Mon histoire » seulement sur ordinateur (sur téléphone, on fait défiler) */
-@media (max-width:860px){#p-coach #sensei .actions{display:none!important}}
 
 /* Fluidité sur téléphone : les blocs apparaissent vite, sans cascade, et les titres se dessinent plus vite */
 @media (max-width:860px){
@@ -1349,3 +1347,18 @@ header.top .nv-lang:focus-visible{outline:3px solid var(--gold,#c9a55c);outline-
 @media (max-width:860px){header.top .nv-lang{display:none!important}}
 /* Bas de page entre 981 et 1180 px : la colonne Contact (bouton du numéro) débordait de quelques pixels ; on rééquilibre les colonnes (français et anglais) */
 @media (min-width:981px) and (max-width:1180px){footer.pied .pied-g{column-gap:16px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr) minmax(0,1.35fr)}}
+
+/* À propos : « Vous hésitez ? » est regroupé avec « Mes engagements » (un seul écran, sans grand vide entre les deux) */
+#p-coach .ap-hes{max-width:1000px;margin:40px auto 0}
+#p-coach .ap-hes .acc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+@media (max-width:860px){#p-coach .ap-hes{margin-top:30px}#p-coach .ap-hes .acc{grid-template-columns:1fr;gap:8px}}
+
+/* Toucher plus vif sur téléphone : pas d'attente de double-tap, et un retour visuel immédiat sur tout ce qui se touche */
+html{touch-action:manipulation}
+@media (hover:none){
+  :is(a.btn,button,summary,.chip,.ema,.cha,.lune-c,.card-p,.som-btn,.nv-tel,.sm-tu,.sm-l,.voie-c,.scroll):active{scale:.97;filter:brightness(.96);transition:scale .05s ease-out,filter .05s ease-out}
+}
+/* Fenêtre « Ce que je crois » ouverte sans showModal : centrée au-dessus de tout, avec son fond */
+.ema-dlg[open]{position:fixed;inset:0;margin:auto;height:fit-content;z-index:2147483001}
+.ema-fond{position:fixed;inset:0;z-index:2147483000;background:rgba(20,14,8,.58)}
+.ema-fond[hidden]{display:none}
