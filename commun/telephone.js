@@ -92,7 +92,5 @@
   var t = 0;
   function plus_tard() { clearTimeout(t); t = setTimeout(ranger, 120); }
   ecran();
-  if (document.readyState === "complete") ranger(); else addEventListener("load", function () { ranger(); setTimeout(ranger, 700); });
-  addEventListener("resize", function () { if (ecran()) plus_tard(); });
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(plus_tard);
+  addEventListener("resize", ecran);
 })();
